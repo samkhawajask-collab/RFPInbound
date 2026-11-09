@@ -1,0 +1,827 @@
+{
+  "name": "RFP - Rerun Stage",
+  "description": "Rerun an RFP's pipeline from a stage (1-9). Refused while the pipeline is running or after the RFP is filed.",
+  "modernflowtype": 1,
+  "environmentVariables": [],
+  "clientdata": {
+    "properties": {
+      "connectionReferences": {
+        "shared_commondataserviceforapps": {
+          "runtimeSource": "embedded",
+          "connection": {
+            "connectionReferenceLogicalName": "hrs_dataverseconnection"
+          },
+          "api": {
+            "name": "shared_commondataserviceforapps"
+          }
+        },
+        "{{tools:api}}": {
+          "runtimeSource": "embedded",
+          "connection": {
+            "connectionReferenceLogicalName": "hrs_rfptoolsconnection"
+          },
+          "api": {
+            "name": "{{tools:api}}"
+          }
+        }
+      },
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "$connections": {
+            "defaultValue": {},
+            "type": "Object"
+          },
+          "$authentication": {
+            "defaultValue": {},
+            "type": "SecureObject"
+          }
+        },
+        "triggers": {
+          "manual": {
+            "type": "Request",
+            "kind": "Skills",
+            "inputs": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "rfpKey",
+                  "stage"
+                ],
+                "properties": {
+                  "rfpKey": {
+                    "title": "rfpKey",
+                    "description": "The RFP's key, as the user gave it. The tool says if no RFP has that key",
+                    "type": "string",
+                    "x-ms-content-hint": "TEXT",
+                    "x-ms-dynamically-added": true
+                  },
+                  "stage": {
+                    "title": "stage",
+                    "description": "The stage to rerun from, 1 to 9",
+                    "type": "string",
+                    "x-ms-content-hint": "TEXT",
+                    "x-ms-dynamically-added": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "actions": {
+          "RFP": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "ListRecords",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_rfps",
+                "$select": "hrs_rfpid,hrs_rfpkey,hrs_stage,hrs_status,hrs_currentrevision",
+                "$filter": "hrs_rfpkey eq '@{trim(triggerBody()?['rfpKey'])}'"
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 5000
+              }
+            },
+            "runAfter": {}
+          },
+          "Check": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/{{tools:api}}",
+                "operationId": "OrchestratorRerunCheck",
+                "connectionName": "{{tools:api}}"
+              },
+              "parameters": {
+                "body": {
+                  "rfp": "@first(body('RFP')?['value'])",
+                  "stage": "@{triggerBody()?['stage']}"
+                }
+              }
+            },
+            "limit": {
+              "timeout": "PT10M"
+            },
+            "retryPolicy": {
+              "type": "exponential",
+              "count": 3,
+              "interval": "PT10S"
+            },
+            "runAfter": {
+              "RFP": [
+                "Succeeded"
+              ]
+            }
+          },
+          "If_audit": {
+            "type": "If",
+            "expression": {
+              "greater": [
+                "@length(body('RFP')?['value'])",
+                0
+              ]
+            },
+            "actions": {
+              "Audit_Tool_RFP": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "CreateRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_runlogs",
+                    "item/hrs_name": "Tool run: RFP - Rerun Stage",
+                    "item/hrs_status": 431200181,
+                    "item/hrs_startedon": "@{utcNow()}",
+                    "item/hrs_completedon": "@{utcNow()}",
+                    "item/hrs_correlationid": "@{take(coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), 100)}",
+                    "item/hrs_errordetail": "@{concat('Audit (RFP Orchestrator). Tool: RFP - Rerun Stage; parameters: ', string(triggerBody()), '; outcome: ', if(equals(body('Check')?['allowed'], true), 'allowed', concat('refused: ', body('Check')?['reason'])), '; caller: ', coalesce(triggerOutputs()?['headers']?['x-ms-object-id'], 'unknown'), '; client: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-keywords'], 'unknown'), '; conversation: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), '.')}",
+                    "item/hrs_rfp@odata.bind": "hrs_rfps(@{first(body('RFP')?['value'])?['hrs_rfpid']})"
+                  }
+                },
+                "runAfter": {}
+              }
+            },
+            "else": {
+              "actions": {
+                "Audit_Tool": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "hrs_runlogs",
+                      "item/hrs_name": "Tool run: RFP - Rerun Stage",
+                      "item/hrs_status": 431200181,
+                      "item/hrs_startedon": "@{utcNow()}",
+                      "item/hrs_completedon": "@{utcNow()}",
+                      "item/hrs_correlationid": "@{take(coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), 100)}",
+                      "item/hrs_errordetail": "@{concat('Audit (RFP Orchestrator). Tool: RFP - Rerun Stage; parameters: ', string(triggerBody()), '; outcome: ', if(equals(body('Check')?['allowed'], true), 'allowed', concat('refused: ', body('Check')?['reason'])), '; caller: ', coalesce(triggerOutputs()?['headers']?['x-ms-object-id'], 'unknown'), '; client: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-keywords'], 'unknown'), '; conversation: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), '.')}"
+                    }
+                  },
+                  "runAfter": {}
+                }
+              }
+            },
+            "runAfter": {
+              "Check": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Respond_Not_Audited": {
+            "type": "Response",
+            "kind": "Skills",
+            "inputs": {
+              "statusCode": 200,
+              "body": {
+                "result": "Not rerun, and nothing was changed: the audit record could not be written. Trying again won't help until that is fixed. Ask an administrator to check the latest RFP - Rerun Stage flow run."
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "title": "result",
+                    "description": "The answer for the user",
+                    "type": "string",
+                    "x-ms-content-hint": "TEXT",
+                    "x-ms-dynamically-added": true
+                  }
+                }
+              }
+            },
+            "runAfter": {
+              "If_audit": [
+                "Failed",
+                "TimedOut"
+              ]
+            }
+          },
+          "If_allowed": {
+            "type": "If",
+            "expression": {
+              "equals": [
+                "@body('Check')?['allowed']",
+                true
+              ]
+            },
+            "actions": {
+              "Respond_Started": {
+                "type": "Response",
+                "kind": "Skills",
+                "inputs": {
+                  "statusCode": 200,
+                  "body": {
+                    "result": "@{concat(body('Check')?['reason'], ' The pipeline restarts once rows from the earlier pass are removed; ask for the run status to follow it.')}"
+                  },
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "result": {
+                        "title": "result",
+                        "description": "The answer for the user",
+                        "type": "string",
+                        "x-ms-content-hint": "TEXT",
+                        "x-ms-dynamically-added": true
+                      }
+                    }
+                  }
+                },
+                "runAfter": {}
+              },
+              "Pass": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_runlogs",
+                    "$select": "hrs_startedon",
+                    "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and hrs_stage eq @{body('Check')?['fromStage']}",
+                    "$orderby": "createdon desc",
+                    "$top": 1
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "Respond_Started": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Approvals": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_approvals",
+                    "$select": "hrs_approvalid",
+                    "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and createdon ge @{coalesce(first(body('Pass')?['value'])?['hrs_startedon'], utcNow())}"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "Pass": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Approvals_Each": {
+                "type": "Foreach",
+                "foreach": "@body('Rerun_Approvals')?['value']",
+                "actions": {
+                  "Rerun_Approvals_Delete": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "DeleteRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_approvals",
+                        "recordId": "@items('Rerun_Approvals_Each')?['hrs_approvalid']"
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                },
+                "runtimeConfiguration": {
+                  "concurrency": {
+                    "repetitions": 20
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Approvals": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Clarifications": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_clarifications",
+                    "$select": "hrs_clarificationid",
+                    "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and createdon ge @{coalesce(first(body('Pass')?['value'])?['hrs_startedon'], utcNow())}"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Approvals_Each": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Clarifications_Each": {
+                "type": "Foreach",
+                "foreach": "@body('Rerun_Clarifications')?['value']",
+                "actions": {
+                  "Rerun_Clarifications_Delete": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "DeleteRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_clarifications",
+                        "recordId": "@items('Rerun_Clarifications_Each')?['hrs_clarificationid']"
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                },
+                "runtimeConfiguration": {
+                  "concurrency": {
+                    "repetitions": 20
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Clarifications": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Gaps": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_gaps",
+                    "$select": "hrs_gapid",
+                    "$filter": "hrs_requirement/_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and createdon ge @{coalesce(first(body('Pass')?['value'])?['hrs_startedon'], utcNow())}"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Clarifications_Each": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Gaps_Each": {
+                "type": "Foreach",
+                "foreach": "@body('Rerun_Gaps')?['value']",
+                "actions": {
+                  "Rerun_Gaps_Delete": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "DeleteRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_gaps",
+                        "recordId": "@items('Rerun_Gaps_Each')?['hrs_gapid']"
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                },
+                "runtimeConfiguration": {
+                  "concurrency": {
+                    "repetitions": 20
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Gaps": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Responses": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_responses",
+                    "$select": "hrs_responseid",
+                    "$filter": "hrs_requirement/_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and createdon ge @{coalesce(first(body('Pass')?['value'])?['hrs_startedon'], utcNow())}"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Gaps_Each": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Responses_Each": {
+                "type": "Foreach",
+                "foreach": "@body('Rerun_Responses')?['value']",
+                "actions": {
+                  "Rerun_Responses_Delete": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "DeleteRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_responses",
+                        "recordId": "@items('Rerun_Responses_Each')?['hrs_responseid']"
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                },
+                "runtimeConfiguration": {
+                  "concurrency": {
+                    "repetitions": 20
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Responses": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Flags": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_flags",
+                    "$select": "hrs_flagid",
+                    "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and createdon ge @{coalesce(first(body('Pass')?['value'])?['hrs_startedon'], utcNow())}"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Responses_Each": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Flags_Each": {
+                "type": "Foreach",
+                "foreach": "@body('Rerun_Flags')?['value']",
+                "actions": {
+                  "Rerun_Flags_Delete": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "DeleteRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_flags",
+                        "recordId": "@items('Rerun_Flags_Each')?['hrs_flagid']"
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                },
+                "runtimeConfiguration": {
+                  "concurrency": {
+                    "repetitions": 20
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Flags": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Requirements": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_requirements",
+                    "$select": "hrs_requirementid",
+                    "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and createdon ge @{coalesce(first(body('Pass')?['value'])?['hrs_startedon'], utcNow())}"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Flags_Each": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Requirements_Each": {
+                "type": "Foreach",
+                "foreach": "@body('Rerun_Requirements')?['value']",
+                "actions": {
+                  "Rerun_Requirements_Delete": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "DeleteRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_requirements",
+                        "recordId": "@items('Rerun_Requirements_Each')?['hrs_requirementid']"
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                },
+                "runtimeConfiguration": {
+                  "concurrency": {
+                    "repetitions": 20
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Requirements": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Documentblocks": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_documentblocks",
+                    "$select": "hrs_documentblockid",
+                    "$filter": "hrs_rfpdocument/hrs_rfprevision/_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and createdon ge @{coalesce(first(body('Pass')?['value'])?['hrs_startedon'], utcNow())}"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Requirements_Each": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Documentblocks_Each": {
+                "type": "Foreach",
+                "foreach": "@body('Rerun_Documentblocks')?['value']",
+                "actions": {
+                  "Rerun_Documentblocks_Delete": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "DeleteRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_documentblocks",
+                        "recordId": "@items('Rerun_Documentblocks_Each')?['hrs_documentblockid']"
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                },
+                "runtimeConfiguration": {
+                  "concurrency": {
+                    "repetitions": 20
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Documentblocks": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Answers": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_answers",
+                    "$select": "hrs_answerid",
+                    "$filter": "startswith(hrs_answercode,'PROP-@{first(body('RFP')?['value'])?['hrs_rfpkey']}-') and hrs_approvalstatus eq 431200011 and createdon ge @{coalesce(first(body('Pass')?['value'])?['hrs_startedon'], utcNow())}"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Documentblocks_Each": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rerun_Answers_Each": {
+                "type": "Foreach",
+                "foreach": "@body('Rerun_Answers')?['value']",
+                "actions": {
+                  "Rerun_Answers_Delete": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "DeleteRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_answers",
+                        "recordId": "@items('Rerun_Answers_Each')?['hrs_answerid']"
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                },
+                "runtimeConfiguration": {
+                  "concurrency": {
+                    "repetitions": 20
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Answers": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rewind": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "UpdateOnlyRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_rfps",
+                    "recordId": "@{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')}",
+                    "item/hrs_stage": "@sub(body('Check')?['fromStage'], 1)",
+                    "item/hrs_status": 431200170,
+                    "item/hrs_currentrevision": "@if(body('Check')?['resetRevision'], 0, first(body('RFP')?['value'])?['hrs_currentrevision'])"
+                  }
+                },
+                "runAfter": {
+                  "Rerun_Answers_Each": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Restart": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "UpdateOnlyRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_rfps",
+                    "recordId": "@{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')}",
+                    "item/hrs_status": 431200171
+                  }
+                },
+                "runAfter": {
+                  "Rewind": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Log_Rerun": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "CreateRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_runlogs",
+                    "item/hrs_name": "@{concat('Rerun from stage ', string(body('Check')?['fromStage']), ' (RFP Orchestrator)')}",
+                    "item/hrs_rfp@odata.bind": "hrs_rfps(@{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')})",
+                    "item/hrs_status": 431200181,
+                    "item/hrs_startedon": "@{utcNow()}",
+                    "item/hrs_completedon": "@{utcNow()}",
+                    "item/hrs_correlationid": "@{workflow()?['run']?['name']}",
+                    "item/hrs_errordetail": "@body('Check')?['reason']"
+                  }
+                },
+                "runAfter": {
+                  "Restart": [
+                    "Succeeded"
+                  ]
+                }
+              }
+            },
+            "else": {
+              "actions": {
+                "Respond_Refused": {
+                  "type": "Response",
+                  "kind": "Skills",
+                  "inputs": {
+                    "statusCode": 200,
+                    "body": {
+                      "result": "@{concat('Not rerun: ', body('Check')?['reason'])}"
+                    },
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "result": {
+                          "title": "result",
+                          "description": "The answer for the user",
+                          "type": "string",
+                          "x-ms-content-hint": "TEXT",
+                          "x-ms-dynamically-added": true
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {}
+                }
+              }
+            },
+            "runAfter": {
+              "If_audit": [
+                "Succeeded"
+              ]
+            }
+          }
+        },
+        "outputs": {}
+      },
+      "templateName": ""
+    },
+    "schemaVersion": "1.0.0.0"
+  }
+}

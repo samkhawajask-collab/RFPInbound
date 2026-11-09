@@ -1,0 +1,2072 @@
+{
+ "apiVersion": "2024-11-30",
+ "pages": [
+  {
+   "pageNumber": 1,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch",
+   "angle": -0.017100000753998756,
+   "words": [
+    {
+     "content": "TRI-HARBOR",
+     "confidence": 0.992,
+     "offset": 0,
+     "length": 10
+    },
+    {
+     "content": "PORT",
+     "confidence": 0.993,
+     "offset": 11,
+     "length": 4
+    },
+    {
+     "content": "AUTHORITY",
+     "confidence": 0.992,
+     "offset": 16,
+     "length": 9
+    },
+    {
+     "content": "ADDENDUM",
+     "confidence": 0.995,
+     "offset": 26,
+     "length": 8
+    },
+    {
+     "content": "NO.",
+     "confidence": 0.992,
+     "offset": 35,
+     "length": 3
+    },
+    {
+     "content": "1",
+     "confidence": 0.989,
+     "offset": 39,
+     "length": 1
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.951,
+     "offset": 41,
+     "length": 3
+    },
+    {
+     "content": "NO.",
+     "confidence": 0.992,
+     "offset": 45,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.986,
+     "offset": 49,
+     "length": 4
+    },
+    {
+     "content": "2026-09",
+     "confidence": 0.993,
+     "offset": 54,
+     "length": 7
+    },
+    {
+     "content": "-",
+     "confidence": 0.996,
+     "offset": 62,
+     "length": 1
+    },
+    {
+     "content": "MAINTENANCE",
+     "confidence": 0.997,
+     "offset": 64,
+     "length": 11
+    },
+    {
+     "content": "MANAGEMENT",
+     "confidence": 0.993,
+     "offset": 76,
+     "length": 10
+    },
+    {
+     "content": "SYSTEM",
+     "confidence": 0.996,
+     "offset": 87,
+     "length": 6
+    },
+    {
+     "content": "REPLACEMENT",
+     "confidence": 0.995,
+     "offset": 94,
+     "length": 11
+    },
+    {
+     "content": "Issue",
+     "confidence": 0.994,
+     "offset": 106,
+     "length": 5
+    },
+    {
+     "content": "date:",
+     "confidence": 0.994,
+     "offset": 112,
+     "length": 5
+    },
+    {
+     "content": "November",
+     "confidence": 0.995,
+     "offset": 118,
+     "length": 8
+    },
+    {
+     "content": "6,",
+     "confidence": 0.995,
+     "offset": 127,
+     "length": 2
+    },
+    {
+     "content": "2026",
+     "confidence": 0.987,
+     "offset": 130,
+     "length": 4
+    },
+    {
+     "content": "This",
+     "confidence": 0.989,
+     "offset": 135,
+     "length": 4
+    },
+    {
+     "content": "Addendum",
+     "confidence": 0.995,
+     "offset": 140,
+     "length": 8
+    },
+    {
+     "content": "modifies",
+     "confidence": 0.993,
+     "offset": 149,
+     "length": 8
+    },
+    {
+     "content": "the",
+     "confidence": 0.998,
+     "offset": 158,
+     "length": 3
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.992,
+     "offset": 162,
+     "length": 3
+    },
+    {
+     "content": "as",
+     "confidence": 0.996,
+     "offset": 166,
+     "length": 2
+    },
+    {
+     "content": "stated",
+     "confidence": 0.998,
+     "offset": 169,
+     "length": 6
+    },
+    {
+     "content": "below.",
+     "confidence": 0.993,
+     "offset": 176,
+     "length": 6
+    },
+    {
+     "content": "All",
+     "confidence": 0.988,
+     "offset": 183,
+     "length": 3
+    },
+    {
+     "content": "other",
+     "confidence": 0.997,
+     "offset": 187,
+     "length": 5
+    },
+    {
+     "content": "terms",
+     "confidence": 0.997,
+     "offset": 193,
+     "length": 5
+    },
+    {
+     "content": "remain",
+     "confidence": 0.997,
+     "offset": 199,
+     "length": 6
+    },
+    {
+     "content": "unchanged.",
+     "confidence": 0.994,
+     "offset": 206,
+     "length": 10
+    },
+    {
+     "content": "Respondents",
+     "confidence": 0.994,
+     "offset": 217,
+     "length": 11
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 229,
+     "length": 4
+    },
+    {
+     "content": "acknowledge",
+     "confidence": 0.992,
+     "offset": 234,
+     "length": 11
+    },
+    {
+     "content": "receipt",
+     "confidence": 0.997,
+     "offset": 246,
+     "length": 7
+    },
+    {
+     "content": "of",
+     "confidence": 0.993,
+     "offset": 254,
+     "length": 2
+    },
+    {
+     "content": "this",
+     "confidence": 0.989,
+     "offset": 257,
+     "length": 4
+    },
+    {
+     "content": "Addendum",
+     "confidence": 0.995,
+     "offset": 262,
+     "length": 8
+    },
+    {
+     "content": "on",
+     "confidence": 0.998,
+     "offset": 271,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.996,
+     "offset": 274,
+     "length": 3
+    },
+    {
+     "content": "Signature",
+     "confidence": 0.995,
+     "offset": 278,
+     "length": 9
+    },
+    {
+     "content": "Page.",
+     "confidence": 0.993,
+     "offset": 288,
+     "length": 5
+    },
+    {
+     "content": "Failure",
+     "confidence": 0.996,
+     "offset": 294,
+     "length": 7
+    },
+    {
+     "content": "to",
+     "confidence": 0.998,
+     "offset": 302,
+     "length": 2
+    },
+    {
+     "content": "acknowledge",
+     "confidence": 0.993,
+     "offset": 305,
+     "length": 11
+    },
+    {
+     "content": "may",
+     "confidence": 0.995,
+     "offset": 317,
+     "length": 3
+    },
+    {
+     "content": "result",
+     "confidence": 0.997,
+     "offset": 321,
+     "length": 6
+    },
+    {
+     "content": "in",
+     "confidence": 0.998,
+     "offset": 328,
+     "length": 2
+    },
+    {
+     "content": "rejection",
+     "confidence": 0.995,
+     "offset": 331,
+     "length": 9
+    },
+    {
+     "content": "of",
+     "confidence": 0.998,
+     "offset": 341,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 344,
+     "length": 3
+    },
+    {
+     "content": "proposal.",
+     "confidence": 0.989,
+     "offset": 348,
+     "length": 9
+    },
+    {
+     "content": "A.",
+     "confidence": 0.992,
+     "offset": 358,
+     "length": 2
+    },
+    {
+     "content": "SCHEDULE",
+     "confidence": 0.996,
+     "offset": 361,
+     "length": 8
+    },
+    {
+     "content": "AND",
+     "confidence": 0.998,
+     "offset": 370,
+     "length": 3
+    },
+    {
+     "content": "SUBMISSION",
+     "confidence": 0.993,
+     "offset": 374,
+     "length": 10
+    },
+    {
+     "content": "CHANGES",
+     "confidence": 0.995,
+     "offset": 385,
+     "length": 7
+    },
+    {
+     "content": "A.",
+     "confidence": 0.992,
+     "offset": 393,
+     "length": 2
+    },
+    {
+     "content": "1",
+     "confidence": 0.968,
+     "offset": 396,
+     "length": 1
+    },
+    {
+     "content": "The",
+     "confidence": 0.998,
+     "offset": 398,
+     "length": 3
+    },
+    {
+     "content": "proposal",
+     "confidence": 0.994,
+     "offset": 402,
+     "length": 8
+    },
+    {
+     "content": "due",
+     "confidence": 0.997,
+     "offset": 411,
+     "length": 3
+    },
+    {
+     "content": "date",
+     "confidence": 0.992,
+     "offset": 415,
+     "length": 4
+    },
+    {
+     "content": "is",
+     "confidence": 0.998,
+     "offset": 420,
+     "length": 2
+    },
+    {
+     "content": "extended",
+     "confidence": 0.993,
+     "offset": 423,
+     "length": 8
+    },
+    {
+     "content": "from",
+     "confidence": 0.992,
+     "offset": 432,
+     "length": 4
+    },
+    {
+     "content": "November",
+     "confidence": 0.994,
+     "offset": 437,
+     "length": 8
+    },
+    {
+     "content": "24,",
+     "confidence": 0.994,
+     "offset": 446,
+     "length": 3
+    },
+    {
+     "content": "2026",
+     "confidence": 0.991,
+     "offset": 450,
+     "length": 4
+    },
+    {
+     "content": "to",
+     "confidence": 0.998,
+     "offset": 455,
+     "length": 2
+    },
+    {
+     "content": "December",
+     "confidence": 0.992,
+     "offset": 458,
+     "length": 8
+    },
+    {
+     "content": "8,",
+     "confidence": 0.992,
+     "offset": 467,
+     "length": 2
+    },
+    {
+     "content": "2026",
+     "confidence": 0.989,
+     "offset": 470,
+     "length": 4
+    },
+    {
+     "content": "at",
+     "confidence": 0.996,
+     "offset": 475,
+     "length": 2
+    },
+    {
+     "content": "2:00",
+     "confidence": 0.992,
+     "offset": 478,
+     "length": 4
+    },
+    {
+     "content": "p.m.",
+     "confidence": 0.992,
+     "offset": 483,
+     "length": 4
+    },
+    {
+     "content": "local",
+     "confidence": 0.989,
+     "offset": 488,
+     "length": 5
+    },
+    {
+     "content": "time.",
+     "confidence": 0.995,
+     "offset": 494,
+     "length": 5
+    },
+    {
+     "content": "A.2",
+     "confidence": 0.913,
+     "offset": 500,
+     "length": 3
+    },
+    {
+     "content": "Section",
+     "confidence": 0.996,
+     "offset": 504,
+     "length": 7
+    },
+    {
+     "content": "3.2",
+     "confidence": 0.992,
+     "offset": 512,
+     "length": 3
+    },
+    {
+     "content": "is",
+     "confidence": 0.996,
+     "offset": 516,
+     "length": 2
+    },
+    {
+     "content": "revised:",
+     "confidence": 0.992,
+     "offset": 519,
+     "length": 8
+    },
+    {
+     "content": "the",
+     "confidence": 0.998,
+     "offset": 528,
+     "length": 3
+    },
+    {
+     "content": "technical",
+     "confidence": 0.993,
+     "offset": 532,
+     "length": 9
+    },
+    {
+     "content": "proposal",
+     "confidence": 0.993,
+     "offset": 542,
+     "length": 8
+    },
+    {
+     "content": "shall",
+     "confidence": 0.994,
+     "offset": 551,
+     "length": 5
+    },
+    {
+     "content": "not",
+     "confidence": 0.992,
+     "offset": 557,
+     "length": 3
+    },
+    {
+     "content": "exceed",
+     "confidence": 0.993,
+     "offset": 561,
+     "length": 6
+    },
+    {
+     "content": "twenty",
+     "confidence": 0.993,
+     "offset": 568,
+     "length": 6
+    },
+    {
+     "content": "(20)",
+     "confidence": 0.992,
+     "offset": 575,
+     "length": 4
+    },
+    {
+     "content": "pages",
+     "confidence": 0.995,
+     "offset": 580,
+     "length": 5
+    },
+    {
+     "content": "(previously",
+     "confidence": 0.992,
+     "offset": 586,
+     "length": 11
+    },
+    {
+     "content": "twenty-five",
+     "confidence": 0.991,
+     "offset": 598,
+     "length": 11
+    },
+    {
+     "content": "(25)",
+     "confidence": 0.985,
+     "offset": 610,
+     "length": 4
+    },
+    {
+     "content": "pages)",
+     "confidence": 0.993,
+     "offset": 615,
+     "length": 6
+    },
+    {
+     "content": ".",
+     "confidence": 0.992,
+     "offset": 622,
+     "length": 1
+    },
+    {
+     "content": "B.",
+     "confidence": 0.993,
+     "offset": 624,
+     "length": 2
+    },
+    {
+     "content": "CHANGES",
+     "confidence": 0.994,
+     "offset": 627,
+     "length": 7
+    },
+    {
+     "content": "TO",
+     "confidence": 0.998,
+     "offset": 635,
+     "length": 2
+    },
+    {
+     "content": "SECTION",
+     "confidence": 0.992,
+     "offset": 638,
+     "length": 7
+    },
+    {
+     "content": "5",
+     "confidence": 0.935,
+     "offset": 646,
+     "length": 1
+    },
+    {
+     "content": "-",
+     "confidence": 0.992,
+     "offset": 648,
+     "length": 1
+    },
+    {
+     "content": "TECHNICAL",
+     "confidence": 0.992,
+     "offset": 650,
+     "length": 9
+    },
+    {
+     "content": "REQUIREMENTS",
+     "confidence": 0.992,
+     "offset": 660,
+     "length": 12
+    },
+    {
+     "content": "B.1",
+     "confidence": 0.976,
+     "offset": 673,
+     "length": 3
+    },
+    {
+     "content": "THPA-036",
+     "confidence": 0.993,
+     "offset": 677,
+     "length": 8
+    },
+    {
+     "content": "is",
+     "confidence": 0.996,
+     "offset": 686,
+     "length": 2
+    },
+    {
+     "content": "revised",
+     "confidence": 0.995,
+     "offset": 689,
+     "length": 7
+    },
+    {
+     "content": "to",
+     "confidence": 0.997,
+     "offset": 697,
+     "length": 2
+    },
+    {
+     "content": "read:",
+     "confidence": 0.992,
+     "offset": 700,
+     "length": 5
+    },
+    {
+     "content": "\"The",
+     "confidence": 0.991,
+     "offset": 706,
+     "length": 4
+    },
+    {
+     "content": "system",
+     "confidence": 0.998,
+     "offset": 711,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 718,
+     "length": 4
+    },
+    {
+     "content": "be",
+     "confidence": 0.992,
+     "offset": 723,
+     "length": 2
+    },
+    {
+     "content": "available",
+     "confidence": 0.993,
+     "offset": 726,
+     "length": 9
+    },
+    {
+     "content": "99.95%",
+     "confidence": 0.992,
+     "offset": 736,
+     "length": 6
+    },
+    {
+     "content": "of",
+     "confidence": 0.998,
+     "offset": 743,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 746,
+     "length": 3
+    },
+    {
+     "content": "time,",
+     "confidence": 0.995,
+     "offset": 750,
+     "length": 5
+    },
+    {
+     "content": "measured",
+     "confidence": 0.994,
+     "offset": 756,
+     "length": 8
+    },
+    {
+     "content": "monthly.\"",
+     "confidence": 0.977,
+     "offset": 765,
+     "length": 9
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.994,
+     "offset": 775,
+     "length": 3
+    },
+    {
+     "content": "B.2",
+     "confidence": 0.888,
+     "offset": 779,
+     "length": 3
+    },
+    {
+     "content": "THPA-010",
+     "confidence": 0.992,
+     "offset": 783,
+     "length": 8
+    },
+    {
+     "content": "is",
+     "confidence": 0.994,
+     "offset": 792,
+     "length": 2
+    },
+    {
+     "content": "deleted",
+     "confidence": 0.994,
+     "offset": 795,
+     "length": 7
+    },
+    {
+     "content": "in",
+     "confidence": 0.996,
+     "offset": 803,
+     "length": 2
+    },
+    {
+     "content": "its",
+     "confidence": 0.997,
+     "offset": 806,
+     "length": 3
+    },
+    {
+     "content": "entirety.",
+     "confidence": 0.993,
+     "offset": 810,
+     "length": 9
+    },
+    {
+     "content": "Respondents",
+     "confidence": 0.992,
+     "offset": 820,
+     "length": 11
+    },
+    {
+     "content": "should",
+     "confidence": 0.996,
+     "offset": 832,
+     "length": 6
+    },
+    {
+     "content": "not",
+     "confidence": 0.997,
+     "offset": 839,
+     "length": 3
+    },
+    {
+     "content": "respond",
+     "confidence": 0.993,
+     "offset": 843,
+     "length": 7
+    },
+    {
+     "content": "to",
+     "confidence": 0.997,
+     "offset": 851,
+     "length": 2
+    },
+    {
+     "content": "this",
+     "confidence": 0.992,
+     "offset": 854,
+     "length": 4
+    },
+    {
+     "content": "requirement.",
+     "confidence": 0.992,
+     "offset": 859,
+     "length": 12
+    },
+    {
+     "content": "B.3",
+     "confidence": 0.945,
+     "offset": 872,
+     "length": 3
+    },
+    {
+     "content": "THPA-020",
+     "confidence": 0.992,
+     "offset": 876,
+     "length": 8
+    },
+    {
+     "content": "is",
+     "confidence": 0.992,
+     "offset": 885,
+     "length": 2
+    },
+    {
+     "content": "changed",
+     "confidence": 0.993,
+     "offset": 888,
+     "length": 7
+    },
+    {
+     "content": "from",
+     "confidence": 0.992,
+     "offset": 896,
+     "length": 4
+    },
+    {
+     "content": "Desirable",
+     "confidence": 0.993,
+     "offset": 901,
+     "length": 9
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.993,
+     "offset": 911,
+     "length": 3
+    },
+    {
+     "content": "to",
+     "confidence": 0.998,
+     "offset": 915,
+     "length": 2
+    },
+    {
+     "content": "Mandatory",
+     "confidence": 0.995,
+     "offset": 918,
+     "length": 9
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.997,
+     "offset": 928,
+     "length": 3
+    },
+    {
+     "content": ".",
+     "confidence": 0.993,
+     "offset": 932,
+     "length": 1
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 934,
+     "length": 3
+    },
+    {
+     "content": "requirement",
+     "confidence": 0.993,
+     "offset": 938,
+     "length": 11
+    },
+    {
+     "content": "text",
+     "confidence": 0.992,
+     "offset": 950,
+     "length": 4
+    },
+    {
+     "content": "is",
+     "confidence": 0.995,
+     "offset": 955,
+     "length": 2
+    },
+    {
+     "content": "unchanged.",
+     "confidence": 0.993,
+     "offset": 958,
+     "length": 10
+    },
+    {
+     "content": "B.",
+     "confidence": 0.992,
+     "offset": 969,
+     "length": 2
+    },
+    {
+     "content": "4",
+     "confidence": 0.992,
+     "offset": 972,
+     "length": 1
+    },
+    {
+     "content": "New",
+     "confidence": 0.998,
+     "offset": 974,
+     "length": 3
+    },
+    {
+     "content": "requirement",
+     "confidence": 0.992,
+     "offset": 978,
+     "length": 11
+    },
+    {
+     "content": "THPA-051",
+     "confidence": 0.992,
+     "offset": 990,
+     "length": 8
+    },
+    {
+     "content": "is",
+     "confidence": 0.995,
+     "offset": 999,
+     "length": 2
+    },
+    {
+     "content": "added",
+     "confidence": 0.995,
+     "offset": 1002,
+     "length": 5
+    },
+    {
+     "content": "to",
+     "confidence": 0.995,
+     "offset": 1008,
+     "length": 2
+    },
+    {
+     "content": "5.10",
+     "confidence": 0.989,
+     "offset": 1011,
+     "length": 4
+    },
+    {
+     "content": "Implementation:",
+     "confidence": 0.988,
+     "offset": 1016,
+     "length": 15
+    },
+    {
+     "content": "\"The",
+     "confidence": 0.988,
+     "offset": 1032,
+     "length": 4
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.997,
+     "offset": 1037,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 1044,
+     "length": 4
+    },
+    {
+     "content": "perform",
+     "confidence": 0.996,
+     "offset": 1049,
+     "length": 7
+    },
+    {
+     "content": "a",
+     "confidence": 0.994,
+     "offset": 1057,
+     "length": 1
+    },
+    {
+     "content": "business",
+     "confidence": 0.995,
+     "offset": 1059,
+     "length": 8
+    },
+    {
+     "content": "process",
+     "confidence": 0.995,
+     "offset": 1068,
+     "length": 7
+    },
+    {
+     "content": "reengineering",
+     "confidence": 0.995,
+     "offset": 1076,
+     "length": 13
+    },
+    {
+     "content": "assessment",
+     "confidence": 0.994,
+     "offset": 1090,
+     "length": 10
+    },
+    {
+     "content": "prior",
+     "confidence": 0.994,
+     "offset": 1101,
+     "length": 5
+    },
+    {
+     "content": "to",
+     "confidence": 0.999,
+     "offset": 1107,
+     "length": 2
+    },
+    {
+     "content": "configuration.\"",
+     "confidence": 0.958,
+     "offset": 1110,
+     "length": 15
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.989,
+     "offset": 1126,
+     "length": 3
+    },
+    {
+     "content": "C.",
+     "confidence": 0.995,
+     "offset": 1130,
+     "length": 2
+    },
+    {
+     "content": "RESPONSES",
+     "confidence": 0.995,
+     "offset": 1133,
+     "length": 9
+    },
+    {
+     "content": "TO",
+     "confidence": 0.999,
+     "offset": 1143,
+     "length": 2
+    },
+    {
+     "content": "WRITTEN",
+     "confidence": 0.994,
+     "offset": 1146,
+     "length": 7
+    },
+    {
+     "content": "QUESTIONS",
+     "confidence": 0.993,
+     "offset": 1154,
+     "length": 9
+    },
+    {
+     "content": "Q1.",
+     "confidence": 0.899,
+     "offset": 1164,
+     "length": 3
+    },
+    {
+     "content": "Will",
+     "confidence": 0.989,
+     "offset": 1168,
+     "length": 4
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 1173,
+     "length": 3
+    },
+    {
+     "content": "Port",
+     "confidence": 0.992,
+     "offset": 1177,
+     "length": 4
+    },
+    {
+     "content": "accept",
+     "confidence": 0.996,
+     "offset": 1182,
+     "length": 6
+    },
+    {
+     "content": "a",
+     "confidence": 0.993,
+     "offset": 1189,
+     "length": 1
+    },
+    {
+     "content": "cloud-hosted",
+     "confidence": 0.992,
+     "offset": 1191,
+     "length": 12
+    },
+    {
+     "content": "solution?",
+     "confidence": 0.992,
+     "offset": 1204,
+     "length": 9
+    },
+    {
+     "content": "A1.",
+     "confidence": 0.6,
+     "offset": 1214,
+     "length": 3
+    },
+    {
+     "content": "Yes.",
+     "confidence": 0.988,
+     "offset": 1218,
+     "length": 4
+    },
+    {
+     "content": "Cloud-hosted",
+     "confidence": 0.992,
+     "offset": 1223,
+     "length": 12
+    },
+    {
+     "content": "solutions",
+     "confidence": 0.993,
+     "offset": 1236,
+     "length": 9
+    },
+    {
+     "content": "are",
+     "confidence": 0.994,
+     "offset": 1246,
+     "length": 3
+    },
+    {
+     "content": "acceptable",
+     "confidence": 0.993,
+     "offset": 1250,
+     "length": 10
+    },
+    {
+     "content": "provided",
+     "confidence": 0.994,
+     "offset": 1261,
+     "length": 8
+    },
+    {
+     "content": "data",
+     "confidence": 0.992,
+     "offset": 1270,
+     "length": 4
+    },
+    {
+     "content": "is",
+     "confidence": 0.996,
+     "offset": 1275,
+     "length": 2
+    },
+    {
+     "content": "stored",
+     "confidence": 0.995,
+     "offset": 1278,
+     "length": 6
+    },
+    {
+     "content": "in",
+     "confidence": 0.998,
+     "offset": 1285,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 1288,
+     "length": 3
+    },
+    {
+     "content": "United",
+     "confidence": 0.995,
+     "offset": 1292,
+     "length": 6
+    },
+    {
+     "content": "States.",
+     "confidence": 0.992,
+     "offset": 1299,
+     "length": 7
+    },
+    {
+     "content": "Q2.",
+     "confidence": 0.935,
+     "offset": 1307,
+     "length": 3
+    },
+    {
+     "content": "How",
+     "confidence": 0.994,
+     "offset": 1311,
+     "length": 3
+    },
+    {
+     "content": "many",
+     "confidence": 0.992,
+     "offset": 1315,
+     "length": 4
+    },
+    {
+     "content": "concurrent",
+     "confidence": 0.993,
+     "offset": 1320,
+     "length": 10
+    },
+    {
+     "content": "users",
+     "confidence": 0.993,
+     "offset": 1331,
+     "length": 5
+    },
+    {
+     "content": "are",
+     "confidence": 0.995,
+     "offset": 1337,
+     "length": 3
+    },
+    {
+     "content": "expected?",
+     "confidence": 0.988,
+     "offset": 1341,
+     "length": 9
+    },
+    {
+     "content": "A2.",
+     "confidence": 0.983,
+     "offset": 1351,
+     "length": 3
+    },
+    {
+     "content": "Approximately",
+     "confidence": 0.993,
+     "offset": 1355,
+     "length": 13
+    },
+    {
+     "content": "140",
+     "confidence": 0.998,
+     "offset": 1369,
+     "length": 3
+    },
+    {
+     "content": "named",
+     "confidence": 0.995,
+     "offset": 1373,
+     "length": 5
+    },
+    {
+     "content": "users",
+     "confidence": 0.992,
+     "offset": 1379,
+     "length": 5
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 1385,
+     "length": 3
+    },
+    {
+     "content": "60",
+     "confidence": 0.996,
+     "offset": 1389,
+     "length": 2
+    },
+    {
+     "content": "concurrent",
+     "confidence": 0.994,
+     "offset": 1392,
+     "length": 10
+    },
+    {
+     "content": "users",
+     "confidence": 0.995,
+     "offset": 1403,
+     "length": 5
+    },
+    {
+     "content": "at",
+     "confidence": 0.998,
+     "offset": 1409,
+     "length": 2
+    },
+    {
+     "content": "peak.",
+     "confidence": 0.992,
+     "offset": 1412,
+     "length": 5
+    },
+    {
+     "content": "Q3.",
+     "confidence": 0.948,
+     "offset": 1418,
+     "length": 3
+    },
+    {
+     "content": "Is",
+     "confidence": 0.994,
+     "offset": 1422,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.998,
+     "offset": 1425,
+     "length": 3
+    },
+    {
+     "content": "Port's",
+     "confidence": 0.992,
+     "offset": 1429,
+     "length": 6
+    },
+    {
+     "content": "crane",
+     "confidence": 0.994,
+     "offset": 1436,
+     "length": 5
+    },
+    {
+     "content": "OEM",
+     "confidence": 0.984,
+     "offset": 1442,
+     "length": 3
+    },
+    {
+     "content": "data",
+     "confidence": 0.992,
+     "offset": 1446,
+     "length": 4
+    },
+    {
+     "content": "available",
+     "confidence": 0.992,
+     "offset": 1451,
+     "length": 9
+    },
+    {
+     "content": "for",
+     "confidence": 0.995,
+     "offset": 1461,
+     "length": 3
+    },
+    {
+     "content": "conversion?",
+     "confidence": 0.989,
+     "offset": 1465,
+     "length": 11
+    },
+    {
+     "content": "A3.",
+     "confidence": 0.992,
+     "offset": 1477,
+     "length": 3
+    },
+    {
+     "content": "Yes,",
+     "confidence": 0.988,
+     "offset": 1481,
+     "length": 4
+    },
+    {
+     "content": "in",
+     "confidence": 0.998,
+     "offset": 1486,
+     "length": 2
+    },
+    {
+     "content": "Excel",
+     "confidence": 0.992,
+     "offset": 1489,
+     "length": 5
+    },
+    {
+     "content": "format",
+     "confidence": 0.996,
+     "offset": 1495,
+     "length": 6
+    },
+    {
+     "content": "for",
+     "confidence": 0.995,
+     "offset": 1502,
+     "length": 3
+    },
+    {
+     "content": "41",
+     "confidence": 0.992,
+     "offset": 1506,
+     "length": 2
+    },
+    {
+     "content": "cranes.",
+     "confidence": 0.992,
+     "offset": 1509,
+     "length": 7
+    },
+    {
+     "content": "ACKNOWLEDGEMENT",
+     "confidence": 0.977,
+     "offset": 1517,
+     "length": 15
+    },
+    {
+     "content": "OF",
+     "confidence": 0.999,
+     "offset": 1533,
+     "length": 2
+    },
+    {
+     "content": "ADDENDUM",
+     "confidence": 0.995,
+     "offset": 1536,
+     "length": 8
+    },
+    {
+     "content": "NO.",
+     "confidence": 0.992,
+     "offset": 1545,
+     "length": 3
+    },
+    {
+     "content": "1",
+     "confidence": 0.989,
+     "offset": 1549,
+     "length": 1
+    },
+    {
+     "content": "Company",
+     "confidence": 0.996,
+     "offset": 1551,
+     "length": 7
+    },
+    {
+     "content": "name",
+     "confidence": 0.992,
+     "offset": 1559,
+     "length": 4
+    },
+    {
+     "content": "Authorized",
+     "confidence": 0.995,
+     "offset": 1564,
+     "length": 10
+    },
+    {
+     "content": "signature",
+     "confidence": 0.995,
+     "offset": 1575,
+     "length": 9
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.991,
+     "offset": 1585,
+     "length": 4
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.974,
+     "offset": 1590,
+     "length": 3
+    },
+    {
+     "content": "2026-09",
+     "confidence": 0.995,
+     "offset": 1594,
+     "length": 7
+    },
+    {
+     "content": "Page",
+     "confidence": 0.992,
+     "offset": 1602,
+     "length": 4
+    },
+    {
+     "content": "1",
+     "confidence": 0.992,
+     "offset": 1607,
+     "length": 1
+    }
+   ]
+  },
+  {
+   "pageNumber": 2,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch",
+   "angle": -0.2669999897480011,
+   "words": [
+    {
+     "content": "Date",
+     "confidence": 0.992,
+     "offset": 1609,
+     "length": 4
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.991,
+     "offset": 1614,
+     "length": 4
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.975,
+     "offset": 1619,
+     "length": 3
+    },
+    {
+     "content": "2026-09",
+     "confidence": 0.995,
+     "offset": 1623,
+     "length": 7
+    },
+    {
+     "content": "Page",
+     "confidence": 0.992,
+     "offset": 1631,
+     "length": 4
+    },
+    {
+     "content": "2",
+     "confidence": 0.995,
+     "offset": 1636,
+     "length": 1
+    }
+   ]
+  }
+ ],
+ "paragraphs": [
+  {
+   "role": "title",
+   "content": "TRI-HARBOR PORT AUTHORITY ADDENDUM NO. 1",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      2.8818,
+      1.0336,
+      5.6109,
+      1.0307,
+      5.6114,
+      1.5047,
+      2.8823,
+      1.5076
+     ]
+    }
+   ],
+   "offset": 0
+  },
+  {
+   "role": "title",
+   "content": "RFP NO. THPA 2026-09 - MAINTENANCE MANAGEMENT SYSTEM REPLACEMENT",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.4128,
+      1.6717,
+      7.0849,
+      1.6663,
+      7.0853,
+      2.0528,
+      1.4131,
+      2.0582
+     ]
+    }
+   ],
+   "offset": 41
+  },
+  {
+   "role": null,
+   "content": "Issue date: November 6, 2026",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0773,
+      2.4343,
+      3.5382,
+      2.4281,
+      3.5386,
+      2.5748,
+      1.0776,
+      2.5811
+     ]
+    }
+   ],
+   "offset": 106
+  },
+  {
+   "role": null,
+   "content": "This Addendum modifies the RFP as stated below. All other terms remain unchanged. Respondents must acknowledge receipt of this Addendum on the Signature Page. Failure to acknowledge may result in rejection of the proposal.",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0626,
+      2.701,
+      7.2957,
+      2.6995,
+      7.2958,
+      3.4202,
+      1.0628,
+      3.4217
+     ]
+    }
+   ],
+   "offset": 135
+  },
+  {
+   "role": "sectionHeading",
+   "content": "A. SCHEDULE AND SUBMISSION CHANGES",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0622,
+      3.5704,
+      4.4878,
+      3.5695,
+      4.4878,
+      3.7231,
+      1.0623,
+      3.7241
+     ]
+    }
+   ],
+   "offset": 358
+  },
+  {
+   "role": null,
+   "content": "A. 1 The proposal due date is extended from November 24, 2026 to December 8, 2026 at 2:00 p.m. local time.",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0663,
+      3.8311,
+      7.3921,
+      3.826,
+      7.3924,
+      4.1692,
+      1.0666,
+      4.1744
+     ]
+    }
+   ],
+   "offset": 393
+  },
+  {
+   "role": null,
+   "content": "A.2 Section 3.2 is revised: the technical proposal shall not exceed twenty (20) pages (previously twenty-five (25) pages) .",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0667,
+      4.2874,
+      6.9603,
+      4.2884,
+      6.9602,
+      4.6432,
+      1.0666,
+      4.6422
+     ]
+    }
+   ],
+   "offset": 500
+  },
+  {
+   "role": "sectionHeading",
+   "content": "B. CHANGES TO SECTION 5 - TECHNICAL REQUIREMENTS",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0617,
+      4.7839,
+      5.8877,
+      4.7856,
+      5.8877,
+      4.9484,
+      1.0617,
+      4.9467
+     ]
+    }
+   ],
+   "offset": 624
+  },
+  {
+   "role": null,
+   "content": "B.1 THPA-036 is revised to read: \"The system must be available 99.95% of the time, measured monthly.\" (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0664,
+      5.0464,
+      7.3921,
+      5.0411,
+      7.3924,
+      5.3919,
+      1.0667,
+      5.3972
+     ]
+    }
+   ],
+   "offset": 673
+  },
+  {
+   "role": null,
+   "content": "B.2 THPA-010 is deleted in its entirety. Respondents should not respond to this requirement.",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0671,
+      5.5029,
+      7.3074,
+      5.5077,
+      7.3071,
+      5.8508,
+      1.0668,
+      5.846
+     ]
+    }
+   ],
+   "offset": 779
+  },
+  {
+   "role": null,
+   "content": "B.3 THPA-020 is changed from Desirable (D) to Mandatory (M) . The requirement text is unchanged.",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0689,
+      5.9601,
+      6.6874,
+      5.9632,
+      6.6872,
+      6.3121,
+      1.0687,
+      6.309
+     ]
+    }
+   ],
+   "offset": 872
+  },
+  {
+   "role": null,
+   "content": "B. 4 New requirement THPA-051 is added to 5.10 Implementation: \"The Vendor must perform a business process reengineering assessment prior to configuration.\" (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0674,
+      6.42,
+      7.3872,
+      6.418,
+      7.3874,
+      6.9544,
+      1.0676,
+      6.9564
+     ]
+    }
+   ],
+   "offset": 969
+  },
+  {
+   "role": "sectionHeading",
+   "content": "C. RESPONSES TO WRITTEN QUESTIONS",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0693,
+      7.108,
+      4.3857,
+      7.1088,
+      4.3857,
+      7.267,
+      1.0692,
+      7.2662
+     ]
+    }
+   ],
+   "offset": 1130
+  },
+  {
+   "role": null,
+   "content": "Q1. Will the Port accept a cloud-hosted solution? A1. Yes. Cloud-hosted solutions are acceptable provided data is stored in the United States.",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0705,
+      7.3705,
+      7.3062,
+      7.3624,
+      7.3066,
+      7.7036,
+      1.071,
+      7.7116
+     ]
+    }
+   ],
+   "offset": 1164
+  },
+  {
+   "role": null,
+   "content": "Q2. How many concurrent users are expected? A2. Approximately 140 named users and 60 concurrent users at peak.",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0691,
+      7.8332,
+      7.3046,
+      7.826,
+      7.305,
+      8.1558,
+      1.0694,
+      8.163
+     ]
+    }
+   ],
+   "offset": 1307
+  },
+  {
+   "role": null,
+   "content": "Q3. Is the Port's crane OEM data available for conversion? A3. Yes, in Excel format for 41 cranes.",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0677,
+      8.2828,
+      7.2123,
+      8.2808,
+      7.2124,
+      8.6104,
+      1.0678,
+      8.6125
+     ]
+    }
+   ],
+   "offset": 1418
+  },
+  {
+   "role": "sectionHeading",
+   "content": "ACKNOWLEDGEMENT OF ADDENDUM NO. 1",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0652,
+      9.1147,
+      4.3806,
+      9.1153,
+      4.3806,
+      9.2615,
+      1.0652,
+      9.261
+     ]
+    }
+   ],
+   "offset": 1517
+  },
+  {
+   "role": null,
+   "content": "Company name",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0708,
+      9.4318,
+      2.1369,
+      9.4355,
+      2.1365,
+      9.5692,
+      1.0704,
+      9.5655
+     ]
+    }
+   ],
+   "offset": 1551
+  },
+  {
+   "role": null,
+   "content": "Authorized signature",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0645,
+      9.6928,
+      2.8361,
+      9.6942,
+      2.8359,
+      9.8351,
+      1.0644,
+      9.8337
+     ]
+    }
+   ],
+   "offset": 1564
+  },
+  {
+   "role": "pageFooter",
+   "content": "THPA RFP 2026-09",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      0.9881,
+      10.3104,
+      2.1351,
+      10.3076,
+      2.1353,
+      10.4172,
+      0.9884,
+      10.42
+     ]
+    }
+   ],
+   "offset": 1585
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 1",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      7.0638,
+      10.3152,
+      7.4964,
+      10.3151,
+      7.4964,
+      10.4259,
+      7.0638,
+      10.4259
+     ]
+    }
+   ],
+   "offset": 1602
+  },
+  {
+   "role": null,
+   "content": "Date",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0793,
+      1.0718,
+      1.4327,
+      1.0746,
+      1.4319,
+      1.1812,
+      1.0785,
+      1.1783
+     ]
+    }
+   ],
+   "offset": 1609
+  },
+  {
+   "role": "pageFooter",
+   "content": "THPA RFP 2026-09",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9919,
+      10.3158,
+      2.1328,
+      10.3103,
+      2.1333,
+      10.4136,
+      0.9924,
+      10.4191
+     ]
+    }
+   ],
+   "offset": 1614
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 2",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      7.0673,
+      10.3183,
+      7.4991,
+      10.3158,
+      7.4997,
+      10.4226,
+      7.0679,
+      10.4251
+     ]
+    }
+   ],
+   "offset": 1631
+  }
+ ],
+ "tables": []
+}

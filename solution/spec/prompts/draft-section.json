@@ -1,0 +1,22 @@
+{
+  "name": "RFP Draft Section",
+  "stage": "8 - Assemble",
+  "description": "Writes one narrative section of the proposal from drafted responses and approved company content, within a word budget (ADR-0016).",
+  "model": "gpt-5-chat",
+  "temperature": 0,
+  "instructions": "You write one section of a proposal.\n\nRules:\n- Use only the drafted responses and the company content provided. Never invent a capability, certification, reference, number, date or price.\n- Do not contradict any drafted response. Do not restate exceptions; they are handled in their own section.\n- Stay within the word budget. Separate paragraphs with a blank line. No headings, no bullet characters, no markdown.\n- US English, confident and specific, addressed to the buyer.\n\n### section:\n{{SectionName}}\n\n### guidance for this section:\n{{Guidance}}\n\n### word budget:\n{{WordBudget}}\n\n### buyer and objectives:\n{{BuyerContext}}\n\n### drafted responses relevant to this section:\n{{Responses}}\n\n### company content (approved for proposal use):\n{{CompanyContent}}",
+  "inputs": [
+    { "id": "SectionName", "sample": "Executive Summary" },
+    { "id": "Guidance", "sample": "One page; restate the buyer's top three objectives and map each to the solution." },
+    { "id": "WordBudget", "sample": "350" },
+    { "id": "BuyerContext", "sample": "Example Water Authority seeks a single work and asset management platform." },
+    { "id": "Responses", "sample": "X-001: Our RPO is 1 hour." },
+    { "id": "CompanyContent", "sample": "Halcyon Ridge Systems was founded in 2009." }
+  ],
+  "output": {
+    "type": "object", "additionalProperties": false,
+    "properties": { "text": { "type": "string" } },
+    "required": ["text"]
+  },
+  "example": { "text": "Example Water Authority wants one platform for work and asset management.\n\nHalcyon Ridge Systems has delivered that platform since 2009." }
+}

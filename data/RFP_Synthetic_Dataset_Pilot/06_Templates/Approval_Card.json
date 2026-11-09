@@ -1,0 +1,103 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Proposal approval required",
+      "weight": "Bolder",
+      "size": "Large"
+    },
+    {
+      "type": "TextBlock",
+      "text": "${buyerName} - ${rfpNumber}",
+      "wrap": true,
+      "spacing": "None"
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        {
+          "title": "Due",
+          "value": "${dueDate}"
+        },
+        {
+          "title": "Value band",
+          "value": "${valueBand}"
+        },
+        {
+          "title": "Approval level",
+          "value": "${approvalLevel}"
+        },
+        {
+          "title": "Requirements",
+          "value": "${totalRequirements}"
+        },
+        {
+          "title": "Full / Partial / No",
+          "value": "${countFull} / ${countPartial} / ${countNo}"
+        },
+        {
+          "title": "Gaps routed to SMEs",
+          "value": "${countGap}"
+        },
+        {
+          "title": "Clarifications sent",
+          "value": "${countClarify}"
+        },
+        {
+          "title": "Page count / limit",
+          "value": "${pageCount} / ${pageLimit}"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Policy exceptions",
+      "weight": "Bolder",
+      "spacing": "Medium"
+    },
+    {
+      "type": "Container",
+      "$data": "${exceptions}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${ruleId} (${severity}) - ${reqId}: ${summary}",
+          "wrap": true,
+          "size": "Small"
+        }
+      ]
+    },
+    {
+      "type": "Input.Text",
+      "id": "comments",
+      "isMultiline": true,
+      "placeholder": "Comments (required if rejecting)"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Approve",
+      "style": "positive",
+      "data": {
+        "decision": "approve"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Reject",
+      "style": "destructive",
+      "data": {
+        "decision": "reject"
+      }
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "Open draft",
+      "url": "${draftUrl}"
+    }
+  ]
+}

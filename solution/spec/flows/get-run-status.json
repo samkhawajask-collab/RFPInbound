@@ -1,0 +1,317 @@
+{
+  "name": "RFP - Get Run Status",
+  "description": "Where an RFP is in the pipeline, what it is waiting for, and its recent run log.",
+  "modernflowtype": 1,
+  "environmentVariables": [],
+  "clientdata": {
+    "properties": {
+      "connectionReferences": {
+        "shared_commondataserviceforapps": {
+          "runtimeSource": "embedded",
+          "connection": {
+            "connectionReferenceLogicalName": "hrs_dataverseconnection"
+          },
+          "api": {
+            "name": "shared_commondataserviceforapps"
+          }
+        },
+        "{{tools:api}}": {
+          "runtimeSource": "embedded",
+          "connection": {
+            "connectionReferenceLogicalName": "hrs_rfptoolsconnection"
+          },
+          "api": {
+            "name": "{{tools:api}}"
+          }
+        }
+      },
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "$connections": {
+            "defaultValue": {},
+            "type": "Object"
+          },
+          "$authentication": {
+            "defaultValue": {},
+            "type": "SecureObject"
+          }
+        },
+        "triggers": {
+          "manual": {
+            "type": "Request",
+            "kind": "Skills",
+            "inputs": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "rfpKey"
+                ],
+                "properties": {
+                  "rfpKey": {
+                    "title": "rfpKey",
+                    "description": "The RFP's key, as the user gave it. The tool says if no RFP has that key",
+                    "type": "string",
+                    "x-ms-content-hint": "TEXT",
+                    "x-ms-dynamically-added": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "actions": {
+          "RFP": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "ListRecords",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_rfps",
+                "$select": "hrs_rfpid,hrs_rfpkey,hrs_stage,hrs_status,hrs_currentrevision",
+                "$filter": "hrs_rfpkey eq '@{trim(triggerBody()?['rfpKey'])}'"
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 5000
+              }
+            },
+            "runAfter": {}
+          },
+          "If_audit": {
+            "type": "If",
+            "expression": {
+              "greater": [
+                "@length(body('RFP')?['value'])",
+                0
+              ]
+            },
+            "actions": {
+              "Audit_Tool_RFP": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "CreateRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_runlogs",
+                    "item/hrs_name": "Tool run: RFP - Get Run Status",
+                    "item/hrs_status": 431200181,
+                    "item/hrs_startedon": "@{utcNow()}",
+                    "item/hrs_completedon": "@{utcNow()}",
+                    "item/hrs_correlationid": "@{take(coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), 100)}",
+                    "item/hrs_errordetail": "@{concat('Audit (RFP Orchestrator). Tool: RFP - Get Run Status; parameters: ', string(triggerBody()), '; outcome: ', 'ran', '; caller: ', coalesce(triggerOutputs()?['headers']?['x-ms-object-id'], 'unknown'), '; client: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-keywords'], 'unknown'), '; conversation: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), '.')}",
+                    "item/hrs_rfp@odata.bind": "hrs_rfps(@{first(body('RFP')?['value'])?['hrs_rfpid']})"
+                  }
+                },
+                "runAfter": {}
+              }
+            },
+            "else": {
+              "actions": {
+                "Audit_Tool": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "hrs_runlogs",
+                      "item/hrs_name": "Tool run: RFP - Get Run Status",
+                      "item/hrs_status": 431200181,
+                      "item/hrs_startedon": "@{utcNow()}",
+                      "item/hrs_completedon": "@{utcNow()}",
+                      "item/hrs_correlationid": "@{take(coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), 100)}",
+                      "item/hrs_errordetail": "@{concat('Audit (RFP Orchestrator). Tool: RFP - Get Run Status; parameters: ', string(triggerBody()), '; outcome: ', 'ran', '; caller: ', coalesce(triggerOutputs()?['headers']?['x-ms-object-id'], 'unknown'), '; client: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-keywords'], 'unknown'), '; conversation: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), '.')}"
+                    }
+                  },
+                  "runAfter": {}
+                }
+              }
+            },
+            "runAfter": {
+              "RFP": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Run_Log": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "ListRecords",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_runlogs",
+                "$select": "hrs_name,hrs_status,hrs_creditsestimate,hrs_errordetail",
+                "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and not startswith(hrs_name,'Tool ')",
+                "$orderby": "createdon desc",
+                "$top": 8
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 5000
+              }
+            },
+            "runAfter": {
+              "If_audit": [
+                "Succeeded",
+                "Failed"
+              ]
+            }
+          },
+          "Gaps": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "ListRecords",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_gaps",
+                "$select": "hrs_smestatus",
+                "$filter": "hrs_requirement/_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')}"
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 5000
+              }
+            },
+            "runAfter": {
+              "Run_Log": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Ocr_Open": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "ListRecords",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_flags",
+                "$select": "hrs_flagid",
+                "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and hrs_flagtype eq 431200153 and hrs_resolvedon eq null"
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 5000
+              }
+            },
+            "runAfter": {
+              "Gaps": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Approvals": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "ListRecords",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_approvals",
+                "$select": "hrs_level,hrs_decision",
+                "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')}",
+                "$orderby": "createdon desc"
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 5000
+              }
+            },
+            "runAfter": {
+              "Ocr_Open": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Status": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/{{tools:api}}",
+                "operationId": "OrchestratorRunStatus",
+                "connectionName": "{{tools:api}}"
+              },
+              "parameters": {
+                "body": {
+                  "rfp": "@first(body('RFP')?['value'])",
+                  "runlogs": "@body('Run_Log')?['value']",
+                  "gaps": "@body('Gaps')?['value']",
+                  "ocrOpen": "@body('Ocr_Open')?['value']",
+                  "approvals": "@body('Approvals')?['value']"
+                }
+              }
+            },
+            "limit": {
+              "timeout": "PT10M"
+            },
+            "retryPolicy": {
+              "type": "exponential",
+              "count": 3,
+              "interval": "PT10S"
+            },
+            "runAfter": {
+              "Approvals": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Respond": {
+            "type": "Response",
+            "kind": "Skills",
+            "inputs": {
+              "statusCode": 200,
+              "body": {
+                "result": "@body('Status')?['text']"
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "title": "result",
+                    "description": "The answer for the user",
+                    "type": "string",
+                    "x-ms-content-hint": "TEXT",
+                    "x-ms-dynamically-added": true
+                  }
+                }
+              }
+            },
+            "runAfter": {
+              "Status": [
+                "Succeeded"
+              ]
+            }
+          }
+        },
+        "outputs": {}
+      },
+      "templateName": ""
+    },
+    "schemaVersion": "1.0.0.0"
+  }
+}

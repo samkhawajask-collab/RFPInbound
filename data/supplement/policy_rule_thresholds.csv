@@ -1,0 +1,15 @@
+hrs_ruleid,hrs_thresholdmetric,hrs_thresholdoperator,hrs_thresholdvalue,hrs_thresholdunit
+R-02,availability_percent,gt,99.9,percent
+R-04,payment_net_days,gt,60,days
+R-05,penalty_percent,gt,10,percent
+R-07,cyber_insurance_usd,gt,10000000,usd
+R-12,rpo_hours,lt,1,hours
+R-13,rto_hours,lt,4,hours
+R-14,breach_notification_hours,lt,72,hours
+R-21,p1_response_hours,lt,1,hours
+R-23,termination_notice_days,lt,90,days
+R-24,price_hold_years,gt,3,years
+R-28,wcag_level,gt,2.12,wcag
+R-30,performance_bond_percent,gt,10,percent
+R-31,non_solicitation_months,gt,12,months
+R-33,go_live_months,lt,6,months

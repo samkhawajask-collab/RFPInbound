@@ -1,0 +1,5 @@
+hrs_level,hrs_valueband,hrs_risktrigger,hrs_approvername,hrs_approvertitle,hrs_approveremail
+L1,"< $250,000",No warn/block flags,Dana Whitfield,"Director, Proposal Management",dana.whitfield@halcyonridge.example
+L2,"$250,000 - $1,000,000",Any warn flag,Laura Fenwick,"VP, Sales",laura.fenwick@halcyonridge.example
+L3,"> $1,000,000",Any block flag or legal exception,Theodore Vance,General Counsel & Contracts,theodore.vance@halcyonridge.example
+L4,"> $3,000,000",Any block flag accepted as exception,Adrian Kessler,Chief Executive Officer,adrian.kessler@halcyonridge.example

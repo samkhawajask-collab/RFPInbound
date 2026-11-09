@@ -1,0 +1,12 @@
+hrs_staffid,hrs_name,hrs_role,hrs_yearsexperience,hrs_certifications,hrs_relevantprojects
+TM-01,Joanna Pryce,Engagement Director,21,PMP,Oversaw 40+ Halcyon implementations including Ashgrove Regional Utilities and Port of Kessler Bay
+TM-02,Victor Mbeki,Senior Project Manager,16,"PMP, PMI-ACP",Led Lakemont Water District and Bramwell County Public Works implementations
+TM-03,Lena Sorensen,Solution Architect,14,Azure Solutions Architect Expert,Designed integration architecture for City of Fernhill and Riverbend Electric Cooperative
+TM-04,Kwame Asante,Data Conversion Lead,12,Microsoft Certified: Azure Data Engineer,Converted 4.2M asset records for Northfield Transit Authority
+TM-05,Ines Carvalho,GIS Integration Specialist,11,Esri ArcGIS Enterprise Administration Professional,Delivered ArcGIS integrations for 18 water utilities
+TM-06,Brett Hollister,Training Lead,15,CPTD,"Developed Halcyon Academy curriculum; trained 3,000+ field users"
+TM-07,Mei-Lin Zhao,Business Analyst,8,CBAP,Process design for Glenmoor Parks & Recreation
+TM-08,Oscar Delgado,Change Management Lead,13,Prosci Certified Change Practitioner,Adoption programs for six county public works departments
+TM-09,Rachel Nguyen,Quality Assurance Lead,10,ISTQB Advanced Test Manager,UAT management for 25 implementations
+TM-10,Samuel Ortiz,Customer Success Manager,9,Certified Customer Success Manager (CCSM),Manages 30 public-sector accounts
+TM-11,Hana Kobayashi,Integration Developer,7,Microsoft Certified: Azure Developer Associate,Built ERP connectors for Dynamics 365 and Tyler Munis

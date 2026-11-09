@@ -1,0 +1,9 @@
+[project]
+name = "rfp-tools"
+version = "0.1.0"
+description = "Deterministic operations for the RFP Response Factory (ARCHITECTURE.md section 3.5)"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

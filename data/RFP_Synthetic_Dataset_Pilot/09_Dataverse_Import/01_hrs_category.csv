@@ -1,0 +1,13 @@
+hrs_categorycode,hrs_name,hrs_description,hrs_primarysmeid,hrs_backupsmeid
+COMP,Company & Experience,"Corporate profile, history, references, financials",SME-01,SME-12
+WORK,Work Order & Field Operations,"Work orders, dispatch, mobile, inspections, requests",SME-02,SME-03
+ASSET,Asset Management,"Asset registry, condition, risk, capital planning",SME-03,SME-02
+ANLY,Reporting & Analytics,"Reports, dashboards, KPIs, predictive analytics",SME-04,SME-03
+INTG,Integration & APIs,"APIs, ERP, GIS, CIS, SCADA, identity integration",SME-05,SME-06
+TECH,Architecture & Hosting,"Hosting model, platforms, scalability, accessibility",SME-06,SME-05
+SEC,Information Security,"Encryption, access control, certifications, testing",SME-07,SME-06
+PRIV,Data Privacy & Retention,"Ownership, retention, privacy, subprocessors",SME-08,SME-07
+AVAIL,"Availability, Backup & DR","SLAs, RPO/RTO, backups, disaster recovery",SME-09,SME-06
+IMPL,Implementation & Training,"Methodology, schedule, conversion, training",SME-10,SME-11
+SUPP,Support & SLAs,"Support hours, response targets, escalation",SME-11,SME-10
+COMM,Commercial & Legal,"Pricing, payment, insurance, liability, contract terms",SME-12,SME-01

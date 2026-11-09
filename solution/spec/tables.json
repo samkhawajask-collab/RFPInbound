@@ -1,0 +1,400 @@
+{
+  "$comment": "Generator input for the RFPFactory Dataverse schema (ADR-0014). Applied to dev by scripts/apply-schema.ps1, then reconciled into solution/src by export + unpack. Choice values are explicit and append-only: never renumber or reuse a value.",
+  "publisher": {
+    "uniquename": "hrsrfpfactory",
+    "friendlyname": "HRS RFP Factory",
+    "description": "Publisher for the Proposal & RFP Response Factory",
+    "customizationprefix": "hrs",
+    "customizationoptionvalueprefix": 43120
+  },
+  "solution": {
+    "uniquename": "RFPFactory",
+    "friendlyname": "RFP Response Factory",
+    "version": "0.1.0.0",
+    "description": "Proposal & RFP Response Factory (see docs/ARCHITECTURE.md)"
+  },
+  "choices": {
+    "hrs_answertype":            { "label": "Answer Type",            "options": [[431200000, "Short"], [431200001, "Long-form"], [431200002, "Boilerplate"]] },
+    "hrs_approvalstatus":        { "label": "Approval Status",        "options": [[431200010, "Approved"], [431200011, "Draft"], [431200012, "Retired"]] },
+    "hrs_confidentiality":       { "label": "Confidentiality",        "options": [[431200020, "Public"], [431200021, "NDA-only"]] },
+    "hrs_product":               { "label": "Product",                "options": [[431200030, "All"], [431200031, "AssetIQ"], [431200032, "Company"], [431200033, "FieldOps"], [431200034, "Insight"]] },
+    "hrs_rulecategory":          { "label": "Rule Category",          "options": [[431200040, "Commercial"], [431200041, "Compliance"], [431200042, "Delivery"], [431200043, "Legal"], [431200044, "Security"]] },
+    "hrs_severity":              { "label": "Severity",               "options": [[431200050, "Block"], [431200051, "Warn"], [431200052, "Info"]] },
+    "hrs_gonogo":                { "label": "Go/No-Go",               "options": [[431200060, "Go"], [431200061, "No-Go"]] },
+    "hrs_certstatus":            { "label": "Certification Status",   "options": [[431200070, "Valid"], [431200071, "Expired"]] },
+    "hrs_outcome":               { "label": "Proposal Outcome",       "options": [[431200080, "Won"], [431200081, "Lost"], [431200082, "Withdrawn"]] },
+    "hrs_compliance":            { "label": "Compliance",             "options": [[431200090, "Full"], [431200091, "Partial"], [431200092, "No"], [431200093, "Clarify"], [431200094, "Gap"], [431200095, "Withdrawn"]] },
+    "hrs_responsestatus":        { "label": "Response Status",        "options": [[431200100, "Not started"], [431200101, "Drafted"], [431200102, "SME review"], [431200103, "Approved"]] },
+    "hrs_mandatory":             { "label": "Mandatory",              "options": [[431200110, "Mandatory"], [431200111, "Desirable"]] },
+    "hrs_format":                { "label": "Document Format",        "options": [[431200120, "Docx"], [431200121, "PdfNative"], [431200122, "PdfScanned"], [431200123, "Xlsx"]] },
+    "hrs_blocktype":             { "label": "Block Type",             "options": [[431200130, "Heading"], [431200131, "Paragraph"], [431200132, "TableRow"], [431200133, "Cell"], [431200134, "ListItem"]] },
+    "hrs_flagtype":              { "label": "Flag Type",              "options": [[431200140, "POLICY-RULE"], [431200141, "OUT-OF-SCOPE"], [431200142, "AMBIGUOUS"], [431200143, "CONTRADICTION"], [431200144, "DUPLICATE"], [431200145, "NO-LIBRARY-ANSWER"], [431200146, "LIBRARY-RETIRED-MATCH"], [431200147, "LIBRARY-CONFLICT"], [431200148, "LIBRARY-STALE"], [431200149, "LIBRARY-DRAFT-PRESENT"], [431200150, "CERTIFICATION-INVALID"], [431200151, "ADDENDUM-CHANGE"], [431200152, "ADDENDUM-WITHDRAWN"], [431200153, "OCR-LOW-CONFIDENCE"], [431200154, "LIMIT-BREACH"]] },
+    "hrs_requirementstatus":     { "label": "Requirement Status",     "options": [[431200160, "Active"], [431200161, "Withdrawn"]] },
+    "hrs_runstatus":             { "label": "Run Status",             "options": [[431200170, "Not started"], [431200171, "Running"], [431200172, "Awaiting human"], [431200173, "Completed"], [431200174, "Failed"]] },
+    "hrs_stagestatus":           { "label": "Stage Status",           "options": [[431200180, "Started"], [431200181, "Succeeded"], [431200182, "Failed"], [431200183, "Skipped"]] },
+    "hrs_smestatus":             { "label": "SME Status",             "options": [[431200190, "Routed"], [431200191, "Answered"], [431200192, "Cannot answer"], [431200193, "Overdue"]] },
+    "hrs_clarificationtrigger":  { "label": "Clarification Trigger",  "options": [[431200200, "Ambiguity"], [431200201, "Contradiction"], [431200202, "Missing reference"]] },
+    "hrs_clarificationstatus":   { "label": "Clarification Status",   "options": [[431200210, "Drafted"], [431200211, "In review"], [431200212, "Sent"], [431200213, "Answered"]] },
+    "hrs_approvaldecision":      { "label": "Approval Decision",      "options": [[431200220, "Pending"], [431200221, "Approved"], [431200222, "Rejected"]] }
+  },
+  "tables": [
+    {
+      "name": "hrs_sme", "label": "SME", "plural": "SMEs", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_smecode", "label": "SME ID", "maxLength": 20, "csv": "hrs_smeid" },
+      "columns": [
+        { "name": "hrs_name",  "label": "Name",  "type": "text", "maxLength": 200 },
+        { "name": "hrs_title", "label": "Title", "type": "text", "maxLength": 200 },
+        { "name": "hrs_email", "label": "Email", "type": "email", "maxLength": 100 }
+      ],
+      "keys": [["hrs_smecode"]]
+    },
+    {
+      "name": "hrs_category", "label": "Category", "plural": "Categories", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_categorycode", "label": "Category Code", "maxLength": 20 },
+      "columns": [
+        { "name": "hrs_name",         "label": "Name",        "type": "text", "maxLength": 200 },
+        { "name": "hrs_description",  "label": "Description", "type": "memo", "maxLength": 4000 },
+        { "name": "hrs_primarysmeid", "label": "Primary SME", "type": "lookup", "target": "hrs_sme" },
+        { "name": "hrs_backupsmeid",  "label": "Backup SME",  "type": "lookup", "target": "hrs_sme" }
+      ],
+      "keys": [["hrs_categorycode"]]
+    },
+    {
+      "name": "hrs_answer", "label": "Library Answer", "plural": "Library Answers", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_answercode", "label": "Answer ID", "maxLength": 20, "csv": "hrs_answerid" },
+      "columns": [
+        { "name": "hrs_question",        "label": "Question",        "type": "memo", "maxLength": 4000 },
+        { "name": "hrs_answertext",      "label": "Answer Text",     "type": "memo", "maxLength": 4000 },
+        { "name": "hrs_answertype",      "label": "Answer Type",     "type": "choice", "choice": "hrs_answertype" },
+        { "name": "hrs_categorycode",    "label": "Category",        "type": "lookup", "target": "hrs_category" },
+        { "name": "hrs_product",         "label": "Product",         "type": "choice", "choice": "hrs_product" },
+        { "name": "hrs_owneremail",      "label": "Owner Email",     "type": "email", "maxLength": 100 },
+        { "name": "hrs_lastreviewed",    "label": "Last Reviewed",   "type": "date" },
+        { "name": "hrs_approvalstatus",  "label": "Approval Status", "type": "choice", "choice": "hrs_approvalstatus" },
+        { "name": "hrs_supersededby",    "label": "Superseded By",   "type": "lookup", "target": "hrs_answer" },
+        { "name": "hrs_confidentiality", "label": "Confidentiality", "type": "choice", "choice": "hrs_confidentiality" },
+        { "name": "hrs_timesused",       "label": "Times Used",      "type": "int", "min": 0, "max": 1000000 },
+        { "name": "hrs_winrate",         "label": "Win Rate",        "type": "decimal", "precision": 4, "min": 0, "max": 1 },
+        { "name": "hrs_tags",            "label": "Tags",            "type": "text", "maxLength": 400 }
+      ],
+      "keys": [["hrs_answercode"]]
+    },
+    {
+      "name": "hrs_policyrule", "label": "Policy Rule", "plural": "Policy Rules", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_ruleid", "label": "Rule ID", "maxLength": 20 },
+      "columns": [
+        { "name": "hrs_category",         "label": "Rule Category",     "type": "choice", "choice": "hrs_rulecategory" },
+        { "name": "hrs_triggerpattern",   "label": "Trigger Pattern",   "type": "text", "maxLength": 400 },
+        { "name": "hrs_condition",        "label": "Condition",         "type": "memo", "maxLength": 4000 },
+        { "name": "hrs_severity",         "label": "Severity",          "type": "choice", "choice": "hrs_severity" },
+        { "name": "hrs_approvedposition", "label": "Approved Position", "type": "memo", "maxLength": 4000 },
+        { "name": "hrs_escalationsmeid",  "label": "Escalation SME",    "type": "lookup", "target": "hrs_sme" },
+        { "name": "hrs_thresholdmetric",   "label": "Threshold Metric",   "type": "text", "maxLength": 100, "supplement": "policy_rule_thresholds.csv" },
+        { "name": "hrs_thresholdoperator", "label": "Threshold Operator", "type": "text", "maxLength": 10,  "supplement": "policy_rule_thresholds.csv" },
+        { "name": "hrs_thresholdvalue",    "label": "Threshold Value",    "type": "decimal", "precision": 4, "min": -100000000000, "max": 100000000000, "supplement": "policy_rule_thresholds.csv" },
+        { "name": "hrs_thresholdunit",     "label": "Threshold Unit",     "type": "text", "maxLength": 20,  "supplement": "policy_rule_thresholds.csv" }
+      ],
+      "keys": [["hrs_ruleid"]]
+    },
+    {
+      "name": "hrs_approver", "label": "Approver", "plural": "Approvers", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_level", "label": "Level", "maxLength": 10 },
+      "columns": [
+        { "name": "hrs_valueband",     "label": "Value Band",     "type": "text", "maxLength": 100 },
+        { "name": "hrs_risktrigger",   "label": "Risk Trigger",   "type": "text", "maxLength": 200 },
+        { "name": "hrs_approvername",  "label": "Approver Name",  "type": "text", "maxLength": 200 },
+        { "name": "hrs_approvertitle", "label": "Approver Title", "type": "text", "maxLength": 200 },
+        { "name": "hrs_approveremail", "label": "Approver Email", "type": "email", "maxLength": 100 }
+      ],
+      "keys": [["hrs_level"]]
+    },
+    {
+      "name": "hrs_opportunity", "label": "Opportunity", "plural": "Opportunities", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_opportunitycode", "label": "Opportunity ID", "maxLength": 20, "csv": "hrs_opportunityid" },
+      "columns": [
+        { "name": "hrs_rfpkey",     "label": "RFP Key",     "type": "text", "maxLength": 20 },
+        { "name": "hrs_buyer",      "label": "Buyer",       "type": "text", "maxLength": 200 },
+        { "name": "hrs_industry",   "label": "Industry",    "type": "text", "maxLength": 200 },
+        { "name": "hrs_rfpnumber",  "label": "RFP Number",  "type": "text", "maxLength": 100 },
+        { "name": "hrs_title",      "label": "Title",       "type": "text", "maxLength": 400 },
+        { "name": "hrs_issuedate",  "label": "Issue Date",  "type": "date" },
+        { "name": "hrs_qadeadline", "label": "Q&A Deadline", "type": "date" },
+        { "name": "hrs_duedate",    "label": "Due Date",    "type": "date" },
+        { "name": "hrs_valueband",  "label": "Value Band",  "type": "text", "maxLength": 100 },
+        { "name": "hrs_bidowner",   "label": "Bid Owner",   "type": "text", "maxLength": 200 },
+        { "name": "hrs_gonogo",     "label": "Go/No-Go",    "type": "choice", "choice": "hrs_gonogo" }
+      ],
+      "keys": [["hrs_opportunitycode"]]
+    },
+    {
+      "name": "hrs_certification", "label": "Certification", "plural": "Certifications", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_certid", "label": "Certification ID", "maxLength": 20 },
+      "columns": [
+        { "name": "hrs_name",               "label": "Name",               "type": "text", "maxLength": 200 },
+        { "name": "hrs_issuingbody",        "label": "Issuing Body",       "type": "text", "maxLength": 200 },
+        { "name": "hrs_certificatenumber",  "label": "Certificate Number", "type": "text", "maxLength": 100 },
+        { "name": "hrs_issued",             "label": "Issued",             "type": "date" },
+        { "name": "hrs_expires",            "label": "Expires",            "type": "date" },
+        { "name": "hrs_scope",              "label": "Scope",              "type": "text", "maxLength": 400 },
+        { "name": "hrs_statusasof20261027", "label": "Status as of 2026-10-27 (snapshot)", "type": "choice", "choice": "hrs_certstatus" }
+      ],
+      "keys": [["hrs_certid"]]
+    },
+    {
+      "name": "hrs_insurance", "label": "Insurance Coverage", "plural": "Insurance Coverages", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_coverage", "label": "Coverage", "maxLength": 200 },
+      "columns": [
+        { "name": "hrs_limits",      "label": "Limits",       "type": "text", "maxLength": 200 },
+        { "name": "hrs_carrier",     "label": "Carrier",      "type": "text", "maxLength": 200 },
+        { "name": "hrs_policystart", "label": "Policy Start", "type": "date" },
+        { "name": "hrs_policyend",   "label": "Policy End",   "type": "date" }
+      ],
+      "keys": [["hrs_coverage"]]
+    },
+    {
+      "name": "hrs_casestudy", "label": "Case Study", "plural": "Case Studies", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_casestudycode", "label": "Case Study ID", "maxLength": 20, "csv": "hrs_casestudyid" },
+      "columns": [
+        { "name": "hrs_client",           "label": "Client",            "type": "text", "maxLength": 200 },
+        { "name": "hrs_industry",         "label": "Industry",          "type": "text", "maxLength": 200 },
+        { "name": "hrs_challenge",        "label": "Challenge",         "type": "text", "maxLength": 1000 },
+        { "name": "hrs_solution",         "label": "Solution",          "type": "text", "maxLength": 1000 },
+        { "name": "hrs_result",           "label": "Result",            "type": "text", "maxLength": 1000 },
+        { "name": "hrs_referencecontact", "label": "Reference Contact", "type": "text", "maxLength": 200 }
+      ],
+      "keys": [["hrs_casestudycode"]]
+    },
+    {
+      "name": "hrs_teammember", "label": "Team Member", "plural": "Team Members", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_staffid", "label": "Staff ID", "maxLength": 20 },
+      "columns": [
+        { "name": "hrs_name",             "label": "Name",              "type": "text", "maxLength": 200 },
+        { "name": "hrs_role",             "label": "Role",              "type": "text", "maxLength": 200 },
+        { "name": "hrs_yearsexperience",  "label": "Years Experience",  "type": "int", "min": 0, "max": 100 },
+        { "name": "hrs_certifications",   "label": "Certifications",    "type": "text", "maxLength": 400 },
+        { "name": "hrs_relevantprojects", "label": "Relevant Projects", "type": "text", "maxLength": 1000 }
+      ],
+      "keys": [["hrs_staffid"]]
+    },
+    {
+      "name": "hrs_pastproposal", "label": "Past Proposal", "plural": "Past Proposals", "group": "reference", "ownership": "OrganizationOwned",
+      "primaryName": { "name": "hrs_proposalid", "label": "Proposal ID", "maxLength": 20 },
+      "columns": [
+        { "name": "hrs_buyer",              "label": "Buyer",              "type": "text", "maxLength": 200 },
+        { "name": "hrs_industry",           "label": "Industry",           "type": "text", "maxLength": 200 },
+        { "name": "hrs_rfpnumber",          "label": "RFP Number",         "type": "text", "maxLength": 100 },
+        { "name": "hrs_submissiondate",     "label": "Submission Date",    "type": "date" },
+        { "name": "hrs_valueband",          "label": "Value Band",         "type": "text", "maxLength": 100 },
+        { "name": "hrs_outcome",            "label": "Outcome",            "type": "choice", "choice": "hrs_outcome" },
+        { "name": "hrs_lossreason",         "label": "Loss Reason",        "type": "text", "maxLength": 400 },
+        { "name": "hrs_evaluatorfeedback",  "label": "Evaluator Feedback", "type": "memo", "maxLength": 4000 },
+        { "name": "hrs_finalrank",          "label": "Final Rank",         "type": "int", "min": 0, "max": 1000 },
+        { "name": "hrs_evaluationscore",    "label": "Evaluation Score",   "type": "int", "min": 0, "max": 1000 },
+        { "name": "hrs_answersused",        "label": "Answers Used",       "type": "memo", "maxLength": 4000 },
+        { "name": "hrs_filename",           "label": "File Name",          "type": "text", "maxLength": 400 }
+      ],
+      "keys": [["hrs_proposalid"]]
+    },
+
+    {
+      "name": "hrs_rfp", "label": "RFP", "plural": "RFPs", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_rfpkey", "label": "RFP Key", "maxLength": 20 },
+      "columns": [
+        { "name": "hrs_opportunityid",      "label": "Opportunity",            "type": "lookup", "target": "hrs_opportunity" },
+        { "name": "hrs_duedate",            "label": "Due Date",               "type": "date" },
+        { "name": "hrs_qadeadline",         "label": "Q&A Deadline",           "type": "date" },
+        { "name": "hrs_submissionmethod",   "label": "Submission Method",      "type": "text", "maxLength": 1000 },
+        { "name": "hrs_pagelimit",          "label": "Page Limit",             "type": "int", "min": 0, "max": 10000 },
+        { "name": "hrs_pagelimitbasis",     "label": "Page Limit Basis",       "type": "memo", "maxLength": 4000 },
+        { "name": "hrs_wordlimitperanswer", "label": "Word Limit per Answer",  "type": "int", "min": 0, "max": 100000 },
+        { "name": "hrs_responsecodes",      "label": "Response Codes",         "type": "text", "maxLength": 400 },
+        { "name": "hrs_evaluationweights",  "label": "Evaluation Weights",     "type": "memo", "maxLength": 100000 },
+        { "name": "hrs_requiredforms",      "label": "Required Forms",         "type": "memo", "maxLength": 100000 },
+        { "name": "hrs_currentrevision",    "label": "Current Revision",       "type": "int", "min": 0, "max": 1000 },
+        { "name": "hrs_stage",              "label": "Stage",                  "type": "int", "min": 0, "max": 9 },
+        { "name": "hrs_status",             "label": "Run Status",             "type": "choice", "choice": "hrs_runstatus" },
+        { "name": "hrs_packagefacts",       "label": "Package Facts",          "type": "memo", "maxLength": 4000 }
+      ],
+      "keys": [["hrs_rfpkey"]]
+    },
+    {
+      "name": "hrs_rfprevision", "label": "RFP Revision", "plural": "RFP Revisions", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_name", "label": "Name", "maxLength": 200 },
+      "columns": [
+        { "name": "hrs_rfp",            "label": "RFP",             "type": "lookup", "target": "hrs_rfp" },
+        { "name": "hrs_revisionnumber", "label": "Revision Number", "type": "int", "min": 0, "max": 1000 },
+        { "name": "hrs_effectivedate",  "label": "Effective Date",  "type": "date" },
+        { "name": "hrs_note",           "label": "Note",            "type": "memo", "maxLength": 4000 },
+        { "name": "hrs_sourcedocument", "label": "Source Document", "type": "text", "maxLength": 1000 }
+      ],
+      "keys": [["hrs_rfp", "hrs_revisionnumber"]]
+    },
+    {
+      "name": "hrs_rfpdocument", "label": "RFP Document", "plural": "RFP Documents", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_name", "label": "Name", "maxLength": 400 },
+      "columns": [
+        { "name": "hrs_rfprevision",     "label": "RFP Revision",    "type": "lookup", "target": "hrs_rfprevision" },
+        { "name": "hrs_format",          "label": "Format",          "type": "choice", "choice": "hrs_format" },
+        { "name": "hrs_pagecount",       "label": "Page Count",      "type": "int", "min": 0, "max": 100000 },
+        { "name": "hrs_ocrused",         "label": "OCR Used",        "type": "bool" },
+        { "name": "hrs_meanconfidence",  "label": "Mean Confidence", "type": "decimal", "precision": 4, "min": 0, "max": 1 },
+        { "name": "hrs_file",            "label": "File",            "type": "file", "maxSizeInKB": 32768 }
+      ]
+    },
+    {
+      "name": "hrs_documentblock", "label": "Document Block", "plural": "Document Blocks", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_name", "label": "Name", "maxLength": 200 },
+      "columns": [
+        { "name": "hrs_rfpdocument", "label": "RFP Document", "type": "lookup", "target": "hrs_rfpdocument" },
+        { "name": "hrs_blockindex",  "label": "Block Index",  "type": "int", "min": 0, "max": 2147483647 },
+        { "name": "hrs_pagenumber",  "label": "Page Number",  "type": "int", "min": 0, "max": 100000 },
+        { "name": "hrs_section",     "label": "Section",      "type": "text", "maxLength": 1000 },
+        { "name": "hrs_blocktype",   "label": "Block Type",   "type": "choice", "choice": "hrs_blocktype" },
+        { "name": "hrs_text",        "label": "Text",         "type": "memo", "maxLength": 1048576 },
+        { "name": "hrs_rowref",      "label": "Row Reference", "type": "text", "maxLength": 100 },
+        { "name": "hrs_polygon",     "label": "Polygon",      "type": "memo", "maxLength": 100000 },
+        { "name": "hrs_confidence",  "label": "Confidence",   "type": "decimal", "precision": 4, "min": 0, "max": 1 }
+      ],
+      "keys": [["hrs_rfpdocument", "hrs_blockindex"]]
+    },
+    {
+      "name": "hrs_requirement", "label": "Requirement", "plural": "Requirements", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_reqid", "label": "Requirement ID", "maxLength": 40 },
+      "columns": [
+        { "name": "hrs_rfp",                  "label": "RFP",                    "type": "lookup", "target": "hrs_rfp" },
+        { "name": "hrs_location",             "label": "Location",               "type": "text", "maxLength": 400 },
+        { "name": "hrs_section",              "label": "Section",                "type": "text", "maxLength": 1000 },
+        { "name": "hrs_requirementtext",      "label": "Requirement Text",       "type": "memo", "maxLength": 1048576 },
+        { "name": "hrs_originaltext",         "label": "Original Text",          "type": "memo", "maxLength": 1048576 },
+        { "name": "hrs_categorycode",         "label": "Category",               "type": "lookup", "target": "hrs_category" },
+        { "name": "hrs_mandatory",            "label": "Mandatory",              "type": "choice", "choice": "hrs_mandatory" },
+        { "name": "hrs_weight",               "label": "Weight",                 "type": "decimal", "precision": 4, "min": 0, "max": 1000 },
+        { "name": "hrs_status",               "label": "Requirement Status",     "type": "choice", "choice": "hrs_requirementstatus" },
+        { "name": "hrs_compliance",           "label": "Compliance",             "type": "choice", "choice": "hrs_compliance" },
+        { "name": "hrs_duplicateof",          "label": "Duplicate Of",           "type": "lookup", "target": "hrs_requirement" },
+        { "name": "hrs_contradictiongroup",   "label": "Contradiction Group",    "type": "text", "maxLength": 40 },
+        { "name": "hrs_outofscope",           "label": "Out of Scope",           "type": "bool" },
+        { "name": "hrs_ambiguous",            "label": "Ambiguous",              "type": "bool" },
+        { "name": "hrs_sourceblock",          "label": "Source Block",           "type": "lookup", "target": "hrs_documentblock" },
+        { "name": "hrs_extractionconfidence", "label": "Extraction Confidence",  "type": "decimal", "precision": 4, "min": 0, "max": 1 },
+        { "name": "hrs_introducedinrevision", "label": "Introduced in Revision", "type": "int", "min": 0, "max": 1000 }
+      ],
+      "keys": [["hrs_rfp", "hrs_reqid"]]
+    },
+    {
+      "name": "hrs_response", "label": "Response", "plural": "Responses", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_name", "label": "Name", "maxLength": 200 },
+      "columns": [
+        { "name": "hrs_requirement",        "label": "Requirement",          "type": "lookup", "target": "hrs_requirement" },
+        { "name": "hrs_answer",             "label": "Library Answer",       "type": "lookup", "target": "hrs_answer", "required": true,
+          "$comment": "Business required: a response cannot be saved without the answer it came from (hard rule 5, ARCHITECTURE.md 5.6)" },
+        { "name": "hrs_responsetext",       "label": "Response Text",        "type": "memo", "maxLength": 1048576 },
+        { "name": "hrs_responsecode",       "label": "Response Code",        "type": "text", "maxLength": 40 },
+        { "name": "hrs_wordcount",          "label": "Word Count",           "type": "int", "min": 0, "max": 1000000 },
+        { "name": "hrs_status",             "label": "Response Status",      "type": "choice", "choice": "hrs_responsestatus" },
+        { "name": "hrs_smereviewrequired",  "label": "SME Review Required",  "type": "bool" }
+      ],
+      "keys": [["hrs_requirement"]]
+    },
+    {
+      "name": "hrs_flag", "label": "Flag", "plural": "Flags", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_name", "label": "Name", "maxLength": 200 },
+      "columns": [
+        { "name": "hrs_rfp",           "label": "RFP",           "type": "lookup", "target": "hrs_rfp" },
+        { "name": "hrs_requirement",   "label": "Requirement",   "type": "lookup", "target": "hrs_requirement" },
+        { "name": "hrs_flagtype",      "label": "Flag Type",     "type": "choice", "choice": "hrs_flagtype" },
+        { "name": "hrs_severity",      "label": "Severity",      "type": "choice", "choice": "hrs_severity" },
+        { "name": "hrs_policyrule",    "label": "Policy Rule",   "type": "lookup", "target": "hrs_policyrule" },
+        { "name": "hrs_certification", "label": "Certification", "type": "lookup", "target": "hrs_certification" },
+        { "name": "hrs_detail",        "label": "Detail",        "type": "memo", "maxLength": 100000 },
+        { "name": "hrs_resolvedby",    "label": "Resolved By",   "type": "text", "maxLength": 200 },
+        { "name": "hrs_resolvedon",    "label": "Resolved On",   "type": "datetime" }
+      ]
+    },
+    {
+      "name": "hrs_gap", "label": "Gap", "plural": "Gaps", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_name", "label": "Name", "maxLength": 200 },
+      "columns": [
+        { "name": "hrs_requirement",    "label": "Requirement",     "type": "lookup", "target": "hrs_requirement" },
+        { "name": "hrs_routedtosme",    "label": "Routed To SME",   "type": "lookup", "target": "hrs_sme" },
+        { "name": "hrs_routedon",       "label": "Routed On",       "type": "datetime" },
+        { "name": "hrs_dueby",          "label": "Due By",          "type": "datetime" },
+        { "name": "hrs_smeanswertext",  "label": "SME Answer Text", "type": "memo", "maxLength": 100000 },
+        { "name": "hrs_smestatus",      "label": "SME Status",      "type": "choice", "choice": "hrs_smestatus" },
+        { "name": "hrs_proposedanswer", "label": "Proposed Answer", "type": "lookup", "target": "hrs_answer" }
+      ],
+      "keys": [["hrs_requirement"]]
+    },
+    {
+      "name": "hrs_clarification", "label": "Clarification", "plural": "Clarifications", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_name", "label": "Name", "maxLength": 200 },
+      "columns": [
+        { "name": "hrs_rfp",            "label": "RFP",             "type": "lookup", "target": "hrs_rfp" },
+        { "name": "hrs_requirementids", "label": "Requirement IDs", "type": "memo", "maxLength": 4000 },
+        { "name": "hrs_trigger",        "label": "Trigger",         "type": "choice", "choice": "hrs_clarificationtrigger" },
+        { "name": "hrs_questiontext",   "label": "Question Text",   "type": "memo", "maxLength": 100000 },
+        { "name": "hrs_status",         "label": "Clarification Status", "type": "choice", "choice": "hrs_clarificationstatus" },
+        { "name": "hrs_senton",         "label": "Sent On",         "type": "datetime" },
+        { "name": "hrs_buyerresponse",  "label": "Buyer Response",  "type": "memo", "maxLength": 100000 }
+      ]
+    },
+    {
+      "name": "hrs_approval", "label": "Approval", "plural": "Approvals", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_name", "label": "Name", "maxLength": 200 },
+      "columns": [
+        { "name": "hrs_rfp",                "label": "RFP",                  "type": "lookup", "target": "hrs_rfp" },
+        { "name": "hrs_approver",           "label": "Approver",             "type": "lookup", "target": "hrs_approver" },
+        { "name": "hrs_level",              "label": "Level",                "type": "text", "maxLength": 10 },
+        { "name": "hrs_decision",           "label": "Decision",             "type": "choice", "choice": "hrs_approvaldecision" },
+        { "name": "hrs_comments",           "label": "Comments",             "type": "memo", "maxLength": 100000 },
+        { "name": "hrs_cardpayload",        "label": "Card Payload",         "type": "memo", "maxLength": 1048576 },
+        { "name": "hrs_requestedon",        "label": "Requested On",         "type": "datetime" },
+        { "name": "hrs_decidedon",          "label": "Decided On",           "type": "datetime" },
+        { "name": "hrs_totalrequirements",  "label": "Total Requirements",   "type": "int", "min": 0, "max": 100000 },
+        { "name": "hrs_fullcount",          "label": "Full Count",           "type": "int", "min": 0, "max": 100000 },
+        { "name": "hrs_partialcount",       "label": "Partial Count",        "type": "int", "min": 0, "max": 100000 },
+        { "name": "hrs_nocount",            "label": "No Count",             "type": "int", "min": 0, "max": 100000 },
+        { "name": "hrs_gapsrouted",         "label": "Gaps Routed",          "type": "int", "min": 0, "max": 100000 },
+        { "name": "hrs_clarificationssent", "label": "Clarifications Sent",  "type": "int", "min": 0, "max": 100000 },
+        { "name": "hrs_pagecount",          "label": "Page Count",           "type": "int", "min": 0, "max": 100000 }
+      ],
+      "keys": [["hrs_rfp"]]
+    },
+    {
+      "name": "hrs_runlog", "label": "Run Log", "plural": "Run Logs", "group": "runtime", "ownership": "UserOwned",
+      "primaryName": { "name": "hrs_name", "label": "Name", "maxLength": 200 },
+      "columns": [
+        { "name": "hrs_rfp",             "label": "RFP",              "type": "lookup", "target": "hrs_rfp" },
+        { "name": "hrs_stage",           "label": "Stage",            "type": "int", "min": 0, "max": 9 },
+        { "name": "hrs_status",          "label": "Stage Status",     "type": "choice", "choice": "hrs_stagestatus" },
+        { "name": "hrs_startedon",       "label": "Started On",       "type": "datetime" },
+        { "name": "hrs_completedon",     "label": "Completed On",     "type": "datetime" },
+        { "name": "hrs_correlationid",   "label": "Correlation ID",   "type": "text", "maxLength": 100 },
+        { "name": "hrs_creditsestimate", "label": "Credits Estimate", "type": "decimal", "precision": 2, "min": 0, "max": 100000000 },
+        { "name": "hrs_errordetail",     "label": "Error Detail",     "type": "memo", "maxLength": 100000 }
+      ]
+    }
+  ],
+  "environmentVariables": [
+    { "name": "hrs_SharePointSiteUrl",  "label": "SharePoint site URL",              "type": "String", "description": "Site that holds the Inbound, Content and Output folders" },
+    { "name": "hrs_InboundLibraryUrl",  "label": "Inbound folder path",              "type": "String", "description": "Site-relative folder that receives inbound RFPs and addenda, e.g. /Shared Documents/Inbound" },
+    { "name": "hrs_ContentLibraryUrl",  "label": "Content folder path",              "type": "String", "description": "Site-relative folder with approved company content (Company/) and templates (Templates/), e.g. /Shared Documents/Content" },
+    { "name": "hrs_OutputLibraryUrl",   "label": "Output folder path",               "type": "String", "description": "Site-relative folder for draft (Draft/) and filed (Filed/) proposal packages, e.g. /Shared Documents/Output" },
+    { "name": "hrs_RfpToolsBaseUrl",    "label": "rfp-tools host",                   "type": "String", "description": "Host name (no scheme) of the rfp-tools service; used as the custom connector's Host via @environmentVariables" },
+    { "name": "hrs_DocumentLibraryId",  "label": "Document library ID",              "type": "String", "description": "SharePoint list ID of the library holding Inbound/Content/Output (for file triggers)" },
+    { "name": "hrs_DocumentDriveId",    "label": "Document library drive ID",        "type": "String", "description": "Graph drive ID of the same library (for Word Online PDF conversion)" },
+    { "name": "hrs_CompanyName",        "label": "Company name",                     "type": "String", "description": "Respondent's legal name, used in proposal headers" },
+    { "name": "hrs_PilotRecipientUpn",  "label": "Pilot card recipient",             "type": "String", "description": "UPN that receives every SME and approval card during the pilot; the routed SME/approver is still recorded (Q6)" },
+    { "name": "hrs_ReminderAfter",      "label": "Card reminder after",              "type": "String", "default": "PT24H", "description": "ISO 8601 duration a gap, OCR or approval card waits before a reminder (ADR-0027)" },
+    { "name": "hrs_EscalateAfter",      "label": "Card escalation after",            "type": "String", "default": "PT24H", "description": "ISO 8601 duration after the reminder before escalating to the backup, and again before the card is recorded overdue (ADR-0027)" }
+  ],
+  "connectionReferences": [
+    { "name": "hrs_DataverseConnection",   "label": "RFP Factory - Dataverse",        "connector": "shared_commondataserviceforapps" },
+    { "name": "hrs_SharePointConnection",  "label": "RFP Factory - SharePoint",       "connector": "shared_sharepointonline" },
+    { "name": "hrs_TeamsConnection",       "label": "RFP Factory - Teams",            "connector": "shared_teams" },
+    { "name": "hrs_OutlookConnection",     "label": "RFP Factory - Outlook",          "connector": "shared_office365" },
+    { "name": "hrs_O365UsersConnection",   "label": "RFP Factory - Office 365 Users", "connector": "shared_office365users" },
+    { "name": "hrs_WordOnlineConnection",  "label": "RFP Factory - Word Online",      "connector": "shared_wordonlinebusiness" },
+    { "name": "hrs_RfpToolsConnection",    "label": "RFP Factory - RFP Tools",        "customConnector": "new_rfp-20factory-20tools" }
+  ]
+}

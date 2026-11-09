@@ -1,0 +1,104 @@
+{
+  "EnvironmentVariables": [
+    {
+      "SchemaName": "hrs_ContentLibraryUrl",
+      "Value": "",
+      "Name": {
+        "Default": "Company content library URL",
+        "ByLcid": {
+          "1033": "Company content library URL"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "SharePoint library with approved company content and templates",
+        "ByLcid": {
+          "1033": "SharePoint library with approved company content and templates"
+        }
+      },
+      "IsRequired": false
+    },
+    {
+      "SchemaName": "hrs_InboundLibraryUrl",
+      "Value": "",
+      "Name": {
+        "Default": "Inbound RFP library URL",
+        "ByLcid": {
+          "1033": "Inbound RFP library URL"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "SharePoint library that receives inbound RFPs and addenda",
+        "ByLcid": {
+          "1033": "SharePoint library that receives inbound RFPs and addenda"
+        }
+      },
+      "IsRequired": false
+    },
+    {
+      "SchemaName": "hrs_OutputLibraryUrl",
+      "Value": "",
+      "Name": {
+        "Default": "Output library URL",
+        "ByLcid": {
+          "1033": "Output library URL"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "SharePoint library for draft and filed proposal packages",
+        "ByLcid": {
+          "1033": "SharePoint library for draft and filed proposal packages"
+        }
+      },
+      "IsRequired": false
+    },
+    {
+      "SchemaName": "hrs_RfpToolsBaseUrl",
+      "Value": "",
+      "Name": {
+        "Default": "rfp-tools base URL",
+        "ByLcid": {
+          "1033": "rfp-tools base URL"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "Base URL of the rfp-tools service behind the custom connector",
+        "ByLcid": {
+          "1033": "Base URL of the rfp-tools service behind the custom connector"
+        }
+      },
+      "IsRequired": false
+    }
+  ],
+  "ConnectionReferences": [
+    {
+      "LogicalName": "hrs_dataverseconnection",
+      "ConnectionId": "",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+    },
+    {
+      "LogicalName": "hrs_o365usersconnection",
+      "ConnectionId": "",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_office365users"
+    },
+    {
+      "LogicalName": "hrs_outlookconnection",
+      "ConnectionId": "",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+    },
+    {
+      "LogicalName": "hrs_sharepointconnection",
+      "ConnectionId": "",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+    },
+    {
+      "LogicalName": "hrs_teamsconnection",
+      "ConnectionId": "",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_teams"
+    }
+  ],
+  "CopilotAgents": []
+}

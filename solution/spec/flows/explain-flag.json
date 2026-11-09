@@ -1,0 +1,270 @@
+{
+  "name": "RFP - Explain Flag",
+  "description": "Every flag on one requirement: type, severity, the policy rule and its approved position, and the reason.",
+  "modernflowtype": 1,
+  "environmentVariables": [],
+  "clientdata": {
+    "properties": {
+      "connectionReferences": {
+        "shared_commondataserviceforapps": {
+          "runtimeSource": "embedded",
+          "connection": {
+            "connectionReferenceLogicalName": "hrs_dataverseconnection"
+          },
+          "api": {
+            "name": "shared_commondataserviceforapps"
+          }
+        },
+        "{{tools:api}}": {
+          "runtimeSource": "embedded",
+          "connection": {
+            "connectionReferenceLogicalName": "hrs_rfptoolsconnection"
+          },
+          "api": {
+            "name": "{{tools:api}}"
+          }
+        }
+      },
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "$connections": {
+            "defaultValue": {},
+            "type": "Object"
+          },
+          "$authentication": {
+            "defaultValue": {},
+            "type": "SecureObject"
+          }
+        },
+        "triggers": {
+          "manual": {
+            "type": "Request",
+            "kind": "Skills",
+            "inputs": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "rfpKey",
+                  "reqId"
+                ],
+                "properties": {
+                  "rfpKey": {
+                    "title": "rfpKey",
+                    "description": "The RFP's key, as the user gave it. The tool says if no RFP has that key",
+                    "type": "string",
+                    "x-ms-content-hint": "TEXT",
+                    "x-ms-dynamically-added": true
+                  },
+                  "reqId": {
+                    "title": "reqId",
+                    "description": "The requirement ID as the buyer wrote it, for example CV-047 or THPA-036",
+                    "type": "string",
+                    "x-ms-content-hint": "TEXT",
+                    "x-ms-dynamically-added": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "actions": {
+          "RFP": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "ListRecords",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_rfps",
+                "$select": "hrs_rfpid,hrs_rfpkey,hrs_stage,hrs_status,hrs_currentrevision",
+                "$filter": "hrs_rfpkey eq '@{trim(triggerBody()?['rfpKey'])}'"
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 5000
+              }
+            },
+            "runAfter": {}
+          },
+          "If_audit": {
+            "type": "If",
+            "expression": {
+              "greater": [
+                "@length(body('RFP')?['value'])",
+                0
+              ]
+            },
+            "actions": {
+              "Audit_Tool_RFP": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "CreateRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_runlogs",
+                    "item/hrs_name": "Tool run: RFP - Explain Flag",
+                    "item/hrs_status": 431200181,
+                    "item/hrs_startedon": "@{utcNow()}",
+                    "item/hrs_completedon": "@{utcNow()}",
+                    "item/hrs_correlationid": "@{take(coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), 100)}",
+                    "item/hrs_errordetail": "@{concat('Audit (RFP Orchestrator). Tool: RFP - Explain Flag; parameters: ', string(triggerBody()), '; outcome: ', 'ran', '; caller: ', coalesce(triggerOutputs()?['headers']?['x-ms-object-id'], 'unknown'), '; client: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-keywords'], 'unknown'), '; conversation: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), '.')}",
+                    "item/hrs_rfp@odata.bind": "hrs_rfps(@{first(body('RFP')?['value'])?['hrs_rfpid']})"
+                  }
+                },
+                "runAfter": {}
+              }
+            },
+            "else": {
+              "actions": {
+                "Audit_Tool": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "hrs_runlogs",
+                      "item/hrs_name": "Tool run: RFP - Explain Flag",
+                      "item/hrs_status": 431200181,
+                      "item/hrs_startedon": "@{utcNow()}",
+                      "item/hrs_completedon": "@{utcNow()}",
+                      "item/hrs_correlationid": "@{take(coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), 100)}",
+                      "item/hrs_errordetail": "@{concat('Audit (RFP Orchestrator). Tool: RFP - Explain Flag; parameters: ', string(triggerBody()), '; outcome: ', 'ran', '; caller: ', coalesce(triggerOutputs()?['headers']?['x-ms-object-id'], 'unknown'), '; client: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-keywords'], 'unknown'), '; conversation: ', coalesce(triggerOutputs()?['headers']?['x-ms-client-session-id'], 'unknown'), '.')}"
+                    }
+                  },
+                  "runAfter": {}
+                }
+              }
+            },
+            "runAfter": {
+              "RFP": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Requirement": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "ListRecords",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_requirements",
+                "$select": "hrs_requirementid,hrs_reqid,hrs_location,hrs_requirementtext,hrs_compliance",
+                "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and hrs_reqid eq '@{trim(triggerBody()?['reqId'])}'"
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 5000
+              }
+            },
+            "runAfter": {
+              "If_audit": [
+                "Succeeded",
+                "Failed"
+              ]
+            }
+          },
+          "Flags": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "ListRecords",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_flags",
+                "$select": "hrs_flagtype,hrs_severity,hrs_detail,hrs_resolvedby",
+                "$filter": "_hrs_requirement_value eq @{coalesce(first(body('Requirement')?['value'])?['hrs_requirementid'], '00000000-0000-0000-0000-000000000000')}",
+                "$expand": "hrs_policyrule($select=hrs_ruleid,hrs_approvedposition)"
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 5000
+              }
+            },
+            "runAfter": {
+              "Requirement": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Explain": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/{{tools:api}}",
+                "operationId": "OrchestratorExplainFlags",
+                "connectionName": "{{tools:api}}"
+              },
+              "parameters": {
+                "body": {
+                  "requirement": "@first(body('Requirement')?['value'])",
+                  "flags": "@body('Flags')?['value']"
+                }
+              }
+            },
+            "limit": {
+              "timeout": "PT10M"
+            },
+            "retryPolicy": {
+              "type": "exponential",
+              "count": 3,
+              "interval": "PT10S"
+            },
+            "runAfter": {
+              "Flags": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Respond": {
+            "type": "Response",
+            "kind": "Skills",
+            "inputs": {
+              "statusCode": 200,
+              "body": {
+                "result": "@body('Explain')?['text']"
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "title": "result",
+                    "description": "The answer for the user",
+                    "type": "string",
+                    "x-ms-content-hint": "TEXT",
+                    "x-ms-dynamically-added": true
+                  }
+                }
+              }
+            },
+            "runAfter": {
+              "Explain": [
+                "Succeeded"
+              ]
+            }
+          }
+        },
+        "outputs": {}
+      },
+      "templateName": ""
+    },
+    "schemaVersion": "1.0.0.0"
+  }
+}

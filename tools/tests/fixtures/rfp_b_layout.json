@@ -1,0 +1,8048 @@
+{
+ "apiVersion": "2024-11-30",
+ "pages": [
+  {
+   "pageNumber": 1,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 2,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 3,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 4,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 5,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 6,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 7,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 8,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 9,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 10,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 11,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 12,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 13,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 14,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 15,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  },
+  {
+   "pageNumber": 16,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch"
+  }
+ ],
+ "paragraphs": [
+  {
+   "role": "title",
+   "content": "MARLOW COUNTY HEALTH DISTRICT Office of Administrative Services - Purchasing",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.5881,
+      2.7182,
+      6.8967,
+      2.7177,
+      6.8967,
+      3.2829,
+      1.5881,
+      3.2834
+     ]
+    }
+   ],
+   "offset": 0
+  },
+  {
+   "role": null,
+   "content": "REQUEST FOR PROPOSALS RFP MCHD 26-044 Environmental Health Field Inspection and Asset Management Solution",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.2463,
+      3.902,
+      7.2475,
+      3.9036,
+      7.2473,
+      4.8958,
+      1.2461,
+      4.8942
+     ]
+    }
+   ],
+   "offset": 77
+  },
+  {
+   "role": null,
+   "content": "Release Date: October 9, 2026 Written Questions Due: October 30, 2026, 4:00 p.m. local time Proposal Due Date: November 13, 2026, 3:00 p.m. local time",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      2.2771,
+      5.5654,
+      6.214,
+      5.5629,
+      6.2144,
+      6.3377,
+      2.2775,
+      6.3402
+     ]
+    }
+   ],
+   "offset": 183
+  },
+  {
+   "role": null,
+   "content": "Issuing Officer: Gregory Thaddeus, Purchasing Manager purchasing@marlowhealth.example",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      2.495,
+      7.0475,
+      6.0001,
+      7.0499,
+      5.9998,
+      7.4356,
+      2.4948,
+      7.4332
+     ]
+    }
+   ],
+   "offset": 334
+  },
+  {
+   "role": null,
+   "content": "All names, places and organizations in this document are fictitious.",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      2.1774,
+      8.8403,
+      6.3031,
+      8.84,
+      6.3031,
+      9.0043,
+      2.1774,
+      9.0046
+     ]
+    }
+   ],
+   "offset": 420
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      0.9852,
+      10.3008,
+      3.6024,
+      10.2943,
+      3.6027,
+      10.4254,
+      0.9855,
+      10.4319
+     ]
+    }
+   ],
+   "offset": 489
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 1",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      7.1685,
+      10.3019,
+      7.4949,
+      10.3049,
+      7.4938,
+      10.4318,
+      7.1673,
+      10.4287
+     ]
+    }
+   ],
+   "offset": 537
+  },
+  {
+   "role": "sectionHeading",
+   "content": "Contents",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.08,
+      1.0287,
+      1.8862,
+      1.0289,
+      1.8862,
+      1.2156,
+      1.08,
+      1.2154
+     ]
+    }
+   ],
+   "offset": 544
+  },
+  {
+   "role": null,
+   "content": "1. Introduction",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0826,
+      1.4245,
+      1.9986,
+      1.4261,
+      1.9984,
+      1.5784,
+      1.0824,
+      1.5768
+     ]
+    }
+   ],
+   "offset": 553
+  },
+  {
+   "role": null,
+   "content": "2. Instructions to Respondents",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0729,
+      1.7209,
+      2.9392,
+      1.7236,
+      2.939,
+      1.8889,
+      1.0727,
+      1.8863
+     ]
+    }
+   ],
+   "offset": 569
+  },
+  {
+   "role": null,
+   "content": "3. Scope of Work",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0696,
+      2.0206,
+      2.1676,
+      2.0162,
+      2.1682,
+      2.1841,
+      1.0703,
+      2.1885
+     ]
+    }
+   ],
+   "offset": 600
+  },
+  {
+   "role": null,
+   "content": "4. Respondent Qualifications",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0709,
+      2.3181,
+      2.8666,
+      2.3177,
+      2.8667,
+      2.4871,
+      1.071,
+      2.4874
+     ]
+    }
+   ],
+   "offset": 617
+  },
+  {
+   "role": null,
+   "content": "5. Evaluation and Award",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.076,
+      2.6171,
+      2.6191,
+      2.615,
+      2.6193,
+      2.777,
+      1.0762,
+      2.7791
+     ]
+    }
+   ],
+   "offset": 646
+  },
+  {
+   "role": null,
+   "content": "6. Cost Proposal",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0751,
+      2.9182,
+      2.0952,
+      2.9176,
+      2.0953,
+      3.0853,
+      1.0752,
+      3.0859
+     ]
+    }
+   ],
+   "offset": 670
+  },
+  {
+   "role": null,
+   "content": "Appendix A - Cost Proposal Form",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.075,
+      3.2195,
+      3.1911,
+      3.2118,
+      3.1917,
+      3.3853,
+      1.0756,
+      3.393
+     ]
+    }
+   ],
+   "offset": 687
+  },
+  {
+   "role": null,
+   "content": "Appendix B - Reference Form",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0727,
+      3.5184,
+      2.9502,
+      3.5041,
+      2.9515,
+      3.6751,
+      1.074,
+      3.6895
+     ]
+    }
+   ],
+   "offset": 719
+  },
+  {
+   "role": null,
+   "content": "Appendix C - Security Requirements",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0754,
+      3.8168,
+      3.3552,
+      3.8108,
+      3.3557,
+      3.9838,
+      1.0759,
+      3.9898
+     ]
+    }
+   ],
+   "offset": 747
+  },
+  {
+   "role": null,
+   "content": "Appendix D - Contract Terms",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0748,
+      4.1184,
+      2.9207,
+      4.1061,
+      2.9218,
+      4.2737,
+      1.0759,
+      4.286
+     ]
+    }
+   ],
+   "offset": 782
+  },
+  {
+   "role": null,
+   "content": "Appendix E - Supplemental Requirements",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0736,
+      4.4141,
+      3.6758,
+      4.4063,
+      3.6764,
+      4.5816,
+      1.0741,
+      4.5893
+     ]
+    }
+   ],
+   "offset": 810
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9869,
+      10.304,
+      3.601,
+      10.2967,
+      3.6013,
+      10.4238,
+      0.9872,
+      10.4311
+     ]
+    }
+   ],
+   "offset": 849
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 2",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      7.1703,
+      10.3034,
+      7.5036,
+      10.3067,
+      7.5023,
+      10.432,
+      7.169,
+      10.4287
+     ]
+    }
+   ],
+   "offset": 897
+  },
+  {
+   "role": "sectionHeading",
+   "content": "1. Introduction",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0765,
+      1.0235,
+      2.4292,
+      1.0288,
+      2.4284,
+      1.2215,
+      1.0757,
+      1.2161
+     ]
+    }
+   ],
+   "offset": 904
+  },
+  {
+   "role": "sectionHeading",
+   "content": "1.1 Purpose",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0755,
+      1.4261,
+      1.9575,
+      1.432,
+      1.9562,
+      1.6224,
+      1.0742,
+      1.6165
+     ]
+    }
+   ],
+   "offset": 920
+  },
+  {
+   "role": null,
+   "content": "The Marlow County Health District (the \"District\") is soliciting proposals from qualified firms to provide a cloud-based solution for environmental health field inspections, complaint management and the maintenance of District facilities and equipment, together with implementation, training and support services. The District anticipates awarding one contract for an initial term of three (3) years, with up to three (3) one-year renewals.",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0645,
+      1.748,
+      7.426,
+      1.7393,
+      7.4274,
+      2.7306,
+      1.0659,
+      2.7393
+     ]
+    }
+   ],
+   "offset": 932
+  },
+  {
+   "role": "sectionHeading",
+   "content": "1.2 Background",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.075,
+      2.8716,
+      2.267,
+      2.8769,
+      2.2662,
+      3.0717,
+      1.0741,
+      3.0664
+     ]
+    }
+   ],
+   "offset": 1373
+  },
+  {
+   "role": null,
+   "content": "The District serves a population of approximately 418,000 residents across 22 municipalities and unincorporated areas. Its Environmental Health Division employs 38 registered sanitarians and inspectors, six administrative staff and three supervisors. The District permits approximately 9,400 facilities, including 3,100 food service operations, 410 public pools and spas, and 5,200 onsite sewage and private water systems.",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0652,
+      3.1985,
+      7.4257,
+      3.1943,
+      7.4264,
+      4.1875,
+      1.0659,
+      4.1918
+     ]
+    }
+   ],
+   "offset": 1388
+  },
+  {
+   "role": null,
+   "content": "Since 2011 the District has used a locally developed Microsoft Access database for permitting and inspection records. The database is not accessible in the field, has no audit trail and is supported by a single employee who plans to retire in 2027. In 2025 the Board of Health directed staff to replace the database with a commercially supported solution and to extend the same platform to facilities and equipment maintenance.",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0683,
+      4.2944,
+      7.428,
+      4.2962,
+      7.4278,
+      5.3012,
+      1.068,
+      5.2994
+     ]
+    }
+   ],
+   "offset": 1811
+  },
+  {
+   "role": "sectionHeading",
+   "content": "1.3 Goals",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0754,
+      5.431,
+      1.7687,
+      5.4308,
+      1.7688,
+      5.611,
+      1.0754,
+      5.6111
+     ]
+    }
+   ],
+   "offset": 2239
+  },
+  {
+   "role": null,
+   "content": "The District's goals are to complete inspection reports in the field at the time of inspection; to publish inspection results to the public within one business day; to schedule risk-based inspection frequencies; to maintain a reliable inventory of District facilities and equipment; and to reduce administrative data entry by at least 60%.",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0675,
+      5.7565,
+      7.4226,
+      5.7485,
+      7.4236,
+      6.5386,
+      1.0685,
+      6.5466
+     ]
+    }
+   ],
+   "offset": 2249
+  },
+  {
+   "role": "sectionHeading",
+   "content": "1.4 Environmental Health Programs",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0777,
+      6.6784,
+      3.7873,
+      6.6887,
+      3.7865,
+      6.8818,
+      1.0769,
+      6.8714
+     ]
+    }
+   ],
+   "offset": 2589
+  },
+  {
+   "role": null,
+   "content": "The programs that will use the solution, with approximate annual volumes, are summarized in Table 1-1. Volumes are provided for planning purposes and are not guaranteed.",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0731,
+      7.0063,
+      7.4241,
+      7.001,
+      7.4244,
+      7.3971,
+      1.0734,
+      7.4024
+     ]
+    }
+   ],
+   "offset": 2623
+  },
+  {
+   "role": null,
+   "content": "Program",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9998,
+      7.4814,
+      3.4027,
+      7.4881,
+      3.4027,
+      7.7363,
+      0.9998,
+      7.7363
+     ]
+    }
+   ],
+   "offset": 2793
+  },
+  {
+   "role": null,
+   "content": "Permitted facilities",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      3.4027,
+      7.4881,
+      4.6981,
+      7.4881,
+      4.6981,
+      7.7363,
+      3.4027,
+      7.7363
+     ]
+    }
+   ],
+   "offset": 2801
+  },
+  {
+   "role": null,
+   "content": "Inspections per year",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      4.6981,
+      7.4881,
+      6.1009,
+      7.4814,
+      6.1009,
+      7.7363,
+      4.6981,
+      7.7363
+     ]
+    }
+   ],
+   "offset": 2822
+  },
+  {
+   "role": null,
+   "content": "Complaints per year",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      6.1009,
+      7.4814,
+      7.4969,
+      7.4814,
+      7.4969,
+      7.7363,
+      6.1009,
+      7.7363
+     ]
+    }
+   ],
+   "offset": 2843
+  },
+  {
+   "role": null,
+   "content": "Food service and retail food",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9998,
+      7.7363,
+      3.4027,
+      7.7363,
+      3.3959,
+      7.9913,
+      0.9998,
+      7.9913
+     ]
+    }
+   ],
+   "offset": 2863
+  },
+  {
+   "role": null,
+   "content": "3,100",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      3.4027,
+      7.7363,
+      4.6981,
+      7.7363,
+      4.6981,
+      7.9913,
+      3.3959,
+      7.9913
+     ]
+    }
+   ],
+   "offset": 2892
+  },
+  {
+   "role": null,
+   "content": "9,800",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      4.6981,
+      7.7363,
+      6.1009,
+      7.7363,
+      6.1009,
+      7.9913,
+      4.6981,
+      7.9913
+     ]
+    }
+   ],
+   "offset": 2898
+  },
+  {
+   "role": null,
+   "content": "1,150",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      6.1009,
+      7.7363,
+      7.4969,
+      7.7363,
+      7.4969,
+      7.9913,
+      6.1009,
+      7.9913
+     ]
+    }
+   ],
+   "offset": 2904
+  },
+  {
+   "role": null,
+   "content": "Public pools and spas",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9998,
+      7.9913,
+      3.3959,
+      7.9913,
+      3.3959,
+      8.2395,
+      0.9998,
+      8.2395
+     ]
+    }
+   ],
+   "offset": 2910
+  },
+  {
+   "role": null,
+   "content": "410",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      3.3959,
+      7.9913,
+      4.6981,
+      7.9913,
+      4.6981,
+      8.2395,
+      3.3959,
+      8.2395
+     ]
+    }
+   ],
+   "offset": 2932
+  },
+  {
+   "role": null,
+   "content": "2,600",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      4.6981,
+      7.9913,
+      6.1009,
+      7.9913,
+      6.1009,
+      8.2395,
+      4.6981,
+      8.2395
+     ]
+    }
+   ],
+   "offset": 2936
+  },
+  {
+   "role": null,
+   "content": "140",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      6.1009,
+      7.9913,
+      7.4969,
+      7.9913,
+      7.4969,
+      8.2261,
+      6.1009,
+      8.2395
+     ]
+    }
+   ],
+   "offset": 2942
+  },
+  {
+   "role": null,
+   "content": "Body art facilities",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9998,
+      8.2395,
+      3.3959,
+      8.2395,
+      3.3959,
+      8.4877,
+      0.9931,
+      8.4877
+     ]
+    }
+   ],
+   "offset": 2946
+  },
+  {
+   "role": null,
+   "content": "95",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      3.3959,
+      8.2395,
+      4.6981,
+      8.2395,
+      4.6981,
+      8.4877,
+      3.3959,
+      8.4877
+     ]
+    }
+   ],
+   "offset": 2966
+  },
+  {
+   "role": null,
+   "content": "190",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      4.6981,
+      8.2395,
+      6.1009,
+      8.2395,
+      6.1009,
+      8.4877,
+      4.6981,
+      8.4877
+     ]
+    }
+   ],
+   "offset": 2969
+  },
+  {
+   "role": null,
+   "content": "25",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      6.1009,
+      8.2395,
+      7.4969,
+      8.2261,
+      7.4969,
+      8.4877,
+      6.1009,
+      8.4877
+     ]
+    }
+   ],
+   "offset": 2973
+  },
+  {
+   "role": null,
+   "content": "Private water systems (wells)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9931,
+      8.4877,
+      3.3959,
+      8.4877,
+      3.3959,
+      8.7427,
+      0.9931,
+      8.7427
+     ]
+    }
+   ],
+   "offset": 2976
+  },
+  {
+   "role": null,
+   "content": "2,300",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      3.3959,
+      8.4877,
+      4.6981,
+      8.4877,
+      4.6981,
+      8.7427,
+      3.3959,
+      8.7427
+     ]
+    }
+   ],
+   "offset": 3006
+  },
+  {
+   "role": null,
+   "content": "1,700",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      4.6981,
+      8.4877,
+      6.1009,
+      8.4877,
+      6.0941,
+      8.736,
+      4.6981,
+      8.7427
+     ]
+    }
+   ],
+   "offset": 3012
+  },
+  {
+   "role": null,
+   "content": "210",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      6.1009,
+      8.4877,
+      7.4969,
+      8.4877,
+      7.4969,
+      8.736,
+      6.0941,
+      8.736
+     ]
+    }
+   ],
+   "offset": 3018
+  },
+  {
+   "role": null,
+   "content": "Onsite sewage treatment systems",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9931,
+      8.7427,
+      3.3959,
+      8.7427,
+      3.3959,
+      8.9909,
+      0.9931,
+      8.9909
+     ]
+    }
+   ],
+   "offset": 3022
+  },
+  {
+   "role": null,
+   "content": "2,900",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      3.3959,
+      8.7427,
+      4.6981,
+      8.7427,
+      4.6981,
+      8.9909,
+      3.3959,
+      8.9909
+     ]
+    }
+   ],
+   "offset": 3054
+  },
+  {
+   "role": null,
+   "content": "4,900",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      4.6981,
+      8.7427,
+      6.0941,
+      8.736,
+      6.0941,
+      8.9842,
+      4.6981,
+      8.9909
+     ]
+    }
+   ],
+   "offset": 3060
+  },
+  {
+   "role": null,
+   "content": "480",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      6.0941,
+      8.736,
+      7.4969,
+      8.736,
+      7.4969,
+      8.9842,
+      6.0941,
+      8.9842
+     ]
+    }
+   ],
+   "offset": 3066
+  },
+  {
+   "role": null,
+   "content": "Schools and child care",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9931,
+      8.9909,
+      3.3959,
+      8.9909,
+      3.3959,
+      9.2391,
+      0.9931,
+      9.2391
+     ]
+    }
+   ],
+   "offset": 3070
+  },
+  {
+   "role": null,
+   "content": "520",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      3.3959,
+      8.9909,
+      4.6981,
+      8.9909,
+      4.6981,
+      9.2391,
+      3.3959,
+      9.2391
+     ]
+    }
+   ],
+   "offset": 3093
+  },
+  {
+   "role": null,
+   "content": "1,040",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      4.6981,
+      8.9909,
+      6.0941,
+      8.9842,
+      6.0941,
+      9.2391,
+      4.6981,
+      9.2391
+     ]
+    }
+   ],
+   "offset": 3097
+  },
+  {
+   "role": null,
+   "content": "60",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      6.0941,
+      8.9842,
+      7.4969,
+      8.9842,
+      7.4902,
+      9.2391,
+      6.0941,
+      9.2391
+     ]
+    }
+   ],
+   "offset": 3103
+  },
+  {
+   "role": null,
+   "content": "Nuisance and solid waste",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9931,
+      9.2391,
+      3.3959,
+      9.2391,
+      3.3959,
+      9.4807,
+      0.9931,
+      9.4807
+     ]
+    }
+   ],
+   "offset": 3106
+  },
+  {
+   "role": null,
+   "content": "n/a",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      3.3959,
+      9.2391,
+      4.6981,
+      9.2391,
+      4.6981,
+      9.4807,
+      3.3959,
+      9.4807
+     ]
+    }
+   ],
+   "offset": 3131
+  },
+  {
+   "role": null,
+   "content": "780",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      4.6981,
+      9.2391,
+      6.0941,
+      9.2391,
+      6.0941,
+      9.4807,
+      4.6981,
+      9.4807
+     ]
+    }
+   ],
+   "offset": 3135
+  },
+  {
+   "role": null,
+   "content": "1,900",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      6.0941,
+      9.2391,
+      7.4902,
+      9.2391,
+      7.4902,
+      9.4807,
+      6.0941,
+      9.4807
+     ]
+    }
+   ],
+   "offset": 3139
+  },
+  {
+   "role": "sectionHeading",
+   "content": "1.5 Current Process",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0787,
+      9.7466,
+      2.5555,
+      9.7499,
+      2.5551,
+      9.913,
+      1.0783,
+      9.9097
+     ]
+    }
+   ],
+   "offset": 3145
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9847,
+      10.296,
+      3.6008,
+      10.2908,
+      3.601,
+      10.4261,
+      0.9849,
+      10.4312
+     ]
+    }
+   ],
+   "offset": 3165
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 3",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      7.1683,
+      10.3005,
+      7.5,
+      10.3031,
+      7.499,
+      10.4307,
+      7.1673,
+      10.4281
+     ]
+    }
+   ],
+   "offset": 3213
+  },
+  {
+   "role": null,
+   "content": "Inspectors prepare for each day by printing facility histories from the Access database. Findings are recorded on carbonless paper forms; a copy is left with the operator and the original is returned to the office, where administrative staff enter violations and scores. The average time from inspection to data entry is four business days. Complaints are received by phone and email and are logged in a shared spreadsheet before being assigned by a supervisor. Re-inspections are tracked manually on wall calendars in each regional office.",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0655,
+      1.0006,
+      7.4252,
+      0.9902,
+      7.4271,
+      2.1761,
+      1.0674,
+      2.1865
+     ]
+    }
+   ],
+   "offset": 3220
+  },
+  {
+   "role": null,
+   "content": "District facilities and equipment are maintained by a Facilities Manager and two maintenance technicians. Vehicle maintenance is performed by a contracted garage, and invoices are reconciled manually against a spreadsheet of vehicles. Laboratory equipment calibration dates are tracked by laboratory staff in a separate spreadsheet.",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0667,
+      2.3064,
+      7.4246,
+      2.3075,
+      7.4245,
+      3.0943,
+      1.0665,
+      3.0932
+     ]
+    }
+   ],
+   "offset": 3761
+  },
+  {
+   "role": "sectionHeading",
+   "content": "1.6 Funding",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0731,
+      3.2287,
+      1.9819,
+      3.2372,
+      1.9802,
+      3.4252,
+      1.0713,
+      3.4167
+     ]
+    }
+   ],
+   "offset": 4094
+  },
+  {
+   "role": null,
+   "content": "The project is funded through the District's capital improvement fund and a state public health infrastructure grant. Grant-funded costs must be incurred by June 30, 2028.",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0663,
+      3.5536,
+      7.4241,
+      3.551,
+      7.4242,
+      3.9352,
+      1.0665,
+      3.9379
+     ]
+    }
+   ],
+   "offset": 4106
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      0.9843,
+      10.2995,
+      3.6023,
+      10.2917,
+      3.6027,
+      10.4247,
+      0.9847,
+      10.4325
+     ]
+    }
+   ],
+   "offset": 4278
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 4",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      7.1675,
+      10.3009,
+      7.5064,
+      10.3047,
+      7.5049,
+      10.4325,
+      7.1661,
+      10.4287
+     ]
+    }
+   ],
+   "offset": 4326
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2. Instructions to Respondents",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0678,
+      1.0144,
+      3.7844,
+      1.0214,
+      3.7839,
+      1.242,
+      1.0672,
+      1.235
+     ]
+    }
+   ],
+   "offset": 4333
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2.1 Procurement Timeline",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0687,
+      1.4266,
+      3.0212,
+      1.4287,
+      3.021,
+      1.5982,
+      1.0685,
+      1.5961
+     ]
+    }
+   ],
+   "offset": 4364
+  },
+  {
+   "role": null,
+   "content": "Activity",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9998,
+      1.7129,
+      4.4967,
+      1.7196,
+      4.4967,
+      1.9679,
+      0.9998,
+      1.9679
+     ]
+    }
+   ],
+   "offset": 4389
+  },
+  {
+   "role": null,
+   "content": "Date",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      4.4967,
+      1.7196,
+      7.4902,
+      1.7196,
+      7.4902,
+      1.9679,
+      4.4967,
+      1.9679
+     ]
+    }
+   ],
+   "offset": 4398
+  },
+  {
+   "role": null,
+   "content": "RFP release",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9998,
+      1.9679,
+      4.4967,
+      1.9679,
+      4.4967,
+      2.2228,
+      0.9998,
+      2.2094
+     ]
+    }
+   ],
+   "offset": 4403
+  },
+  {
+   "role": null,
+   "content": "October 9, 2026",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      4.4967,
+      1.9679,
+      7.4902,
+      1.9679,
+      7.4902,
+      2.2228,
+      4.4967,
+      2.2228
+     ]
+    }
+   ],
+   "offset": 4415
+  },
+  {
+   "role": null,
+   "content": "Written questions due",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9998,
+      2.2094,
+      4.4967,
+      2.2228,
+      4.4967,
+      2.4643,
+      0.9998,
+      2.4643
+     ]
+    }
+   ],
+   "offset": 4431
+  },
+  {
+   "role": null,
+   "content": "October 30, 2026, 4:00 p.m.",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      4.4967,
+      2.2228,
+      7.4902,
+      2.2228,
+      7.4969,
+      2.4643,
+      4.4967,
+      2.4643
+     ]
+    }
+   ],
+   "offset": 4453
+  },
+  {
+   "role": null,
+   "content": "Responses to questions issued",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9998,
+      2.4643,
+      4.4967,
+      2.4643,
+      4.4967,
+      2.7125,
+      0.9998,
+      2.7125
+     ]
+    }
+   ],
+   "offset": 4481
+  },
+  {
+   "role": null,
+   "content": "November 4, 2026",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      4.4967,
+      2.4643,
+      7.4969,
+      2.4643,
+      7.4969,
+      2.7125,
+      4.4967,
+      2.7125
+     ]
+    }
+   ],
+   "offset": 4511
+  },
+  {
+   "role": null,
+   "content": "Proposals due",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9998,
+      2.7125,
+      4.4967,
+      2.7125,
+      4.4967,
+      2.9742,
+      0.9998,
+      2.9742
+     ]
+    }
+   ],
+   "offset": 4528
+  },
+  {
+   "role": null,
+   "content": "November 13, 2026, 3:00 p.m.",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      4.4967,
+      2.7125,
+      7.4969,
+      2.7125,
+      7.4969,
+      2.9675,
+      4.4967,
+      2.9742
+     ]
+    }
+   ],
+   "offset": 4542
+  },
+  {
+   "role": null,
+   "content": "Oral presentations (if requested)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9998,
+      2.9742,
+      4.4967,
+      2.9742,
+      4.4967,
+      3.2157,
+      0.9998,
+      3.2224
+     ]
+    }
+   ],
+   "offset": 4571
+  },
+  {
+   "role": null,
+   "content": "December 2-4, 2026",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      4.4967,
+      2.9742,
+      7.4969,
+      2.9675,
+      7.4969,
+      3.2157,
+      4.4967,
+      3.2157
+     ]
+    }
+   ],
+   "offset": 4605
+  },
+  {
+   "role": null,
+   "content": "Board of Health approval",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9998,
+      3.2224,
+      4.4967,
+      3.2157,
+      4.4967,
+      3.4639,
+      0.9998,
+      3.4639
+     ]
+    }
+   ],
+   "offset": 4624
+  },
+  {
+   "role": null,
+   "content": "December 17, 2026",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      4.4967,
+      3.2157,
+      7.4969,
+      3.2157,
+      7.4969,
+      3.4639,
+      4.4967,
+      3.4639
+     ]
+    }
+   ],
+   "offset": 4649
+  },
+  {
+   "role": null,
+   "content": "Contract start (target)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9998,
+      3.4639,
+      4.4967,
+      3.4639,
+      4.4967,
+      3.7122,
+      0.9998,
+      3.7122
+     ]
+    }
+   ],
+   "offset": 4667
+  },
+  {
+   "role": null,
+   "content": "January 11, 2027",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      4.4967,
+      3.4639,
+      7.4969,
+      3.4639,
+      7.4969,
+      3.7122,
+      4.4967,
+      3.7122
+     ]
+    }
+   ],
+   "offset": 4691
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2.2 Questions",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0688,
+      3.9681,
+      2.0802,
+      3.9707,
+      2.0797,
+      4.153,
+      1.0683,
+      4.1503
+     ]
+    }
+   ],
+   "offset": 4708
+  },
+  {
+   "role": null,
+   "content": "Questions must be submitted by email to the Issuing Officer by the deadline above. Questions received after the deadline will not be answered. Answers will be issued to all Respondents as a written addendum.",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0698,
+      4.2926,
+      7.4261,
+      4.2875,
+      7.4266,
+      4.8583,
+      1.0703,
+      4.8635
+     ]
+    }
+   ],
+   "offset": 4722
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2.3 Submission",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0694,
+      5.0141,
+      2.1964,
+      5.0173,
+      2.1959,
+      5.1973,
+      1.0689,
+      5.194
+     ]
+    }
+   ],
+   "offset": 4930
+  },
+  {
+   "role": null,
+   "content": "Proposals must be submitted by email to purchasing@marlowhealth.example as a single PDF file not exceeding 25 MB, with the subject line \"RFP MCHD 26-044 - [Respondent Name]\". The Cost Proposal (Appendix A) must be submitted as a separate PDF attachment in the same email. Late proposals will not be accepted.",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0648,
+      5.3376,
+      7.43,
+      5.3341,
+      7.4304,
+      6.1181,
+      1.0652,
+      6.1216
+     ]
+    }
+   ],
+   "offset": 4945
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2.4 Page Limit and Format",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0674,
+      6.2653,
+      3.0959,
+      6.2668,
+      3.0958,
+      6.4606,
+      1.0672,
+      6.4591
+     ]
+    }
+   ],
+   "offset": 5254
+  },
+  {
+   "role": null,
+   "content": "The technical proposal must not exceed fifty (50) pages, excluding the cover letter, Appendix A, Appendix B, résumés and insurance certificates. Pages must be 8.5 x 11 inches with one-inch margins and a font of at least 11 points. Content beyond the fiftieth page will be removed before evaluation.",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0687,
+      6.5862,
+      7.4247,
+      6.5877,
+      7.4246,
+      7.1794,
+      1.0686,
+      7.1779
+     ]
+    }
+   ],
+   "offset": 5280
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2.5 Proposal Contents",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0666,
+      7.3136,
+      2.7129,
+      7.3179,
+      2.7124,
+      7.5081,
+      1.0661,
+      7.5038
+     ]
+    }
+   ],
+   "offset": 5579
+  },
+  {
+   "role": null,
+   "content": "Proposals should address each paragraph of Section 3 and Section 4 and each item in Appendices C, D and E in order, using the District's paragraph and item numbers as headings. Respondents should state clearly whether each requirement is met, partially met or not met. Silence will be interpreted as non-compliance.",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0645,
+      7.631,
+      7.4237,
+      7.6294,
+      7.4239,
+      8.4237,
+      1.0647,
+      8.4253
+     ]
+    }
+   ],
+   "offset": 5601
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2.6 District Rights",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0678,
+      8.5634,
+      2.4306,
+      8.5676,
+      2.43,
+      8.7559,
+      1.0672,
+      8.7517
+     ]
+    }
+   ],
+   "offset": 5917
+  },
+  {
+   "role": null,
+   "content": "The District reserves the right to reject any or all proposals, to waive minor irregularities, to negotiate with one or more Respondents, to request best and final offers and to cancel this solicitation at any time. The District is not liable for any costs incurred by Respondents in preparing proposals or attending presentations.",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0677,
+      8.8875,
+      7.4259,
+      8.8846,
+      7.4263,
+      9.6647,
+      1.068,
+      9.6676
+     ]
+    }
+   ],
+   "offset": 5937
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9841,
+      10.2956,
+      3.6016,
+      10.291,
+      3.6019,
+      10.4263,
+      0.9843,
+      10.431
+     ]
+    }
+   ],
+   "offset": 6269
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 5",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      7.1679,
+      10.3014,
+      7.5023,
+      10.3043,
+      7.5012,
+      10.43,
+      7.1668,
+      10.427
+     ]
+    }
+   ],
+   "offset": 6317
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2.7 Public Records",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      1.0678,
+      1.0107,
+      2.4712,
+      1.0132,
+      2.4709,
+      1.1842,
+      1.0675,
+      1.1816
+     ]
+    }
+   ],
+   "offset": 6324
+  },
+  {
+   "role": null,
+   "content": "Proposals become public records after award, subject to exemptions under state law. Information that a Respondent considers a trade secret should be clearly marked; the District will make reasonable efforts to protect properly marked information to the extent permitted by law.",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      1.0662,
+      1.3375,
+      7.4233,
+      1.3342,
+      7.4236,
+      1.9188,
+      1.0665,
+      1.9221
+     ]
+    }
+   ],
+   "offset": 6343
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2.8 Communication Restrictions",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      1.0689,
+      2.0553,
+      3.4756,
+      2.0574,
+      3.4755,
+      2.2387,
+      1.0687,
+      2.2366
+     ]
+    }
+   ],
+   "offset": 6621
+  },
+  {
+   "role": null,
+   "content": "From the release of this RFP until award, communication regarding this solicitation is limited to the Issuing Officer. Contact with Board members or District staff regarding this solicitation may be grounds for disqualification.",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      1.0667,
+      2.384,
+      7.4241,
+      2.3813,
+      7.4243,
+      2.9735,
+      1.0669,
+      2.9762
+     ]
+    }
+   ],
+   "offset": 6652
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2.9 Protests",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      1.0689,
+      3.107,
+      1.946,
+      3.1112,
+      1.9452,
+      3.2858,
+      1.068,
+      3.2816
+     ]
+    }
+   ],
+   "offset": 6881
+  },
+  {
+   "role": null,
+   "content": "Protests are governed by the District's purchasing policy, available on request from the Issuing Officer. Protests must be filed in writing within five business days of the notice of intent to award.",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      1.0679,
+      3.4312,
+      7.4137,
+      3.4285,
+      7.4139,
+      3.8161,
+      1.0681,
+      3.8189
+     ]
+    }
+   ],
+   "offset": 6894
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      0.9844,
+      10.299,
+      3.6021,
+      10.2915,
+      3.6025,
+      10.4251,
+      0.9848,
+      10.4326
+     ]
+    }
+   ],
+   "offset": 7094
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 6",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      7.1676,
+      10.3004,
+      7.5088,
+      10.3033,
+      7.5077,
+      10.4314,
+      7.1665,
+      10.4286
+     ]
+    }
+   ],
+   "offset": 7142
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3. Scope of Work",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0655,
+      1.0146,
+      2.6189,
+      1.0156,
+      2.6187,
+      1.2413,
+      1.0653,
+      1.2402
+     ]
+    }
+   ],
+   "offset": 7149
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3.1 Overview",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.065,
+      1.4243,
+      2.0589,
+      1.4266,
+      2.0585,
+      1.6011,
+      1.0646,
+      1.5989
+     ]
+    }
+   ],
+   "offset": 7166
+  },
+  {
+   "role": null,
+   "content": "This section describes the services and capabilities the District requires. Requirements are expressed throughout the narrative. Respondents are responsible for identifying and responding to every requirement, whether it appears in a numbered paragraph, a table or an appendix.",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0631,
+      1.7494,
+      7.426,
+      1.7542,
+      7.4256,
+      2.3442,
+      1.0627,
+      2.3394
+     ]
+    }
+   ],
+   "offset": 7179
+  },
+  {
+   "role": null,
+   "content": "The solution will be used by approximately 55 District staff, including 38 field inspectors who will use tablets, and by members of the public who submit complaints and view inspection results online. The District anticipates up to 12 concurrent field users during peak periods.",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0665,
+      2.4469,
+      7.422,
+      2.4471,
+      7.422,
+      3.0397,
+      1.0665,
+      3.0394
+     ]
+    }
+   ],
+   "offset": 7457
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3.2 Field Inspection Operations",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0655,
+      3.1666,
+      3.4115,
+      3.1746,
+      3.4109,
+      3.3716,
+      1.0648,
+      3.3636
+     ]
+    }
+   ],
+   "offset": 7736
+  },
+  {
+   "role": null,
+   "content": "The District's Environmental Health Division conducts approximately 21,000 inspections each year across food service establishments, public pools, body art facilities, private wells and onsite sewage systems. Inspections are currently documented on paper and later transcribed into a legacy permitting database.",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0701,
+      3.4932,
+      7.4271,
+      3.4981,
+      7.4265,
+      4.2735,
+      1.0695,
+      4.2686
+     ]
+    }
+   ],
+   "offset": 7768
+  },
+  {
+   "role": null,
+   "content": "3.2.1 Field staff currently rely on paper forms and spreadsheets, which delays closure and limits visibility for supervisors. The District requires that the proposed system allow work orders to be created from service requests, inspections, preventive maintenance schedules and manually by users. The District requires that the proposed system support intake of public service requests through a web portal and mobile app. The system shall support contractor management, including contractor portals and timesheet approval.",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.066,
+      4.4002,
+      7.4288,
+      4.4014,
+      7.4285,
+      5.5978,
+      1.0657,
+      5.5967
+     ]
+    }
+   ],
+   "offset": 8080
+  },
+  {
+   "role": null,
+   "content": "3.2.2 The District requires that the proposed system allow users to attach photos, documents and signatures to work orders from the field. The selected solution must provide a dispatch board for assigning and scheduling work orders to crews and individual technicians. Consistency between the office and the field is a priority for this procurement.",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0682,
+      5.7049,
+      7.4294,
+      5.7077,
+      7.429,
+      6.5007,
+      1.0679,
+      6.4978
+     ]
+    }
+   ],
+   "offset": 8604
+  },
+  {
+   "role": null,
+   "content": "3.2.3 The selected solution will be used daily by crews, supervisors and dispatch staff across all service areas. The system shall support offline work order execution on mobile devices with automatic synchronization when connectivity returns. The District requires that the proposed system let administrators build inspection checklists without custom code.",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0681,
+      6.6066,
+      7.4291,
+      6.6062,
+      7.4291,
+      7.3939,
+      1.0681,
+      7.3943
+     ]
+    }
+   ],
+   "offset": 8954
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3.3 Facilities and Equipment Asset Management",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0657,
+      7.5299,
+      4.6731,
+      7.5402,
+      4.6726,
+      7.7357,
+      1.0651,
+      7.7254
+     ]
+    }
+   ],
+   "offset": 9313
+  },
+  {
+   "role": null,
+   "content": "In addition to inspection activity, the District maintains six facilities, a fleet of 74 vehicles and approximately 1,900 items of laboratory and field equipment. Maintenance for these assets is currently tracked in spreadsheets maintained by the Facilities Manager.",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0647,
+      7.8623,
+      7.4288,
+      7.8579,
+      7.4292,
+      8.4437,
+      1.0651,
+      8.4481
+     ]
+    }
+   ],
+   "offset": 9359
+  },
+  {
+   "role": null,
+   "content": "3.3.1 Asset records are incomplete for older facilities, and condition data has not been collected consistently. The District requires that the proposed system use GIS as the system of record for spatial asset data. The District requires that the proposed system help prioritize capital replacement projects. The selected solution must record usage meters against assets.",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0667,
+      8.5618,
+      7.4266,
+      8.557,
+      7.4271,
+      9.3428,
+      1.0673,
+      9.3476
+     ]
+    }
+   ],
+   "offset": 9626
+  },
+  {
+   "role": null,
+   "content": "3.3.2 The District requires that the proposed system maintain a hierarchical asset registry with parent-child relationships. The District requires that the proposed system record asset condition",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0656,
+      9.4641,
+      7.4232,
+      9.4577,
+      7.4236,
+      9.8445,
+      1.066,
+      9.8509
+     ]
+    }
+   ],
+   "offset": 9998
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9835,
+      10.2958,
+      3.6024,
+      10.2899,
+      3.6027,
+      10.4251,
+      0.9838,
+      10.4309
+     ]
+    }
+   ],
+   "offset": 10193
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 7",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      7.166,
+      10.3005,
+      7.5036,
+      10.3028,
+      7.5027,
+      10.4301,
+      7.1652,
+      10.4278
+     ]
+    }
+   ],
+   "offset": 10241
+  },
+  {
+   "role": null,
+   "content": "assessments using configurable rating scales. Asset data will be reconciled with the GIS during implementation.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0698,
+      1.0023,
+      7.4259,
+      1.0013,
+      7.426,
+      1.381,
+      1.0699,
+      1.3819
+     ]
+    }
+   ],
+   "offset": 10248
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3.4 Reporting",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0674,
+      1.5224,
+      2.1039,
+      1.5302,
+      2.1024,
+      1.7264,
+      1.066,
+      1.7187
+     ]
+    }
+   ],
+   "offset": 10360
+  },
+  {
+   "role": null,
+   "content": "The District reports inspection activity to the County Board of Health monthly and to the State Department of Health quarterly. The reporting requirements are summarized in Table 3-1.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0676,
+      1.8487,
+      7.4237,
+      1.8447,
+      7.4239,
+      2.2304,
+      1.0678,
+      2.2344
+     ]
+    }
+   ],
+   "offset": 10374
+  },
+  {
+   "role": null,
+   "content": "Table 3-1. Reporting Requirements",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0733,
+      2.3497,
+      3.3966,
+      2.3519,
+      3.3964,
+      2.5306,
+      1.0731,
+      2.5285
+     ]
+    }
+   ],
+   "offset": 10558
+  },
+  {
+   "role": null,
+   "content": "Item",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1,
+      2.6234,
+      1.4903,
+      2.6234,
+      1.4903,
+      2.8719,
+      1,
+      2.8719
+     ]
+    }
+   ],
+   "offset": 10592
+  },
+  {
+   "role": null,
+   "content": "Requirement",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.4903,
+      2.6234,
+      6.5015,
+      2.6234,
+      6.5015,
+      2.8719,
+      1.4903,
+      2.8719
+     ]
+    }
+   ],
+   "offset": 10597
+  },
+  {
+   "role": null,
+   "content": "Priority",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      6.5015,
+      2.6234,
+      7.5024,
+      2.6234,
+      7.5024,
+      2.8719,
+      6.5015,
+      2.8719
+     ]
+    }
+   ],
+   "offset": 10609
+  },
+  {
+   "role": null,
+   "content": "a",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1,
+      2.8719,
+      1.4903,
+      2.8719,
+      1.497,
+      3.1204,
+      1,
+      3.1204
+     ]
+    }
+   ],
+   "offset": 10618
+  },
+  {
+   "role": null,
+   "content": "The system shall provide configurable role-based dashboards.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.4903,
+      2.8719,
+      6.5015,
+      2.8719,
+      6.5015,
+      3.1204,
+      1.497,
+      3.1204
+     ]
+    }
+   ],
+   "offset": 10620
+  },
+  {
+   "role": null,
+   "content": "Required",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      6.5015,
+      2.8719,
+      7.5024,
+      2.8719,
+      7.5024,
+      3.1204,
+      6.5015,
+      3.1204
+     ]
+    }
+   ],
+   "offset": 10681
+  },
+  {
+   "role": null,
+   "content": "b",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1,
+      3.1204,
+      1.497,
+      3.1204,
+      1.497,
+      3.3756,
+      1,
+      3.3756
+     ]
+    }
+   ],
+   "offset": 10690
+  },
+  {
+   "role": null,
+   "content": "The selected solution must support energy consumption benchmarking for facilities.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.497,
+      3.1204,
+      6.5015,
+      3.1204,
+      6.5015,
+      3.3756,
+      1.497,
+      3.3756
+     ]
+    }
+   ],
+   "offset": 10692
+  },
+  {
+   "role": null,
+   "content": "Required",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      6.5015,
+      3.1204,
+      7.5024,
+      3.1204,
+      7.5024,
+      3.3756,
+      6.5015,
+      3.3756
+     ]
+    }
+   ],
+   "offset": 10775
+  },
+  {
+   "role": null,
+   "content": "c",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1,
+      3.3756,
+      1.497,
+      3.3756,
+      1.497,
+      3.6241,
+      1,
+      3.6241
+     ]
+    }
+   ],
+   "offset": 10784
+  },
+  {
+   "role": null,
+   "content": "The system shall allow any list or report to be exported to Excel, CSV or PDF.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.497,
+      3.3756,
+      6.5015,
+      3.3756,
+      6.5015,
+      3.6241,
+      1.497,
+      3.6241
+     ]
+    }
+   ],
+   "offset": 10786
+  },
+  {
+   "role": null,
+   "content": "Required",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      6.5015,
+      3.3756,
+      7.5024,
+      3.3756,
+      7.5024,
+      3.6241,
+      6.5015,
+      3.6241
+     ]
+    }
+   ],
+   "offset": 10865
+  },
+  {
+   "role": null,
+   "content": "d",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1,
+      3.6241,
+      1.497,
+      3.6241,
+      1.497,
+      3.8793,
+      0.9932,
+      3.8793
+     ]
+    }
+   ],
+   "offset": 10874
+  },
+  {
+   "role": null,
+   "content": "The system shall allow business users to create ad hoc reports without technical assistance.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.497,
+      3.6241,
+      6.5015,
+      3.6241,
+      6.5015,
+      3.8793,
+      1.497,
+      3.8793
+     ]
+    }
+   ],
+   "offset": 10876
+  },
+  {
+   "role": null,
+   "content": "Preferred",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      6.5015,
+      3.6241,
+      7.5024,
+      3.6241,
+      7.5024,
+      3.8793,
+      6.5015,
+      3.8793
+     ]
+    }
+   ],
+   "offset": 10969
+  },
+  {
+   "role": null,
+   "content": "e",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      0.9932,
+      3.8793,
+      1.497,
+      3.8793,
+      1.497,
+      4.289,
+      0.9932,
+      4.289
+     ]
+    }
+   ],
+   "offset": 10979
+  },
+  {
+   "role": null,
+   "content": "The District requires that the proposed system report key performance indicators such as mean time to repair and PM compliance.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.497,
+      3.8793,
+      6.5015,
+      3.8793,
+      6.5015,
+      4.289,
+      1.497,
+      4.289
+     ]
+    }
+   ],
+   "offset": 10981
+  },
+  {
+   "role": null,
+   "content": "Preferred",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      6.5015,
+      3.8793,
+      7.5024,
+      3.8793,
+      7.5024,
+      4.289,
+      6.5015,
+      4.289
+     ]
+    }
+   ],
+   "offset": 11109
+  },
+  {
+   "role": null,
+   "content": "f",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      0.9932,
+      4.289,
+      1.497,
+      4.289,
+      1.497,
+      4.5442,
+      0.9932,
+      4.5442
+     ]
+    }
+   ],
+   "offset": 11119
+  },
+  {
+   "role": null,
+   "content": "The system shall use historical data to predict likely failures.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.497,
+      4.289,
+      6.5015,
+      4.289,
+      6.5082,
+      4.5442,
+      1.497,
+      4.5442
+     ]
+    }
+   ],
+   "offset": 11121
+  },
+  {
+   "role": null,
+   "content": "Required",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      6.5015,
+      4.289,
+      7.5024,
+      4.289,
+      7.5024,
+      4.5442,
+      6.5082,
+      4.5442
+     ]
+    }
+   ],
+   "offset": 11186
+  },
+  {
+   "role": null,
+   "content": "g",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      0.9932,
+      4.5442,
+      1.497,
+      4.5442,
+      1.497,
+      4.7927,
+      0.9932,
+      4.7927
+     ]
+    }
+   ],
+   "offset": 11195
+  },
+  {
+   "role": null,
+   "content": "The selected solution must provide map-based visualization of work and asset data.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.497,
+      4.5442,
+      6.5082,
+      4.5442,
+      6.5082,
+      4.7927,
+      1.497,
+      4.7927
+     ]
+    }
+   ],
+   "offset": 11197
+  },
+  {
+   "role": null,
+   "content": "Preferred",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      6.5082,
+      4.5442,
+      7.5024,
+      4.5442,
+      7.5024,
+      4.7927,
+      6.5082,
+      4.7927
+     ]
+    }
+   ],
+   "offset": 11280
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3.5 Systems Integration",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0664,
+      5.0422,
+      2.827,
+      5.0476,
+      2.8264,
+      5.2429,
+      1.0658,
+      5.2375
+     ]
+    }
+   ],
+   "offset": 11290
+  },
+  {
+   "role": null,
+   "content": "The District's application landscape includes the County's Workday financial system, the State permitting registry, Esri ArcGIS Online and Microsoft 365.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0636,
+      5.3628,
+      7.4247,
+      5.3617,
+      7.4247,
+      5.7616,
+      1.0637,
+      5.7627
+     ]
+    }
+   ],
+   "offset": 11314
+  },
+  {
+   "role": null,
+   "content": "3.5.1 The solution will operate within an existing landscape of enterprise systems, several of which are scheduled to remain in place for at least five years. The District requires that the proposed system support integration with the Esri GIS platform. The District requires that the proposed system integrate with Cityworks for a phased coexistence period. The selected solution must integrate with the customer information and utility billing system.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0662,
+      5.868,
+      7.4268,
+      5.8683,
+      7.4268,
+      6.8587,
+      1.0662,
+      6.8584
+     ]
+    }
+   ],
+   "offset": 11468
+  },
+  {
+   "role": null,
+   "content": "3.5.2 The District requires that the proposed system support integration with the agency's Kronos timekeeping system. The system shall accept condition and alarm data from SCADA or IoT sources. Integration design will be finalized during the discovery phase.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0674,
+      6.9696,
+      7.4224,
+      6.9742,
+      7.422,
+      7.5655,
+      1.067,
+      7.5609
+     ]
+    }
+   ],
+   "offset": 11922
+  },
+  {
+   "role": null,
+   "content": "3.5.3 Integration design will be finalized during the discovery phase. The District requires that the proposed system integrate with the state 811 one-call ticket management system. The selected solution must integrate with the agency's ERP for financials, purchasing and human resources.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0647,
+      7.6721,
+      7.4235,
+      7.6711,
+      7.4236,
+      8.2546,
+      1.0648,
+      8.2556
+     ]
+    }
+   ],
+   "offset": 12181
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3.6 Technical Environment",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0651,
+      8.3978,
+      3.1034,
+      8.3991,
+      3.1033,
+      8.5783,
+      1.065,
+      8.577
+     ]
+    }
+   ],
+   "offset": 12470
+  },
+  {
+   "role": null,
+   "content": "District staff use Windows laptops and iPads managed through Microsoft Intune. The County IT Department provides network and identity services through Microsoft Entra ID.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0673,
+      8.7204,
+      7.4216,
+      8.72,
+      7.4216,
+      9.1063,
+      1.0674,
+      9.1067
+     ]
+    }
+   ],
+   "offset": 12496
+  },
+  {
+   "role": null,
+   "content": "3.6.1 The IT department supports a mixed device fleet and a Microsoft-centric identity environment. The system shall use a modern, service-based architecture with documented components. The system shall provide adequate performance for District users. The selected solution must keep all production and backup data within the United States.",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      1.0674,
+      9.2189,
+      7.4216,
+      9.2126,
+      7.4223,
+      9.9968,
+      1.0682,
+      10.0031
+     ]
+    }
+   ],
+   "offset": 12667
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      0.9846,
+      10.2963,
+      3.6007,
+      10.289,
+      3.6011,
+      10.4249,
+      0.9849,
+      10.4321
+     ]
+    }
+   ],
+   "offset": 13008
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 8",
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      7.168,
+      10.3023,
+      7.5044,
+      10.3041,
+      7.5037,
+      10.4298,
+      7.1673,
+      10.428
+     ]
+    }
+   ],
+   "offset": 13056
+  },
+  {
+   "role": null,
+   "content": "3.6.2 The system shall include at least one non-production environment for testing and training. The District requires that the proposed system be upgraded by the vendor without customer-side installation or additional cost. The organization prefers solutions that minimize the burden on internal infrastructure staff.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0672,
+      0.9995,
+      7.4223,
+      0.98,
+      7.4246,
+      1.7426,
+      1.0695,
+      1.7621
+     ]
+    }
+   ],
+   "offset": 13063
+  },
+  {
+   "role": null,
+   "content": "3.6.3 The organization prefers solutions that minimize the burden on internal infrastructure staff. The District requires that the proposed system be provided as a cloud-hosted SaaS offering managed by the vendor. The system shall provide a native desktop client for Linux workstations.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0675,
+      1.901,
+      7.4252,
+      1.8971,
+      7.4255,
+      2.4818,
+      1.0679,
+      2.4857
+     ]
+    }
+   ],
+   "offset": 13382
+  },
+  {
+   "role": null,
+   "content": "3.6.4 The selected solution must scale to support at least 500 named users and 2 million asset records without performance degradation. The selected solution must conform to WCAG 2.1 Level AA accessibility guidelines.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0676,
+      2.6035,
+      7.4217,
+      2.6032,
+      7.4217,
+      3.1885,
+      1.0677,
+      3.1887
+     ]
+    }
+   ],
+   "offset": 13669
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3.7 Data Management and Privacy",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0666,
+      3.3251,
+      3.6555,
+      3.3353,
+      3.6547,
+      3.5306,
+      1.0659,
+      3.5204
+     ]
+    }
+   ],
+   "offset": 13887
+  },
+  {
+   "role": null,
+   "content": "Inspection records include facility owner names, addresses and, for private wells and septic systems, homeowner contact information. Records are subject to the District's records retention schedule and to public records law.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0636,
+      3.643,
+      7.4228,
+      3.6523,
+      7.4219,
+      4.2483,
+      1.0627,
+      4.239
+     ]
+    }
+   ],
+   "offset": 13919
+  },
+  {
+   "role": null,
+   "content": "3.7.1 Records produced by the solution are public records subject to applicable retention schedules. Respondents must restrict data access to US-based staff. To limit storage of personal information, the system shall automatically and permanently purge all inspection records older than three (3) years. Respondents must not use agency data to train artificial intelligence models without written consent.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0671,
+      4.3502,
+      7.4237,
+      4.3495,
+      7.4238,
+      5.1417,
+      1.0671,
+      5.1424
+     ]
+    }
+   ],
+   "offset": 14144
+  },
+  {
+   "role": null,
+   "content": "3.7.2 Inspection records shall be retained for a minimum of seven (7) years in accordance with the District's records retention schedule. The Respondent shall return all agency data in a usable format at the end of the contract. Some records will contain names, addresses and contact details of members of the public.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.067,
+      5.2526,
+      7.4409,
+      5.2501,
+      7.4413,
+      6.0419,
+      1.0673,
+      6.0444
+     ]
+    }
+   ],
+   "offset": 14550
+  },
+  {
+   "role": null,
+   "content": "3.7.3 Some records will contain names, addresses and contact details of members of the public. The Respondent shall sign a BAA if PHI is involved. The Respondent shall acknowledge that the agency retains ownership of all its data.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0641,
+      6.1539,
+      7.4234,
+      6.1542,
+      7.4233,
+      6.7431,
+      1.0641,
+      6.7428
+     ]
+    }
+   ],
+   "offset": 14868
+  },
+  {
+   "role": null,
+   "content": "3.7.4 The District requires that the proposed system support placing records on legal hold to suspend retention-based deletion.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0646,
+      6.8553,
+      7.427,
+      6.858,
+      7.4269,
+      7.2327,
+      1.0644,
+      7.23
+     ]
+    }
+   ],
+   "offset": 15099
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3.8 Implementation Services",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0661,
+      7.3847,
+      3.1842,
+      7.3862,
+      3.1841,
+      7.5779,
+      1.066,
+      7.5765
+     ]
+    }
+   ],
+   "offset": 15227
+  },
+  {
+   "role": null,
+   "content": "The District expects the implementation to be complete within nine months of contract execution, with inspections moving to the new system before the summer pool season.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0669,
+      7.7072,
+      7.4237,
+      7.7064,
+      7.4237,
+      8.0888,
+      1.0669,
+      8.0897
+     ]
+    }
+   ],
+   "offset": 15255
+  },
+  {
+   "role": null,
+   "content": "3.8.1 Internal staff availability is limited, and the implementation plan must account for ongoing operational duties. The Respondent shall support the agency through user acceptance testing with test scripts and defect tracking. The Respondent shall help the agency manage change and adoption. The Respondent shall provide bilingual Spanish-language trainers for field crews.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.067,
+      8.2043,
+      7.4264,
+      8.206,
+      7.4262,
+      8.993,
+      1.0667,
+      8.9913
+     ]
+    }
+   ],
+   "offset": 15425
+  },
+  {
+   "role": null,
+   "content": "3.8.2 The Respondent shall support the agency during the period immediately after go-live. The Respondent shall identify key personnel and their roles for the implementation. The organization expects a structured, phased approach with clear acceptance criteria.",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      1.0655,
+      9.1088,
+      7.4227,
+      9.0958,
+      7.4239,
+      9.6859,
+      1.0667,
+      9.699
+     ]
+    }
+   ],
+   "offset": 15802
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      0.9837,
+      10.2964,
+      3.6019,
+      10.2897,
+      3.6022,
+      10.4239,
+      0.984,
+      10.4306
+     ]
+    }
+   ],
+   "offset": 16064
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 9",
+   "boundingRegions": [
+    {
+     "pageNumber": 9,
+     "polygon": [
+      7.1674,
+      10.301,
+      7.5002,
+      10.3017,
+      7.5,
+      10.428,
+      7.1672,
+      10.4273
+     ]
+    }
+   ],
+   "offset": 16112
+  },
+  {
+   "role": null,
+   "content": "3.8.3 The organization expects a structured, phased approach with clear acceptance criteria. The Respondent shall provide a proposed implementation schedule with key milestones. The Respondent shall provide training for administrators, end users and field staff.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0659,
+      0.9988,
+      7.4262,
+      0.9969,
+      7.4264,
+      1.5847,
+      1.0661,
+      1.5866
+     ]
+    }
+   ],
+   "offset": 16119
+  },
+  {
+   "role": null,
+   "content": "3.8.4 The Respondent shall provide a dedicated project manager following a recognized project management approach. The Respondent shall provide a full-time on-site data steward for 12 months. The Respondent shall station two (2) full-time staff members on site at the District's offices, available twenty-four hours a day, seven days a week, for the full contract term.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0674,
+      1.6985,
+      7.429,
+      1.703,
+      7.4285,
+      2.4919,
+      1.0668,
+      2.4874
+     ]
+    }
+   ],
+   "offset": 16382
+  },
+  {
+   "role": null,
+   "content": "3.8.5 Internal staff availability is limited, and the implementation plan must account for ongoing operational duties. Respondents must explain its approach to delivering the implementation.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0665,
+      2.5984,
+      7.4243,
+      2.6094,
+      7.4236,
+      3.0044,
+      1.0659,
+      2.9935
+     ]
+    }
+   ],
+   "offset": 16752
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3.9 Ongoing Support",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0647,
+      3.124,
+      2.6437,
+      3.1298,
+      2.643,
+      3.3324,
+      1.064,
+      3.3266
+     ]
+    }
+   ],
+   "offset": 16943
+  },
+  {
+   "role": null,
+   "content": "The District's IT staff consists of two analysts who will serve as system administrators. Support arrangements must therefore be robust.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0676,
+      3.4456,
+      7.4291,
+      3.4502,
+      7.4289,
+      3.8389,
+      1.0674,
+      3.8343
+     ]
+    }
+   ],
+   "offset": 16963
+  },
+  {
+   "role": null,
+   "content": "3.9.1 Support arrangements must remain in place for the full contract term, including any renewals. The Respondent shall describe how support issues are escalated. Respondents must report regularly on support performance against targets. Respondents must offer a user group or community for sharing practices.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0654,
+      3.9474,
+      7.4256,
+      3.9476,
+      7.4255,
+      4.7362,
+      1.0653,
+      4.736
+     ]
+    }
+   ],
+   "offset": 17100
+  },
+  {
+   "role": null,
+   "content": "3.9.2 Respondents must provide a dedicated support engineer embedded in the agency's IT team. Respondents must make product documentation available online. The organization will designate system administrators as primary support contacts.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0664,
+      4.8476,
+      7.4218,
+      4.8447,
+      7.422,
+      5.4409,
+      1.0667,
+      5.4438
+     ]
+    }
+   ],
+   "offset": 17410
+  },
+  {
+   "role": null,
+   "content": "3.9.3 The organization will designate system administrators as primary support contacts. The Respondent shall assign a named account or customer success manager. The Respondent shall provide technical support during the agency's business hours at a minimum.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.065,
+      5.5505,
+      7.4254,
+      5.5512,
+      7.4253,
+      6.1448,
+      1.0649,
+      6.1441
+     ]
+    }
+   ],
+   "offset": 17649
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3.10 Service Levels and Continuity",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.065,
+      6.2708,
+      3.6555,
+      6.2796,
+      3.6548,
+      6.476,
+      1.0643,
+      6.4672
+     ]
+    }
+   ],
+   "offset": 17907
+  },
+  {
+   "role": null,
+   "content": "Field inspections occur seven days a week during peak season, and the District's emergency response program relies on timely access to facility records.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0626,
+      6.6032,
+      7.4229,
+      6.6104,
+      7.4224,
+      7.0063,
+      1.0622,
+      6.9991
+     ]
+    }
+   ],
+   "offset": 17942
+  },
+  {
+   "role": null,
+   "content": "3.10.1 The solution supports essential public services, and extended outages would affect field response. The system shall operate with geographic redundancy across at least two data center regions. The Respondent shall define the maximum acceptable data loss in a disaster. Respondents must perform planned maintenance only in off-peak windows.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0644,
+      7.1009,
+      7.4294,
+      7.1006,
+      7.4294,
+      7.9004,
+      1.0644,
+      7.9007
+     ]
+    }
+   ],
+   "offset": 18095
+  },
+  {
+   "role": null,
+   "content": "3.10.2 Respondents must perform regular backups of all agency data and retain them securely. Respondents must provide a public status page showing current service health and incident history. Service levels will be incorporated into the final agreement.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0672,
+      8.0045,
+      7.4158,
+      8.0078,
+      7.4155,
+      8.5932,
+      1.0669,
+      8.5898
+     ]
+    }
+   ],
+   "offset": 18441
+  },
+  {
+   "role": null,
+   "content": "3.10.3 Service levels will be incorporated into the final agreement. The Respondent shall commit to a service availability level for the production environment.",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      1.0673,
+      8.7095,
+      7.4252,
+      8.7118,
+      7.4251,
+      9.0915,
+      1.0671,
+      9.0892
+     ]
+    }
+   ],
+   "offset": 18695
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      0.9842,
+      10.2973,
+      3.6022,
+      10.2913,
+      3.6025,
+      10.4232,
+      0.9845,
+      10.4292
+     ]
+    }
+   ],
+   "offset": 18856
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 10",
+   "boundingRegions": [
+    {
+     "pageNumber": 10,
+     "polygon": [
+      7.1054,
+      10.2993,
+      7.5027,
+      10.2998,
+      7.5025,
+      10.4285,
+      7.1052,
+      10.428
+     ]
+    }
+   ],
+   "offset": 18904
+  },
+  {
+   "role": "sectionHeading",
+   "content": "4. Respondent Qualifications",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0713,
+      1.0159,
+      3.651,
+      1.0161,
+      3.651,
+      1.2421,
+      1.0713,
+      1.2419
+     ]
+    }
+   ],
+   "offset": 18912
+  },
+  {
+   "role": "sectionHeading",
+   "content": "4.1 General",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0713,
+      1.4259,
+      1.95,
+      1.4253,
+      1.9501,
+      1.5955,
+      1.0714,
+      1.5961
+     ]
+    }
+   ],
+   "offset": 18941
+  },
+  {
+   "role": null,
+   "content": "The District will evaluate each Respondent's qualifications on the basis of the information requested below, references and any other information the District obtains. The District reserves the right to verify any information provided.",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0689,
+      1.75,
+      7.4251,
+      1.7517,
+      7.425,
+      2.3379,
+      1.0687,
+      2.3362
+     ]
+    }
+   ],
+   "offset": 18953
+  },
+  {
+   "role": "sectionHeading",
+   "content": "4.2 Respondent Qualifications",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0705,
+      2.4742,
+      3.3113,
+      2.4757,
+      3.3111,
+      2.6692,
+      1.0704,
+      2.6677
+     ]
+    }
+   ],
+   "offset": 19189
+  },
+  {
+   "role": null,
+   "content": "Respondents must demonstrate the capacity, experience and stability needed to support the District for the full contract term.",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0659,
+      2.7983,
+      7.4252,
+      2.7953,
+      7.4254,
+      3.1653,
+      1.0661,
+      3.1683
+     ]
+    }
+   ],
+   "offset": 19219
+  },
+  {
+   "role": null,
+   "content": "4.2.1 Respondents must demonstrate the capacity and experience to deliver a project of this size. Respondents must describe its experience delivering similar solutions to public-sector agencies. Respondents must describe the size of its current customer base for the proposed solution. Respondents must disclose any pending litigation or contract terminations for cause in the last five years.",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0668,
+      3.2942,
+      7.4207,
+      3.2944,
+      7.4206,
+      4.0895,
+      1.0668,
+      4.0893
+     ]
+    }
+   ],
+   "offset": 19346
+  },
+  {
+   "role": null,
+   "content": "4.2.2 Respondents must describe its business continuity plan for its own corporate operations. The Respondent shall describe its product roadmap for the next 24 months. Qualifications will be verified through references and submitted documentation.",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0681,
+      4.2012,
+      7.4262,
+      4.2005,
+      7.4263,
+      4.785,
+      1.0682,
+      4.7857
+     ]
+    }
+   ],
+   "offset": 19740
+  },
+  {
+   "role": null,
+   "content": "4.2.3 Qualifications will be verified through references and submitted documentation. Respondents must describe its organizational size, including total employees and staff dedicated to delivery and support. The Respondent shall demonstrate financial stability through audited financials for the three most recent years.",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0651,
+      4.8971,
+      7.4249,
+      4.8996,
+      7.4246,
+      5.6864,
+      1.0648,
+      5.6839
+     ]
+    }
+   ],
+   "offset": 19989
+  },
+  {
+   "role": null,
+   "content": "4.2.4 The Respondent shall provide at least three client references from organizations of comparable size and scope.",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0707,
+      5.7983,
+      7.4226,
+      5.8018,
+      7.4224,
+      6.1934,
+      1.0705,
+      6.1899
+     ]
+    }
+   ],
+   "offset": 20310
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5. Evaluation and Award",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0713,
+      6.3272,
+      3.3197,
+      6.3276,
+      3.3197,
+      6.5345,
+      1.0712,
+      6.5341
+     ]
+    }
+   ],
+   "offset": 20427
+  },
+  {
+   "role": null,
+   "content": "An evaluation committee will score proposals using the criteria below. The District may request oral presentations from the highest-ranked Respondents.",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0657,
+      6.7218,
+      7.4254,
+      6.7201,
+      7.4255,
+      7.106,
+      1.0658,
+      7.1076
+     ]
+    }
+   ],
+   "offset": 20451
+  },
+  {
+   "role": null,
+   "content": "Criterion",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1,
+      7.1991,
+      5.991,
+      7.1991,
+      5.991,
+      7.4541,
+      1,
+      7.4541
+     ]
+    }
+   ],
+   "offset": 20603
+  },
+  {
+   "role": null,
+   "content": "Points",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      5.991,
+      7.1991,
+      7.4889,
+      7.2058,
+      7.4889,
+      7.4541,
+      5.991,
+      7.4541
+     ]
+    }
+   ],
+   "offset": 20613
+  },
+  {
+   "role": null,
+   "content": "Understanding of requirements and proposed solution",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1,
+      7.4541,
+      5.991,
+      7.4541,
+      5.991,
+      7.7023,
+      1,
+      7.7091
+     ]
+    }
+   ],
+   "offset": 20620
+  },
+  {
+   "role": null,
+   "content": "35",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      5.991,
+      7.4541,
+      7.4889,
+      7.4541,
+      7.4889,
+      7.7023,
+      5.991,
+      7.7023
+     ]
+    }
+   ],
+   "offset": 20672
+  },
+  {
+   "role": null,
+   "content": "Implementation plan, staffing and schedule",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1,
+      7.7091,
+      5.991,
+      7.7023,
+      5.991,
+      7.9506,
+      1,
+      7.9439
+     ]
+    }
+   ],
+   "offset": 20675
+  },
+  {
+   "role": null,
+   "content": "20",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      5.991,
+      7.7023,
+      7.4889,
+      7.7023,
+      7.4889,
+      7.9506,
+      5.991,
+      7.9506
+     ]
+    }
+   ],
+   "offset": 20718
+  },
+  {
+   "role": null,
+   "content": "Respondent qualifications and references",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1,
+      7.9439,
+      5.991,
+      7.9506,
+      5.9977,
+      8.1989,
+      1,
+      8.1989
+     ]
+    }
+   ],
+   "offset": 20721
+  },
+  {
+   "role": null,
+   "content": "15",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      5.991,
+      7.9506,
+      7.4889,
+      7.9506,
+      7.4957,
+      8.1989,
+      5.9977,
+      8.1989
+     ]
+    }
+   ],
+   "offset": 20762
+  },
+  {
+   "role": null,
+   "content": "Security, hosting and data management",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1,
+      8.1989,
+      5.9977,
+      8.1989,
+      5.9977,
+      8.4538,
+      1,
+      8.4538
+     ]
+    }
+   ],
+   "offset": 20765
+  },
+  {
+   "role": null,
+   "content": "10",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      5.9977,
+      8.1989,
+      7.4957,
+      8.1989,
+      7.4957,
+      8.4538,
+      5.9977,
+      8.4538
+     ]
+    }
+   ],
+   "offset": 20803
+  },
+  {
+   "role": null,
+   "content": "Cost",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1,
+      8.4538,
+      5.9977,
+      8.4538,
+      5.9977,
+      8.7021,
+      1,
+      8.7021
+     ]
+    }
+   ],
+   "offset": 20806
+  },
+  {
+   "role": null,
+   "content": "20",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      5.9977,
+      8.4538,
+      7.4957,
+      8.4538,
+      7.4957,
+      8.7088,
+      5.9977,
+      8.7021
+     ]
+    }
+   ],
+   "offset": 20811
+  },
+  {
+   "role": null,
+   "content": "Total",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1,
+      8.7021,
+      5.9977,
+      8.7021,
+      5.9977,
+      8.9571,
+      1,
+      8.9436
+     ]
+    }
+   ],
+   "offset": 20814
+  },
+  {
+   "role": null,
+   "content": "100",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      5.9977,
+      8.7021,
+      7.4957,
+      8.7088,
+      7.4957,
+      8.9571,
+      5.9977,
+      8.9571
+     ]
+    }
+   ],
+   "offset": 20820
+  },
+  {
+   "role": "sectionHeading",
+   "content": "6. Cost Proposal",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0755,
+      9.1868,
+      2.5415,
+      9.1894,
+      2.5411,
+      9.4034,
+      1.0751,
+      9.4007
+     ]
+    }
+   ],
+   "offset": 20824
+  },
+  {
+   "role": null,
+   "content": "Respondents must complete Appendix A. Costs must include all software subscription fees, implementation services, data migration, training and travel. The District is exempt from sales tax.",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      1.0684,
+      9.5883,
+      7.4167,
+      9.5888,
+      7.4167,
+      9.9629,
+      1.0684,
+      9.9625
+     ]
+    }
+   ],
+   "offset": 20841
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      0.9851,
+      10.2965,
+      3.6003,
+      10.2901,
+      3.6006,
+      10.4244,
+      0.9855,
+      10.4309
+     ]
+    }
+   ],
+   "offset": 21031
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 11",
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      7.1086,
+      10.3006,
+      7.4926,
+      10.301,
+      7.4925,
+      10.4269,
+      7.1084,
+      10.4265
+     ]
+    }
+   ],
+   "offset": 21079
+  },
+  {
+   "role": "sectionHeading",
+   "content": "Appendix A - Cost Proposal Form",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1.0711,
+      1.0278,
+      4.1255,
+      1.0168,
+      4.1263,
+      1.2415,
+      1.0719,
+      1.2525
+     ]
+    }
+   ],
+   "offset": 21087
+  },
+  {
+   "role": null,
+   "content": "Cost element",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1,
+      1.3992,
+      3.7003,
+      1.3992,
+      3.7003,
+      1.6482,
+      1,
+      1.6482
+     ]
+    }
+   ],
+   "offset": 21119
+  },
+  {
+   "role": null,
+   "content": "Year 1",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      3.7003,
+      1.3992,
+      4.6475,
+      1.3992,
+      4.6475,
+      1.6482,
+      3.7003,
+      1.6482
+     ]
+    }
+   ],
+   "offset": 21132
+  },
+  {
+   "role": null,
+   "content": "Year 2",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      4.6475,
+      1.3992,
+      5.6014,
+      1.3992,
+      5.6014,
+      1.6482,
+      4.6475,
+      1.6482
+     ]
+    }
+   ],
+   "offset": 21139
+  },
+  {
+   "role": null,
+   "content": "Year 3",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      5.6014,
+      1.3992,
+      6.5418,
+      1.3992,
+      6.5485,
+      1.6482,
+      5.6014,
+      1.6482
+     ]
+    }
+   ],
+   "offset": 21146
+  },
+  {
+   "role": null,
+   "content": "Total",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      6.5418,
+      1.3992,
+      7.5024,
+      1.3992,
+      7.5024,
+      1.6482,
+      6.5485,
+      1.6482
+     ]
+    }
+   ],
+   "offset": 21153
+  },
+  {
+   "role": null,
+   "content": "Subscription - inspection module",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1,
+      1.6482,
+      3.7003,
+      1.6482,
+      3.6936,
+      1.8971,
+      1,
+      1.8971
+     ]
+    }
+   ],
+   "offset": 21159
+  },
+  {
+   "role": null,
+   "content": "Subscription - asset and facilities module",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1,
+      1.8971,
+      3.6936,
+      1.8971,
+      3.6936,
+      2.1528,
+      1,
+      2.1461
+     ]
+    }
+   ],
+   "offset": 21192
+  },
+  {
+   "role": null,
+   "content": "Public portal",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1,
+      2.1461,
+      3.6936,
+      2.1528,
+      3.6936,
+      2.4018,
+      1,
+      2.4018
+     ]
+    }
+   ],
+   "offset": 21235
+  },
+  {
+   "role": null,
+   "content": "Implementation services",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1,
+      2.4018,
+      3.6936,
+      2.4018,
+      3.6936,
+      2.6574,
+      1,
+      2.6574
+     ]
+    }
+   ],
+   "offset": 21249
+  },
+  {
+   "role": null,
+   "content": "Data migration",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1,
+      2.6574,
+      3.6936,
+      2.6574,
+      3.6936,
+      2.9064,
+      1,
+      2.9064
+     ]
+    }
+   ],
+   "offset": 21273
+  },
+  {
+   "role": null,
+   "content": "Training",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1,
+      2.9064,
+      3.6936,
+      2.9064,
+      3.6936,
+      3.1486,
+      1,
+      3.1553
+     ]
+    }
+   ],
+   "offset": 21288
+  },
+  {
+   "role": null,
+   "content": "Travel",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1,
+      3.1553,
+      3.6936,
+      3.1486,
+      3.6936,
+      3.3976,
+      1,
+      3.3976
+     ]
+    }
+   ],
+   "offset": 21297
+  },
+  {
+   "role": null,
+   "content": "Total",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1,
+      3.3976,
+      3.6936,
+      3.3976,
+      3.6936,
+      3.6465,
+      1,
+      3.6465
+     ]
+    }
+   ],
+   "offset": 21304
+  },
+  {
+   "role": "sectionHeading",
+   "content": "Appendix B - Reference Form",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1.0723,
+      3.9433,
+      3.7584,
+      3.9292,
+      3.7596,
+      4.1557,
+      1.0735,
+      4.1698
+     ]
+    }
+   ],
+   "offset": 21310
+  },
+  {
+   "role": null,
+   "content": "Provide three references for comparable implementations completed within the last five years.",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1.0681,
+      4.3309,
+      6.8397,
+      4.3319,
+      6.8397,
+      4.5148,
+      1.0681,
+      4.5139
+     ]
+    }
+   ],
+   "offset": 21338
+  },
+  {
+   "role": null,
+   "content": "#",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      0.9996,
+      4.61,
+      1.3886,
+      4.61,
+      1.3886,
+      4.8655,
+      0.9929,
+      4.8655
+     ]
+    }
+   ],
+   "offset": 21432
+  },
+  {
+   "role": null,
+   "content": "Organization",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      1.3886,
+      4.61,
+      2.9914,
+      4.61,
+      2.9914,
+      4.8655,
+      1.3886,
+      4.8655
+     ]
+    }
+   ],
+   "offset": 21434
+  },
+  {
+   "role": null,
+   "content": "Contact",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      2.9914,
+      4.61,
+      4.5004,
+      4.61,
+      4.5004,
+      4.8655,
+      2.9914,
+      4.8655
+     ]
+    }
+   ],
+   "offset": 21447
+  },
+  {
+   "role": null,
+   "content": "Phone / email",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      4.5004,
+      4.61,
+      5.996,
+      4.61,
+      5.996,
+      4.8655,
+      4.5004,
+      4.8655
+     ]
+    }
+   ],
+   "offset": 21455
+  },
+  {
+   "role": null,
+   "content": "Scope and dates",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      5.996,
+      4.61,
+      7.4915,
+      4.61,
+      7.4915,
+      4.8655,
+      5.996,
+      4.8655
+     ]
+    }
+   ],
+   "offset": 21469
+  },
+  {
+   "role": null,
+   "content": "1",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      0.9929,
+      4.8655,
+      1.3886,
+      4.8655,
+      1.3886,
+      5.1143,
+      0.9929,
+      5.1143
+     ]
+    }
+   ],
+   "offset": 21485
+  },
+  {
+   "role": null,
+   "content": "2",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      0.9929,
+      5.1143,
+      1.3886,
+      5.1143,
+      1.3886,
+      5.3631,
+      0.9929,
+      5.3631
+     ]
+    }
+   ],
+   "offset": 21487
+  },
+  {
+   "role": null,
+   "content": "3",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      0.9929,
+      5.3631,
+      1.3886,
+      5.3631,
+      1.3886,
+      5.6186,
+      0.9929,
+      5.6186
+     ]
+    }
+   ],
+   "offset": 21489
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      0.9844,
+      10.2997,
+      3.6011,
+      10.2924,
+      3.6015,
+      10.4247,
+      0.9848,
+      10.4321
+     ]
+    }
+   ],
+   "offset": 21491
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 12",
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      7.1089,
+      10.3014,
+      7.5035,
+      10.3028,
+      7.5031,
+      10.4275,
+      7.1085,
+      10.4261
+     ]
+    }
+   ],
+   "offset": 21539
+  },
+  {
+   "role": "sectionHeading",
+   "content": "Appendix C - Security Requirements",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1.072,
+      1.0177,
+      4.3753,
+      1.005,
+      4.3763,
+      1.2514,
+      1.0729,
+      1.264
+     ]
+    }
+   ],
+   "offset": 21547
+  },
+  {
+   "role": null,
+   "content": "Respondents must address each item below in the security section of the proposal.",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1.0691,
+      1.4201,
+      6.1013,
+      1.4185,
+      6.1014,
+      1.5924,
+      1.0692,
+      1.594
+     ]
+    }
+   ],
+   "offset": 21582
+  },
+  {
+   "role": null,
+   "content": "Item",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1,
+      1.6989,
+      1.6986,
+      1.6989,
+      1.6986,
+      1.9473,
+      1,
+      1.9473
+     ]
+    }
+   ],
+   "offset": 21664
+  },
+  {
+   "role": null,
+   "content": "Security Requirement",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1.6986,
+      1.6989,
+      7.4957,
+      1.6989,
+      7.4957,
+      1.9473,
+      1.6986,
+      1.9473
+     ]
+    }
+   ],
+   "offset": 21669
+  },
+  {
+   "role": null,
+   "content": "C-01",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1,
+      1.9473,
+      1.6986,
+      1.9473,
+      1.6986,
+      2.1957,
+      1,
+      2.1957
+     ]
+    }
+   ],
+   "offset": 21690
+  },
+  {
+   "role": null,
+   "content": "The District requires that the proposed system restrict access to functions and data based on user roles.",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1.6986,
+      1.9473,
+      7.4957,
+      1.9473,
+      7.4957,
+      2.1957,
+      1.6986,
+      2.1957
+     ]
+    }
+   ],
+   "offset": 21695
+  },
+  {
+   "role": null,
+   "content": "C-02",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1,
+      2.1957,
+      1.6986,
+      2.1957,
+      1.6986,
+      2.4441,
+      1,
+      2.4374
+     ]
+    }
+   ],
+   "offset": 21801
+  },
+  {
+   "role": null,
+   "content": "The selected solution must enforce MFA for user sign-in.",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1.6986,
+      2.1957,
+      7.4957,
+      2.1957,
+      7.4957,
+      2.4508,
+      1.6986,
+      2.4441
+     ]
+    }
+   ],
+   "offset": 21806
+  },
+  {
+   "role": null,
+   "content": "C-03",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1,
+      2.4374,
+      1.6986,
+      2.4441,
+      1.6986,
+      2.6926,
+      1,
+      2.6926
+     ]
+    }
+   ],
+   "offset": 21863
+  },
+  {
+   "role": null,
+   "content": "Respondents must have an independent third party perform annual penetration tests.",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1.6986,
+      2.4441,
+      7.4957,
+      2.4508,
+      7.4957,
+      2.6858,
+      1.6986,
+      2.6926
+     ]
+    }
+   ],
+   "offset": 21868
+  },
+  {
+   "role": null,
+   "content": "C-04",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1,
+      2.6926,
+      1.6986,
+      2.6926,
+      1.6919,
+      3.1088,
+      0.9932,
+      3.1088
+     ]
+    }
+   ],
+   "offset": 21951
+  },
+  {
+   "role": null,
+   "content": "The Respondent shall notify the District of any security incident affecting District data within twenty-four (24) hours of discovery.",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1.6986,
+      2.6926,
+      7.4957,
+      2.6858,
+      7.4957,
+      3.1088,
+      1.6919,
+      3.1088
+     ]
+    }
+   ],
+   "offset": 21956
+  },
+  {
+   "role": null,
+   "content": "C-05",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      0.9932,
+      3.1088,
+      1.6919,
+      3.1088,
+      1.6919,
+      3.364,
+      0.9932,
+      3.364
+     ]
+    }
+   ],
+   "offset": 22090
+  },
+  {
+   "role": null,
+   "content": "The Respondent shall operate a vulnerability management program with defined remediation timeframes.",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1.6919,
+      3.1088,
+      7.4957,
+      3.1088,
+      7.4957,
+      3.364,
+      1.6919,
+      3.364
+     ]
+    }
+   ],
+   "offset": 22095
+  },
+  {
+   "role": null,
+   "content": "C-06",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      0.9932,
+      3.364,
+      1.6919,
+      3.364,
+      1.6919,
+      3.6057,
+      0.9932,
+      3.6057
+     ]
+    }
+   ],
+   "offset": 22196
+  },
+  {
+   "role": null,
+   "content": "The system shall encrypt all customer data at rest and in transit using industry-standard algorithms.",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      1.6919,
+      3.364,
+      7.4957,
+      3.364,
+      7.4957,
+      3.6124,
+      1.6919,
+      3.6057
+     ]
+    }
+   ],
+   "offset": 22201
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      0.9846,
+      10.3022,
+      3.6015,
+      10.292,
+      3.602,
+      10.4216,
+      0.9851,
+      10.4317
+     ]
+    }
+   ],
+   "offset": 22303
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 13",
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      7.108,
+      10.3014,
+      7.4986,
+      10.3024,
+      7.4983,
+      10.4294,
+      7.1077,
+      10.4284
+     ]
+    }
+   ],
+   "offset": 22351
+  },
+  {
+   "role": "sectionHeading",
+   "content": "Appendix D - Contract Terms",
+   "boundingRegions": [
+    {
+     "pageNumber": 14,
+     "polygon": [
+      1.0699,
+      1.0239,
+      3.7599,
+      1.0079,
+      3.7612,
+      1.239,
+      1.0713,
+      1.255
+     ]
+    }
+   ],
+   "offset": 22359
+  },
+  {
+   "role": null,
+   "content": "The following terms will be included in the District's standard services agreement. Respondents must state whether each term is accepted and identify any proposed exceptions.",
+   "boundingRegions": [
+    {
+     "pageNumber": 14,
+     "polygon": [
+      1.0669,
+      1.4149,
+      7.4291,
+      1.4148,
+      7.4292,
+      1.8068,
+      1.0669,
+      1.8069
+     ]
+    }
+   ],
+   "offset": 22387
+  },
+  {
+   "role": null,
+   "content": "D.1 The agreement will be governed by the laws of the State of Ohio. Liquidated damages equal to fifteen percent (15%) of the annual subscription fee shall be assessed for each month in which any service level is not met.",
+   "boundingRegions": [
+    {
+     "pageNumber": 14,
+     "polygon": [
+      1.0654,
+      1.9156,
+      7.4226,
+      1.919,
+      7.4223,
+      2.4964,
+      1.0651,
+      2.493
+     ]
+    }
+   ],
+   "offset": 22562
+  },
+  {
+   "role": null,
+   "content": "D.2 Respondents must propose its limitation of liability terms.",
+   "boundingRegions": [
+    {
+     "pageNumber": 14,
+     "polygon": [
+      1.0653,
+      2.6247,
+      4.9285,
+      2.6246,
+      4.9285,
+      2.8021,
+      1.0653,
+      2.8022
+     ]
+    }
+   ],
+   "offset": 22784
+  },
+  {
+   "role": null,
+   "content": "D.3 Insurance certificates must be furnished before contract execution. The Respondent shall cap annual price escalation.",
+   "boundingRegions": [
+    {
+     "pageNumber": 14,
+     "polygon": [
+      1.0656,
+      2.9119,
+      7.4219,
+      2.9182,
+      7.4215,
+      3.3069,
+      1.0653,
+      3.3006
+     ]
+    }
+   ],
+   "offset": 22848
+  },
+  {
+   "role": null,
+   "content": "D.4 Respondents must indemnify the agency against third-party intellectual property infringement claims.",
+   "boundingRegions": [
+    {
+     "pageNumber": 14,
+     "polygon": [
+      1.0669,
+      3.4168,
+      7.4284,
+      3.4177,
+      7.4283,
+      3.7823,
+      1.0669,
+      3.7814
+     ]
+    }
+   ],
+   "offset": 22970
+  },
+  {
+   "role": null,
+   "content": "D.5 The Respondent shall propose an outcome-based pricing option tied to maintenance KPIs.",
+   "boundingRegions": [
+    {
+     "pageNumber": 14,
+     "polygon": [
+      1.067,
+      3.9122,
+      6.8907,
+      3.9138,
+      6.8906,
+      4.1037,
+      1.0669,
+      4.1021
+     ]
+    }
+   ],
+   "offset": 23075
+  },
+  {
+   "role": null,
+   "content": "D.6 Invoices will be paid net ninety (90) days following District acceptance of each invoice.",
+   "boundingRegions": [
+    {
+     "pageNumber": 14,
+     "polygon": [
+      1.0661,
+      4.2096,
+      6.763,
+      4.2165,
+      6.7628,
+      4.4028,
+      1.0659,
+      4.3959
+     ]
+    }
+   ],
+   "offset": 23166
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 14,
+     "polygon": [
+      0.9835,
+      10.2984,
+      3.6021,
+      10.2913,
+      3.6024,
+      10.4241,
+      0.9839,
+      10.4312
+     ]
+    }
+   ],
+   "offset": 23260
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 14",
+   "boundingRegions": [
+    {
+     "pageNumber": 14,
+     "polygon": [
+      7.1079,
+      10.3009,
+      7.5051,
+      10.3018,
+      7.5048,
+      10.4264,
+      7.1076,
+      10.4256
+     ]
+    }
+   ],
+   "offset": 23308
+  },
+  {
+   "role": "sectionHeading",
+   "content": "Appendix E - Supplemental Requirements",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      1.0713,
+      1.0212,
+      4.8521,
+      1.0048,
+      4.8532,
+      1.2513,
+      1.0723,
+      1.2677
+     ]
+    }
+   ],
+   "offset": 23316
+  },
+  {
+   "role": null,
+   "content": "The following requirements were added following internal stakeholder review.",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      1.0739,
+      1.415,
+      5.9005,
+      1.4196,
+      5.9004,
+      1.6014,
+      1.0737,
+      1.5968
+     ]
+    }
+   ],
+   "offset": 23355
+  },
+  {
+   "role": null,
+   "content": "Item",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      0.9984,
+      1.6992,
+      1.5953,
+      1.6992,
+      1.5953,
+      1.948,
+      0.9917,
+      1.948
+     ]
+    }
+   ],
+   "offset": 23432
+  },
+  {
+   "role": null,
+   "content": "Requirement",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      1.5953,
+      1.6992,
+      7.4971,
+      1.6992,
+      7.4971,
+      1.948,
+      1.5953,
+      1.948
+     ]
+    }
+   ],
+   "offset": 23437
+  },
+  {
+   "role": null,
+   "content": "E-1",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      0.9917,
+      1.948,
+      1.5953,
+      1.948,
+      1.5953,
+      2.1968,
+      0.9917,
+      2.1968
+     ]
+    }
+   ],
+   "offset": 23449
+  },
+  {
+   "role": null,
+   "content": "The Respondent shall defend the agency against IP infringement claims.",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      1.5953,
+      1.948,
+      7.4971,
+      1.948,
+      7.4903,
+      2.1968,
+      1.5953,
+      2.1968
+     ]
+    }
+   ],
+   "offset": 23453
+  },
+  {
+   "role": null,
+   "content": "E-2",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      0.9917,
+      2.1968,
+      1.5953,
+      2.1968,
+      1.5953,
+      2.4456,
+      0.9917,
+      2.4456
+     ]
+    }
+   ],
+   "offset": 23524
+  },
+  {
+   "role": null,
+   "content": "The system shall support photo, document and signature capture on mobile work orders.",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      1.5953,
+      2.1968,
+      7.4903,
+      2.1968,
+      7.4903,
+      2.4456,
+      1.5953,
+      2.4456
+     ]
+    }
+   ],
+   "offset": 23528
+  },
+  {
+   "role": null,
+   "content": "E-3",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      0.9917,
+      2.4456,
+      1.5953,
+      2.4456,
+      1.5953,
+      2.7011,
+      0.9917,
+      2.7011
+     ]
+    }
+   ],
+   "offset": 23614
+  },
+  {
+   "role": null,
+   "content": "The District requires that the proposed system provide predictive analytics to forecast asset failure.",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      1.5953,
+      2.4456,
+      7.4903,
+      2.4456,
+      7.4903,
+      2.7011,
+      1.5953,
+      2.7011
+     ]
+    }
+   ],
+   "offset": 23618
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      0.9844,
+      10.3019,
+      3.6011,
+      10.2916,
+      3.6016,
+      10.4221,
+      0.9849,
+      10.4323
+     ]
+    }
+   ],
+   "offset": 23721
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 15",
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      7.1081,
+      10.301,
+      7.5014,
+      10.3007,
+      7.5015,
+      10.4292,
+      7.1083,
+      10.4295
+     ]
+    }
+   ],
+   "offset": 23769
+  },
+  {
+   "role": "sectionHeading",
+   "content": "Appendix F - Inspection Form Data Elements",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0711,
+      1.0289,
+      5.1397,
+      1.008,
+      5.1409,
+      1.2326,
+      1.0723,
+      1.2534
+     ]
+    }
+   ],
+   "offset": 23777
+  },
+  {
+   "role": null,
+   "content": "The following data elements are captured on the District's current food service inspection form and are provided to assist Respondents in estimating configuration effort.",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0619,
+      1.4178,
+      7.4203,
+      1.4168,
+      7.4203,
+      1.8061,
+      1.0619,
+      1.8071
+     ]
+    }
+   ],
+   "offset": 23820
+  },
+  {
+   "role": null,
+   "content": "Data element",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0079,
+      1.897,
+      3.1977,
+      1.897,
+      3.1977,
+      2.1455,
+      1.0079,
+      2.1455
+     ]
+    }
+   ],
+   "offset": 23991
+  },
+  {
+   "role": null,
+   "content": "Type",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      1.897,
+      4.4001,
+      1.897,
+      4.4001,
+      2.1455,
+      3.1977,
+      2.1455
+     ]
+    }
+   ],
+   "offset": 24004
+  },
+  {
+   "role": null,
+   "content": "Notes",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.4001,
+      1.897,
+      7.4968,
+      1.897,
+      7.4968,
+      2.1455,
+      4.4001,
+      2.1455
+     ]
+    }
+   ],
+   "offset": 24009
+  },
+  {
+   "role": null,
+   "content": "Facility name and permit number",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0079,
+      2.1455,
+      3.1977,
+      2.1455,
+      3.1977,
+      2.394,
+      1.0079,
+      2.394
+     ]
+    }
+   ],
+   "offset": 24015
+  },
+  {
+   "role": null,
+   "content": "Text",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      2.1455,
+      4.4001,
+      2.1455,
+      4.3934,
+      2.394,
+      3.1977,
+      2.394
+     ]
+    }
+   ],
+   "offset": 24047
+  },
+  {
+   "role": null,
+   "content": "From permit record",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.4001,
+      2.1455,
+      7.4968,
+      2.1455,
+      7.4968,
+      2.4008,
+      4.3934,
+      2.394
+     ]
+    }
+   ],
+   "offset": 24052
+  },
+  {
+   "role": null,
+   "content": "Inspection type",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0079,
+      2.394,
+      3.1977,
+      2.394,
+      3.1977,
+      2.8172,
+      1.0079,
+      2.8037
+     ]
+    }
+   ],
+   "offset": 24071
+  },
+  {
+   "role": null,
+   "content": "Pick list",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      2.394,
+      4.3934,
+      2.394,
+      4.3934,
+      2.8172,
+      3.1977,
+      2.8172
+     ]
+    }
+   ],
+   "offset": 24087
+  },
+  {
+   "role": null,
+   "content": "Routine, follow-up, complaint, pre-opening, HACCP review",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.3934,
+      2.394,
+      7.4968,
+      2.4008,
+      7.4968,
+      2.8172,
+      4.3934,
+      2.8172
+     ]
+    }
+   ],
+   "offset": 24097
+  },
+  {
+   "role": null,
+   "content": "Risk category",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0079,
+      2.8037,
+      3.1977,
+      2.8172,
+      3.1977,
+      3.0656,
+      1.0079,
+      3.0656
+     ]
+    }
+   ],
+   "offset": 24154
+  },
+  {
+   "role": null,
+   "content": "Pick list",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      2.8172,
+      4.3934,
+      2.8172,
+      4.3934,
+      3.0656,
+      3.1977,
+      3.0656
+     ]
+    }
+   ],
+   "offset": 24168
+  },
+  {
+   "role": null,
+   "content": "1 to 4 based on menu complexity",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.3934,
+      2.8172,
+      7.4968,
+      2.8172,
+      7.4968,
+      3.0656,
+      4.3934,
+      3.0656
+     ]
+    }
+   ],
+   "offset": 24178
+  },
+  {
+   "role": null,
+   "content": "Person in charge",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0079,
+      3.0656,
+      3.1977,
+      3.0656,
+      3.1977,
+      3.3141,
+      1.0079,
+      3.3141
+     ]
+    }
+   ],
+   "offset": 24210
+  },
+  {
+   "role": null,
+   "content": "Text",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      3.0656,
+      4.3934,
+      3.0656,
+      4.3934,
+      3.3141,
+      3.1977,
+      3.3141
+     ]
+    }
+   ],
+   "offset": 24227
+  },
+  {
+   "role": null,
+   "content": "Name and certification number",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.3934,
+      3.0656,
+      7.4968,
+      3.0656,
+      7.4968,
+      3.3141,
+      4.3934,
+      3.3141
+     ]
+    }
+   ],
+   "offset": 24232
+  },
+  {
+   "role": null,
+   "content": "Violations",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0079,
+      3.3141,
+      3.1977,
+      3.3141,
+      3.1977,
+      3.7305,
+      1.0079,
+      3.7305
+     ]
+    }
+   ],
+   "offset": 24262
+  },
+  {
+   "role": null,
+   "content": "Repeating group",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      3.3141,
+      4.3934,
+      3.3141,
+      4.3934,
+      3.7305,
+      3.1977,
+      3.7305
+     ]
+    }
+   ],
+   "offset": 24273
+  },
+  {
+   "role": null,
+   "content": "Code, description, priority, corrected on site (Y/N), comments",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.3934,
+      3.3141,
+      7.4968,
+      3.3141,
+      7.4968,
+      3.7305,
+      4.3934,
+      3.7305
+     ]
+    }
+   ],
+   "offset": 24289
+  },
+  {
+   "role": null,
+   "content": "Temperature observations",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0079,
+      3.7305,
+      3.1977,
+      3.7305,
+      3.1977,
+      3.979,
+      1.0079,
+      3.979
+     ]
+    }
+   ],
+   "offset": 24352
+  },
+  {
+   "role": null,
+   "content": "Repeating group",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      3.7305,
+      4.3934,
+      3.7305,
+      4.3934,
+      3.979,
+      3.1977,
+      3.979
+     ]
+    }
+   ],
+   "offset": 24377
+  },
+  {
+   "role": null,
+   "content": "Item, location, temperature (F)",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.3934,
+      3.7305,
+      7.4968,
+      3.7305,
+      7.4968,
+      3.979,
+      4.3934,
+      3.979
+     ]
+    }
+   ],
+   "offset": 24393
+  },
+  {
+   "role": null,
+   "content": "Photographs",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0079,
+      3.979,
+      3.1977,
+      3.979,
+      3.1977,
+      4.2275,
+      1.0079,
+      4.2275
+     ]
+    }
+   ],
+   "offset": 24425
+  },
+  {
+   "role": null,
+   "content": "Attachment",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      3.979,
+      4.3934,
+      3.979,
+      4.3934,
+      4.2275,
+      3.1977,
+      4.2275
+     ]
+    }
+   ],
+   "offset": 24437
+  },
+  {
+   "role": null,
+   "content": "Optional",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.3934,
+      3.979,
+      7.4968,
+      3.979,
+      7.4968,
+      4.2275,
+      4.3934,
+      4.2275
+     ]
+    }
+   ],
+   "offset": 24448
+  },
+  {
+   "role": null,
+   "content": "Score",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0079,
+      4.2275,
+      3.1977,
+      4.2275,
+      3.1977,
+      4.476,
+      1.0011,
+      4.4828
+     ]
+    }
+   ],
+   "offset": 24457
+  },
+  {
+   "role": null,
+   "content": "Number",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      4.2275,
+      4.3934,
+      4.2275,
+      4.3934,
+      4.4828,
+      3.1977,
+      4.476
+     ]
+    }
+   ],
+   "offset": 24463
+  },
+  {
+   "role": null,
+   "content": "Calculated: 100 minus weighted deductions",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.3934,
+      4.2275,
+      7.4968,
+      4.2275,
+      7.4968,
+      4.4693,
+      4.3934,
+      4.4828
+     ]
+    }
+   ],
+   "offset": 24470
+  },
+  {
+   "role": null,
+   "content": "Operator signature",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0011,
+      4.4828,
+      3.1977,
+      4.476,
+      3.1977,
+      4.7312,
+      1.0011,
+      4.7312
+     ]
+    }
+   ],
+   "offset": 24512
+  },
+  {
+   "role": null,
+   "content": "Signature",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      4.476,
+      4.3934,
+      4.4828,
+      4.3934,
+      4.7245,
+      3.1977,
+      4.7312
+     ]
+    }
+   ],
+   "offset": 24531
+  },
+  {
+   "role": null,
+   "content": "Captured on tablet",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.3934,
+      4.4828,
+      7.4968,
+      4.4693,
+      7.4968,
+      4.7312,
+      4.3934,
+      4.7245
+     ]
+    }
+   ],
+   "offset": 24541
+  },
+  {
+   "role": null,
+   "content": "Re-inspection date",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      1.0011,
+      4.7312,
+      3.1977,
+      4.7312,
+      3.1977,
+      4.9797,
+      1.0011,
+      4.9797
+     ]
+    }
+   ],
+   "offset": 24560
+  },
+  {
+   "role": null,
+   "content": "Date",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      3.1977,
+      4.7312,
+      4.3934,
+      4.7245,
+      4.3867,
+      4.9797,
+      3.1977,
+      4.9797
+     ]
+    }
+   ],
+   "offset": 24579
+  },
+  {
+   "role": null,
+   "content": "Required if priority violations remain",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      4.3934,
+      4.7245,
+      7.4968,
+      4.7312,
+      7.4968,
+      4.9797,
+      4.3867,
+      4.9797
+     ]
+    }
+   ],
+   "offset": 24584
+  },
+  {
+   "role": "pageFooter",
+   "content": "Marlow County Health District - RFP MCHD 26-044",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      0.9841,
+      10.2988,
+      3.6024,
+      10.2919,
+      3.6028,
+      10.4249,
+      0.9844,
+      10.4318
+     ]
+    }
+   ],
+   "offset": 24623
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 16",
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      7.1083,
+      10.2998,
+      7.508,
+      10.3013,
+      7.5075,
+      10.429,
+      7.1078,
+      10.4275
+     ]
+    }
+   ],
+   "offset": 24671
+  }
+ ],
+ "tables": [
+  {
+   "rowCount": 8,
+   "columnCount": 4,
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9899,
+      7.4778,
+      7.5048,
+      7.4836,
+      7.5037,
+      9.4967,
+      0.9884,
+      9.4903
+     ]
+    }
+   ],
+   "offset": 2793,
+   "length": 351,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "Program"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "Permitted facilities"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 2,
+     "kind": "columnHeader",
+     "content": "Inspections per year"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 3,
+     "kind": "columnHeader",
+     "content": "Complaints per year"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Food service and retail food"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "3,100"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "9,800"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": "1,150"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Public pools and spas"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "410"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "2,600"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": "140"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Body art facilities"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "95"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "190"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": "25"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Private water systems (wells)"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "2,300"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "1,700"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": "210"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Onsite sewage treatment systems"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "2,900"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "4,900"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": "480"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Schools and child care"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "520"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "1,040"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": "60"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Nuisance and solid waste"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "n/a"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "780"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": "1,900"
+    }
+   ]
+  },
+  {
+   "rowCount": 8,
+   "columnCount": 2,
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.99,
+      1.7078,
+      7.5075,
+      1.707,
+      7.5085,
+      3.7245,
+      0.9907,
+      3.7259
+     ]
+    }
+   ],
+   "offset": 4389,
+   "length": 318,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "Activity"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "Date"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "RFP release"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "October 9, 2026"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Written questions due"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "October 30, 2026, 4:00 p.m."
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Responses to questions issued"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "November 4, 2026"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Proposals due"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "November 13, 2026, 3:00 p.m."
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Oral presentations (if requested)"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "December 2-4, 2026"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Board of Health approval"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "December 17, 2026"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Contract start (target)"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "January 11, 2027"
+    }
+   ]
+  },
+  {
+   "rowCount": 8,
+   "columnCount": 3,
+   "boundingRegions": [
+    {
+     "pageNumber": 8,
+     "polygon": [
+      0.9869,
+      2.607,
+      7.5079,
+      2.6068,
+      7.51,
+      4.803,
+      0.9888,
+      4.8036
+     ]
+    }
+   ],
+   "offset": 10592,
+   "length": 697,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "Item"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "Requirement"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 2,
+     "kind": "columnHeader",
+     "content": "Priority"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "a"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The system shall provide configurable role-based dashboards."
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Required"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "b"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The selected solution must support energy consumption benchmarking for facilities."
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Required"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "c"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The system shall allow any list or report to be exported to Excel, CSV or PDF."
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Required"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "d"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The system shall allow business users to create ad hoc reports without technical assistance."
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Preferred"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "e"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The District requires that the proposed system report key performance indicators such as mean time to repair and PM compliance."
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Preferred"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "f"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The system shall use historical data to predict likely failures."
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Required"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "g"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The selected solution must provide map-based visualization of work and asset data."
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Preferred"
+    }
+   ]
+  },
+  {
+   "rowCount": 7,
+   "columnCount": 2,
+   "boundingRegions": [
+    {
+     "pageNumber": 11,
+     "polygon": [
+      0.9894,
+      7.1924,
+      7.5094,
+      7.1918,
+      7.5119,
+      8.9612,
+      0.9915,
+      8.9622
+     ]
+    }
+   ],
+   "offset": 20603,
+   "length": 220,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "Criterion"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "Points"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Understanding of requirements and proposed solution"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "35"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Implementation plan, staffing and schedule"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "20"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Respondent qualifications and references"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "15"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Security, hosting and data management"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "10"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Cost"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "20"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Total"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "100"
+    }
+   ]
+  },
+  {
+   "rowCount": 9,
+   "columnCount": 5,
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      0.9901,
+      1.3875,
+      7.5089,
+      1.3876,
+      7.5096,
+      3.6565,
+      0.9904,
+      3.6559
+     ]
+    }
+   ],
+   "offset": 21119,
+   "length": 190,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "Cost element"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "Year 1"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 2,
+     "kind": "columnHeader",
+     "content": "Year 2"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 3,
+     "kind": "columnHeader",
+     "content": "Year 3"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 4,
+     "kind": "columnHeader",
+     "content": "Total"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Subscription - inspection module"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Subscription - asset and facilities module"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Public portal"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Implementation services"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Data migration"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Training"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Travel"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 8,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Total"
+    },
+    {
+     "rowIndex": 8,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 8,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 8,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 8,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    }
+   ]
+  },
+  {
+   "rowCount": 4,
+   "columnCount": 5,
+   "boundingRegions": [
+    {
+     "pageNumber": 12,
+     "polygon": [
+      0.9878,
+      4.5994,
+      7.5015,
+      4.5999,
+      7.5032,
+      5.6224,
+      0.9891,
+      5.6212
+     ]
+    }
+   ],
+   "offset": 21432,
+   "length": 58,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "#"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "Organization"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 2,
+     "kind": "columnHeader",
+     "content": "Contact"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 3,
+     "kind": "columnHeader",
+     "content": "Phone / email"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 4,
+     "kind": "columnHeader",
+     "content": "Scope and dates"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "1"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "2"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "3"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 4,
+     "kind": "content",
+     "content": ""
+    }
+   ]
+  },
+  {
+   "rowCount": 7,
+   "columnCount": 2,
+   "boundingRegions": [
+    {
+     "pageNumber": 13,
+     "polygon": [
+      0.989,
+      1.6792,
+      7.5107,
+      1.6803,
+      7.5103,
+      3.6279,
+      0.9885,
+      3.6261
+     ]
+    }
+   ],
+   "offset": 21664,
+   "length": 638,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "Item"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "Security Requirement"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "C-01"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The District requires that the proposed system restrict access to functions and data based on user roles."
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "C-02"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The selected solution must enforce MFA for user sign-in."
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "C-03"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Respondents must have an independent third party perform annual penetration tests."
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "C-04"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The Respondent shall notify the District of any security incident affecting District data within twenty-four (24) hours of discovery."
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "C-05"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The Respondent shall operate a vulnerability management program with defined remediation timeframes."
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "C-06"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The system shall encrypt all customer data at rest and in transit using industry-standard algorithms."
+    }
+   ]
+  },
+  {
+   "rowCount": 4,
+   "columnCount": 2,
+   "boundingRegions": [
+    {
+     "pageNumber": 15,
+     "polygon": [
+      0.9908,
+      1.6781,
+      7.5084,
+      1.6793,
+      7.5093,
+      2.7027,
+      0.9914,
+      2.7011
+     ]
+    }
+   ],
+   "offset": 23432,
+   "length": 288,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "Item"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "Requirement"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "E-1"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The Respondent shall defend the agency against IP infringement claims."
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "E-2"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The system shall support photo, document and signature capture on mobile work orders."
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "E-3"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "The District requires that the proposed system provide predictive analytics to forecast asset failure."
+    }
+   ]
+  },
+  {
+   "rowCount": 11,
+   "columnCount": 3,
+   "boundingRegions": [
+    {
+     "pageNumber": 16,
+     "polygon": [
+      0.9822,
+      1.8834,
+      7.507,
+      1.8853,
+      7.5053,
+      4.9961,
+      0.9801,
+      4.9936
+     ]
+    }
+   ],
+   "offset": 23991,
+   "length": 631,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "Data element"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "Type"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 2,
+     "kind": "columnHeader",
+     "content": "Notes"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Facility name and permit number"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Text"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "From permit record"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Inspection type"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Pick list"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Routine, follow-up, complaint, pre-opening, HACCP review"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Risk category"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Pick list"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "1 to 4 based on menu complexity"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Person in charge"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Text"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Name and certification number"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Violations"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Repeating group"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Code, description, priority, corrected on site (Y/N), comments"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Temperature observations"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Repeating group"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Item, location, temperature (F)"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Photographs"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Attachment"
+    },
+    {
+     "rowIndex": 7,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Optional"
+    },
+    {
+     "rowIndex": 8,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Score"
+    },
+    {
+     "rowIndex": 8,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Number"
+    },
+    {
+     "rowIndex": 8,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Calculated: 100 minus weighted deductions"
+    },
+    {
+     "rowIndex": 9,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Operator signature"
+    },
+    {
+     "rowIndex": 9,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Signature"
+    },
+    {
+     "rowIndex": 9,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Captured on tablet"
+    },
+    {
+     "rowIndex": 10,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Re-inspection date"
+    },
+    {
+     "rowIndex": 10,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Date"
+    },
+    {
+     "rowIndex": 10,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": "Required if priority violations remain"
+    }
+   ]
+  }
+ ]
+}

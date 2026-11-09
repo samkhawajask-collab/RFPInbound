@@ -1,0 +1,10 @@
+# Runtime dependencies for rfp_tools and the Azure Functions service (tools/service).
+python-docx==1.2.0
+openpyxl==3.1.5
+pypdf==5.4.0
+azure-functions==1.21.3
+# Managed-identity token for Document Intelligence (ADR-0023); HTTP uses the standard library.
+azure-identity==1.19.0
+# Page-image crops for the OCR verification queue (ADR-0025).
+Pillow==11.0.0
+# The MCP endpoint for agents is deferred to Slice 7 (ADR-0015: no agents in the pipeline until then).

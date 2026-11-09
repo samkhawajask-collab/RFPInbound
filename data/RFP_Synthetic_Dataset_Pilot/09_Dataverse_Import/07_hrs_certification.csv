@@ -1,0 +1,7 @@
+hrs_certid,hrs_name,hrs_issuingbody,hrs_certificatenumber,hrs_issued,hrs_expires,hrs_scope,hrs_statusasof20261027
+CERT-01,ISO/IEC 27001:2022,Brightline Certification Services,BCS-ISMS-48821,2025-02-15,2028-02-14,Halcyon SaaS platform and corporate ISMS,Valid
+CERT-02,"SOC 2 Type II (Security, Availability, Confidentiality)",Marston & Pike CPAs LLP,MP-SOC2-2026-0331,2026-05-20,2027-05-19,Report period 2025-04-01 to 2026-03-31; bridge letter available,Valid
+CERT-03,ISO 9001:2015,Brightline Certification Services,BCS-QMS-30417,2023-07-01,2026-06-30,Quality management system - implementation services,Expired
+CERT-04,CSA STAR Level 1 (Self-Assessment),Cloud Security Alliance,STAR-SA-77310,2026-01-12,2027-01-11,Halcyon SaaS platform,Valid
+CERT-05,Esri Partner Network - Silver,Esri,EPN-SLV-20931,2026-03-01,2027-02-28,GIS integration partner,Valid
+CERT-06,Microsoft Solutions Partner - Infrastructure (Azure),Microsoft,MSP-INF-551902,2025-11-01,2027-10-31,Azure infrastructure designation,Valid

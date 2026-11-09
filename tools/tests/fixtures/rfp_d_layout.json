@@ -1,0 +1,10573 @@
+{
+ "apiVersion": "2024-11-30",
+ "pages": [
+  {
+   "pageNumber": 1,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch",
+   "angle": -0.22190000116825104,
+   "words": [
+    {
+     "content": "RECEIVED",
+     "confidence": 0.992,
+     "offset": 0,
+     "length": 8
+    },
+    {
+     "content": "OCT",
+     "confidence": 0.992,
+     "offset": 9,
+     "length": 3
+    },
+    {
+     "content": "19",
+     "confidence": 0.998,
+     "offset": 13,
+     "length": 2
+    },
+    {
+     "content": "2026",
+     "confidence": 0.989,
+     "offset": 16,
+     "length": 4
+    },
+    {
+     "content": "TRI",
+     "confidence": 0.989,
+     "offset": 21,
+     "length": 3
+    },
+    {
+     "content": "-",
+     "confidence": 0.977,
+     "offset": 25,
+     "length": 1
+    },
+    {
+     "content": "HARBOR",
+     "confidence": 0.995,
+     "offset": 27,
+     "length": 6
+    },
+    {
+     "content": "PORT",
+     "confidence": 0.989,
+     "offset": 34,
+     "length": 4
+    },
+    {
+     "content": "AUTHORITY",
+     "confidence": 0.993,
+     "offset": 39,
+     "length": 9
+    },
+    {
+     "content": "Purchasing",
+     "confidence": 0.992,
+     "offset": 49,
+     "length": 10
+    },
+    {
+     "content": "Department",
+     "confidence": 0.994,
+     "offset": 60,
+     "length": 10
+    },
+    {
+     "content": "REQUEST",
+     "confidence": 0.994,
+     "offset": 71,
+     "length": 7
+    },
+    {
+     "content": "FOR",
+     "confidence": 0.998,
+     "offset": 79,
+     "length": 3
+    },
+    {
+     "content": "PROPOSALS",
+     "confidence": 0.994,
+     "offset": 83,
+     "length": 9
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.995,
+     "offset": 93,
+     "length": 3
+    },
+    {
+     "content": "NO.",
+     "confidence": 0.989,
+     "offset": 97,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 101,
+     "length": 4
+    },
+    {
+     "content": "2026",
+     "confidence": 0.989,
+     "offset": 106,
+     "length": 4
+    },
+    {
+     "content": "-09",
+     "confidence": 0.991,
+     "offset": 111,
+     "length": 3
+    },
+    {
+     "content": "MAINTENANCE",
+     "confidence": 0.992,
+     "offset": 115,
+     "length": 11
+    },
+    {
+     "content": "MANAGEMENT",
+     "confidence": 0.993,
+     "offset": 127,
+     "length": 10
+    },
+    {
+     "content": "SYSTEM",
+     "confidence": 0.994,
+     "offset": 138,
+     "length": 6
+    },
+    {
+     "content": "REPLACEMENT",
+     "confidence": 0.992,
+     "offset": 145,
+     "length": 11
+    },
+    {
+     "content": "ISSUE",
+     "confidence": 0.995,
+     "offset": 157,
+     "length": 5
+    },
+    {
+     "content": "DATE:",
+     "confidence": 0.977,
+     "offset": 163,
+     "length": 5
+    },
+    {
+     "content": "OCTOBER",
+     "confidence": 0.995,
+     "offset": 169,
+     "length": 7
+    },
+    {
+     "content": "16,",
+     "confidence": 0.997,
+     "offset": 177,
+     "length": 3
+    },
+    {
+     "content": "2026",
+     "confidence": 0.989,
+     "offset": 181,
+     "length": 4
+    },
+    {
+     "content": "PROPOSALS",
+     "confidence": 0.992,
+     "offset": 186,
+     "length": 9
+    },
+    {
+     "content": "DUE:",
+     "confidence": 0.992,
+     "offset": 196,
+     "length": 4
+    },
+    {
+     "content": "NOVEMBER",
+     "confidence": 0.993,
+     "offset": 201,
+     "length": 8
+    },
+    {
+     "content": "24,",
+     "confidence": 0.996,
+     "offset": 210,
+     "length": 3
+    },
+    {
+     "content": "2026",
+     "confidence": 0.992,
+     "offset": 214,
+     "length": 4
+    },
+    {
+     "content": "AT",
+     "confidence": 0.993,
+     "offset": 219,
+     "length": 2
+    },
+    {
+     "content": "2:00",
+     "confidence": 0.993,
+     "offset": 222,
+     "length": 4
+    },
+    {
+     "content": "P.M.",
+     "confidence": 0.993,
+     "offset": 227,
+     "length": 4
+    },
+    {
+     "content": "LOCAL",
+     "confidence": 0.995,
+     "offset": 232,
+     "length": 5
+    },
+    {
+     "content": "TIME",
+     "confidence": 0.99,
+     "offset": 238,
+     "length": 4
+    },
+    {
+     "content": "CONTACT:",
+     "confidence": 0.989,
+     "offset": 243,
+     "length": 8
+    },
+    {
+     "content": "HOWARD",
+     "confidence": 0.995,
+     "offset": 252,
+     "length": 6
+    },
+    {
+     "content": "BELLAMY,",
+     "confidence": 0.992,
+     "offset": 259,
+     "length": 8
+    },
+    {
+     "content": "CONTRACTS",
+     "confidence": 0.992,
+     "offset": 268,
+     "length": 9
+    },
+    {
+     "content": "ADMINISTRATOR",
+     "confidence": 0.992,
+     "offset": 278,
+     "length": 13
+    },
+    {
+     "content": "TRI-",
+     "confidence": 0.935,
+     "offset": 292,
+     "length": 4
+    },
+    {
+     "content": "HARBOR",
+     "confidence": 0.994,
+     "offset": 297,
+     "length": 6
+    },
+    {
+     "content": "PORT",
+     "confidence": 0.991,
+     "offset": 304,
+     "length": 4
+    },
+    {
+     "content": "AUTHORITY,",
+     "confidence": 0.989,
+     "offset": 309,
+     "length": 10
+    },
+    {
+     "content": "1",
+     "confidence": 0.992,
+     "offset": 320,
+     "length": 1
+    },
+    {
+     "content": "TERMINAL",
+     "confidence": 0.994,
+     "offset": 322,
+     "length": 8
+    },
+    {
+     "content": "WAY,",
+     "confidence": 0.992,
+     "offset": 331,
+     "length": 4
+    },
+    {
+     "content": "HARBOR",
+     "confidence": 0.995,
+     "offset": 336,
+     "length": 6
+    },
+    {
+     "content": "CITY",
+     "confidence": 0.988,
+     "offset": 343,
+     "length": 4
+    },
+    {
+     "content": "bids@triharborport.example",
+     "confidence": 0.984,
+     "offset": 348,
+     "length": 26
+    },
+    {
+     "content": "(All",
+     "confidence": 0.814,
+     "offset": 375,
+     "length": 4
+    },
+    {
+     "content": "names",
+     "confidence": 0.992,
+     "offset": 380,
+     "length": 5
+    },
+    {
+     "content": "and",
+     "confidence": 0.994,
+     "offset": 386,
+     "length": 3
+    },
+    {
+     "content": "organizations",
+     "confidence": 0.99,
+     "offset": 390,
+     "length": 13
+    },
+    {
+     "content": "are",
+     "confidence": 0.992,
+     "offset": 404,
+     "length": 3
+    },
+    {
+     "content": "fictitious.)",
+     "confidence": 0.987,
+     "offset": 408,
+     "length": 12
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.985,
+     "offset": 421,
+     "length": 4
+    },
+    {
+     "content": "RFP.2026-09",
+     "confidence": 0.848,
+     "offset": 426,
+     "length": 11
+    },
+    {
+     "content": "Page",
+     "confidence": 0.988,
+     "offset": 438,
+     "length": 4
+    },
+    {
+     "content": "1",
+     "confidence": 0.996,
+     "offset": 443,
+     "length": 1
+    }
+   ]
+  },
+  {
+   "pageNumber": 2,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch",
+   "angle": -0.1143999993801117,
+   "words": [
+    {
+     "content": "1.",
+     "confidence": 0.995,
+     "offset": 445,
+     "length": 2
+    },
+    {
+     "content": "GENERAL",
+     "confidence": 0.995,
+     "offset": 448,
+     "length": 7
+    },
+    {
+     "content": "INFORMATION",
+     "confidence": 0.992,
+     "offset": 456,
+     "length": 11
+    },
+    {
+     "content": "1.1",
+     "confidence": 0.992,
+     "offset": 468,
+     "length": 3
+    },
+    {
+     "content": "The",
+     "confidence": 0.996,
+     "offset": 472,
+     "length": 3
+    },
+    {
+     "content": "Tri-Harbor",
+     "confidence": 0.977,
+     "offset": 476,
+     "length": 10
+    },
+    {
+     "content": "Port",
+     "confidence": 0.993,
+     "offset": 487,
+     "length": 4
+    },
+    {
+     "content": "Authority",
+     "confidence": 0.994,
+     "offset": 492,
+     "length": 9
+    },
+    {
+     "content": "(\"Port\")",
+     "confidence": 0.789,
+     "offset": 502,
+     "length": 8
+    },
+    {
+     "content": "operates",
+     "confidence": 0.992,
+     "offset": 511,
+     "length": 8
+    },
+    {
+     "content": "three",
+     "confidence": 0.992,
+     "offset": 520,
+     "length": 5
+    },
+    {
+     "content": "marine",
+     "confidence": 0.996,
+     "offset": 526,
+     "length": 6
+    },
+    {
+     "content": "terminals,",
+     "confidence": 0.992,
+     "offset": 533,
+     "length": 10
+    },
+    {
+     "content": "41",
+     "confidence": 0.995,
+     "offset": 544,
+     "length": 2
+    },
+    {
+     "content": "ship-to-shore",
+     "confidence": 0.962,
+     "offset": 547,
+     "length": 13
+    },
+    {
+     "content": "and",
+     "confidence": 0.995,
+     "offset": 561,
+     "length": 3
+    },
+    {
+     "content": "yard",
+     "confidence": 0.986,
+     "offset": 565,
+     "length": 4
+    },
+    {
+     "content": "cranes,",
+     "confidence": 0.993,
+     "offset": 570,
+     "length": 7
+    },
+    {
+     "content": "18",
+     "confidence": 0.997,
+     "offset": 578,
+     "length": 2
+    },
+    {
+     "content": "berths,",
+     "confidence": 0.993,
+     "offset": 581,
+     "length": 7
+    },
+    {
+     "content": "2.3",
+     "confidence": 0.988,
+     "offset": 589,
+     "length": 3
+    },
+    {
+     "content": "million",
+     "confidence": 0.995,
+     "offset": 593,
+     "length": 7
+    },
+    {
+     "content": "square",
+     "confidence": 0.995,
+     "offset": 601,
+     "length": 6
+    },
+    {
+     "content": "feet",
+     "confidence": 0.989,
+     "offset": 608,
+     "length": 4
+    },
+    {
+     "content": "of",
+     "confidence": 0.998,
+     "offset": 613,
+     "length": 2
+    },
+    {
+     "content": "warehouse",
+     "confidence": 0.993,
+     "offset": 616,
+     "length": 9
+    },
+    {
+     "content": "space",
+     "confidence": 0.995,
+     "offset": 626,
+     "length": 5
+    },
+    {
+     "content": "and",
+     "confidence": 0.992,
+     "offset": 632,
+     "length": 3
+    },
+    {
+     "content": "a",
+     "confidence": 0.994,
+     "offset": 636,
+     "length": 1
+    },
+    {
+     "content": "fleet",
+     "confidence": 0.992,
+     "offset": 638,
+     "length": 5
+    },
+    {
+     "content": "of",
+     "confidence": 0.996,
+     "offset": 644,
+     "length": 2
+    },
+    {
+     "content": "260",
+     "confidence": 0.984,
+     "offset": 647,
+     "length": 3
+    },
+    {
+     "content": "vehicles",
+     "confidence": 0.994,
+     "offset": 651,
+     "length": 8
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 660,
+     "length": 3
+    },
+    {
+     "content": "pieces",
+     "confidence": 0.994,
+     "offset": 664,
+     "length": 6
+    },
+    {
+     "content": "of",
+     "confidence": 0.998,
+     "offset": 671,
+     "length": 2
+    },
+    {
+     "content": "mobile",
+     "confidence": 0.992,
+     "offset": 674,
+     "length": 6
+    },
+    {
+     "content": "equipment.",
+     "confidence": 0.992,
+     "offset": 681,
+     "length": 10
+    },
+    {
+     "content": "The",
+     "confidence": 0.997,
+     "offset": 692,
+     "length": 3
+    },
+    {
+     "content": "Port's",
+     "confidence": 0.993,
+     "offset": 696,
+     "length": 6
+    },
+    {
+     "content": "Maintenance",
+     "confidence": 0.992,
+     "offset": 703,
+     "length": 11
+    },
+    {
+     "content": "Division",
+     "confidence": 0.992,
+     "offset": 715,
+     "length": 8
+    },
+    {
+     "content": "(210",
+     "confidence": 0.992,
+     "offset": 724,
+     "length": 4
+    },
+    {
+     "content": "employees)",
+     "confidence": 0.977,
+     "offset": 729,
+     "length": 10
+    },
+    {
+     "content": "currently",
+     "confidence": 0.992,
+     "offset": 740,
+     "length": 9
+    },
+    {
+     "content": "uses",
+     "confidence": 0.992,
+     "offset": 750,
+     "length": 4
+    },
+    {
+     "content": "a",
+     "confidence": 0.993,
+     "offset": 755,
+     "length": 1
+    },
+    {
+     "content": "maintenance",
+     "confidence": 0.992,
+     "offset": 757,
+     "length": 11
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 769,
+     "length": 6
+    },
+    {
+     "content": "installed",
+     "confidence": 0.994,
+     "offset": 776,
+     "length": 9
+    },
+    {
+     "content": "in",
+     "confidence": 0.999,
+     "offset": 786,
+     "length": 2
+    },
+    {
+     "content": "2006",
+     "confidence": 0.992,
+     "offset": 789,
+     "length": 4
+    },
+    {
+     "content": "that",
+     "confidence": 0.991,
+     "offset": 794,
+     "length": 4
+    },
+    {
+     "content": "is",
+     "confidence": 0.999,
+     "offset": 799,
+     "length": 2
+    },
+    {
+     "content": "no",
+     "confidence": 0.998,
+     "offset": 802,
+     "length": 2
+    },
+    {
+     "content": "longer",
+     "confidence": 0.994,
+     "offset": 805,
+     "length": 6
+    },
+    {
+     "content": "supported.",
+     "confidence": 0.99,
+     "offset": 812,
+     "length": 10
+    },
+    {
+     "content": "1.2",
+     "confidence": 0.992,
+     "offset": 823,
+     "length": 3
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 827,
+     "length": 3
+    },
+    {
+     "content": "Port",
+     "confidence": 0.995,
+     "offset": 831,
+     "length": 4
+    },
+    {
+     "content": "seeks",
+     "confidence": 0.995,
+     "offset": 836,
+     "length": 5
+    },
+    {
+     "content": "proposals",
+     "confidence": 0.993,
+     "offset": 842,
+     "length": 9
+    },
+    {
+     "content": "for",
+     "confidence": 0.997,
+     "offset": 852,
+     "length": 3
+    },
+    {
+     "content": "a",
+     "confidence": 0.995,
+     "offset": 856,
+     "length": 1
+    },
+    {
+     "content": "replacement",
+     "confidence": 0.993,
+     "offset": 858,
+     "length": 11
+    },
+    {
+     "content": "maintenance",
+     "confidence": 0.994,
+     "offset": 870,
+     "length": 11
+    },
+    {
+     "content": "management",
+     "confidence": 0.994,
+     "offset": 882,
+     "length": 10
+    },
+    {
+     "content": "system,",
+     "confidence": 0.993,
+     "offset": 893,
+     "length": 7
+    },
+    {
+     "content": "including",
+     "confidence": 0.995,
+     "offset": 901,
+     "length": 9
+    },
+    {
+     "content": "software,",
+     "confidence": 0.994,
+     "offset": 911,
+     "length": 9
+    },
+    {
+     "content": "implementation,",
+     "confidence": 0.992,
+     "offset": 921,
+     "length": 15
+    },
+    {
+     "content": "data",
+     "confidence": 0.989,
+     "offset": 937,
+     "length": 4
+    },
+    {
+     "content": "conversion,",
+     "confidence": 0.994,
+     "offset": 942,
+     "length": 11
+    },
+    {
+     "content": "training",
+     "confidence": 0.996,
+     "offset": 954,
+     "length": 8
+    },
+    {
+     "content": "and",
+     "confidence": 0.997,
+     "offset": 963,
+     "length": 3
+    },
+    {
+     "content": "support.",
+     "confidence": 0.991,
+     "offset": 967,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.994,
+     "offset": 976,
+     "length": 3
+    },
+    {
+     "content": "resulting",
+     "confidence": 0.993,
+     "offset": 980,
+     "length": 9
+    },
+    {
+     "content": "contract",
+     "confidence": 0.995,
+     "offset": 990,
+     "length": 8
+    },
+    {
+     "content": "will",
+     "confidence": 0.989,
+     "offset": 999,
+     "length": 4
+    },
+    {
+     "content": "have",
+     "confidence": 0.992,
+     "offset": 1004,
+     "length": 4
+    },
+    {
+     "content": "an",
+     "confidence": 0.997,
+     "offset": 1009,
+     "length": 2
+    },
+    {
+     "content": "initial",
+     "confidence": 0.995,
+     "offset": 1012,
+     "length": 7
+    },
+    {
+     "content": "term",
+     "confidence": 0.989,
+     "offset": 1020,
+     "length": 4
+    },
+    {
+     "content": "of",
+     "confidence": 0.992,
+     "offset": 1025,
+     "length": 2
+    },
+    {
+     "content": "five",
+     "confidence": 0.987,
+     "offset": 1028,
+     "length": 4
+    },
+    {
+     "content": "(5)",
+     "confidence": 0.992,
+     "offset": 1033,
+     "length": 3
+    },
+    {
+     "content": "years.",
+     "confidence": 0.995,
+     "offset": 1037,
+     "length": 6
+    },
+    {
+     "content": "1.3",
+     "confidence": 0.993,
+     "offset": 1044,
+     "length": 3
+    },
+    {
+     "content": "The",
+     "confidence": 0.995,
+     "offset": 1048,
+     "length": 3
+    },
+    {
+     "content": "Port's",
+     "confidence": 0.992,
+     "offset": 1052,
+     "length": 6
+    },
+    {
+     "content": "terminals",
+     "confidence": 0.993,
+     "offset": 1059,
+     "length": 9
+    },
+    {
+     "content": "operate",
+     "confidence": 0.992,
+     "offset": 1069,
+     "length": 7
+    },
+    {
+     "content": "24",
+     "confidence": 0.978,
+     "offset": 1077,
+     "length": 2
+    },
+    {
+     "content": "hours",
+     "confidence": 0.996,
+     "offset": 1080,
+     "length": 5
+    },
+    {
+     "content": "a",
+     "confidence": 0.994,
+     "offset": 1086,
+     "length": 1
+    },
+    {
+     "content": "day.",
+     "confidence": 0.992,
+     "offset": 1088,
+     "length": 4
+    },
+    {
+     "content": "Crane",
+     "confidence": 0.994,
+     "offset": 1093,
+     "length": 5
+    },
+    {
+     "content": "availability",
+     "confidence": 0.992,
+     "offset": 1099,
+     "length": 12
+    },
+    {
+     "content": "is",
+     "confidence": 0.999,
+     "offset": 1112,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.997,
+     "offset": 1115,
+     "length": 3
+    },
+    {
+     "content": "Division's",
+     "confidence": 0.992,
+     "offset": 1119,
+     "length": 10
+    },
+    {
+     "content": "most",
+     "confidence": 0.992,
+     "offset": 1130,
+     "length": 4
+    },
+    {
+     "content": "important",
+     "confidence": 0.994,
+     "offset": 1135,
+     "length": 9
+    },
+    {
+     "content": "performance",
+     "confidence": 0.993,
+     "offset": 1145,
+     "length": 11
+    },
+    {
+     "content": "measure;",
+     "confidence": 0.992,
+     "offset": 1157,
+     "length": 8
+    },
+    {
+     "content": "each",
+     "confidence": 0.991,
+     "offset": 1166,
+     "length": 4
+    },
+    {
+     "content": "hour",
+     "confidence": 0.992,
+     "offset": 1171,
+     "length": 4
+    },
+    {
+     "content": "of",
+     "confidence": 0.995,
+     "offset": 1176,
+     "length": 2
+    },
+    {
+     "content": "unplanned",
+     "confidence": 0.992,
+     "offset": 1179,
+     "length": 9
+    },
+    {
+     "content": "crane",
+     "confidence": 0.995,
+     "offset": 1189,
+     "length": 5
+    },
+    {
+     "content": "downtime",
+     "confidence": 0.992,
+     "offset": 1195,
+     "length": 8
+    },
+    {
+     "content": "delays",
+     "confidence": 0.995,
+     "offset": 1204,
+     "length": 6
+    },
+    {
+     "content": "vessel",
+     "confidence": 0.993,
+     "offset": 1211,
+     "length": 6
+    },
+    {
+     "content": "operations.",
+     "confidence": 0.992,
+     "offset": 1218,
+     "length": 11
+    },
+    {
+     "content": "2.",
+     "confidence": 0.992,
+     "offset": 1230,
+     "length": 2
+    },
+    {
+     "content": "SCHEDULE",
+     "confidence": 0.995,
+     "offset": 1233,
+     "length": 8
+    },
+    {
+     "content": "EVENT",
+     "confidence": 0.995,
+     "offset": 1242,
+     "length": 5
+    },
+    {
+     "content": "DATE",
+     "confidence": 0.989,
+     "offset": 1248,
+     "length": 4
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.987,
+     "offset": 1253,
+     "length": 3
+    },
+    {
+     "content": "issued",
+     "confidence": 0.992,
+     "offset": 1257,
+     "length": 6
+    },
+    {
+     "content": "October",
+     "confidence": 0.993,
+     "offset": 1264,
+     "length": 7
+    },
+    {
+     "content": "16,",
+     "confidence": 0.997,
+     "offset": 1272,
+     "length": 3
+    },
+    {
+     "content": "2026",
+     "confidence": 0.989,
+     "offset": 1276,
+     "length": 4
+    },
+    {
+     "content": "Site",
+     "confidence": 0.988,
+     "offset": 1281,
+     "length": 4
+    },
+    {
+     "content": "visit",
+     "confidence": 0.992,
+     "offset": 1286,
+     "length": 5
+    },
+    {
+     "content": "(optional)",
+     "confidence": 0.976,
+     "offset": 1292,
+     "length": 10
+    },
+    {
+     "content": "October",
+     "confidence": 0.995,
+     "offset": 1303,
+     "length": 7
+    },
+    {
+     "content": "27,",
+     "confidence": 0.999,
+     "offset": 1311,
+     "length": 3
+    },
+    {
+     "content": "2026,",
+     "confidence": 0.995,
+     "offset": 1315,
+     "length": 5
+    },
+    {
+     "content": "9:00",
+     "confidence": 0.992,
+     "offset": 1321,
+     "length": 4
+    },
+    {
+     "content": "a.m.",
+     "confidence": 0.992,
+     "offset": 1326,
+     "length": 4
+    },
+    {
+     "content": "Written",
+     "confidence": 0.996,
+     "offset": 1331,
+     "length": 7
+    },
+    {
+     "content": "questions",
+     "confidence": 0.992,
+     "offset": 1339,
+     "length": 9
+    },
+    {
+     "content": "due",
+     "confidence": 0.998,
+     "offset": 1349,
+     "length": 3
+    },
+    {
+     "content": "November",
+     "confidence": 0.995,
+     "offset": 1353,
+     "length": 8
+    },
+    {
+     "content": "3,",
+     "confidence": 0.997,
+     "offset": 1362,
+     "length": 2
+    },
+    {
+     "content": "2026,",
+     "confidence": 0.995,
+     "offset": 1365,
+     "length": 5
+    },
+    {
+     "content": "4:00",
+     "confidence": 0.988,
+     "offset": 1371,
+     "length": 4
+    },
+    {
+     "content": "p.m.",
+     "confidence": 0.988,
+     "offset": 1376,
+     "length": 4
+    },
+    {
+     "content": "Proposals",
+     "confidence": 0.992,
+     "offset": 1381,
+     "length": 9
+    },
+    {
+     "content": "due",
+     "confidence": 0.998,
+     "offset": 1391,
+     "length": 3
+    },
+    {
+     "content": "November",
+     "confidence": 0.992,
+     "offset": 1395,
+     "length": 8
+    },
+    {
+     "content": "24,",
+     "confidence": 0.998,
+     "offset": 1404,
+     "length": 3
+    },
+    {
+     "content": "2026,",
+     "confidence": 0.993,
+     "offset": 1408,
+     "length": 5
+    },
+    {
+     "content": "2:00",
+     "confidence": 0.992,
+     "offset": 1414,
+     "length": 4
+    },
+    {
+     "content": "p.m.",
+     "confidence": 0.992,
+     "offset": 1419,
+     "length": 4
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.996,
+     "offset": 1424,
+     "length": 6
+    },
+    {
+     "content": "interviews",
+     "confidence": 0.994,
+     "offset": 1431,
+     "length": 10
+    },
+    {
+     "content": "Week",
+     "confidence": 0.992,
+     "offset": 1442,
+     "length": 4
+    },
+    {
+     "content": "of",
+     "confidence": 0.998,
+     "offset": 1447,
+     "length": 2
+    },
+    {
+     "content": "December",
+     "confidence": 0.995,
+     "offset": 1450,
+     "length": 8
+    },
+    {
+     "content": "7,",
+     "confidence": 0.996,
+     "offset": 1459,
+     "length": 2
+    },
+    {
+     "content": "2026",
+     "confidence": 0.989,
+     "offset": 1462,
+     "length": 4
+    },
+    {
+     "content": "Award",
+     "confidence": 0.996,
+     "offset": 1467,
+     "length": 5
+    },
+    {
+     "content": "(target)",
+     "confidence": 0.98,
+     "offset": 1473,
+     "length": 8
+    },
+    {
+     "content": "January",
+     "confidence": 0.993,
+     "offset": 1482,
+     "length": 7
+    },
+    {
+     "content": "2027",
+     "confidence": 0.99,
+     "offset": 1490,
+     "length": 4
+    },
+    {
+     "content": "3.",
+     "confidence": 0.994,
+     "offset": 1495,
+     "length": 2
+    },
+    {
+     "content": "SUBMISSION",
+     "confidence": 0.993,
+     "offset": 1498,
+     "length": 10
+    },
+    {
+     "content": "REQUIREMENTS",
+     "confidence": 0.992,
+     "offset": 1509,
+     "length": 12
+    },
+    {
+     "content": "3.1",
+     "confidence": 0.992,
+     "offset": 1522,
+     "length": 3
+    },
+    {
+     "content": "Deliver",
+     "confidence": 0.994,
+     "offset": 1526,
+     "length": 7
+    },
+    {
+     "content": "five",
+     "confidence": 0.99,
+     "offset": 1534,
+     "length": 4
+    },
+    {
+     "content": "(5)",
+     "confidence": 0.995,
+     "offset": 1539,
+     "length": 3
+    },
+    {
+     "content": "bound",
+     "confidence": 0.995,
+     "offset": 1543,
+     "length": 5
+    },
+    {
+     "content": "copies",
+     "confidence": 0.993,
+     "offset": 1549,
+     "length": 6
+    },
+    {
+     "content": "and",
+     "confidence": 0.995,
+     "offset": 1556,
+     "length": 3
+    },
+    {
+     "content": "one",
+     "confidence": 0.996,
+     "offset": 1560,
+     "length": 3
+    },
+    {
+     "content": "(1)",
+     "confidence": 0.992,
+     "offset": 1564,
+     "length": 3
+    },
+    {
+     "content": "electronic",
+     "confidence": 0.992,
+     "offset": 1568,
+     "length": 10
+    },
+    {
+     "content": "copy",
+     "confidence": 0.994,
+     "offset": 1579,
+     "length": 4
+    },
+    {
+     "content": "on",
+     "confidence": 0.996,
+     "offset": 1584,
+     "length": 2
+    },
+    {
+     "content": "a",
+     "confidence": 0.992,
+     "offset": 1587,
+     "length": 1
+    },
+    {
+     "content": "USB",
+     "confidence": 0.977,
+     "offset": 1589,
+     "length": 3
+    },
+    {
+     "content": "drive,",
+     "confidence": 0.992,
+     "offset": 1593,
+     "length": 6
+    },
+    {
+     "content": "in",
+     "confidence": 0.998,
+     "offset": 1600,
+     "length": 2
+    },
+    {
+     "content": "a",
+     "confidence": 0.993,
+     "offset": 1603,
+     "length": 1
+    },
+    {
+     "content": "sealed",
+     "confidence": 0.994,
+     "offset": 1605,
+     "length": 6
+    },
+    {
+     "content": "envelope",
+     "confidence": 0.992,
+     "offset": 1612,
+     "length": 8
+    },
+    {
+     "content": "marked",
+     "confidence": 0.995,
+     "offset": 1621,
+     "length": 6
+    },
+    {
+     "content": "\"RFP",
+     "confidence": 0.976,
+     "offset": 1628,
+     "length": 4
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.992,
+     "offset": 1633,
+     "length": 4
+    },
+    {
+     "content": "2026-09\",",
+     "confidence": 0.906,
+     "offset": 1638,
+     "length": 9
+    },
+    {
+     "content": "to",
+     "confidence": 0.992,
+     "offset": 1648,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.998,
+     "offset": 1651,
+     "length": 3
+    },
+    {
+     "content": "Purchasing",
+     "confidence": 0.995,
+     "offset": 1655,
+     "length": 10
+    },
+    {
+     "content": "Department,",
+     "confidence": 0.993,
+     "offset": 1666,
+     "length": 11
+    },
+    {
+     "content": "1",
+     "confidence": 0.993,
+     "offset": 1678,
+     "length": 1
+    },
+    {
+     "content": "Terminal",
+     "confidence": 0.992,
+     "offset": 1680,
+     "length": 8
+    },
+    {
+     "content": "Way,",
+     "confidence": 0.989,
+     "offset": 1689,
+     "length": 4
+    },
+    {
+     "content": "Harbor",
+     "confidence": 0.993,
+     "offset": 1694,
+     "length": 6
+    },
+    {
+     "content": "City.",
+     "confidence": 0.993,
+     "offset": 1701,
+     "length": 5
+    },
+    {
+     "content": "Faxed",
+     "confidence": 0.995,
+     "offset": 1707,
+     "length": 5
+    },
+    {
+     "content": "or",
+     "confidence": 0.998,
+     "offset": 1713,
+     "length": 2
+    },
+    {
+     "content": "emailed",
+     "confidence": 0.993,
+     "offset": 1716,
+     "length": 7
+    },
+    {
+     "content": "proposals",
+     "confidence": 0.993,
+     "offset": 1724,
+     "length": 9
+    },
+    {
+     "content": "will",
+     "confidence": 0.992,
+     "offset": 1734,
+     "length": 4
+    },
+    {
+     "content": "not",
+     "confidence": 0.994,
+     "offset": 1739,
+     "length": 3
+    },
+    {
+     "content": "be",
+     "confidence": 0.996,
+     "offset": 1743,
+     "length": 2
+    },
+    {
+     "content": "accepted.",
+     "confidence": 0.992,
+     "offset": 1746,
+     "length": 9
+    },
+    {
+     "content": "3.2",
+     "confidence": 0.992,
+     "offset": 1756,
+     "length": 3
+    },
+    {
+     "content": "PAGE",
+     "confidence": 0.989,
+     "offset": 1760,
+     "length": 4
+    },
+    {
+     "content": "LIMIT.",
+     "confidence": 0.989,
+     "offset": 1765,
+     "length": 6
+    },
+    {
+     "content": "The",
+     "confidence": 0.995,
+     "offset": 1772,
+     "length": 3
+    },
+    {
+     "content": "technical",
+     "confidence": 0.992,
+     "offset": 1776,
+     "length": 9
+    },
+    {
+     "content": "proposal",
+     "confidence": 0.976,
+     "offset": 1786,
+     "length": 8
+    },
+    {
+     "content": "shall",
+     "confidence": 0.98,
+     "offset": 1795,
+     "length": 5
+    },
+    {
+     "content": "not",
+     "confidence": 0.993,
+     "offset": 1801,
+     "length": 3
+    },
+    {
+     "content": "exceed",
+     "confidence": 0.993,
+     "offset": 1805,
+     "length": 6
+    },
+    {
+     "content": "twenty-five",
+     "confidence": 0.977,
+     "offset": 1812,
+     "length": 11
+    },
+    {
+     "content": "(25)",
+     "confidence": 0.992,
+     "offset": 1824,
+     "length": 4
+    },
+    {
+     "content": "pages,",
+     "confidence": 0.993,
+     "offset": 1829,
+     "length": 6
+    },
+    {
+     "content": "single-sided,",
+     "confidence": 0.977,
+     "offset": 1836,
+     "length": 13
+    },
+    {
+     "content": "excluding",
+     "confidence": 0.994,
+     "offset": 1850,
+     "length": 9
+    },
+    {
+     "content": "the",
+     "confidence": 0.998,
+     "offset": 1860,
+     "length": 3
+    },
+    {
+     "content": "signature",
+     "confidence": 0.993,
+     "offset": 1864,
+     "length": 9
+    },
+    {
+     "content": "page,",
+     "confidence": 0.995,
+     "offset": 1874,
+     "length": 5
+    },
+    {
+     "content": "price",
+     "confidence": 0.997,
+     "offset": 1880,
+     "length": 5
+    },
+    {
+     "content": "form",
+     "confidence": 0.992,
+     "offset": 1886,
+     "length": 4
+    },
+    {
+     "content": "and",
+     "confidence": 0.993,
+     "offset": 1891,
+     "length": 3
+    },
+    {
+     "content": "resumes.",
+     "confidence": 0.984,
+     "offset": 1895,
+     "length": 8
+    },
+    {
+     "content": "Pages",
+     "confidence": 0.996,
+     "offset": 1904,
+     "length": 5
+    },
+    {
+     "content": "in",
+     "confidence": 0.998,
+     "offset": 1910,
+     "length": 2
+    },
+    {
+     "content": "excess",
+     "confidence": 0.992,
+     "offset": 1913,
+     "length": 6
+    },
+    {
+     "content": "of",
+     "confidence": 0.997,
+     "offset": 1920,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 1923,
+     "length": 3
+    },
+    {
+     "content": "limit",
+     "confidence": 0.994,
+     "offset": 1927,
+     "length": 5
+    },
+    {
+     "content": "will",
+     "confidence": 0.989,
+     "offset": 1933,
+     "length": 4
+    },
+    {
+     "content": "not",
+     "confidence": 0.992,
+     "offset": 1938,
+     "length": 3
+    },
+    {
+     "content": "be",
+     "confidence": 0.998,
+     "offset": 1942,
+     "length": 2
+    },
+    {
+     "content": "read.",
+     "confidence": 0.994,
+     "offset": 1945,
+     "length": 5
+    },
+    {
+     "content": "3.3",
+     "confidence": 0.992,
+     "offset": 1951,
+     "length": 3
+    },
+    {
+     "content": "Respond",
+     "confidence": 0.993,
+     "offset": 1955,
+     "length": 7
+    },
+    {
+     "content": "to",
+     "confidence": 0.992,
+     "offset": 1963,
+     "length": 2
+    },
+    {
+     "content": "each",
+     "confidence": 0.992,
+     "offset": 1966,
+     "length": 4
+    },
+    {
+     "content": "requirement",
+     "confidence": 0.992,
+     "offset": 1971,
+     "length": 11
+    },
+    {
+     "content": "in",
+     "confidence": 0.994,
+     "offset": 1983,
+     "length": 2
+    },
+    {
+     "content": "Section",
+     "confidence": 0.993,
+     "offset": 1986,
+     "length": 7
+    },
+    {
+     "content": "5",
+     "confidence": 0.992,
+     "offset": 1994,
+     "length": 1
+    },
+    {
+     "content": "by",
+     "confidence": 0.996,
+     "offset": 1996,
+     "length": 2
+    },
+    {
+     "content": "number,",
+     "confidence": 0.993,
+     "offset": 1999,
+     "length": 7
+    },
+    {
+     "content": "stating",
+     "confidence": 0.996,
+     "offset": 2007,
+     "length": 7
+    },
+    {
+     "content": "\"Comply\",",
+     "confidence": 0.937,
+     "offset": 2015,
+     "length": 9
+    },
+    {
+     "content": "\"Partially",
+     "confidence": 0.989,
+     "offset": 2025,
+     "length": 10
+    },
+    {
+     "content": "Comply\"",
+     "confidence": 0.988,
+     "offset": 2036,
+     "length": 7
+    },
+    {
+     "content": "or",
+     "confidence": 0.996,
+     "offset": 2044,
+     "length": 2
+    },
+    {
+     "content": "\"Do",
+     "confidence": 0.991,
+     "offset": 2047,
+     "length": 3
+    },
+    {
+     "content": "Not",
+     "confidence": 0.995,
+     "offset": 2051,
+     "length": 3
+    },
+    {
+     "content": "Comply\"",
+     "confidence": 0.989,
+     "offset": 2055,
+     "length": 7
+    },
+    {
+     "content": "with",
+     "confidence": 0.992,
+     "offset": 2063,
+     "length": 4
+    },
+    {
+     "content": "an",
+     "confidence": 0.996,
+     "offset": 2068,
+     "length": 2
+    },
+    {
+     "content": "explanation.",
+     "confidence": 0.991,
+     "offset": 2071,
+     "length": 12
+    },
+    {
+     "content": "3.4",
+     "confidence": 0.992,
+     "offset": 2084,
+     "length": 3
+    },
+    {
+     "content": "Required",
+     "confidence": 0.994,
+     "offset": 2088,
+     "length": 8
+    },
+    {
+     "content": "attachments:",
+     "confidence": 0.992,
+     "offset": 2097,
+     "length": 12
+    },
+    {
+     "content": "(a)",
+     "confidence": 0.992,
+     "offset": 2110,
+     "length": 3
+    },
+    {
+     "content": "Signature",
+     "confidence": 0.993,
+     "offset": 2114,
+     "length": 9
+    },
+    {
+     "content": "Page;",
+     "confidence": 0.989,
+     "offset": 2124,
+     "length": 5
+    },
+    {
+     "content": "(b)",
+     "confidence": 0.995,
+     "offset": 2130,
+     "length": 3
+    },
+    {
+     "content": "Price",
+     "confidence": 0.995,
+     "offset": 2134,
+     "length": 5
+    },
+    {
+     "content": "Form;",
+     "confidence": 0.992,
+     "offset": 2140,
+     "length": 5
+    },
+    {
+     "content": "(c)",
+     "confidence": 0.989,
+     "offset": 2146,
+     "length": 3
+    },
+    {
+     "content": "three",
+     "confidence": 0.996,
+     "offset": 2150,
+     "length": 5
+    },
+    {
+     "content": "(3)",
+     "confidence": 0.994,
+     "offset": 2156,
+     "length": 3
+    },
+    {
+     "content": "references;",
+     "confidence": 0.963,
+     "offset": 2160,
+     "length": 11
+    },
+    {
+     "content": "(d)",
+     "confidence": 0.994,
+     "offset": 2172,
+     "length": 3
+    },
+    {
+     "content": "certificate",
+     "confidence": 0.992,
+     "offset": 2176,
+     "length": 11
+    },
+    {
+     "content": "of",
+     "confidence": 0.998,
+     "offset": 2188,
+     "length": 2
+    },
+    {
+     "content": "insurance;",
+     "confidence": 0.99,
+     "offset": 2191,
+     "length": 10
+    },
+    {
+     "content": "(e)",
+     "confidence": 0.994,
+     "offset": 2202,
+     "length": 3
+    },
+    {
+     "content": "W-9.",
+     "confidence": 0.975,
+     "offset": 2206,
+     "length": 4
+    },
+    {
+     "content": "4.",
+     "confidence": 0.995,
+     "offset": 2211,
+     "length": 2
+    },
+    {
+     "content": "EVALUATION",
+     "confidence": 0.993,
+     "offset": 2214,
+     "length": 10
+    },
+    {
+     "content": "CRITERIA",
+     "confidence": 0.992,
+     "offset": 2225,
+     "length": 8
+    },
+    {
+     "content": "POINTS",
+     "confidence": 0.995,
+     "offset": 2234,
+     "length": 6
+    },
+    {
+     "content": "Technical",
+     "confidence": 0.992,
+     "offset": 2241,
+     "length": 9
+    },
+    {
+     "content": "requirements",
+     "confidence": 0.992,
+     "offset": 2251,
+     "length": 12
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 2264,
+     "length": 3
+    },
+    {
+     "content": "functionality",
+     "confidence": 0.993,
+     "offset": 2268,
+     "length": 13
+    },
+    {
+     "content": "35",
+     "confidence": 0.998,
+     "offset": 2282,
+     "length": 2
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 2285,
+     "length": 4
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.98,
+     "offset": 2290,
+     "length": 3
+    },
+    {
+     "content": "2026",
+     "confidence": 0.989,
+     "offset": 2294,
+     "length": 4
+    },
+    {
+     "content": "-09",
+     "confidence": 0.977,
+     "offset": 2299,
+     "length": 3
+    },
+    {
+     "content": "Page",
+     "confidence": 0.988,
+     "offset": 2303,
+     "length": 4
+    },
+    {
+     "content": "2",
+     "confidence": 0.995,
+     "offset": 2308,
+     "length": 1
+    }
+   ]
+  },
+  {
+   "pageNumber": 3,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch",
+   "angle": -0.09390000253915787,
+   "words": [
+    {
+     "content": "Implementation",
+     "confidence": 0.989,
+     "offset": 2310,
+     "length": 14
+    },
+    {
+     "content": "plan",
+     "confidence": 0.99,
+     "offset": 2325,
+     "length": 4
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 2330,
+     "length": 3
+    },
+    {
+     "content": "schedule",
+     "confidence": 0.993,
+     "offset": 2334,
+     "length": 8
+    },
+    {
+     "content": "20",
+     "confidence": 0.998,
+     "offset": 2343,
+     "length": 2
+    },
+    {
+     "content": "Experience",
+     "confidence": 0.992,
+     "offset": 2346,
+     "length": 10
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 2357,
+     "length": 3
+    },
+    {
+     "content": "references",
+     "confidence": 0.992,
+     "offset": 2361,
+     "length": 10
+    },
+    {
+     "content": "15",
+     "confidence": 0.998,
+     "offset": 2372,
+     "length": 2
+    },
+    {
+     "content": "Support",
+     "confidence": 0.992,
+     "offset": 2375,
+     "length": 7
+    },
+    {
+     "content": "and",
+     "confidence": 0.994,
+     "offset": 2383,
+     "length": 3
+    },
+    {
+     "content": "service",
+     "confidence": 0.994,
+     "offset": 2387,
+     "length": 7
+    },
+    {
+     "content": "levels",
+     "confidence": 0.992,
+     "offset": 2395,
+     "length": 6
+    },
+    {
+     "content": "10",
+     "confidence": 0.998,
+     "offset": 2402,
+     "length": 2
+    },
+    {
+     "content": "Price",
+     "confidence": 0.997,
+     "offset": 2405,
+     "length": 5
+    },
+    {
+     "content": "20",
+     "confidence": 0.998,
+     "offset": 2411,
+     "length": 2
+    },
+    {
+     "content": "5.",
+     "confidence": 0.993,
+     "offset": 2414,
+     "length": 2
+    },
+    {
+     "content": "TECHNICAL",
+     "confidence": 0.993,
+     "offset": 2417,
+     "length": 9
+    },
+    {
+     "content": "REQUIREMENTS",
+     "confidence": 0.992,
+     "offset": 2427,
+     "length": 12
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.995,
+     "offset": 2440,
+     "length": 3
+    },
+    {
+     "content": "=",
+     "confidence": 0.992,
+     "offset": 2444,
+     "length": 1
+    },
+    {
+     "content": "Mandatory.",
+     "confidence": 0.992,
+     "offset": 2446,
+     "length": 10
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.993,
+     "offset": 2457,
+     "length": 3
+    },
+    {
+     "content": "=",
+     "confidence": 0.963,
+     "offset": 2461,
+     "length": 1
+    },
+    {
+     "content": "Desirable.",
+     "confidence": 0.992,
+     "offset": 2463,
+     "length": 10
+    },
+    {
+     "content": "5.1",
+     "confidence": 0.992,
+     "offset": 2474,
+     "length": 3
+    },
+    {
+     "content": "VENDOR",
+     "confidence": 0.997,
+     "offset": 2478,
+     "length": 6
+    },
+    {
+     "content": "QUALIFICATIONS",
+     "confidence": 0.977,
+     "offset": 2485,
+     "length": 14
+    },
+    {
+     "content": "THPA-001",
+     "confidence": 0.963,
+     "offset": 2500,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.998,
+     "offset": 2509,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.994,
+     "offset": 2513,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 2520,
+     "length": 4
+    },
+    {
+     "content": "identify",
+     "confidence": 0.994,
+     "offset": 2525,
+     "length": 8
+    },
+    {
+     "content": "any",
+     "confidence": 0.995,
+     "offset": 2534,
+     "length": 3
+    },
+    {
+     "content": "subcontractors",
+     "confidence": 0.992,
+     "offset": 2538,
+     "length": 14
+    },
+    {
+     "content": "it",
+     "confidence": 0.996,
+     "offset": 2553,
+     "length": 2
+    },
+    {
+     "content": "intends",
+     "confidence": 0.995,
+     "offset": 2556,
+     "length": 7
+    },
+    {
+     "content": "to",
+     "confidence": 0.999,
+     "offset": 2564,
+     "length": 2
+    },
+    {
+     "content": "use",
+     "confidence": 0.998,
+     "offset": 2567,
+     "length": 3
+    },
+    {
+     "content": "and",
+     "confidence": 0.996,
+     "offset": 2571,
+     "length": 3
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 2575,
+     "length": 3
+    },
+    {
+     "content": "work",
+     "confidence": 0.99,
+     "offset": 2579,
+     "length": 4
+    },
+    {
+     "content": "they",
+     "confidence": 0.992,
+     "offset": 2584,
+     "length": 4
+    },
+    {
+     "content": "will",
+     "confidence": 0.987,
+     "offset": 2589,
+     "length": 4
+    },
+    {
+     "content": "perform.",
+     "confidence": 0.994,
+     "offset": 2594,
+     "length": 8
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.985,
+     "offset": 2603,
+     "length": 3
+    },
+    {
+     "content": "THPA-002",
+     "confidence": 0.989,
+     "offset": 2607,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.998,
+     "offset": 2616,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.995,
+     "offset": 2620,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 2627,
+     "length": 4
+    },
+    {
+     "content": "describe",
+     "confidence": 0.994,
+     "offset": 2632,
+     "length": 8
+    },
+    {
+     "content": "its",
+     "confidence": 0.998,
+     "offset": 2641,
+     "length": 3
+    },
+    {
+     "content": "experience",
+     "confidence": 0.993,
+     "offset": 2645,
+     "length": 10
+    },
+    {
+     "content": "delivering",
+     "confidence": 0.995,
+     "offset": 2656,
+     "length": 10
+    },
+    {
+     "content": "similar",
+     "confidence": 0.994,
+     "offset": 2667,
+     "length": 7
+    },
+    {
+     "content": "solutions",
+     "confidence": 0.992,
+     "offset": 2675,
+     "length": 9
+    },
+    {
+     "content": "to",
+     "confidence": 0.998,
+     "offset": 2685,
+     "length": 2
+    },
+    {
+     "content": "public-sector",
+     "confidence": 0.977,
+     "offset": 2688,
+     "length": 13
+    },
+    {
+     "content": "agencies.",
+     "confidence": 0.992,
+     "offset": 2702,
+     "length": 9
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.996,
+     "offset": 2712,
+     "length": 3
+    },
+    {
+     "content": "THPA-003",
+     "confidence": 0.975,
+     "offset": 2716,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.998,
+     "offset": 2725,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.994,
+     "offset": 2729,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 2736,
+     "length": 4
+    },
+    {
+     "content": "describe",
+     "confidence": 0.993,
+     "offset": 2741,
+     "length": 8
+    },
+    {
+     "content": "the",
+     "confidence": 0.998,
+     "offset": 2750,
+     "length": 3
+    },
+    {
+     "content": "size",
+     "confidence": 0.989,
+     "offset": 2754,
+     "length": 4
+    },
+    {
+     "content": "of",
+     "confidence": 0.997,
+     "offset": 2759,
+     "length": 2
+    },
+    {
+     "content": "its",
+     "confidence": 0.995,
+     "offset": 2762,
+     "length": 3
+    },
+    {
+     "content": "current",
+     "confidence": 0.993,
+     "offset": 2766,
+     "length": 7
+    },
+    {
+     "content": "customer",
+     "confidence": 0.995,
+     "offset": 2774,
+     "length": 8
+    },
+    {
+     "content": "base",
+     "confidence": 0.992,
+     "offset": 2783,
+     "length": 4
+    },
+    {
+     "content": "for",
+     "confidence": 0.998,
+     "offset": 2788,
+     "length": 3
+    },
+    {
+     "content": "the",
+     "confidence": 0.998,
+     "offset": 2792,
+     "length": 3
+    },
+    {
+     "content": "proposed",
+     "confidence": 0.993,
+     "offset": 2796,
+     "length": 8
+    },
+    {
+     "content": "solution.",
+     "confidence": 0.992,
+     "offset": 2805,
+     "length": 9
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.995,
+     "offset": 2815,
+     "length": 3
+    },
+    {
+     "content": "5.2",
+     "confidence": 0.987,
+     "offset": 2819,
+     "length": 3
+    },
+    {
+     "content": "MAINTENANCE",
+     "confidence": 0.992,
+     "offset": 2823,
+     "length": 11
+    },
+    {
+     "content": "OPERATIONS",
+     "confidence": 0.992,
+     "offset": 2835,
+     "length": 10
+    },
+    {
+     "content": "THPA-004",
+     "confidence": 0.91,
+     "offset": 2846,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 2855,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 2859,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.994,
+     "offset": 2866,
+     "length": 4
+    },
+    {
+     "content": "provide",
+     "confidence": 0.992,
+     "offset": 2871,
+     "length": 7
+    },
+    {
+     "content": "augmented",
+     "confidence": 0.992,
+     "offset": 2879,
+     "length": 9
+    },
+    {
+     "content": "reality",
+     "confidence": 0.994,
+     "offset": 2889,
+     "length": 7
+    },
+    {
+     "content": "guidance",
+     "confidence": 0.992,
+     "offset": 2897,
+     "length": 8
+    },
+    {
+     "content": "for",
+     "confidence": 0.998,
+     "offset": 2906,
+     "length": 3
+    },
+    {
+     "content": "field",
+     "confidence": 0.994,
+     "offset": 2910,
+     "length": 5
+    },
+    {
+     "content": "technicians.",
+     "confidence": 0.992,
+     "offset": 2916,
+     "length": 12
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.962,
+     "offset": 2929,
+     "length": 3
+    },
+    {
+     "content": "THPA-005",
+     "confidence": 0.986,
+     "offset": 2933,
+     "length": 8
+    },
+    {
+     "content": ".",
+     "confidence": 0.164,
+     "offset": 2942,
+     "length": 1
+    },
+    {
+     "content": "The",
+     "confidence": 0.996,
+     "offset": 2944,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 2948,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 2955,
+     "length": 4
+    },
+    {
+     "content": "allow",
+     "confidence": 0.996,
+     "offset": 2960,
+     "length": 5
+    },
+    {
+     "content": "users",
+     "confidence": 0.993,
+     "offset": 2966,
+     "length": 5
+    },
+    {
+     "content": "to",
+     "confidence": 0.998,
+     "offset": 2972,
+     "length": 2
+    },
+    {
+     "content": "attach",
+     "confidence": 0.996,
+     "offset": 2975,
+     "length": 6
+    },
+    {
+     "content": "photos,",
+     "confidence": 0.992,
+     "offset": 2982,
+     "length": 7
+    },
+    {
+     "content": "documents",
+     "confidence": 0.992,
+     "offset": 2990,
+     "length": 9
+    },
+    {
+     "content": "and",
+     "confidence": 0.997,
+     "offset": 3000,
+     "length": 3
+    },
+    {
+     "content": "signatures",
+     "confidence": 0.994,
+     "offset": 3004,
+     "length": 10
+    },
+    {
+     "content": "to",
+     "confidence": 0.998,
+     "offset": 3015,
+     "length": 2
+    },
+    {
+     "content": "work",
+     "confidence": 0.991,
+     "offset": 3018,
+     "length": 4
+    },
+    {
+     "content": "orders",
+     "confidence": 0.996,
+     "offset": 3023,
+     "length": 6
+    },
+    {
+     "content": "from",
+     "confidence": 0.992,
+     "offset": 3030,
+     "length": 4
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 3035,
+     "length": 3
+    },
+    {
+     "content": "field.",
+     "confidence": 0.995,
+     "offset": 3039,
+     "length": 6
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.995,
+     "offset": 3046,
+     "length": 3
+    },
+    {
+     "content": "THPA-006",
+     "confidence": 0.977,
+     "offset": 3050,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.996,
+     "offset": 3059,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.994,
+     "offset": 3063,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.994,
+     "offset": 3070,
+     "length": 4
+    },
+    {
+     "content": "provide",
+     "confidence": 0.995,
+     "offset": 3075,
+     "length": 7
+    },
+    {
+     "content": "automated",
+     "confidence": 0.99,
+     "offset": 3083,
+     "length": 9
+    },
+    {
+     "content": "route",
+     "confidence": 0.995,
+     "offset": 3093,
+     "length": 5
+    },
+    {
+     "content": "optimization",
+     "confidence": 0.992,
+     "offset": 3099,
+     "length": 12
+    },
+    {
+     "content": "for",
+     "confidence": 0.998,
+     "offset": 3112,
+     "length": 3
+    },
+    {
+     "content": "daily",
+     "confidence": 0.994,
+     "offset": 3116,
+     "length": 5
+    },
+    {
+     "content": "crew",
+     "confidence": 0.992,
+     "offset": 3122,
+     "length": 4
+    },
+    {
+     "content": "assignments.",
+     "confidence": 0.991,
+     "offset": 3127,
+     "length": 12
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.995,
+     "offset": 3140,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 3144,
+     "length": 4
+    },
+    {
+     "content": "-007",
+     "confidence": 0.992,
+     "offset": 3149,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 3154,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 3158,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.99,
+     "offset": 3165,
+     "length": 4
+    },
+    {
+     "content": "record",
+     "confidence": 0.995,
+     "offset": 3170,
+     "length": 6
+    },
+    {
+     "content": "labor,",
+     "confidence": 0.987,
+     "offset": 3177,
+     "length": 6
+    },
+    {
+     "content": "parts",
+     "confidence": 0.995,
+     "offset": 3184,
+     "length": 5
+    },
+    {
+     "content": "and",
+     "confidence": 0.995,
+     "offset": 3190,
+     "length": 3
+    },
+    {
+     "content": "equipment",
+     "confidence": 0.992,
+     "offset": 3194,
+     "length": 9
+    },
+    {
+     "content": "costs",
+     "confidence": 0.992,
+     "offset": 3204,
+     "length": 5
+    },
+    {
+     "content": "at",
+     "confidence": 0.997,
+     "offset": 3210,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.998,
+     "offset": 3213,
+     "length": 3
+    },
+    {
+     "content": "work",
+     "confidence": 0.992,
+     "offset": 3217,
+     "length": 4
+    },
+    {
+     "content": "order",
+     "confidence": 0.996,
+     "offset": 3222,
+     "length": 5
+    },
+    {
+     "content": "level.",
+     "confidence": 0.989,
+     "offset": 3228,
+     "length": 6
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.996,
+     "offset": 3235,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 3239,
+     "length": 4
+    },
+    {
+     "content": "-008",
+     "confidence": 0.991,
+     "offset": 3244,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 3249,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.995,
+     "offset": 3253,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 3260,
+     "length": 4
+    },
+    {
+     "content": "supply",
+     "confidence": 0.996,
+     "offset": 3265,
+     "length": 6
+    },
+    {
+     "content": "forty",
+     "confidence": 0.997,
+     "offset": 3272,
+     "length": 5
+    },
+    {
+     "content": "(40)",
+     "confidence": 0.992,
+     "offset": 3278,
+     "length": 4
+    },
+    {
+     "content": "ruggedized",
+     "confidence": 0.992,
+     "offset": 3283,
+     "length": 10
+    },
+    {
+     "content": "handheld",
+     "confidence": 0.993,
+     "offset": 3294,
+     "length": 8
+    },
+    {
+     "content": "devices",
+     "confidence": 0.995,
+     "offset": 3303,
+     "length": 7
+    },
+    {
+     "content": "manufactured",
+     "confidence": 0.992,
+     "offset": 3311,
+     "length": 12
+    },
+    {
+     "content": "in",
+     "confidence": 0.998,
+     "offset": 3324,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.996,
+     "offset": 3327,
+     "length": 3
+    },
+    {
+     "content": "United",
+     "confidence": 0.993,
+     "offset": 3331,
+     "length": 6
+    },
+    {
+     "content": "States",
+     "confidence": 0.994,
+     "offset": 3338,
+     "length": 6
+    },
+    {
+     "content": "and",
+     "confidence": 0.996,
+     "offset": 3345,
+     "length": 3
+    },
+    {
+     "content": "rated",
+     "confidence": 0.994,
+     "offset": 3349,
+     "length": 5
+    },
+    {
+     "content": "IP68.",
+     "confidence": 0.989,
+     "offset": 3355,
+     "length": 5
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.992,
+     "offset": 3361,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.985,
+     "offset": 3365,
+     "length": 4
+    },
+    {
+     "content": "-009",
+     "confidence": 0.989,
+     "offset": 3370,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.998,
+     "offset": 3375,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 3379,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 3386,
+     "length": 4
+    },
+    {
+     "content": "support",
+     "confidence": 0.994,
+     "offset": 3391,
+     "length": 7
+    },
+    {
+     "content": "all",
+     "confidence": 0.977,
+     "offset": 3399,
+     "length": 3
+    },
+    {
+     "content": "port",
+     "confidence": 0.992,
+     "offset": 3403,
+     "length": 4
+    },
+    {
+     "content": "operations.",
+     "confidence": 0.988,
+     "offset": 3408,
+     "length": 11
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.956,
+     "offset": 3420,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 3424,
+     "length": 4
+    },
+    {
+     "content": "-010",
+     "confidence": 0.977,
+     "offset": 3429,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 3434,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.996,
+     "offset": 3438,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.989,
+     "offset": 3445,
+     "length": 4
+    },
+    {
+     "content": "support",
+     "confidence": 0.995,
+     "offset": 3450,
+     "length": 7
+    },
+    {
+     "content": "preventive",
+     "confidence": 0.994,
+     "offset": 3458,
+     "length": 10
+    },
+    {
+     "content": "maintenance",
+     "confidence": 0.993,
+     "offset": 3469,
+     "length": 11
+    },
+    {
+     "content": "schedules",
+     "confidence": 0.992,
+     "offset": 3481,
+     "length": 9
+    },
+    {
+     "content": "based",
+     "confidence": 0.997,
+     "offset": 3491,
+     "length": 5
+    },
+    {
+     "content": "on",
+     "confidence": 0.995,
+     "offset": 3497,
+     "length": 2
+    },
+    {
+     "content": "calendar",
+     "confidence": 0.993,
+     "offset": 3500,
+     "length": 8
+    },
+    {
+     "content": "intervals,",
+     "confidence": 0.992,
+     "offset": 3509,
+     "length": 10
+    },
+    {
+     "content": "meter",
+     "confidence": 0.994,
+     "offset": 3520,
+     "length": 5
+    },
+    {
+     "content": "readings",
+     "confidence": 0.992,
+     "offset": 3526,
+     "length": 8
+    },
+    {
+     "content": "and",
+     "confidence": 0.995,
+     "offset": 3535,
+     "length": 3
+    },
+    {
+     "content": "condition",
+     "confidence": 0.994,
+     "offset": 3539,
+     "length": 9
+    },
+    {
+     "content": "triggers.",
+     "confidence": 0.992,
+     "offset": 3549,
+     "length": 9
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.994,
+     "offset": 3559,
+     "length": 3
+    },
+    {
+     "content": "THPA-011",
+     "confidence": 0.977,
+     "offset": 3563,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 3572,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.996,
+     "offset": 3576,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 3583,
+     "length": 4
+    },
+    {
+     "content": "include",
+     "confidence": 0.994,
+     "offset": 3588,
+     "length": 7
+    },
+    {
+     "content": "visual",
+     "confidence": 0.993,
+     "offset": 3596,
+     "length": 6
+    },
+    {
+     "content": "scheduling",
+     "confidence": 0.995,
+     "offset": 3603,
+     "length": 10
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 3614,
+     "length": 3
+    },
+    {
+     "content": "dispatch",
+     "confidence": 0.995,
+     "offset": 3618,
+     "length": 8
+    },
+    {
+     "content": "of",
+     "confidence": 0.981,
+     "offset": 3627,
+     "length": 2
+    },
+    {
+     "content": "work",
+     "confidence": 0.991,
+     "offset": 3630,
+     "length": 4
+    },
+    {
+     "content": "to",
+     "confidence": 0.997,
+     "offset": 3635,
+     "length": 2
+    },
+    {
+     "content": "crews.",
+     "confidence": 0.993,
+     "offset": 3638,
+     "length": 6
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.992,
+     "offset": 3645,
+     "length": 3
+    },
+    {
+     "content": "5.3",
+     "confidence": 0.994,
+     "offset": 3649,
+     "length": 3
+    },
+    {
+     "content": "ASSET",
+     "confidence": 0.994,
+     "offset": 3653,
+     "length": 5
+    },
+    {
+     "content": "MANAGEMENT",
+     "confidence": 0.992,
+     "offset": 3659,
+     "length": 10
+    },
+    {
+     "content": "THPA-012",
+     "confidence": 0.912,
+     "offset": 3670,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 3679,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.996,
+     "offset": 3683,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 3690,
+     "length": 4
+    },
+    {
+     "content": "record",
+     "confidence": 0.993,
+     "offset": 3695,
+     "length": 6
+    },
+    {
+     "content": "asset",
+     "confidence": 0.995,
+     "offset": 3702,
+     "length": 5
+    },
+    {
+     "content": "condition",
+     "confidence": 0.993,
+     "offset": 3708,
+     "length": 9
+    },
+    {
+     "content": "assessments",
+     "confidence": 0.992,
+     "offset": 3718,
+     "length": 11
+    },
+    {
+     "content": "using",
+     "confidence": 0.997,
+     "offset": 3730,
+     "length": 5
+    },
+    {
+     "content": "configurable",
+     "confidence": 0.992,
+     "offset": 3736,
+     "length": 12
+    },
+    {
+     "content": "rating",
+     "confidence": 0.996,
+     "offset": 3749,
+     "length": 6
+    },
+    {
+     "content": "scales.",
+     "confidence": 0.992,
+     "offset": 3756,
+     "length": 7
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.997,
+     "offset": 3764,
+     "length": 3
+    },
+    {
+     "content": "THPA-013",
+     "confidence": 0.962,
+     "offset": 3768,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 3777,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.994,
+     "offset": 3781,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.995,
+     "offset": 3788,
+     "length": 4
+    },
+    {
+     "content": "track",
+     "confidence": 0.993,
+     "offset": 3793,
+     "length": 5
+    },
+    {
+     "content": "total",
+     "confidence": 0.994,
+     "offset": 3799,
+     "length": 5
+    },
+    {
+     "content": "cost",
+     "confidence": 0.992,
+     "offset": 3805,
+     "length": 4
+    },
+    {
+     "content": "of",
+     "confidence": 0.996,
+     "offset": 3810,
+     "length": 2
+    },
+    {
+     "content": "ownership",
+     "confidence": 0.994,
+     "offset": 3813,
+     "length": 9
+    },
+    {
+     "content": "across",
+     "confidence": 0.995,
+     "offset": 3823,
+     "length": 6
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 3830,
+     "length": 3
+    },
+    {
+     "content": "asset",
+     "confidence": 0.996,
+     "offset": 3834,
+     "length": 5
+    },
+    {
+     "content": "lifecycle.",
+     "confidence": 0.989,
+     "offset": 3840,
+     "length": 10
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.997,
+     "offset": 3851,
+     "length": 3
+    },
+    {
+     "content": "5.4",
+     "confidence": 0.989,
+     "offset": 3855,
+     "length": 3
+    },
+    {
+     "content": "REPORTING",
+     "confidence": 0.995,
+     "offset": 3859,
+     "length": 9
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 3869,
+     "length": 4
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.977,
+     "offset": 3874,
+     "length": 3
+    },
+    {
+     "content": "2026-09",
+     "confidence": 0.916,
+     "offset": 3878,
+     "length": 7
+    },
+    {
+     "content": "Page",
+     "confidence": 0.99,
+     "offset": 3886,
+     "length": 4
+    },
+    {
+     "content": "3",
+     "confidence": 0.996,
+     "offset": 3891,
+     "length": 1
+    }
+   ]
+  },
+  {
+   "pageNumber": 4,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch",
+   "angle": -0.6553999781608582,
+   "words": [
+    {
+     "content": "THPA-014",
+     "confidence": 0.958,
+     "offset": 3893,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 3902,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 3906,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 3913,
+     "length": 4
+    },
+    {
+     "content": "report",
+     "confidence": 0.996,
+     "offset": 3918,
+     "length": 6
+    },
+    {
+     "content": "key",
+     "confidence": 0.996,
+     "offset": 3925,
+     "length": 3
+    },
+    {
+     "content": "performance",
+     "confidence": 0.993,
+     "offset": 3929,
+     "length": 11
+    },
+    {
+     "content": "indicators",
+     "confidence": 0.993,
+     "offset": 3941,
+     "length": 10
+    },
+    {
+     "content": "such",
+     "confidence": 0.992,
+     "offset": 3952,
+     "length": 4
+    },
+    {
+     "content": "as",
+     "confidence": 0.992,
+     "offset": 3957,
+     "length": 2
+    },
+    {
+     "content": "mean",
+     "confidence": 0.987,
+     "offset": 3960,
+     "length": 4
+    },
+    {
+     "content": "time",
+     "confidence": 0.992,
+     "offset": 3965,
+     "length": 4
+    },
+    {
+     "content": "to",
+     "confidence": 0.998,
+     "offset": 3970,
+     "length": 2
+    },
+    {
+     "content": "repair",
+     "confidence": 0.994,
+     "offset": 3973,
+     "length": 6
+    },
+    {
+     "content": "and",
+     "confidence": 0.995,
+     "offset": 3980,
+     "length": 3
+    },
+    {
+     "content": "PM",
+     "confidence": 0.993,
+     "offset": 3984,
+     "length": 2
+    },
+    {
+     "content": "compliance.",
+     "confidence": 0.99,
+     "offset": 3987,
+     "length": 11
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.993,
+     "offset": 3999,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 4003,
+     "length": 4
+    },
+    {
+     "content": "-015",
+     "confidence": 0.977,
+     "offset": 4008,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.996,
+     "offset": 4013,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.996,
+     "offset": 4017,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 4024,
+     "length": 4
+    },
+    {
+     "content": "allow",
+     "confidence": 0.993,
+     "offset": 4029,
+     "length": 5
+    },
+    {
+     "content": "reports",
+     "confidence": 0.994,
+     "offset": 4035,
+     "length": 7
+    },
+    {
+     "content": "to",
+     "confidence": 0.999,
+     "offset": 4043,
+     "length": 2
+    },
+    {
+     "content": "be",
+     "confidence": 0.996,
+     "offset": 4046,
+     "length": 2
+    },
+    {
+     "content": "scheduled",
+     "confidence": 0.992,
+     "offset": 4049,
+     "length": 9
+    },
+    {
+     "content": "and",
+     "confidence": 0.995,
+     "offset": 4059,
+     "length": 3
+    },
+    {
+     "content": "distributed",
+     "confidence": 0.992,
+     "offset": 4063,
+     "length": 11
+    },
+    {
+     "content": "by",
+     "confidence": 0.989,
+     "offset": 4075,
+     "length": 2
+    },
+    {
+     "content": "email.",
+     "confidence": 0.962,
+     "offset": 4078,
+     "length": 6
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.995,
+     "offset": 4085,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 4089,
+     "length": 4
+    },
+    {
+     "content": "-016",
+     "confidence": 0.984,
+     "offset": 4094,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 4099,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.994,
+     "offset": 4103,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.994,
+     "offset": 4110,
+     "length": 4
+    },
+    {
+     "content": "produce",
+     "confidence": 0.995,
+     "offset": 4115,
+     "length": 7
+    },
+    {
+     "content": "reports",
+     "confidence": 0.993,
+     "offset": 4123,
+     "length": 7
+    },
+    {
+     "content": "required",
+     "confidence": 0.992,
+     "offset": 4131,
+     "length": 8
+    },
+    {
+     "content": "by",
+     "confidence": 0.996,
+     "offset": 4140,
+     "length": 2
+    },
+    {
+     "content": "environmental",
+     "confidence": 0.992,
+     "offset": 4143,
+     "length": 13
+    },
+    {
+     "content": "regulators.",
+     "confidence": 0.991,
+     "offset": 4157,
+     "length": 11
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.993,
+     "offset": 4169,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 4173,
+     "length": 4
+    },
+    {
+     "content": "-017",
+     "confidence": 0.992,
+     "offset": 4178,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.994,
+     "offset": 4183,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.996,
+     "offset": 4187,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.989,
+     "offset": 4194,
+     "length": 4
+    },
+    {
+     "content": "produce",
+     "confidence": 0.995,
+     "offset": 4199,
+     "length": 7
+    },
+    {
+     "content": "carbon",
+     "confidence": 0.995,
+     "offset": 4207,
+     "length": 6
+    },
+    {
+     "content": "emissions",
+     "confidence": 0.992,
+     "offset": 4214,
+     "length": 9
+    },
+    {
+     "content": "reporting",
+     "confidence": 0.994,
+     "offset": 4224,
+     "length": 9
+    },
+    {
+     "content": "aligned",
+     "confidence": 0.995,
+     "offset": 4234,
+     "length": 7
+    },
+    {
+     "content": "with",
+     "confidence": 0.989,
+     "offset": 4242,
+     "length": 4
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 4247,
+     "length": 3
+    },
+    {
+     "content": "GHG",
+     "confidence": 0.992,
+     "offset": 4251,
+     "length": 3
+    },
+    {
+     "content": "Protocol.",
+     "confidence": 0.989,
+     "offset": 4255,
+     "length": 9
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.994,
+     "offset": 4265,
+     "length": 3
+    },
+    {
+     "content": "THPA-018",
+     "confidence": 0.952,
+     "offset": 4269,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.998,
+     "offset": 4278,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.994,
+     "offset": 4282,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.995,
+     "offset": 4289,
+     "length": 4
+    },
+    {
+     "content": "support",
+     "confidence": 0.995,
+     "offset": 4294,
+     "length": 7
+    },
+    {
+     "content": "self-service",
+     "confidence": 0.946,
+     "offset": 4302,
+     "length": 12
+    },
+    {
+     "content": "report",
+     "confidence": 0.993,
+     "offset": 4315,
+     "length": 6
+    },
+    {
+     "content": "building",
+     "confidence": 0.995,
+     "offset": 4322,
+     "length": 8
+    },
+    {
+     "content": "by",
+     "confidence": 0.997,
+     "offset": 4331,
+     "length": 2
+    },
+    {
+     "content": "non-technical",
+     "confidence": 0.963,
+     "offset": 4334,
+     "length": 13
+    },
+    {
+     "content": "users:",
+     "confidence": 0.842,
+     "offset": 4348,
+     "length": 6
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.996,
+     "offset": 4355,
+     "length": 3
+    },
+    {
+     "content": "5.5",
+     "confidence": 0.986,
+     "offset": 4359,
+     "length": 3
+    },
+    {
+     "content": "INTERFACES",
+     "confidence": 0.992,
+     "offset": 4363,
+     "length": 10
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 4374,
+     "length": 4
+    },
+    {
+     "content": "-019",
+     "confidence": 0.976,
+     "offset": 4379,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 4384,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.996,
+     "offset": 4388,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.993,
+     "offset": 4395,
+     "length": 4
+    },
+    {
+     "content": "exchange",
+     "confidence": 0.994,
+     "offset": 4400,
+     "length": 8
+    },
+    {
+     "content": "service",
+     "confidence": 0.995,
+     "offset": 4409,
+     "length": 7
+    },
+    {
+     "content": "order",
+     "confidence": 0.993,
+     "offset": 4417,
+     "length": 5
+    },
+    {
+     "content": "data",
+     "confidence": 0.992,
+     "offset": 4423,
+     "length": 4
+    },
+    {
+     "content": "with",
+     "confidence": 0.992,
+     "offset": 4428,
+     "length": 4
+    },
+    {
+     "content": "the",
+     "confidence": 0.998,
+     "offset": 4433,
+     "length": 3
+    },
+    {
+     "content": "CIS.",
+     "confidence": 0.99,
+     "offset": 4437,
+     "length": 4
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.998,
+     "offset": 4442,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 4446,
+     "length": 4
+    },
+    {
+     "content": "-020",
+     "confidence": 0.992,
+     "offset": 4451,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.994,
+     "offset": 4456,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.993,
+     "offset": 4460,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.989,
+     "offset": 4467,
+     "length": 4
+    },
+    {
+     "content": "describe",
+     "confidence": 0.993,
+     "offset": 4472,
+     "length": 8
+    },
+    {
+     "content": "API",
+     "confidence": 0.983,
+     "offset": 4481,
+     "length": 3
+    },
+    {
+     "content": "throughput",
+     "confidence": 0.993,
+     "offset": 4485,
+     "length": 10
+    },
+    {
+     "content": "limits.",
+     "confidence": 0.99,
+     "offset": 4496,
+     "length": 7
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.91,
+     "offset": 4504,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.985,
+     "offset": 4508,
+     "length": 4
+    },
+    {
+     "content": "-021",
+     "confidence": 0.989,
+     "offset": 4513,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.996,
+     "offset": 4518,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.997,
+     "offset": 4522,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 4529,
+     "length": 4
+    },
+    {
+     "content": "exchange",
+     "confidence": 0.993,
+     "offset": 4534,
+     "length": 8
+    },
+    {
+     "content": "data",
+     "confidence": 0.991,
+     "offset": 4543,
+     "length": 4
+    },
+    {
+     "content": "with",
+     "confidence": 0.992,
+     "offset": 4548,
+     "length": 4
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 4553,
+     "length": 3
+    },
+    {
+     "content": "financial",
+     "confidence": 0.993,
+     "offset": 4557,
+     "length": 9
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 4567,
+     "length": 3
+    },
+    {
+     "content": "HR",
+     "confidence": 0.993,
+     "offset": 4571,
+     "length": 2
+    },
+    {
+     "content": "system",
+     "confidence": 0.997,
+     "offset": 4574,
+     "length": 6
+    },
+    {
+     "content": "of",
+     "confidence": 0.997,
+     "offset": 4581,
+     "length": 2
+    },
+    {
+     "content": "record.",
+     "confidence": 0.995,
+     "offset": 4584,
+     "length": 7
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.992,
+     "offset": 4592,
+     "length": 3
+    },
+    {
+     "content": "THPA-022",
+     "confidence": 0.977,
+     "offset": 4596,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.996,
+     "offset": 4605,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 4609,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 4616,
+     "length": 4
+    },
+    {
+     "content": "integrate",
+     "confidence": 0.994,
+     "offset": 4621,
+     "length": 9
+    },
+    {
+     "content": "with",
+     "confidence": 0.992,
+     "offset": 4631,
+     "length": 4
+    },
+    {
+     "content": "Esri",
+     "confidence": 0.992,
+     "offset": 4636,
+     "length": 4
+    },
+    {
+     "content": "ArcGIS",
+     "confidence": 0.986,
+     "offset": 4641,
+     "length": 6
+    },
+    {
+     "content": "Enterprise",
+     "confidence": 0.992,
+     "offset": 4648,
+     "length": 10
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 4659,
+     "length": 3
+    },
+    {
+     "content": "ArcGIS",
+     "confidence": 0.987,
+     "offset": 4663,
+     "length": 6
+    },
+    {
+     "content": "Online.",
+     "confidence": 0.993,
+     "offset": 4670,
+     "length": 7
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.994,
+     "offset": 4678,
+     "length": 3
+    },
+    {
+     "content": "THPA-023",
+     "confidence": 0.958,
+     "offset": 4682,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 4691,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.994,
+     "offset": 4695,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.993,
+     "offset": 4702,
+     "length": 4
+    },
+    {
+     "content": "provide",
+     "confidence": 0.995,
+     "offset": 4707,
+     "length": 7
+    },
+    {
+     "content": "a",
+     "confidence": 0.994,
+     "offset": 4715,
+     "length": 1
+    },
+    {
+     "content": "documented",
+     "confidence": 0.992,
+     "offset": 4717,
+     "length": 10
+    },
+    {
+     "content": "REST",
+     "confidence": 0.989,
+     "offset": 4728,
+     "length": 4
+    },
+    {
+     "content": "API",
+     "confidence": 0.977,
+     "offset": 4733,
+     "length": 3
+    },
+    {
+     "content": "covering",
+     "confidence": 0.993,
+     "offset": 4737,
+     "length": 8
+    },
+    {
+     "content": "all",
+     "confidence": 0.992,
+     "offset": 4746,
+     "length": 3
+    },
+    {
+     "content": "major",
+     "confidence": 0.993,
+     "offset": 4750,
+     "length": 5
+    },
+    {
+     "content": "business",
+     "confidence": 0.994,
+     "offset": 4756,
+     "length": 8
+    },
+    {
+     "content": "objects.",
+     "confidence": 0.992,
+     "offset": 4765,
+     "length": 8
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.996,
+     "offset": 4774,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 4778,
+     "length": 4
+    },
+    {
+     "content": "-024",
+     "confidence": 0.992,
+     "offset": 4783,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 4788,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 4792,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 4799,
+     "length": 4
+    },
+    {
+     "content": "integrate",
+     "confidence": 0.995,
+     "offset": 4804,
+     "length": 9
+    },
+    {
+     "content": "with",
+     "confidence": 0.992,
+     "offset": 4814,
+     "length": 4
+    },
+    {
+     "content": "Microsoft",
+     "confidence": 0.994,
+     "offset": 4819,
+     "length": 9
+    },
+    {
+     "content": "365",
+     "confidence": 0.995,
+     "offset": 4829,
+     "length": 3
+    },
+    {
+     "content": "email,",
+     "confidence": 0.992,
+     "offset": 4833,
+     "length": 6
+    },
+    {
+     "content": "calendar",
+     "confidence": 0.993,
+     "offset": 4840,
+     "length": 8
+    },
+    {
+     "content": "and",
+     "confidence": 0.994,
+     "offset": 4849,
+     "length": 3
+    },
+    {
+     "content": "Teams.",
+     "confidence": 0.987,
+     "offset": 4853,
+     "length": 6
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.986,
+     "offset": 4860,
+     "length": 3
+    },
+    {
+     "content": "THPA-025",
+     "confidence": 0.973,
+     "offset": 4864,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 4873,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 4877,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 4884,
+     "length": 4
+    },
+    {
+     "content": "support",
+     "confidence": 0.995,
+     "offset": 4889,
+     "length": 7
+    },
+    {
+     "content": "scheduled",
+     "confidence": 0.992,
+     "offset": 4897,
+     "length": 9
+    },
+    {
+     "content": "file-based",
+     "confidence": 0.986,
+     "offset": 4907,
+     "length": 10
+    },
+    {
+     "content": "imports",
+     "confidence": 0.995,
+     "offset": 4918,
+     "length": 7
+    },
+    {
+     "content": "and",
+     "confidence": 0.996,
+     "offset": 4926,
+     "length": 3
+    },
+    {
+     "content": "exports",
+     "confidence": 0.993,
+     "offset": 4930,
+     "length": 7
+    },
+    {
+     "content": "over",
+     "confidence": 0.992,
+     "offset": 4938,
+     "length": 4
+    },
+    {
+     "content": "secure",
+     "confidence": 0.997,
+     "offset": 4943,
+     "length": 6
+    },
+    {
+     "content": "file",
+     "confidence": 0.989,
+     "offset": 4950,
+     "length": 4
+    },
+    {
+     "content": "transfer.",
+     "confidence": 0.993,
+     "offset": 4955,
+     "length": 9
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.998,
+     "offset": 4965,
+     "length": 3
+    },
+    {
+     "content": "5.6",
+     "confidence": 0.993,
+     "offset": 4969,
+     "length": 3
+    },
+    {
+     "content": "TECHNICAL",
+     "confidence": 0.993,
+     "offset": 4973,
+     "length": 9
+    },
+    {
+     "content": "THPA-026",
+     "confidence": 0.973,
+     "offset": 4983,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 4992,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.996,
+     "offset": 4996,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.989,
+     "offset": 5003,
+     "length": 4
+    },
+    {
+     "content": "provide",
+     "confidence": 0.995,
+     "offset": 5008,
+     "length": 7
+    },
+    {
+     "content": "a",
+     "confidence": 0.993,
+     "offset": 5016,
+     "length": 1
+    },
+    {
+     "content": "multilingual",
+     "confidence": 0.993,
+     "offset": 5018,
+     "length": 12
+    },
+    {
+     "content": "user",
+     "confidence": 0.992,
+     "offset": 5031,
+     "length": 4
+    },
+    {
+     "content": "interface",
+     "confidence": 0.994,
+     "offset": 5036,
+     "length": 9
+    },
+    {
+     "content": "including",
+     "confidence": 0.995,
+     "offset": 5046,
+     "length": 9
+    },
+    {
+     "content": "Spanish.",
+     "confidence": 0.994,
+     "offset": 5056,
+     "length": 8
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.996,
+     "offset": 5065,
+     "length": 3
+    },
+    {
+     "content": "THPA-027",
+     "confidence": 0.977,
+     "offset": 5069,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.998,
+     "offset": 5078,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.997,
+     "offset": 5082,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.995,
+     "offset": 5089,
+     "length": 4
+    },
+    {
+     "content": "run",
+     "confidence": 0.995,
+     "offset": 5094,
+     "length": 3
+    },
+    {
+     "content": "in",
+     "confidence": 0.997,
+     "offset": 5098,
+     "length": 2
+    },
+    {
+     "content": "all",
+     "confidence": 0.992,
+     "offset": 5101,
+     "length": 3
+    },
+    {
+     "content": "major",
+     "confidence": 0.995,
+     "offset": 5105,
+     "length": 5
+    },
+    {
+     "content": "modern",
+     "confidence": 0.996,
+     "offset": 5111,
+     "length": 6
+    },
+    {
+     "content": "web",
+     "confidence": 0.986,
+     "offset": 5118,
+     "length": 3
+    },
+    {
+     "content": "browsers",
+     "confidence": 0.995,
+     "offset": 5122,
+     "length": 8
+    },
+    {
+     "content": "without",
+     "confidence": 0.994,
+     "offset": 5131,
+     "length": 7
+    },
+    {
+     "content": "plug-ins.",
+     "confidence": 0.844,
+     "offset": 5139,
+     "length": 9
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.941,
+     "offset": 5149,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 5153,
+     "length": 4
+    },
+    {
+     "content": "-028",
+     "confidence": 0.992,
+     "offset": 5158,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 5163,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 5167,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.99,
+     "offset": 5174,
+     "length": 4
+    },
+    {
+     "content": "store",
+     "confidence": 0.996,
+     "offset": 5179,
+     "length": 5
+    },
+    {
+     "content": "all",
+     "confidence": 0.994,
+     "offset": 5185,
+     "length": 3
+    },
+    {
+     "content": "customer",
+     "confidence": 0.995,
+     "offset": 5189,
+     "length": 8
+    },
+    {
+     "content": "data",
+     "confidence": 0.992,
+     "offset": 5198,
+     "length": 4
+    },
+    {
+     "content": "in",
+     "confidence": 0.998,
+     "offset": 5203,
+     "length": 2
+    },
+    {
+     "content": "data",
+     "confidence": 0.989,
+     "offset": 5206,
+     "length": 4
+    },
+    {
+     "content": "centers",
+     "confidence": 0.995,
+     "offset": 5211,
+     "length": 7
+    },
+    {
+     "content": "located",
+     "confidence": 0.993,
+     "offset": 5219,
+     "length": 7
+    },
+    {
+     "content": "within",
+     "confidence": 0.995,
+     "offset": 5227,
+     "length": 6
+    },
+    {
+     "content": "the",
+     "confidence": 0.648,
+     "offset": 5234,
+     "length": 3
+    },
+    {
+     "content": "continental",
+     "confidence": 0.992,
+     "offset": 5238,
+     "length": 11
+    },
+    {
+     "content": "United",
+     "confidence": 0.994,
+     "offset": 5250,
+     "length": 6
+    },
+    {
+     "content": "States.",
+     "confidence": 0.992,
+     "offset": 5257,
+     "length": 7
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.993,
+     "offset": 5265,
+     "length": 3
+    },
+    {
+     "content": "THPA-029",
+     "confidence": 0.949,
+     "offset": 5269,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.995,
+     "offset": 5278,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.997,
+     "offset": 5282,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.994,
+     "offset": 5289,
+     "length": 4
+    },
+    {
+     "content": "operate",
+     "confidence": 0.997,
+     "offset": 5294,
+     "length": 7
+    },
+    {
+     "content": "in",
+     "confidence": 0.998,
+     "offset": 5302,
+     "length": 2
+    },
+    {
+     "content": "a",
+     "confidence": 0.995,
+     "offset": 5305,
+     "length": 1
+    },
+    {
+     "content": "disconnected",
+     "confidence": 0.993,
+     "offset": 5307,
+     "length": 12
+    },
+    {
+     "content": "environment",
+     "confidence": 0.993,
+     "offset": 5320,
+     "length": 11
+    },
+    {
+     "content": "with",
+     "confidence": 0.989,
+     "offset": 5332,
+     "length": 4
+    },
+    {
+     "content": "no",
+     "confidence": 0.998,
+     "offset": 5337,
+     "length": 2
+    },
+    {
+     "content": "internet",
+     "confidence": 0.999,
+     "offset": 5340,
+     "length": 8
+    },
+    {
+     "content": "connectivity.",
+     "confidence": 1,
+     "offset": 5349,
+     "length": 13
+    },
+    {
+     "content": ".",
+     "confidence": 0.999,
+     "offset": 5363,
+     "length": 1
+    },
+    {
+     "content": "(M)",
+     "confidence": 1,
+     "offset": 5365,
+     "length": 3
+    },
+    {
+     "content": "5.7",
+     "confidence": 0.998,
+     "offset": 5369,
+     "length": 3
+    },
+    {
+     "content": "SECURITY",
+     "confidence": 0.992,
+     "offset": 5373,
+     "length": 8
+    },
+    {
+     "content": "THPA-030",
+     "confidence": 0.975,
+     "offset": 5382,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 5391,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.997,
+     "offset": 5395,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 5402,
+     "length": 4
+    },
+    {
+     "content": "perform",
+     "confidence": 0.995,
+     "offset": 5407,
+     "length": 7
+    },
+    {
+     "content": "background",
+     "confidence": 0.992,
+     "offset": 5415,
+     "length": 10
+    },
+    {
+     "content": "checks",
+     "confidence": 0.997,
+     "offset": 5426,
+     "length": 6
+    },
+    {
+     "content": "on",
+     "confidence": 0.992,
+     "offset": 5433,
+     "length": 2
+    },
+    {
+     "content": "all",
+     "confidence": 0.99,
+     "offset": 5436,
+     "length": 3
+    },
+    {
+     "content": "personnel",
+     "confidence": 0.992,
+     "offset": 5440,
+     "length": 9
+    },
+    {
+     "content": "with",
+     "confidence": 0.992,
+     "offset": 5450,
+     "length": 4
+    },
+    {
+     "content": "access",
+     "confidence": 0.995,
+     "offset": 5455,
+     "length": 6
+    },
+    {
+     "content": "to",
+     "confidence": 0.998,
+     "offset": 5462,
+     "length": 2
+    },
+    {
+     "content": "customer",
+     "confidence": 0.994,
+     "offset": 5465,
+     "length": 8
+    },
+    {
+     "content": "data.",
+     "confidence": 0.992,
+     "offset": 5474,
+     "length": 5
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.995,
+     "offset": 5480,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 5484,
+     "length": 4
+    },
+    {
+     "content": "-031",
+     "confidence": 0.992,
+     "offset": 5489,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 5494,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.993,
+     "offset": 5498,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.993,
+     "offset": 5505,
+     "length": 4
+    },
+    {
+     "content": "support",
+     "confidence": 0.995,
+     "offset": 5510,
+     "length": 7
+    },
+    {
+     "content": "multi-factor",
+     "confidence": 0.936,
+     "offset": 5518,
+     "length": 12
+    },
+    {
+     "content": "authentication",
+     "confidence": 0.992,
+     "offset": 5531,
+     "length": 14
+    },
+    {
+     "content": "for",
+     "confidence": 0.993,
+     "offset": 5546,
+     "length": 3
+    },
+    {
+     "content": "all",
+     "confidence": 0.955,
+     "offset": 5550,
+     "length": 3
+    },
+    {
+     "content": "users.",
+     "confidence": 0.992,
+     "offset": 5554,
+     "length": 6
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.994,
+     "offset": 5561,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.992,
+     "offset": 5565,
+     "length": 4
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.978,
+     "offset": 5570,
+     "length": 3
+    },
+    {
+     "content": "2026-09",
+     "confidence": 0.977,
+     "offset": 5574,
+     "length": 7
+    },
+    {
+     "content": "Page",
+     "confidence": 0.99,
+     "offset": 5582,
+     "length": 4
+    },
+    {
+     "content": "4",
+     "confidence": 0.996,
+     "offset": 5587,
+     "length": 1
+    }
+   ]
+  },
+  {
+   "pageNumber": 5,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch",
+   "angle": 0.5554701089859009,
+   "words": [
+    {
+     "content": "THPA-032",
+     "confidence": 0.974,
+     "offset": 5589,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.997,
+     "offset": 5598,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.993,
+     "offset": 5602,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 5609,
+     "length": 4
+    },
+    {
+     "content": "describe",
+     "confidence": 0.994,
+     "offset": 5614,
+     "length": 8
+    },
+    {
+     "content": "its",
+     "confidence": 0.993,
+     "offset": 5623,
+     "length": 3
+    },
+    {
+     "content": "vulnerability",
+     "confidence": 0.992,
+     "offset": 5627,
+     "length": 13
+    },
+    {
+     "content": "scanning",
+     "confidence": 0.995,
+     "offset": 5641,
+     "length": 8
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 5650,
+     "length": 3
+    },
+    {
+     "content": "patching",
+     "confidence": 0.994,
+     "offset": 5654,
+     "length": 8
+    },
+    {
+     "content": "process.",
+     "confidence": 0.993,
+     "offset": 5663,
+     "length": 8
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.992,
+     "offset": 5672,
+     "length": 3
+    },
+    {
+     "content": "5.8",
+     "confidence": 0.998,
+     "offset": 5676,
+     "length": 3
+    },
+    {
+     "content": "DATA",
+     "confidence": 0.99,
+     "offset": 5680,
+     "length": 4
+    },
+    {
+     "content": "THPA-033",
+     "confidence": 0.985,
+     "offset": 5685,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 5694,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.995,
+     "offset": 5698,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 5705,
+     "length": 4
+    },
+    {
+     "content": "sign",
+     "confidence": 0.992,
+     "offset": 5710,
+     "length": 4
+    },
+    {
+     "content": "a",
+     "confidence": 0.993,
+     "offset": 5715,
+     "length": 1
+    },
+    {
+     "content": "BAA",
+     "confidence": 0.992,
+     "offset": 5717,
+     "length": 3
+    },
+    {
+     "content": "if",
+     "confidence": 0.994,
+     "offset": 5721,
+     "length": 2
+    },
+    {
+     "content": "PHI",
+     "confidence": 0.995,
+     "offset": 5724,
+     "length": 3
+    },
+    {
+     "content": "is",
+     "confidence": 0.998,
+     "offset": 5728,
+     "length": 2
+    },
+    {
+     "content": "involved.",
+     "confidence": 0.992,
+     "offset": 5731,
+     "length": 9
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.997,
+     "offset": 5741,
+     "length": 3
+    },
+    {
+     "content": "5.9",
+     "confidence": 0.993,
+     "offset": 5745,
+     "length": 3
+    },
+    {
+     "content": "AVAILABILITY",
+     "confidence": 0.992,
+     "offset": 5749,
+     "length": 12
+    },
+    {
+     "content": "THPA-034",
+     "confidence": 0.99,
+     "offset": 5762,
+     "length": 8
+    },
+    {
+     "content": ".",
+     "confidence": 0.94,
+     "offset": 5771,
+     "length": 1
+    },
+    {
+     "content": "The",
+     "confidence": 0.997,
+     "offset": 5773,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.995,
+     "offset": 5777,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 5784,
+     "length": 4
+    },
+    {
+     "content": "conduct",
+     "confidence": 0.992,
+     "offset": 5789,
+     "length": 7
+    },
+    {
+     "content": "annual",
+     "confidence": 0.983,
+     "offset": 5797,
+     "length": 6
+    },
+    {
+     "content": "disaster",
+     "confidence": 0.993,
+     "offset": 5804,
+     "length": 8
+    },
+    {
+     "content": "recovery",
+     "confidence": 0.993,
+     "offset": 5813,
+     "length": 8
+    },
+    {
+     "content": "exercises.",
+     "confidence": 0.989,
+     "offset": 5822,
+     "length": 10
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.992,
+     "offset": 5833,
+     "length": 3
+    },
+    {
+     "content": "THPA-035",
+     "confidence": 0.963,
+     "offset": 5837,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 5846,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.995,
+     "offset": 5850,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 5857,
+     "length": 4
+    },
+    {
+     "content": "define",
+     "confidence": 0.997,
+     "offset": 5862,
+     "length": 6
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 5869,
+     "length": 3
+    },
+    {
+     "content": "maximum",
+     "confidence": 0.993,
+     "offset": 5873,
+     "length": 7
+    },
+    {
+     "content": "acceptable",
+     "confidence": 0.992,
+     "offset": 5881,
+     "length": 10
+    },
+    {
+     "content": "data",
+     "confidence": 0.99,
+     "offset": 5892,
+     "length": 4
+    },
+    {
+     "content": "loss",
+     "confidence": 0.992,
+     "offset": 5897,
+     "length": 4
+    },
+    {
+     "content": "in",
+     "confidence": 0.998,
+     "offset": 5902,
+     "length": 2
+    },
+    {
+     "content": "a",
+     "confidence": 0.995,
+     "offset": 5905,
+     "length": 1
+    },
+    {
+     "content": "disaster.",
+     "confidence": 0.992,
+     "offset": 5907,
+     "length": 9
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.992,
+     "offset": 5917,
+     "length": 3
+    },
+    {
+     "content": "THPA-036",
+     "confidence": 0.977,
+     "offset": 5921,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 5930,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 5934,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.993,
+     "offset": 5941,
+     "length": 4
+    },
+    {
+     "content": "be",
+     "confidence": 0.993,
+     "offset": 5946,
+     "length": 2
+    },
+    {
+     "content": "available",
+     "confidence": 0.992,
+     "offset": 5949,
+     "length": 9
+    },
+    {
+     "content": "99.5%",
+     "confidence": 0.987,
+     "offset": 5959,
+     "length": 5
+    },
+    {
+     "content": "of",
+     "confidence": 0.996,
+     "offset": 5965,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 5968,
+     "length": 3
+    },
+    {
+     "content": "time,",
+     "confidence": 0.996,
+     "offset": 5972,
+     "length": 5
+    },
+    {
+     "content": "measured",
+     "confidence": 0.994,
+     "offset": 5978,
+     "length": 8
+    },
+    {
+     "content": "monthly.",
+     "confidence": 0.992,
+     "offset": 5987,
+     "length": 8
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.995,
+     "offset": 5996,
+     "length": 3
+    },
+    {
+     "content": "THPA-037",
+     "confidence": 0.977,
+     "offset": 6000,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.997,
+     "offset": 6009,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.996,
+     "offset": 6013,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.987,
+     "offset": 6020,
+     "length": 4
+    },
+    {
+     "content": "monitor",
+     "confidence": 0.996,
+     "offset": 6025,
+     "length": 7
+    },
+    {
+     "content": "system",
+     "confidence": 0.995,
+     "offset": 6033,
+     "length": 6
+    },
+    {
+     "content": "performance",
+     "confidence": 0.992,
+     "offset": 6040,
+     "length": 11
+    },
+    {
+     "content": "and",
+     "confidence": 0.993,
+     "offset": 6052,
+     "length": 3
+    },
+    {
+     "content": "capacity",
+     "confidence": 0.995,
+     "offset": 6056,
+     "length": 8
+    },
+    {
+     "content": "proactively.",
+     "confidence": 0.993,
+     "offset": 6065,
+     "length": 12
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.992,
+     "offset": 6078,
+     "length": 3
+    },
+    {
+     "content": "THPA-038",
+     "confidence": 0.985,
+     "offset": 6082,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 6091,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.996,
+     "offset": 6095,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 6102,
+     "length": 4
+    },
+    {
+     "content": "provide",
+     "confidence": 0.995,
+     "offset": 6107,
+     "length": 7
+    },
+    {
+     "content": "a",
+     "confidence": 0.994,
+     "offset": 6115,
+     "length": 1
+    },
+    {
+     "content": "dedicated",
+     "confidence": 0.993,
+     "offset": 6117,
+     "length": 9
+    },
+    {
+     "content": "single-tenant",
+     "confidence": 0.989,
+     "offset": 6127,
+     "length": 13
+    },
+    {
+     "content": "database",
+     "confidence": 0.995,
+     "offset": 6141,
+     "length": 8
+    },
+    {
+     "content": "for",
+     "confidence": 0.997,
+     "offset": 6150,
+     "length": 3
+    },
+    {
+     "content": "the",
+     "confidence": 0.997,
+     "offset": 6154,
+     "length": 3
+    },
+    {
+     "content": "agency.",
+     "confidence": 0.995,
+     "offset": 6158,
+     "length": 7
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.989,
+     "offset": 6166,
+     "length": 3
+    },
+    {
+     "content": "THPA-039",
+     "confidence": 0.903,
+     "offset": 6170,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.994,
+     "offset": 6179,
+     "length": 3
+    },
+    {
+     "content": "system",
+     "confidence": 0.997,
+     "offset": 6183,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 6190,
+     "length": 4
+    },
+    {
+     "content": "use",
+     "confidence": 0.995,
+     "offset": 6195,
+     "length": 3
+    },
+    {
+     "content": "geographically",
+     "confidence": 0.993,
+     "offset": 6199,
+     "length": 14
+    },
+    {
+     "content": "separate",
+     "confidence": 0.995,
+     "offset": 6214,
+     "length": 8
+    },
+    {
+     "content": "data",
+     "confidence": 0.991,
+     "offset": 6223,
+     "length": 4
+    },
+    {
+     "content": "centers",
+     "confidence": 0.993,
+     "offset": 6228,
+     "length": 7
+    },
+    {
+     "content": "for",
+     "confidence": 0.999,
+     "offset": 6236,
+     "length": 3
+    },
+    {
+     "content": "resilience.",
+     "confidence": 0.992,
+     "offset": 6240,
+     "length": 11
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.996,
+     "offset": 6252,
+     "length": 3
+    },
+    {
+     "content": "5.10",
+     "confidence": 0.987,
+     "offset": 6256,
+     "length": 4
+    },
+    {
+     "content": "IMPLEMENTATION",
+     "confidence": 0.993,
+     "offset": 6261,
+     "length": 14
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 6276,
+     "length": 4
+    },
+    {
+     "content": "-040",
+     "confidence": 0.977,
+     "offset": 6281,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.994,
+     "offset": 6286,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.995,
+     "offset": 6290,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 6297,
+     "length": 4
+    },
+    {
+     "content": "achieve",
+     "confidence": 0.994,
+     "offset": 6302,
+     "length": 7
+    },
+    {
+     "content": "full",
+     "confidence": 0.989,
+     "offset": 6310,
+     "length": 4
+    },
+    {
+     "content": "production",
+     "confidence": 0.992,
+     "offset": 6315,
+     "length": 10
+    },
+    {
+     "content": "go-live",
+     "confidence": 0.872,
+     "offset": 6326,
+     "length": 7
+    },
+    {
+     "content": "of",
+     "confidence": 0.998,
+     "offset": 6334,
+     "length": 2
+    },
+    {
+     "content": "all",
+     "confidence": 0.992,
+     "offset": 6337,
+     "length": 3
+    },
+    {
+     "content": "modules",
+     "confidence": 0.994,
+     "offset": 6341,
+     "length": 7
+    },
+    {
+     "content": "no",
+     "confidence": 0.997,
+     "offset": 6349,
+     "length": 2
+    },
+    {
+     "content": "later",
+     "confidence": 0.995,
+     "offset": 6352,
+     "length": 5
+    },
+    {
+     "content": "than",
+     "confidence": 0.984,
+     "offset": 6358,
+     "length": 4
+    },
+    {
+     "content": "March",
+     "confidence": 0.997,
+     "offset": 6363,
+     "length": 5
+    },
+    {
+     "content": "31,",
+     "confidence": 0.997,
+     "offset": 6369,
+     "length": 3
+    },
+    {
+     "content": "2027.",
+     "confidence": 0.996,
+     "offset": 6373,
+     "length": 5
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.996,
+     "offset": 6379,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 6383,
+     "length": 4
+    },
+    {
+     "content": "-041",
+     "confidence": 0.989,
+     "offset": 6388,
+     "length": 4
+    },
+    {
+     "content": "Implementation",
+     "confidence": 0.992,
+     "offset": 6393,
+     "length": 14
+    },
+    {
+     "content": "must",
+     "confidence": 0.995,
+     "offset": 6408,
+     "length": 4
+    },
+    {
+     "content": "not",
+     "confidence": 0.997,
+     "offset": 6413,
+     "length": 3
+    },
+    {
+     "content": "begin",
+     "confidence": 0.995,
+     "offset": 6417,
+     "length": 5
+    },
+    {
+     "content": "before",
+     "confidence": 0.995,
+     "offset": 6423,
+     "length": 6
+    },
+    {
+     "content": "January",
+     "confidence": 0.989,
+     "offset": 6430,
+     "length": 7
+    },
+    {
+     "content": "15,",
+     "confidence": 0.996,
+     "offset": 6438,
+     "length": 3
+    },
+    {
+     "content": "2027,",
+     "confidence": 0.995,
+     "offset": 6442,
+     "length": 5
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 6448,
+     "length": 3
+    },
+    {
+     "content": "the",
+     "confidence": 0.996,
+     "offset": 6452,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.992,
+     "offset": 6456,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 6463,
+     "length": 4
+    },
+    {
+     "content": "include",
+     "confidence": 0.994,
+     "offset": 6468,
+     "length": 7
+    },
+    {
+     "content": "a",
+     "confidence": 0.993,
+     "offset": 6476,
+     "length": 1
+    },
+    {
+     "content": "parallel",
+     "confidence": 0.992,
+     "offset": 6478,
+     "length": 8
+    },
+    {
+     "content": "run",
+     "confidence": 0.995,
+     "offset": 6487,
+     "length": 3
+    },
+    {
+     "content": "of",
+     "confidence": 0.995,
+     "offset": 6491,
+     "length": 2
+    },
+    {
+     "content": "at",
+     "confidence": 0.994,
+     "offset": 6494,
+     "length": 2
+    },
+    {
+     "content": "least",
+     "confidence": 0.993,
+     "offset": 6497,
+     "length": 5
+    },
+    {
+     "content": "twelve",
+     "confidence": 0.996,
+     "offset": 6503,
+     "length": 6
+    },
+    {
+     "content": "(12)",
+     "confidence": 0.992,
+     "offset": 6510,
+     "length": 4
+    },
+    {
+     "content": "weeks",
+     "confidence": 0.993,
+     "offset": 6515,
+     "length": 5
+    },
+    {
+     "content": "before",
+     "confidence": 0.995,
+     "offset": 6521,
+     "length": 6
+    },
+    {
+     "content": "go-live.",
+     "confidence": 0.977,
+     "offset": 6528,
+     "length": 8
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.994,
+     "offset": 6537,
+     "length": 3
+    },
+    {
+     "content": "5.11",
+     "confidence": 0.987,
+     "offset": 6541,
+     "length": 4
+    },
+    {
+     "content": "SUPPORT",
+     "confidence": 0.995,
+     "offset": 6546,
+     "length": 7
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.987,
+     "offset": 6554,
+     "length": 4
+    },
+    {
+     "content": "-042",
+     "confidence": 0.949,
+     "offset": 6559,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 6564,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.995,
+     "offset": 6568,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 6575,
+     "length": 4
+    },
+    {
+     "content": "assign",
+     "confidence": 0.995,
+     "offset": 6580,
+     "length": 6
+    },
+    {
+     "content": "a",
+     "confidence": 0.994,
+     "offset": 6587,
+     "length": 1
+    },
+    {
+     "content": "named",
+     "confidence": 0.995,
+     "offset": 6589,
+     "length": 5
+    },
+    {
+     "content": "account",
+     "confidence": 0.993,
+     "offset": 6595,
+     "length": 7
+    },
+    {
+     "content": "or",
+     "confidence": 0.997,
+     "offset": 6603,
+     "length": 2
+    },
+    {
+     "content": "customer",
+     "confidence": 0.992,
+     "offset": 6606,
+     "length": 8
+    },
+    {
+     "content": "success",
+     "confidence": 0.992,
+     "offset": 6615,
+     "length": 7
+    },
+    {
+     "content": "manager.",
+     "confidence": 0.992,
+     "offset": 6623,
+     "length": 8
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.992,
+     "offset": 6632,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 6636,
+     "length": 4
+    },
+    {
+     "content": "-",
+     "confidence": 0.992,
+     "offset": 6641,
+     "length": 1
+    },
+    {
+     "content": "043",
+     "confidence": 0.998,
+     "offset": 6643,
+     "length": 3
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 6647,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.996,
+     "offset": 6651,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 6658,
+     "length": 4
+    },
+    {
+     "content": "commit",
+     "confidence": 0.995,
+     "offset": 6663,
+     "length": 6
+    },
+    {
+     "content": "to",
+     "confidence": 0.999,
+     "offset": 6670,
+     "length": 2
+    },
+    {
+     "content": "response",
+     "confidence": 0.994,
+     "offset": 6673,
+     "length": 8
+    },
+    {
+     "content": "times",
+     "confidence": 0.995,
+     "offset": 6682,
+     "length": 5
+    },
+    {
+     "content": "for",
+     "confidence": 0.995,
+     "offset": 6688,
+     "length": 3
+    },
+    {
+     "content": "each",
+     "confidence": 0.992,
+     "offset": 6692,
+     "length": 4
+    },
+    {
+     "content": "priority",
+     "confidence": 0.995,
+     "offset": 6697,
+     "length": 8
+    },
+    {
+     "content": "level.",
+     "confidence": 0.937,
+     "offset": 6706,
+     "length": 6
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.986,
+     "offset": 6713,
+     "length": 3
+    },
+    {
+     "content": "THPA-044",
+     "confidence": 0.906,
+     "offset": 6717,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 6726,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.994,
+     "offset": 6730,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 6737,
+     "length": 4
+    },
+    {
+     "content": "offer",
+     "confidence": 0.998,
+     "offset": 6742,
+     "length": 5
+    },
+    {
+     "content": "support",
+     "confidence": 0.995,
+     "offset": 6748,
+     "length": 7
+    },
+    {
+     "content": "in",
+     "confidence": 0.992,
+     "offset": 6756,
+     "length": 2
+    },
+    {
+     "content": "Spanish.",
+     "confidence": 0.993,
+     "offset": 6759,
+     "length": 8
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.996,
+     "offset": 6768,
+     "length": 3
+    },
+    {
+     "content": ".",
+     "confidence": 0.193,
+     "offset": 6772,
+     "length": 1
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 6774,
+     "length": 4
+    },
+    {
+     "content": "-",
+     "confidence": 0.973,
+     "offset": 6779,
+     "length": 1
+    },
+    {
+     "content": "045",
+     "confidence": 0.998,
+     "offset": 6781,
+     "length": 3
+    },
+    {
+     "content": "The",
+     "confidence": 1,
+     "offset": 6785,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.999,
+     "offset": 6789,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.999,
+     "offset": 6796,
+     "length": 4
+    },
+    {
+     "content": "provide",
+     "confidence": 0.999,
+     "offset": 6801,
+     "length": 7
+    },
+    {
+     "content": "multiple",
+     "confidence": 1,
+     "offset": 6809,
+     "length": 8
+    },
+    {
+     "content": "support",
+     "confidence": 1,
+     "offset": 6818,
+     "length": 7
+    },
+    {
+     "content": "channels.",
+     "confidence": 0.553,
+     "offset": 6826,
+     "length": 9
+    },
+    {
+     "content": ".",
+     "confidence": 1,
+     "offset": 6836,
+     "length": 1
+    },
+    {
+     "content": "(M)",
+     "confidence": 1,
+     "offset": 6838,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.99,
+     "offset": 6842,
+     "length": 4
+    },
+    {
+     "content": "-046",
+     "confidence": 0.978,
+     "offset": 6847,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.998,
+     "offset": 6852,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.993,
+     "offset": 6856,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.989,
+     "offset": 6863,
+     "length": 4
+    },
+    {
+     "content": "describe",
+     "confidence": 0.994,
+     "offset": 6868,
+     "length": 8
+    },
+    {
+     "content": "how",
+     "confidence": 0.999,
+     "offset": 6877,
+     "length": 3
+    },
+    {
+     "content": "support",
+     "confidence": 0.993,
+     "offset": 6881,
+     "length": 7
+    },
+    {
+     "content": "issues",
+     "confidence": 0.993,
+     "offset": 6889,
+     "length": 6
+    },
+    {
+     "content": "are",
+     "confidence": 0.995,
+     "offset": 6896,
+     "length": 3
+    },
+    {
+     "content": "escalated,",
+     "confidence": 0.963,
+     "offset": 6900,
+     "length": 10
+    },
+    {
+     "content": "(D)",
+     "confidence": 0.992,
+     "offset": 6911,
+     "length": 3
+    },
+    {
+     "content": "5.12",
+     "confidence": 0.992,
+     "offset": 6915,
+     "length": 4
+    },
+    {
+     "content": "COMMERCIAL",
+     "confidence": 0.992,
+     "offset": 6920,
+     "length": 10
+    },
+    {
+     "content": "THPA-047",
+     "confidence": 0.955,
+     "offset": 6931,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.997,
+     "offset": 6940,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.995,
+     "offset": 6944,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.985,
+     "offset": 6951,
+     "length": 4
+    },
+    {
+     "content": "maintain",
+     "confidence": 0.993,
+     "offset": 6956,
+     "length": 8
+    },
+    {
+     "content": "commercial",
+     "confidence": 0.989,
+     "offset": 6965,
+     "length": 10
+    },
+    {
+     "content": "general",
+     "confidence": 0.995,
+     "offset": 6976,
+     "length": 7
+    },
+    {
+     "content": "liability,",
+     "confidence": 0.993,
+     "offset": 6984,
+     "length": 10
+    },
+    {
+     "content": "professional",
+     "confidence": 0.992,
+     "offset": 6995,
+     "length": 12
+    },
+    {
+     "content": "liability",
+     "confidence": 0.993,
+     "offset": 7008,
+     "length": 9
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 7018,
+     "length": 3
+    },
+    {
+     "content": "cyber",
+     "confidence": 0.996,
+     "offset": 7022,
+     "length": 5
+    },
+    {
+     "content": "insurance.",
+     "confidence": 0.992,
+     "offset": 7028,
+     "length": 10
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.994,
+     "offset": 7039,
+     "length": 3
+    },
+    {
+     "content": "THPA-048",
+     "confidence": 0.985,
+     "offset": 7043,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.998,
+     "offset": 7052,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.993,
+     "offset": 7056,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 7063,
+     "length": 4
+    },
+    {
+     "content": "furnish",
+     "confidence": 0.993,
+     "offset": 7068,
+     "length": 7
+    },
+    {
+     "content": "a",
+     "confidence": 0.993,
+     "offset": 7076,
+     "length": 1
+    },
+    {
+     "content": "performance",
+     "confidence": 0.993,
+     "offset": 7078,
+     "length": 11
+    },
+    {
+     "content": "bond",
+     "confidence": 0.994,
+     "offset": 7090,
+     "length": 4
+    },
+    {
+     "content": "equal",
+     "confidence": 0.992,
+     "offset": 7095,
+     "length": 5
+    },
+    {
+     "content": "to",
+     "confidence": 0.998,
+     "offset": 7101,
+     "length": 2
+    },
+    {
+     "content": "twenty-five",
+     "confidence": 0.866,
+     "offset": 7104,
+     "length": 11
+    },
+    {
+     "content": "percent",
+     "confidence": 0.993,
+     "offset": 7116,
+     "length": 7
+    },
+    {
+     "content": "(25%)",
+     "confidence": 0.977,
+     "offset": 7124,
+     "length": 5
+    },
+    {
+     "content": "of",
+     "confidence": 0.994,
+     "offset": 7130,
+     "length": 2
+    },
+    {
+     "content": "the",
+     "confidence": 0.995,
+     "offset": 7133,
+     "length": 3
+    },
+    {
+     "content": "total",
+     "confidence": 0.994,
+     "offset": 7137,
+     "length": 5
+    },
+    {
+     "content": "contract",
+     "confidence": 0.994,
+     "offset": 7143,
+     "length": 8
+    },
+    {
+     "content": "value.",
+     "confidence": 0.993,
+     "offset": 7152,
+     "length": 6
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.992,
+     "offset": 7159,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 7163,
+     "length": 4
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.988,
+     "offset": 7168,
+     "length": 3
+    },
+    {
+     "content": "2026-09",
+     "confidence": 0.978,
+     "offset": 7172,
+     "length": 7
+    },
+    {
+     "content": "Page",
+     "confidence": 0.992,
+     "offset": 7180,
+     "length": 4
+    },
+    {
+     "content": "5",
+     "confidence": 0.995,
+     "offset": 7185,
+     "length": 1
+    }
+   ]
+  },
+  {
+   "pageNumber": 6,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch",
+   "angle": -0.2361000031232834,
+   "words": [
+    {
+     "content": "THPA",
+     "confidence": 0.989,
+     "offset": 7200,
+     "length": 4
+    },
+    {
+     "content": "-049",
+     "confidence": 0.988,
+     "offset": 7205,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.996,
+     "offset": 7210,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.995,
+     "offset": 7214,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.987,
+     "offset": 7221,
+     "length": 4
+    },
+    {
+     "content": "indemnify",
+     "confidence": 0.993,
+     "offset": 7226,
+     "length": 9
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 7236,
+     "length": 3
+    },
+    {
+     "content": "agency",
+     "confidence": 0.995,
+     "offset": 7240,
+     "length": 6
+    },
+    {
+     "content": "against",
+     "confidence": 0.995,
+     "offset": 7247,
+     "length": 7
+    },
+    {
+     "content": "third-party",
+     "confidence": 0.992,
+     "offset": 7255,
+     "length": 11
+    },
+    {
+     "content": "intellectual",
+     "confidence": 0.992,
+     "offset": 7267,
+     "length": 12
+    },
+    {
+     "content": "property",
+     "confidence": 0.995,
+     "offset": 7280,
+     "length": 8
+    },
+    {
+     "content": "infringement",
+     "confidence": 0.992,
+     "offset": 7289,
+     "length": 12
+    },
+    {
+     "content": "claims.",
+     "confidence": 0.974,
+     "offset": 7302,
+     "length": 7
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.995,
+     "offset": 7310,
+     "length": 3
+    },
+    {
+     "content": "5.13",
+     "confidence": 0.992,
+     "offset": 7314,
+     "length": 4
+    },
+    {
+     "content": "MISCELLANEOUS",
+     "confidence": 0.992,
+     "offset": 7319,
+     "length": 13
+    },
+    {
+     "content": "THPA-050",
+     "confidence": 0.963,
+     "offset": 7333,
+     "length": 8
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 7342,
+     "length": 3
+    },
+    {
+     "content": "Vendor",
+     "confidence": 0.997,
+     "offset": 7346,
+     "length": 6
+    },
+    {
+     "content": "must",
+     "confidence": 0.992,
+     "offset": 7353,
+     "length": 4
+    },
+    {
+     "content": "provide",
+     "confidence": 0.995,
+     "offset": 7358,
+     "length": 7
+    },
+    {
+     "content": "a",
+     "confidence": 0.994,
+     "offset": 7366,
+     "length": 1
+    },
+    {
+     "content": "dedicated",
+     "confidence": 0.993,
+     "offset": 7368,
+     "length": 9
+    },
+    {
+     "content": "customer",
+     "confidence": 0.994,
+     "offset": 7378,
+     "length": 8
+    },
+    {
+     "content": "success",
+     "confidence": 0.992,
+     "offset": 7387,
+     "length": 7
+    },
+    {
+     "content": "contact.",
+     "confidence": 0.992,
+     "offset": 7395,
+     "length": 8
+    },
+    {
+     "content": "(M)",
+     "confidence": 0.995,
+     "offset": 7404,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.991,
+     "offset": 7408,
+     "length": 4
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.989,
+     "offset": 7413,
+     "length": 3
+    },
+    {
+     "content": "2026-09",
+     "confidence": 0.939,
+     "offset": 7417,
+     "length": 7
+    },
+    {
+     "content": "Page",
+     "confidence": 0.989,
+     "offset": 7425,
+     "length": 4
+    },
+    {
+     "content": "6",
+     "confidence": 0.995,
+     "offset": 7430,
+     "length": 1
+    }
+   ]
+  },
+  {
+   "pageNumber": 7,
+   "width": 8.5,
+   "height": 11,
+   "unit": "inch",
+   "angle": -0.23019999265670776,
+   "words": [
+    {
+     "content": "6.",
+     "confidence": 0.992,
+     "offset": 7432,
+     "length": 2
+    },
+    {
+     "content": "SIGNATURE",
+     "confidence": 0.992,
+     "offset": 7435,
+     "length": 9
+    },
+    {
+     "content": "PAGE",
+     "confidence": 0.992,
+     "offset": 7445,
+     "length": 4
+    },
+    {
+     "content": "The",
+     "confidence": 0.999,
+     "offset": 7450,
+     "length": 3
+    },
+    {
+     "content": "undersigned",
+     "confidence": 0.994,
+     "offset": 7454,
+     "length": 11
+    },
+    {
+     "content": "agrees",
+     "confidence": 0.995,
+     "offset": 7466,
+     "length": 6
+    },
+    {
+     "content": "to",
+     "confidence": 0.999,
+     "offset": 7473,
+     "length": 2
+    },
+    {
+     "content": "furnish",
+     "confidence": 0.994,
+     "offset": 7476,
+     "length": 7
+    },
+    {
+     "content": "the",
+     "confidence": 0.999,
+     "offset": 7484,
+     "length": 3
+    },
+    {
+     "content": "goods",
+     "confidence": 0.995,
+     "offset": 7488,
+     "length": 5
+    },
+    {
+     "content": "and",
+     "confidence": 0.998,
+     "offset": 7494,
+     "length": 3
+    },
+    {
+     "content": "services",
+     "confidence": 0.995,
+     "offset": 7498,
+     "length": 8
+    },
+    {
+     "content": "described",
+     "confidence": 0.995,
+     "offset": 7507,
+     "length": 9
+    },
+    {
+     "content": "in",
+     "confidence": 0.996,
+     "offset": 7517,
+     "length": 2
+    },
+    {
+     "content": "this",
+     "confidence": 0.993,
+     "offset": 7520,
+     "length": 4
+    },
+    {
+     "content": "proposal",
+     "confidence": 0.994,
+     "offset": 7525,
+     "length": 8
+    },
+    {
+     "content": "in",
+     "confidence": 0.998,
+     "offset": 7534,
+     "length": 2
+    },
+    {
+     "content": "accordance",
+     "confidence": 0.994,
+     "offset": 7537,
+     "length": 10
+    },
+    {
+     "content": "with",
+     "confidence": 0.992,
+     "offset": 7548,
+     "length": 4
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.981,
+     "offset": 7553,
+     "length": 3
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.992,
+     "offset": 7557,
+     "length": 4
+    },
+    {
+     "content": "2026-09.",
+     "confidence": 0.963,
+     "offset": 7562,
+     "length": 8
+    },
+    {
+     "content": "Company",
+     "confidence": 0.994,
+     "offset": 7571,
+     "length": 7
+    },
+    {
+     "content": "name",
+     "confidence": 0.992,
+     "offset": 7579,
+     "length": 4
+    },
+    {
+     "content": "Address",
+     "confidence": 0.995,
+     "offset": 7584,
+     "length": 7
+    },
+    {
+     "content": "Authorized",
+     "confidence": 0.995,
+     "offset": 7592,
+     "length": 10
+    },
+    {
+     "content": "signature",
+     "confidence": 0.994,
+     "offset": 7603,
+     "length": 9
+    },
+    {
+     "content": "Printed",
+     "confidence": 0.995,
+     "offset": 7613,
+     "length": 7
+    },
+    {
+     "content": "name",
+     "confidence": 0.992,
+     "offset": 7621,
+     "length": 4
+    },
+    {
+     "content": "and",
+     "confidence": 0.992,
+     "offset": 7626,
+     "length": 3
+    },
+    {
+     "content": "title",
+     "confidence": 0.995,
+     "offset": 7630,
+     "length": 5
+    },
+    {
+     "content": "Date",
+     "confidence": 0.991,
+     "offset": 7636,
+     "length": 4
+    },
+    {
+     "content": "PRICE",
+     "confidence": 0.995,
+     "offset": 7641,
+     "length": 5
+    },
+    {
+     "content": "FORM",
+     "confidence": 0.992,
+     "offset": 7647,
+     "length": 4
+    },
+    {
+     "content": "Item",
+     "confidence": 0.992,
+     "offset": 7652,
+     "length": 4
+    },
+    {
+     "content": "Year",
+     "confidence": 0.99,
+     "offset": 7657,
+     "length": 4
+    },
+    {
+     "content": "1",
+     "confidence": 0.992,
+     "offset": 7662,
+     "length": 1
+    },
+    {
+     "content": "Years",
+     "confidence": 0.993,
+     "offset": 7664,
+     "length": 5
+    },
+    {
+     "content": "2-5",
+     "confidence": 0.992,
+     "offset": 7670,
+     "length": 3
+    },
+    {
+     "content": "(annual)",
+     "confidence": 0.79,
+     "offset": 7674,
+     "length": 8
+    },
+    {
+     "content": "Total",
+     "confidence": 0.992,
+     "offset": 7683,
+     "length": 5
+    },
+    {
+     "content": "5-year",
+     "confidence": 0.992,
+     "offset": 7689,
+     "length": 6
+    },
+    {
+     "content": "Software",
+     "confidence": 0.992,
+     "offset": 7696,
+     "length": 8
+    },
+    {
+     "content": "subscription",
+     "confidence": 0.993,
+     "offset": 7705,
+     "length": 12
+    },
+    {
+     "content": "Implementation",
+     "confidence": 0.992,
+     "offset": 7718,
+     "length": 14
+    },
+    {
+     "content": "Data",
+     "confidence": 0.992,
+     "offset": 7733,
+     "length": 4
+    },
+    {
+     "content": "conversion",
+     "confidence": 0.994,
+     "offset": 7738,
+     "length": 10
+    },
+    {
+     "content": "Training",
+     "confidence": 0.995,
+     "offset": 7749,
+     "length": 8
+    },
+    {
+     "content": "Total",
+     "confidence": 0.989,
+     "offset": 7758,
+     "length": 5
+    },
+    {
+     "content": "THPA",
+     "confidence": 0.985,
+     "offset": 7764,
+     "length": 4
+    },
+    {
+     "content": "RFP",
+     "confidence": 0.98,
+     "offset": 7769,
+     "length": 3
+    },
+    {
+     "content": "2026-09",
+     "confidence": 0.977,
+     "offset": 7773,
+     "length": 7
+    },
+    {
+     "content": "Page",
+     "confidence": 0.986,
+     "offset": 7781,
+     "length": 4
+    },
+    {
+     "content": "7",
+     "confidence": 0.996,
+     "offset": 7786,
+     "length": 1
+    }
+   ]
+  }
+ ],
+ "paragraphs": [
+  {
+   "role": null,
+   "content": "RECEIVED OCT 19 2026",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      7.324,
+      0.9854,
+      7.3517,
+      1.1754,
+      5.1414,
+      1.4982,
+      5.1137,
+      1.3082
+     ]
+    }
+   ],
+   "offset": 0
+  },
+  {
+   "role": null,
+   "content": "TRI - HARBOR PORT AUTHORITY Purchasing Department",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      2.8697,
+      2.3083,
+      5.5958,
+      2.2974,
+      5.5977,
+      2.7616,
+      2.8716,
+      2.7724
+     ]
+    }
+   ],
+   "offset": 21
+  },
+  {
+   "role": null,
+   "content": "REQUEST FOR PROPOSALS RFP NO. THPA 2026 -09",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      3.087,
+      3.3848,
+      5.3825,
+      3.3736,
+      5.3849,
+      3.8581,
+      3.0894,
+      3.8694
+     ]
+    }
+   ],
+   "offset": 71
+  },
+  {
+   "role": null,
+   "content": "MAINTENANCE MANAGEMENT SYSTEM REPLACEMENT",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      2.0003,
+      4.3048,
+      6.4706,
+      4.2848,
+      6.4714,
+      4.4571,
+      2.001,
+      4.4771
+     ]
+    }
+   ],
+   "offset": 115
+  },
+  {
+   "role": null,
+   "content": "ISSUE DATE: OCTOBER 16, 2026 PROPOSALS DUE: NOVEMBER 24, 2026 AT 2:00 P.M. LOCAL TIME",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.7903,
+      5.2014,
+      6.7122,
+      5.1799,
+      6.714,
+      5.5967,
+      1.7921,
+      5.6183
+     ]
+    }
+   ],
+   "offset": 157
+  },
+  {
+   "role": null,
+   "content": "CONTACT: HOWARD BELLAMY, CONTRACTS ADMINISTRATOR TRI- HARBOR PORT AUTHORITY, 1 TERMINAL WAY, HARBOR CITY bids@triharborport.example",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.8796,
+      6.4238,
+      6.6245,
+      6.4063,
+      6.6264,
+      6.9393,
+      1.8816,
+      6.9568
+     ]
+    }
+   ],
+   "offset": 243
+  },
+  {
+   "role": null,
+   "content": "(All names and organizations are fictitious.)",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      2.6761,
+      7.9373,
+      5.8374,
+      7.9242,
+      5.838,
+      8.06,
+      2.6767,
+      8.0731
+     ]
+    }
+   ],
+   "offset": 375
+  },
+  {
+   "role": "pageFooter",
+   "content": "THPA RFP.2026-09",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      1.0074,
+      10.3177,
+      2.1495,
+      10.3118,
+      2.1501,
+      10.4286,
+      1.008,
+      10.4344
+     ]
+    }
+   ],
+   "offset": 421
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 1",
+   "boundingRegions": [
+    {
+     "pageNumber": 1,
+     "polygon": [
+      7.0778,
+      10.298,
+      7.5219,
+      10.2949,
+      7.5227,
+      10.4086,
+      7.0786,
+      10.4117
+     ]
+    }
+   ],
+   "offset": 438
+  },
+  {
+   "role": "sectionHeading",
+   "content": "1. GENERAL INFORMATION",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0617,
+      1.0189,
+      3.2797,
+      1.0151,
+      3.28,
+      1.1701,
+      1.062,
+      1.1738
+     ]
+    }
+   ],
+   "offset": 445
+  },
+  {
+   "role": null,
+   "content": "1.1 The Tri-Harbor Port Authority (\"Port\") operates three marine terminals, 41 ship-to-shore and yard cranes, 18 berths, 2.3 million square feet of warehouse space and a fleet of 260 vehicles and pieces of mobile equipment. The Port's Maintenance Division (210 employees) currently uses a maintenance system installed in 2006 that is no longer supported.",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0497,
+      1.2812,
+      7.3689,
+      1.2661,
+      7.3716,
+      2.3671,
+      1.0523,
+      2.3822
+     ]
+    }
+   ],
+   "offset": 468
+  },
+  {
+   "role": null,
+   "content": "1.2 The Port seeks proposals for a replacement maintenance management system, including software, implementation, data conversion, training and support. The resulting contract will have an initial term of five (5) years.",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0563,
+      2.4896,
+      7.12,
+      2.478,
+      7.1214,
+      3.2052,
+      1.0577,
+      3.2168
+     ]
+    }
+   ],
+   "offset": 823
+  },
+  {
+   "role": null,
+   "content": "1.3 The Port's terminals operate 24 hours a day. Crane availability is the Division's most important performance measure; each hour of unplanned crane downtime delays vessel operations.",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0587,
+      3.3225,
+      7.2044,
+      3.2997,
+      7.2064,
+      3.8435,
+      1.0607,
+      3.8664
+     ]
+    }
+   ],
+   "offset": 1044
+  },
+  {
+   "role": "sectionHeading",
+   "content": "2. SCHEDULE",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0656,
+      4.0078,
+      2.1868,
+      4.0077,
+      2.1869,
+      4.165,
+      1.0656,
+      4.1652
+     ]
+    }
+   ],
+   "offset": 1230
+  },
+  {
+   "role": null,
+   "content": "EVENT",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9932,
+      4.2404,
+      4.2915,
+      4.2337,
+      4.2915,
+      4.5095,
+      0.9932,
+      4.5162
+     ]
+    }
+   ],
+   "offset": 1242
+  },
+  {
+   "role": null,
+   "content": "DATE",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      4.2915,
+      4.2337,
+      7.4957,
+      4.2269,
+      7.4957,
+      4.4961,
+      4.2915,
+      4.5095
+     ]
+    }
+   ],
+   "offset": 1248
+  },
+  {
+   "role": null,
+   "content": "RFP issued",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9932,
+      4.5162,
+      4.2915,
+      4.5095,
+      4.2915,
+      4.7786,
+      0.9932,
+      4.7854
+     ]
+    }
+   ],
+   "offset": 1253
+  },
+  {
+   "role": null,
+   "content": "October 16, 2026",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      4.2915,
+      4.5095,
+      7.4957,
+      4.4961,
+      7.4957,
+      4.7652,
+      4.2915,
+      4.7786
+     ]
+    }
+   ],
+   "offset": 1264
+  },
+  {
+   "role": null,
+   "content": "Site visit (optional)",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9932,
+      4.7854,
+      4.2915,
+      4.7786,
+      4.2915,
+      5.0545,
+      0.9932,
+      5.0612
+     ]
+    }
+   ],
+   "offset": 1281
+  },
+  {
+   "role": null,
+   "content": "October 27, 2026, 9:00 a.m.",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      4.2915,
+      4.7786,
+      7.4957,
+      4.7652,
+      7.4957,
+      5.0343,
+      4.2915,
+      5.0545
+     ]
+    }
+   ],
+   "offset": 1303
+  },
+  {
+   "role": null,
+   "content": "Written questions due",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9932,
+      5.0612,
+      4.2915,
+      5.0545,
+      4.2915,
+      5.3236,
+      0.9932,
+      5.3303
+     ]
+    }
+   ],
+   "offset": 1331
+  },
+  {
+   "role": null,
+   "content": "November 3, 2026, 4:00 p.m.",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      4.2915,
+      5.0545,
+      7.4957,
+      5.0343,
+      7.4957,
+      5.3102,
+      4.2915,
+      5.3236
+     ]
+    }
+   ],
+   "offset": 1353
+  },
+  {
+   "role": null,
+   "content": "Proposals due",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9932,
+      5.3303,
+      4.2915,
+      5.3236,
+      4.2915,
+      5.5995,
+      0.9932,
+      5.6062
+     ]
+    }
+   ],
+   "offset": 1381
+  },
+  {
+   "role": null,
+   "content": "November 24, 2026, 2:00 p.m.",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      4.2915,
+      5.3236,
+      7.4957,
+      5.3102,
+      7.4957,
+      5.5793,
+      4.2915,
+      5.5995
+     ]
+    }
+   ],
+   "offset": 1395
+  },
+  {
+   "role": null,
+   "content": "Vendor interviews",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9932,
+      5.6062,
+      4.2915,
+      5.5995,
+      4.2915,
+      5.8619,
+      0.9932,
+      5.8753
+     ]
+    }
+   ],
+   "offset": 1424
+  },
+  {
+   "role": null,
+   "content": "Week of December 7, 2026",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      4.2915,
+      5.5995,
+      7.4957,
+      5.5793,
+      7.4957,
+      5.8484,
+      4.2915,
+      5.8619
+     ]
+    }
+   ],
+   "offset": 1442
+  },
+  {
+   "role": null,
+   "content": "Award (target)",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9932,
+      5.8753,
+      4.2915,
+      5.8619,
+      4.2915,
+      6.131,
+      0.9932,
+      6.1377
+     ]
+    }
+   ],
+   "offset": 1467
+  },
+  {
+   "role": null,
+   "content": "January 2027",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      4.2915,
+      5.8619,
+      7.4957,
+      5.8484,
+      7.4957,
+      6.1243,
+      4.2915,
+      6.131
+     ]
+    }
+   ],
+   "offset": 1482
+  },
+  {
+   "role": "sectionHeading",
+   "content": "3. SUBMISSION REQUIREMENTS",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0755,
+      6.3668,
+      3.6864,
+      6.3642,
+      3.6866,
+      6.527,
+      1.0757,
+      6.5296
+     ]
+    }
+   ],
+   "offset": 1495
+  },
+  {
+   "role": null,
+   "content": "3.1 Deliver five (5) bound copies and one (1) electronic copy on a USB drive, in a sealed envelope marked \"RFP THPA 2026-09\", to the Purchasing Department, 1 Terminal Way, Harbor City. Faxed or emailed proposals will not be accepted.",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0652,
+      6.6242,
+      7.389,
+      6.613,
+      7.3903,
+      7.3368,
+      1.0665,
+      7.348
+     ]
+    }
+   ],
+   "offset": 1522
+  },
+  {
+   "role": null,
+   "content": "3.2 PAGE LIMIT. The technical proposal shall not exceed twenty-five (25) pages, single-sided, excluding the signature page, price form and resumes. Pages in excess of the limit will not be read.",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0692,
+      7.4608,
+      7.3638,
+      7.4411,
+      7.3655,
+      7.9799,
+      1.0709,
+      7.9995
+     ]
+    }
+   ],
+   "offset": 1756
+  },
+  {
+   "role": null,
+   "content": "3.3 Respond to each requirement in Section 5 by number, stating \"Comply\", \"Partially Comply\" or \"Do Not Comply\" with an explanation.",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0767,
+      8.107,
+      7.0178,
+      8.0939,
+      7.0186,
+      8.4437,
+      1.0775,
+      8.4568
+     ]
+    }
+   ],
+   "offset": 1951
+  },
+  {
+   "role": null,
+   "content": "3.4 Required attachments: (a) Signature Page; (b) Price Form; (c) three",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0798,
+      8.5653,
+      7.31,
+      8.5438,
+      7.3105,
+      8.7029,
+      1.0804,
+      8.7244
+     ]
+    }
+   ],
+   "offset": 2084
+  },
+  {
+   "role": null,
+   "content": "(3) references; (d) certificate of insurance; (e) W-9.",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.1082,
+      8.7517,
+      5.7962,
+      8.7397,
+      5.7966,
+      8.8993,
+      1.1086,
+      8.9114
+     ]
+    }
+   ],
+   "offset": 2156
+  },
+  {
+   "role": "sectionHeading",
+   "content": "4. EVALUATION",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0768,
+      9.0638,
+      2.4015,
+      9.0635,
+      2.4016,
+      9.2178,
+      1.0768,
+      9.218
+     ]
+    }
+   ],
+   "offset": 2211
+  },
+  {
+   "role": null,
+   "content": "CRITERIA",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0093,
+      9.2992,
+      5.8073,
+      9.2858,
+      5.8073,
+      9.5672,
+      1.0093,
+      9.5739
+     ]
+    }
+   ],
+   "offset": 2225
+  },
+  {
+   "role": null,
+   "content": "POINTS",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      5.8073,
+      9.2858,
+      7.5027,
+      9.2858,
+      7.5027,
+      9.5605,
+      5.8073,
+      9.5672
+     ]
+    }
+   ],
+   "offset": 2234
+  },
+  {
+   "role": null,
+   "content": "Technical requirements and functionality",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0093,
+      9.5739,
+      5.8073,
+      9.5672,
+      5.814,
+      9.8285,
+      1.0093,
+      9.8419
+     ]
+    }
+   ],
+   "offset": 2241
+  },
+  {
+   "role": null,
+   "content": "35",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      5.8073,
+      9.5672,
+      7.5027,
+      9.5605,
+      7.5094,
+      9.8285,
+      5.814,
+      9.8285
+     ]
+    }
+   ],
+   "offset": 2282
+  },
+  {
+   "role": "pageFooter",
+   "content": "THPA RFP 2026 -09",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9983,
+      10.3086,
+      2.1419,
+      10.3057,
+      2.1422,
+      10.4242,
+      0.9986,
+      10.4271
+     ]
+    }
+   ],
+   "offset": 2285
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 2",
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      7.0769,
+      10.3013,
+      7.5126,
+      10.3004,
+      7.5128,
+      10.4125,
+      7.0771,
+      10.4134
+     ]
+    }
+   ],
+   "offset": 2303
+  },
+  {
+   "role": null,
+   "content": "Implementation plan and schedule",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9863,
+      0.9805,
+      5.7854,
+      0.9738,
+      5.7854,
+      1.2493,
+      0.9863,
+      1.256
+     ]
+    }
+   ],
+   "offset": 2310
+  },
+  {
+   "role": null,
+   "content": "20",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      5.7854,
+      0.9738,
+      7.4768,
+      0.9738,
+      7.4835,
+      1.2493,
+      5.7854,
+      1.2493
+     ]
+    }
+   ],
+   "offset": 2343
+  },
+  {
+   "role": null,
+   "content": "Experience and references",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9863,
+      1.256,
+      5.7854,
+      1.2493,
+      5.7854,
+      1.5247,
+      0.9863,
+      1.5315
+     ]
+    }
+   ],
+   "offset": 2346
+  },
+  {
+   "role": null,
+   "content": "15",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      5.7854,
+      1.2493,
+      7.4835,
+      1.2493,
+      7.4835,
+      1.518,
+      5.7854,
+      1.5247
+     ]
+    }
+   ],
+   "offset": 2372
+  },
+  {
+   "role": null,
+   "content": "Support and service levels",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9863,
+      1.5315,
+      5.7854,
+      1.5247,
+      5.7921,
+      1.7868,
+      0.9863,
+      1.8002
+     ]
+    }
+   ],
+   "offset": 2375
+  },
+  {
+   "role": null,
+   "content": "10",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      5.7854,
+      1.5247,
+      7.4835,
+      1.518,
+      7.4835,
+      1.7868,
+      5.7921,
+      1.7868
+     ]
+    }
+   ],
+   "offset": 2402
+  },
+  {
+   "role": null,
+   "content": "Price",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9863,
+      1.8002,
+      5.7921,
+      1.7868,
+      5.7921,
+      2.0555,
+      0.9863,
+      2.0622
+     ]
+    }
+   ],
+   "offset": 2405
+  },
+  {
+   "role": null,
+   "content": "20",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      5.7921,
+      1.7868,
+      7.4835,
+      1.7868,
+      7.4902,
+      2.0488,
+      5.7921,
+      2.0555
+     ]
+    }
+   ],
+   "offset": 2411
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5. TECHNICAL REQUIREMENTS",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0702,
+      2.3504,
+      3.5739,
+      2.3469,
+      3.5741,
+      2.5115,
+      1.0704,
+      2.5151
+     ]
+    }
+   ],
+   "offset": 2414
+  },
+  {
+   "role": null,
+   "content": "(M) = Mandatory. (D) = Desirable.",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0962,
+      2.6136,
+      3.9424,
+      2.6082,
+      3.9426,
+      2.7635,
+      1.0965,
+      2.7689
+     ]
+    }
+   ],
+   "offset": 2440
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.1 VENDOR QUALIFICATIONS",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0696,
+      2.9228,
+      3.578,
+      2.9146,
+      3.5785,
+      3.0809,
+      1.0702,
+      3.0891
+     ]
+    }
+   ],
+   "offset": 2474
+  },
+  {
+   "role": null,
+   "content": "THPA-001 The Vendor must identify any subcontractors it intends to use and the work they will perform. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0664,
+      3.1801,
+      7.297,
+      3.174,
+      7.2974,
+      3.5248,
+      1.0668,
+      3.5309
+     ]
+    }
+   ],
+   "offset": 2500
+  },
+  {
+   "role": null,
+   "content": "THPA-002 The Vendor must describe its experience delivering similar solutions to public-sector agencies. (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0655,
+      3.6393,
+      7.0335,
+      3.631,
+      7.034,
+      3.9776,
+      1.066,
+      3.9858
+     ]
+    }
+   ],
+   "offset": 2607
+  },
+  {
+   "role": null,
+   "content": "THPA-003 The Vendor must describe the size of its current customer base for the proposed solution. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0658,
+      4.0941,
+      7.3862,
+      4.0893,
+      7.3865,
+      4.4466,
+      1.0661,
+      4.4514
+     ]
+    }
+   ],
+   "offset": 2716
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.2 MAINTENANCE OPERATIONS",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0736,
+      4.5945,
+      3.682,
+      4.5915,
+      3.6822,
+      4.7534,
+      1.0738,
+      4.7564
+     ]
+    }
+   ],
+   "offset": 2819
+  },
+  {
+   "role": null,
+   "content": "THPA-004 The system must provide augmented reality guidance for field technicians. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0693,
+      4.8569,
+      7.2176,
+      4.843,
+      7.2184,
+      5.1847,
+      1.07,
+      5.1986
+     ]
+    }
+   ],
+   "offset": 2846
+  },
+  {
+   "role": null,
+   "content": "THPA-005 . The system must allow users to attach photos, documents and signatures to work orders from the field. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0654,
+      5.3102,
+      7.132,
+      5.2971,
+      7.1327,
+      5.6505,
+      1.0662,
+      5.6636
+     ]
+    }
+   ],
+   "offset": 2933
+  },
+  {
+   "role": null,
+   "content": "THPA-006 The system must provide automated route optimization for daily crew assignments. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0717,
+      5.7658,
+      7.3926,
+      5.7599,
+      7.393,
+      6.1158,
+      1.0721,
+      6.1217
+     ]
+    }
+   ],
+   "offset": 3050
+  },
+  {
+   "role": null,
+   "content": "THPA -007 The system must record labor, parts and equipment costs at the work order level. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0686,
+      6.2355,
+      7.3982,
+      6.2243,
+      7.3988,
+      6.5624,
+      1.0692,
+      6.5736
+     ]
+    }
+   ],
+   "offset": 3144
+  },
+  {
+   "role": null,
+   "content": "THPA -008 The Vendor must supply forty (40) ruggedized handheld devices manufactured in the United States and rated IP68. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0731,
+      6.6913,
+      7.3024,
+      6.6719,
+      7.3034,
+      7.0213,
+      1.0742,
+      7.0407
+     ]
+    }
+   ],
+   "offset": 3239
+  },
+  {
+   "role": null,
+   "content": "THPA -009 The system must support all port operations. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0711,
+      7.1507,
+      6.1349,
+      7.1393,
+      6.1353,
+      7.2986,
+      1.0714,
+      7.31
+     ]
+    }
+   ],
+   "offset": 3365
+  },
+  {
+   "role": null,
+   "content": "THPA -010 The system must support preventive maintenance schedules based on calendar intervals, meter readings and condition triggers. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0736,
+      7.4229,
+      7.3946,
+      7.402,
+      7.3964,
+      7.9232,
+      1.0754,
+      7.944
+     ]
+    }
+   ],
+   "offset": 3424
+  },
+  {
+   "role": null,
+   "content": "THPA-011 The system must include visual scheduling and dispatch of work to crews. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0755,
+      8.0588,
+      7.3957,
+      8.0486,
+      7.3962,
+      8.3954,
+      1.076,
+      8.4056
+     ]
+    }
+   ],
+   "offset": 3563
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.3 ASSET MANAGEMENT",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0811,
+      8.5648,
+      3.0929,
+      8.5615,
+      3.0932,
+      8.7162,
+      1.0814,
+      8.7195
+     ]
+    }
+   ],
+   "offset": 3649
+  },
+  {
+   "role": null,
+   "content": "THPA-012 The system must record asset condition assessments using configurable rating scales. (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0785,
+      8.8246,
+      6.872,
+      8.8183,
+      6.8724,
+      9.1612,
+      1.0788,
+      9.1675
+     ]
+    }
+   ],
+   "offset": 3670
+  },
+  {
+   "role": null,
+   "content": "THPA-013 The system must track total cost of ownership across the asset lifecycle. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0806,
+      9.2861,
+      7.3919,
+      9.274,
+      7.3926,
+      9.6109,
+      1.0813,
+      9.623
+     ]
+    }
+   ],
+   "offset": 3768
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.4 REPORTING",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      1.0863,
+      9.7825,
+      2.4046,
+      9.7803,
+      2.4048,
+      9.9284,
+      1.0866,
+      9.9307
+     ]
+    }
+   ],
+   "offset": 3855
+  },
+  {
+   "role": "pageFooter",
+   "content": "THPA RFP 2026-09",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9965,
+      10.3066,
+      2.1431,
+      10.3032,
+      2.1435,
+      10.4236,
+      0.9969,
+      10.427
+     ]
+    }
+   ],
+   "offset": 3869
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 3",
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      7.0709,
+      10.2995,
+      7.5068,
+      10.2983,
+      7.5071,
+      10.4183,
+      7.0712,
+      10.4195
+     ]
+    }
+   ],
+   "offset": 3886
+  },
+  {
+   "role": null,
+   "content": "THPA-014 The system must report key performance indicators such as mean time to repair and PM compliance. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0084,
+      1.0526,
+      7.3324,
+      0.9743,
+      7.3366,
+      1.313,
+      1.0126,
+      1.3912
+     ]
+    }
+   ],
+   "offset": 3893
+  },
+  {
+   "role": null,
+   "content": "THPA -015 The system must allow reports to be scheduled and distributed by email. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0143,
+      1.5109,
+      7.2542,
+      1.4217,
+      7.259,
+      1.76,
+      1.0191,
+      1.8492
+     ]
+    }
+   ],
+   "offset": 4003
+  },
+  {
+   "role": null,
+   "content": "THPA -016 The system must produce reports required by environmental regulators. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0201,
+      1.9723,
+      6.8939,
+      1.8905,
+      6.8986,
+      2.2282,
+      1.0248,
+      2.31
+     ]
+    }
+   ],
+   "offset": 4089
+  },
+  {
+   "role": null,
+   "content": "THPA -017 The system must produce carbon emissions reporting aligned with the GHG Protocol. (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0306,
+      2.4232,
+      6.9987,
+      2.3364,
+      7.0037,
+      2.6822,
+      1.0357,
+      2.7691
+     ]
+    }
+   ],
+   "offset": 4173
+  },
+  {
+   "role": null,
+   "content": "THPA-018 The system must support self-service report building by non-technical users: (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.034,
+      2.873,
+      6.744,
+      2.8074,
+      6.748,
+      3.1554,
+      1.0379,
+      3.2211
+     ]
+    }
+   ],
+   "offset": 4269
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.5 INTERFACES",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0459,
+      3.3718,
+      2.4563,
+      3.3589,
+      2.4577,
+      3.5146,
+      1.0473,
+      3.5275
+     ]
+    }
+   ],
+   "offset": 4359
+  },
+  {
+   "role": null,
+   "content": "THPA -019 The system must exchange service order data with the CIS. (M) THPA -020 The Vendor must describe API throughput limits. (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0441,
+      3.6368,
+      7.2438,
+      3.5486,
+      7.25,
+      3.9852,
+      1.0503,
+      4.0734
+     ]
+    }
+   ],
+   "offset": 4374
+  },
+  {
+   "role": null,
+   "content": "THPA -021 The system must exchange data with the financial and HR system of record. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0512,
+      4.1746,
+      7.3774,
+      4.1022,
+      7.3813,
+      4.4415,
+      1.0551,
+      4.5139
+     ]
+    }
+   ],
+   "offset": 4508
+  },
+  {
+   "role": null,
+   "content": "THPA-022 The system must integrate with Esri ArcGIS Enterprise and ArcGIS Online. (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0592,
+      4.6338,
+      6.9446,
+      4.5591,
+      6.949,
+      4.904,
+      1.0636,
+      4.9787
+     ]
+    }
+   ],
+   "offset": 4596
+  },
+  {
+   "role": null,
+   "content": "THPA-023 The system must provide a documented REST API covering all major business objects. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.063,
+      5.1001,
+      7.0256,
+      5.016,
+      7.0304,
+      5.361,
+      1.0679,
+      5.4451
+     ]
+    }
+   ],
+   "offset": 4682
+  },
+  {
+   "role": null,
+   "content": "THPA -024 The system must integrate with Microsoft 365 email, calendar and Teams. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0695,
+      5.5572,
+      7.2172,
+      5.4731,
+      7.2218,
+      5.809,
+      1.0741,
+      5.8931
+     ]
+    }
+   ],
+   "offset": 4778
+  },
+  {
+   "role": null,
+   "content": "THPA-025 The system must support scheduled file-based imports and exports over secure file transfer. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0757,
+      6.0119,
+      6.8767,
+      5.9346,
+      6.8814,
+      6.2849,
+      1.0803,
+      6.3622
+     ]
+    }
+   ],
+   "offset": 4864
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.6 TECHNICAL",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0869,
+      6.5064,
+      2.4011,
+      6.4939,
+      2.4026,
+      6.6523,
+      1.0884,
+      6.6648
+     ]
+    }
+   ],
+   "offset": 4969
+  },
+  {
+   "role": null,
+   "content": "THPA-026 The system must provide a multilingual user interface including Spanish. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0847,
+      6.777,
+      6.6237,
+      6.7002,
+      6.6284,
+      7.0393,
+      1.0894,
+      7.1161
+     ]
+    }
+   ],
+   "offset": 4983
+  },
+  {
+   "role": null,
+   "content": "THPA-027 The system must run in all major modern web browsers without plug-ins. (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.091,
+      7.2203,
+      7.2336,
+      7.1476,
+      7.2377,
+      7.501,
+      1.0952,
+      7.5738
+     ]
+    }
+   ],
+   "offset": 5069
+  },
+  {
+   "role": null,
+   "content": "THPA -028 The system must store all customer data in data centers located within the continental United States. (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.0997,
+      7.6908,
+      6.8068,
+      7.6082,
+      6.8118,
+      7.9555,
+      1.1048,
+      8.0382
+     ]
+    }
+   ],
+   "offset": 5153
+  },
+  {
+   "role": null,
+   "content": "THPA-029 The system must operate in a disconnected environment with no internet connectivity. . (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.1065,
+      8.1485,
+      7.3404,
+      8.0659,
+      7.3449,
+      8.4061,
+      1.111,
+      8.4887
+     ]
+    }
+   ],
+   "offset": 5269
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.7 SECURITY",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.1128,
+      8.636,
+      2.3311,
+      8.6268,
+      2.3323,
+      8.7819,
+      1.114,
+      8.7911
+     ]
+    }
+   ],
+   "offset": 5369
+  },
+  {
+   "role": null,
+   "content": "THPA-030 The Vendor must perform background checks on all personnel with access to customer data. (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.1141,
+      8.9021,
+      7.0743,
+      8.8261,
+      7.0786,
+      9.1649,
+      1.1184,
+      9.2409
+     ]
+    }
+   ],
+   "offset": 5382
+  },
+  {
+   "role": null,
+   "content": "THPA -031 The system must support multi-factor authentication for all users. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.1218,
+      9.369,
+      7.1706,
+      9.2795,
+      7.1754,
+      9.6064,
+      1.1266,
+      9.696
+     ]
+    }
+   ],
+   "offset": 5484
+  },
+  {
+   "role": "pageFooter",
+   "content": "THPA RFP 2026-09",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      1.053,
+      10.3421,
+      2.1963,
+      10.329,
+      2.1976,
+      10.4475,
+      1.0543,
+      10.4606
+     ]
+    }
+   ],
+   "offset": 5565
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 4",
+   "boundingRegions": [
+    {
+     "pageNumber": 4,
+     "polygon": [
+      7.1269,
+      10.2708,
+      7.5642,
+      10.2668,
+      7.5652,
+      10.3769,
+      7.1279,
+      10.3809
+     ]
+    }
+   ],
+   "offset": 5582
+  },
+  {
+   "role": null,
+   "content": "THPA-032 The Vendor must describe its vulnerability scanning and patching process. (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.1176,
+      0.9643,
+      6.8317,
+      1.0316,
+      6.8275,
+      1.3887,
+      1.1134,
+      1.3214
+     ]
+    }
+   ],
+   "offset": 5589
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.8 DATA",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.1182,
+      1.4722,
+      1.9327,
+      1.4789,
+      1.9314,
+      1.6293,
+      1.117,
+      1.6225
+     ]
+    }
+   ],
+   "offset": 5676
+  },
+  {
+   "role": null,
+   "content": "THPA-033 The Vendor must sign a BAA if PHI is involved. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0963,
+      1.7325,
+      6.347,
+      1.7834,
+      6.3455,
+      1.9352,
+      1.0948,
+      1.8843
+     ]
+    }
+   ],
+   "offset": 5685
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.9 AVAILABILITY",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.1114,
+      2.0401,
+      2.7262,
+      2.0521,
+      2.7251,
+      2.2055,
+      1.1102,
+      2.1935
+     ]
+    }
+   ],
+   "offset": 5745
+  },
+  {
+   "role": null,
+   "content": "THPA-034 . The Vendor must conduct annual disaster recovery exercises.",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.1045,
+      2.296,
+      7.1301,
+      2.3671,
+      7.1283,
+      2.5213,
+      1.1027,
+      2.4502
+     ]
+    }
+   ],
+   "offset": 5762
+  },
+  {
+   "role": null,
+   "content": "(D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      2.0811,
+      2.5015,
+      2.2999,
+      2.5009,
+      2.3002,
+      2.6413,
+      2.0814,
+      2.6418
+     ]
+    }
+   ],
+   "offset": 5833
+  },
+  {
+   "role": null,
+   "content": "THPA-035 The Vendor must define the maximum acceptable data loss in a disaster. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0991,
+      2.7588,
+      7.2498,
+      2.8235,
+      7.2462,
+      3.1615,
+      1.0955,
+      3.0968
+     ]
+    }
+   ],
+   "offset": 5837
+  },
+  {
+   "role": null,
+   "content": "THPA-036 The system must be available 99.5% of the time, measured monthly. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0923,
+      3.2162,
+      6.8937,
+      3.273,
+      6.8904,
+      3.6155,
+      1.089,
+      3.5588
+     ]
+    }
+   ],
+   "offset": 5921
+  },
+  {
+   "role": null,
+   "content": "THPA-037 The Vendor must monitor system performance and capacity proactively. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0892,
+      3.6709,
+      6.8016,
+      3.7395,
+      6.7974,
+      4.0943,
+      1.085,
+      4.0257
+     ]
+    }
+   ],
+   "offset": 6000
+  },
+  {
+   "role": null,
+   "content": "THPA-038 The Vendor must provide a dedicated single-tenant database for the agency. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0849,
+      4.129,
+      7.4013,
+      4.1975,
+      7.3976,
+      4.5473,
+      1.0811,
+      4.4789
+     ]
+    }
+   ],
+   "offset": 6082
+  },
+  {
+   "role": null,
+   "content": "THPA-039 The system must use geographically separate data centers for resilience. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0783,
+      4.5936,
+      7.2213,
+      4.6545,
+      7.218,
+      4.9915,
+      1.0749,
+      4.9307
+     ]
+    }
+   ],
+   "offset": 6170
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.10 IMPLEMENTATION",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0778,
+      5.084,
+      2.9967,
+      5.1003,
+      2.9954,
+      5.2591,
+      1.0764,
+      5.2429
+     ]
+    }
+   ],
+   "offset": 6256
+  },
+  {
+   "role": null,
+   "content": "THPA -040 The Vendor must achieve full production go-live of all modules no later than March 31, 2027. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0715,
+      5.3477,
+      7.3873,
+      5.4097,
+      7.3839,
+      5.7562,
+      1.0681,
+      5.6941
+     ]
+    }
+   ],
+   "offset": 6276
+  },
+  {
+   "role": null,
+   "content": "THPA -041 Implementation must not begin before January 15, 2027, and the Vendor must include a parallel run of at least twelve (12) weeks before go-live. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0667,
+      5.8101,
+      7.3888,
+      5.8696,
+      7.3838,
+      6.3996,
+      1.0617,
+      6.34
+     ]
+    }
+   ],
+   "offset": 6383
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.11 SUPPORT",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0634,
+      6.4891,
+      2.2777,
+      6.4996,
+      2.2764,
+      6.6567,
+      1.0621,
+      6.6463
+     ]
+    }
+   ],
+   "offset": 6541
+  },
+  {
+   "role": null,
+   "content": "THPA -042 The Vendor must assign a named account or customer success manager. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0583,
+      6.7481,
+      7.0216,
+      6.8182,
+      7.0175,
+      7.1611,
+      1.0543,
+      7.0911
+     ]
+    }
+   ],
+   "offset": 6554
+  },
+  {
+   "role": null,
+   "content": "THPA - 043 The Vendor must commit to response times for each priority level. (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.051,
+      7.2088,
+      7.0259,
+      7.2786,
+      7.022,
+      7.6158,
+      1.0471,
+      7.546
+     ]
+    }
+   ],
+   "offset": 6636
+  },
+  {
+   "role": null,
+   "content": "THPA-044 The Vendor must offer support in Spanish. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0428,
+      7.6655,
+      5.8496,
+      7.7138,
+      5.8481,
+      7.8704,
+      1.0412,
+      7.8221
+     ]
+    }
+   ],
+   "offset": 6717
+  },
+  {
+   "role": null,
+   "content": ". THPA - 045 The Vendor must provide multiple support channels. . (M) THPA -046 The Vendor must describe how support issues are escalated, (D)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9748,
+      7.9342,
+      7.3326,
+      8.0057,
+      7.3278,
+      8.4326,
+      0.97,
+      8.3611
+     ]
+    }
+   ],
+   "offset": 6772
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.12 COMMERCIAL",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0411,
+      8.5118,
+      2.5565,
+      8.526,
+      2.5551,
+      8.6793,
+      1.0397,
+      8.6652
+     ]
+    }
+   ],
+   "offset": 6915
+  },
+  {
+   "role": null,
+   "content": "THPA-047 The Vendor must maintain commercial general liability, professional liability and cyber insurance. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0353,
+      8.7698,
+      6.6226,
+      8.8355,
+      6.6185,
+      9.1876,
+      1.0312,
+      9.1219
+     ]
+    }
+   ],
+   "offset": 6931
+  },
+  {
+   "role": null,
+   "content": "THPA-048 The Vendor must furnish a performance bond equal to twenty-five percent (25%) of the total contract value. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      1.0312,
+      9.234,
+      7.0423,
+      9.3003,
+      7.0384,
+      9.65,
+      1.0274,
+      9.5837
+     ]
+    }
+   ],
+   "offset": 7043
+  },
+  {
+   "role": "pageFooter",
+   "content": "THPA RFP 2026-09",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      0.9336,
+      10.2706,
+      2.0799,
+      10.2789,
+      2.079,
+      10.3936,
+      0.9328,
+      10.3852
+     ]
+    }
+   ],
+   "offset": 7163
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 5",
+   "boundingRegions": [
+    {
+     "pageNumber": 5,
+     "polygon": [
+      7.0102,
+      10.3386,
+      7.4484,
+      10.3396,
+      7.4481,
+      10.4554,
+      7.0099,
+      10.4543
+     ]
+    }
+   ],
+   "offset": 7180
+  },
+  {
+   "role": null,
+   "content": "THPA -049 The Vendor must indemnify the agency against third-party intellectual property infringement claims. (M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      1.0458,
+      1.0179,
+      6.8389,
+      1.0028,
+      6.8398,
+      1.3438,
+      1.0467,
+      1.3588
+     ]
+    }
+   ],
+   "offset": 7200
+  },
+  {
+   "role": "sectionHeading",
+   "content": "5.13 MISCELLANEOUS",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      1.0542,
+      1.5201,
+      2.8622,
+      1.5139,
+      2.8627,
+      1.6679,
+      1.0547,
+      1.6741
+     ]
+    }
+   ],
+   "offset": 7314
+  },
+  {
+   "role": null,
+   "content": "THPA-050 The Vendor must provide a dedicated customer success contact.",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      1.0533,
+      1.7882,
+      7.2445,
+      1.7567,
+      7.2452,
+      1.8962,
+      1.054,
+      1.9277
+     ]
+    }
+   ],
+   "offset": 7333
+  },
+  {
+   "role": null,
+   "content": "(M)",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      2.0377,
+      1.9709,
+      2.2416,
+      1.9707,
+      2.2418,
+      2.1025,
+      2.0379,
+      2.1028
+     ]
+    }
+   ],
+   "offset": 7404
+  },
+  {
+   "role": "pageFooter",
+   "content": "THPA RFP 2026-09",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      1.0163,
+      10.3238,
+      2.1565,
+      10.3185,
+      2.157,
+      10.4283,
+      1.0169,
+      10.4337
+     ]
+    }
+   ],
+   "offset": 7408
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 6",
+   "boundingRegions": [
+    {
+     "pageNumber": 6,
+     "polygon": [
+      7.0939,
+      10.2949,
+      7.5263,
+      10.2911,
+      7.5273,
+      10.4019,
+      7.0949,
+      10.4058
+     ]
+    }
+   ],
+   "offset": 7425
+  },
+  {
+   "role": "sectionHeading",
+   "content": "6. SIGNATURE PAGE",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0568,
+      1.0343,
+      2.7625,
+      1.0268,
+      2.7631,
+      1.1752,
+      1.0575,
+      1.1826
+     ]
+    }
+   ],
+   "offset": 7432
+  },
+  {
+   "role": null,
+   "content": "The undersigned agrees to furnish the goods and services described in this proposal in accordance with RFP THPA 2026-09.",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.049,
+      1.2923,
+      7.1013,
+      1.2574,
+      7.1033,
+      1.6014,
+      1.051,
+      1.6362
+     ]
+    }
+   ],
+   "offset": 7450
+  },
+  {
+   "role": null,
+   "content": "Company name",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9753,
+      1.8906,
+      3.3782,
+      1.8839,
+      3.3782,
+      2.1458,
+      0.9753,
+      2.1592
+     ]
+    }
+   ],
+   "offset": 7571
+  },
+  {
+   "role": null,
+   "content": "Address",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9753,
+      2.1592,
+      3.3782,
+      2.1458,
+      3.3782,
+      2.4211,
+      0.9753,
+      2.4345
+     ]
+    }
+   ],
+   "offset": 7584
+  },
+  {
+   "role": null,
+   "content": "Authorized signature",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9753,
+      2.4345,
+      3.3782,
+      2.4211,
+      3.3782,
+      2.6964,
+      0.982,
+      2.7098
+     ]
+    }
+   ],
+   "offset": 7592
+  },
+  {
+   "role": null,
+   "content": "Printed name and title",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.982,
+      2.7098,
+      3.3782,
+      2.6964,
+      3.3782,
+      2.9583,
+      0.982,
+      2.9717
+     ]
+    }
+   ],
+   "offset": 7613
+  },
+  {
+   "role": null,
+   "content": "Date",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.982,
+      2.9717,
+      3.3782,
+      2.9583,
+      3.3849,
+      3.2336,
+      0.982,
+      3.247
+     ]
+    }
+   ],
+   "offset": 7636
+  },
+  {
+   "role": "sectionHeading",
+   "content": "PRICE FORM",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0646,
+      3.6205,
+      2.0837,
+      3.6184,
+      2.0839,
+      3.7618,
+      1.0649,
+      3.7639
+     ]
+    }
+   ],
+   "offset": 7641
+  },
+  {
+   "role": null,
+   "content": "Item",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9826,
+      3.8444,
+      3.297,
+      3.831,
+      3.297,
+      4.2956,
+      0.9826,
+      4.3091
+     ]
+    }
+   ],
+   "offset": 7652
+  },
+  {
+   "role": null,
+   "content": "Year 1",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      3.297,
+      3.831,
+      4.4879,
+      3.831,
+      4.4879,
+      4.2889,
+      3.297,
+      4.2956
+     ]
+    }
+   ],
+   "offset": 7657
+  },
+  {
+   "role": null,
+   "content": "Years 2-5 (annual)",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      4.4879,
+      3.831,
+      6.0892,
+      3.8242,
+      6.0892,
+      4.2822,
+      4.4879,
+      4.2889
+     ]
+    }
+   ],
+   "offset": 7664
+  },
+  {
+   "role": null,
+   "content": "Total 5-year",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      6.0892,
+      3.8242,
+      7.4887,
+      3.8175,
+      7.4887,
+      4.2687,
+      6.0892,
+      4.2822
+     ]
+    }
+   ],
+   "offset": 7683
+  },
+  {
+   "role": null,
+   "content": "Software subscription",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9826,
+      4.3091,
+      3.297,
+      4.2956,
+      3.297,
+      4.5717,
+      0.9893,
+      4.5852
+     ]
+    }
+   ],
+   "offset": 7696
+  },
+  {
+   "role": null,
+   "content": "Implementation",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9893,
+      4.5852,
+      3.297,
+      4.5717,
+      3.297,
+      4.8411,
+      0.9893,
+      4.8546
+     ]
+    }
+   ],
+   "offset": 7718
+  },
+  {
+   "role": null,
+   "content": "Data conversion",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9893,
+      4.8546,
+      3.297,
+      4.8411,
+      3.297,
+      5.1105,
+      0.9893,
+      5.1239
+     ]
+    }
+   ],
+   "offset": 7733
+  },
+  {
+   "role": null,
+   "content": "Training",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9893,
+      5.1239,
+      3.297,
+      5.1105,
+      3.297,
+      5.3798,
+      0.9893,
+      5.3933
+     ]
+    }
+   ],
+   "offset": 7749
+  },
+  {
+   "role": null,
+   "content": "Total",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9893,
+      5.3933,
+      3.297,
+      5.3798,
+      3.297,
+      5.6492,
+      0.996,
+      5.6627
+     ]
+    }
+   ],
+   "offset": 7758
+  },
+  {
+   "role": "pageFooter",
+   "content": "THPA RFP 2026-09",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      1.0158,
+      10.3243,
+      2.1547,
+      10.3186,
+      2.1553,
+      10.4277,
+      1.0164,
+      10.4334
+     ]
+    }
+   ],
+   "offset": 7764
+  },
+  {
+   "role": "pageNumber",
+   "content": "Page 7",
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      7.0935,
+      10.2952,
+      7.5279,
+      10.2915,
+      7.5288,
+      10.3998,
+      7.0945,
+      10.4035
+     ]
+    }
+   ],
+   "offset": 7781
+  }
+ ],
+ "tables": [
+  {
+   "rowCount": 7,
+   "columnCount": 2,
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      0.9897,
+      4.224,
+      7.5098,
+      4.2193,
+      7.5128,
+      6.1405,
+      0.9922,
+      6.1464
+     ]
+    }
+   ],
+   "offset": 1242,
+   "length": 252,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "EVENT"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "DATE"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "RFP issued"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "October 16, 2026"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Site visit (optional)"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "October 27, 2026, 9:00 a.m."
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Written questions due"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "November 3, 2026, 4:00 p.m."
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Proposals due"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "November 24, 2026, 2:00 p.m."
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Vendor interviews"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "Week of December 7, 2026"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Award (target)"
+    },
+    {
+     "rowIndex": 6,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "January 2027"
+    }
+   ]
+  },
+  {
+   "rowCount": 2,
+   "columnCount": 2,
+   "boundingRegions": [
+    {
+     "pageNumber": 2,
+     "polygon": [
+      1.0052,
+      9.2993,
+      7.5049,
+      9.2788,
+      7.5108,
+      9.8317,
+      1.0108,
+      9.8522
+     ]
+    }
+   ],
+   "offset": 2225,
+   "length": 59,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "CRITERIA"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "POINTS"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Technical requirements and functionality"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "35"
+    }
+   ]
+  },
+  {
+   "rowCount": 4,
+   "columnCount": 2,
+   "boundingRegions": [
+    {
+     "pageNumber": 3,
+     "polygon": [
+      0.9886,
+      0.9629,
+      7.5043,
+      0.9537,
+      7.5079,
+      2.0715,
+      0.9913,
+      2.0813
+     ]
+    }
+   ],
+   "offset": 2310,
+   "length": 103,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Implementation plan and schedule"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "20"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Experience and references"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "15"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Support and service levels"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "10"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Price"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": "20"
+    }
+   ]
+  },
+  {
+   "rowCount": 5,
+   "columnCount": 2,
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9766,
+      1.8714,
+      7.4935,
+      1.8532,
+      7.491,
+      3.245,
+      0.9745,
+      3.263
+     ]
+    }
+   ],
+   "offset": 7571,
+   "length": 69,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Company name"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Address"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Authorized signature"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Printed name and title"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Date"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    }
+   ]
+  },
+  {
+   "rowCount": 6,
+   "columnCount": 4,
+   "boundingRegions": [
+    {
+     "pageNumber": 7,
+     "polygon": [
+      0.9746,
+      3.829,
+      7.5066,
+      3.8108,
+      7.5119,
+      5.649,
+      0.9793,
+      5.6674
+     ]
+    }
+   ],
+   "offset": 7652,
+   "length": 111,
+   "cells": [
+    {
+     "rowIndex": 0,
+     "columnIndex": 0,
+     "kind": "columnHeader",
+     "content": "Item"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 1,
+     "kind": "columnHeader",
+     "content": "Year 1"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 2,
+     "kind": "columnHeader",
+     "content": "Years 2-5 (annual)"
+    },
+    {
+     "rowIndex": 0,
+     "columnIndex": 3,
+     "kind": "columnHeader",
+     "content": "Total 5-year"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Software subscription"
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 1,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Implementation"
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 2,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Data conversion"
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 3,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Training"
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 4,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 0,
+     "kind": "content",
+     "content": "Total"
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 1,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 2,
+     "kind": "content",
+     "content": ""
+    },
+    {
+     "rowIndex": 5,
+     "columnIndex": 3,
+     "kind": "content",
+     "content": ""
+    }
+   ]
+  }
+ ]
+}

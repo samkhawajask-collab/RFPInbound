@@ -1,0 +1,27 @@
+# Packed solution output - generated, never edited (hard rule 2)
+solution/build/
+
+# Original dataset archive; the extracted copy lives in data/
+/RFP_Synthetic_Dataset_Pilot.zip
+
+# Per-environment deployment settings (values are environment-specific)
+scripts/settings/*.local.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+*.egg-info/
+
+# Local virtual environment for tools/
+tools/.venv/
+
+# Playwright UI automation: dependencies, browser profile (holds a signed-in session) and screenshots
+scripts/ui/node_modules/
+scripts/ui/profile/
+scripts/ui/shots/
+scripts/ui/package-lock.json
+
+# SCALE-500 generated input (eval/scale/make_scale_rfp.py)
+eval/scale/out/

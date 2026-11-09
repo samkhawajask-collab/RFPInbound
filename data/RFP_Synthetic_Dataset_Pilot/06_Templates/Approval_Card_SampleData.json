@@ -1,0 +1,24 @@
+{
+  "buyerName": "Cedar Valley Water Authority",
+  "rfpNumber": "CVWA RFP 2026-117",
+  "dueDate": "2026-11-20 14:00 ET",
+  "valueBand": "$1,000,000 - $3,000,000",
+  "approvalLevel": "L3 - Theodore Vance",
+  "totalRequirements": 60,
+  "countFull": 0,
+  "countPartial": 0,
+  "countNo": 0,
+  "countGap": 0,
+  "countClarify": 0,
+  "pageCount": 0,
+  "pageLimit": 30,
+  "exceptions": [
+    {
+      "ruleId": "R-01",
+      "severity": "Block",
+      "reqId": "CV-0xx",
+      "summary": "Unlimited liability requested"
+    }
+  ],
+  "draftUrl": "https://example.invalid/draft"
+}
