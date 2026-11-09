@@ -16,23 +16,41 @@ These ran on 2026-11-09 against gallery commit `8ce50e4`:
 | `npm test` | 6 tests fail on Windows, and they fail the same way without this entry: Windows refuses to create symlinks without Developer Mode (EPERM). CI runs on Linux |
 | `pac solution check` on the gallery's generated ZIP | 0 critical, 0 high. The medium findings are 66 missing-table dependencies (expected: the tables are in `RFPFactoryData`) and 3 connector warnings |
 
-## Still to do before opening the pull request
+## Fresh-environment test (2026-11-09)
 
-1. **Fresh-environment import (required by the PR template).** Use a new environment with only the documented
-   prerequisites (see [README.md](README.md)). Import `release/RFPFactoryData.zip`, then `release/RFPResponseFactory.zip`,
-   without skipping dependency checks. Set `hrs_RfpToolsBaseUrl` during the import. Then run RFP A end to end to confirm
-   the flows work with the generated preview graphs in their trigger metadata. That last point isn't verified yet.
-2. **Fork and branch.** Fork the gallery, then clone your fork and create a branch:
+The pull-request template requires this attestation. The test followed [README.md](README.md) from a fresh clone of this
+repository, in a new Trial environment ("RFP Gallery Fresh"). It used new Azure resources and a new SharePoint site, and
+nothing from the development environments.
+
+| Step | Result |
+|---|---|
+| `RFPFactoryData.zip` import | Succeeded (6.5 min) |
+| `RFPResponseFactory.zip` import (byte-identical to the gallery bundle), dependency checks on, env vars at import | Succeeded (2 min). 11 flows, 1 agent, 6 tools and hooks, 12 prompts. Every flow kept its generated `associatedData.graph` |
+| rfp-tools tests and deploy | 226 passed; healthy with 56 operations |
+| Connections, settings, seed data (318 rows), flow activation | All 11 flows on |
+| RFP A, uploaded to `Inbound` | Stages 1-7 ran: 60 requirements, 49 responses, 37 flags, 7 gaps routed as Teams cards. After the gaps were closed with `complete-gaps.ps1`, stages 8-9 wrote the proposal package to `Output/Draft` and posted the approval card |
+
+The test also found gaps in the setup scripts and docs, which are fixed in this repository:
+
+- `provision-azure.ps1` failed its first run on a role-assignment lookup.
+- `apply-connector.ps1` needed `-ConnectionOnly` for an environment without the RFPFactory solution.
+- `activate-flows.ps1` had a strict-mode bug.
+- The settings template was missing six environment variables.
+- The README's step order was wrong.
+
+## Steps to open the pull request
+
+1. **Fork and branch.** Fork the gallery, then clone your fork and create a branch:
    ```bash
    gh repo fork microsoft/copilot-studio-gallery --clone
    cd copilot-studio-gallery
    git config core.autocrlf false   # on Windows: keeps the demo fixtures' hashes valid for check:submissions
    git checkout -b add-rfp-response-factory
    ```
-3. **Add the entry.** Copy `gallery-submission/rfp-response-factory/` from this repository to `submissions/rfp-response-factory/`.
+2. **Add the entry.** Copy `gallery-submission/rfp-response-factory/` from this repository to `submissions/rfp-response-factory/`.
    Then run `npm ci` and `npm run check:submissions`. Don't commit the generated files under `public/bundles/` or
    `src/content/`.
-4. **Commit, push and open the PR** against `main`, with the description below.
+3. **Commit, push and open the PR** against `main`, with the description below.
 
 ## Pull request description
 
@@ -54,4 +72,4 @@ These ran on 2026-11-09 against gallery commit `8ce50e4`:
 >
 > N/A
 
-Tick the attestation only after step 1 succeeds.
+The attestation is backed by the fresh-environment test above. The pull request is [#114](https://github.com/microsoft/copilot-studio-gallery/pull/114).

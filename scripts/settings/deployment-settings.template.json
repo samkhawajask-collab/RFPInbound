@@ -1,19 +1,19 @@
 {
   "EnvironmentVariables": [
     {
-      "SchemaName": "hrs_ContentLibraryUrl",
+      "SchemaName": "hrs_SharePointSiteUrl",
       "Value": "",
       "Name": {
-        "Default": "Company content library URL",
+        "Default": "SharePoint site URL",
         "ByLcid": {
-          "1033": "Company content library URL"
+          "1033": "SharePoint site URL"
         }
       },
       "TypeId": 100000000,
       "Description": {
-        "Default": "SharePoint library with approved company content and templates",
+        "Default": "Site that holds the Inbound, Content and Output folders",
         "ByLcid": {
-          "1033": "SharePoint library with approved company content and templates"
+          "1033": "Site that holds the Inbound, Content and Output folders"
         }
       },
       "IsRequired": false
@@ -22,16 +22,34 @@
       "SchemaName": "hrs_InboundLibraryUrl",
       "Value": "",
       "Name": {
-        "Default": "Inbound RFP library URL",
+        "Default": "Inbound folder path",
         "ByLcid": {
-          "1033": "Inbound RFP library URL"
+          "1033": "Inbound folder path"
         }
       },
       "TypeId": 100000000,
       "Description": {
-        "Default": "SharePoint library that receives inbound RFPs and addenda",
+        "Default": "Site-relative folder that receives inbound RFPs and addenda, e.g. /Shared Documents/Inbound",
         "ByLcid": {
-          "1033": "SharePoint library that receives inbound RFPs and addenda"
+          "1033": "Site-relative folder that receives inbound RFPs and addenda, e.g. /Shared Documents/Inbound"
+        }
+      },
+      "IsRequired": false
+    },
+    {
+      "SchemaName": "hrs_ContentLibraryUrl",
+      "Value": "",
+      "Name": {
+        "Default": "Content folder path",
+        "ByLcid": {
+          "1033": "Content folder path"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "Site-relative folder with approved company content (Company/) and templates (Templates/), e.g. /Shared Documents/Content",
+        "ByLcid": {
+          "1033": "Site-relative folder with approved company content (Company/) and templates (Templates/), e.g. /Shared Documents/Content"
         }
       },
       "IsRequired": false
@@ -40,16 +58,16 @@
       "SchemaName": "hrs_OutputLibraryUrl",
       "Value": "",
       "Name": {
-        "Default": "Output library URL",
+        "Default": "Output folder path",
         "ByLcid": {
-          "1033": "Output library URL"
+          "1033": "Output folder path"
         }
       },
       "TypeId": 100000000,
       "Description": {
-        "Default": "SharePoint library for draft and filed proposal packages",
+        "Default": "Site-relative folder for draft (Draft/) and filed (Filed/) proposal packages, e.g. /Shared Documents/Output",
         "ByLcid": {
-          "1033": "SharePoint library for draft and filed proposal packages"
+          "1033": "Site-relative folder for draft (Draft/) and filed (Filed/) proposal packages, e.g. /Shared Documents/Output"
         }
       },
       "IsRequired": false
@@ -58,16 +76,124 @@
       "SchemaName": "hrs_RfpToolsBaseUrl",
       "Value": "",
       "Name": {
-        "Default": "rfp-tools base URL",
+        "Default": "rfp-tools host",
         "ByLcid": {
-          "1033": "rfp-tools base URL"
+          "1033": "rfp-tools host"
         }
       },
       "TypeId": 100000000,
       "Description": {
-        "Default": "Base URL of the rfp-tools service behind the custom connector",
+        "Default": "Host name (no scheme) of the rfp-tools service; used as the custom connector's Host via @environmentVariables",
         "ByLcid": {
-          "1033": "Base URL of the rfp-tools service behind the custom connector"
+          "1033": "Host name (no scheme) of the rfp-tools service; used as the custom connector's Host via @environmentVariables"
+        }
+      },
+      "IsRequired": false
+    },
+    {
+      "SchemaName": "hrs_DocumentLibraryId",
+      "Value": "",
+      "Name": {
+        "Default": "Document library ID",
+        "ByLcid": {
+          "1033": "Document library ID"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "SharePoint list ID of the library holding Inbound/Content/Output (for file triggers)",
+        "ByLcid": {
+          "1033": "SharePoint list ID of the library holding Inbound/Content/Output (for file triggers)"
+        }
+      },
+      "IsRequired": false
+    },
+    {
+      "SchemaName": "hrs_DocumentDriveId",
+      "Value": "",
+      "Name": {
+        "Default": "Document library drive ID",
+        "ByLcid": {
+          "1033": "Document library drive ID"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "Graph drive ID of the same library (for Word Online PDF conversion)",
+        "ByLcid": {
+          "1033": "Graph drive ID of the same library (for Word Online PDF conversion)"
+        }
+      },
+      "IsRequired": false
+    },
+    {
+      "SchemaName": "hrs_CompanyName",
+      "Value": "",
+      "Name": {
+        "Default": "Company name",
+        "ByLcid": {
+          "1033": "Company name"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "Respondent's legal name, used in proposal headers",
+        "ByLcid": {
+          "1033": "Respondent's legal name, used in proposal headers"
+        }
+      },
+      "IsRequired": false
+    },
+    {
+      "SchemaName": "hrs_PilotRecipientUpn",
+      "Value": "",
+      "Name": {
+        "Default": "Pilot card recipient",
+        "ByLcid": {
+          "1033": "Pilot card recipient"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "UPN that receives every SME and approval card during the pilot; the routed SME/approver is still recorded (Q6)",
+        "ByLcid": {
+          "1033": "UPN that receives every SME and approval card during the pilot; the routed SME/approver is still recorded (Q6)"
+        }
+      },
+      "IsRequired": false
+    },
+    {
+      "SchemaName": "hrs_ReminderAfter",
+      "Value": "",
+      "Name": {
+        "Default": "Card reminder after",
+        "ByLcid": {
+          "1033": "Card reminder after"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "ISO 8601 duration a gap, OCR or approval card waits before a reminder (ADR-0027)",
+        "ByLcid": {
+          "1033": "ISO 8601 duration a gap, OCR or approval card waits before a reminder (ADR-0027)"
+        }
+      },
+      "IsRequired": false
+    },
+    {
+      "SchemaName": "hrs_EscalateAfter",
+      "Value": "",
+      "Name": {
+        "Default": "Card escalation after",
+        "ByLcid": {
+          "1033": "Card escalation after"
+        }
+      },
+      "TypeId": 100000000,
+      "Description": {
+        "Default": "ISO 8601 duration after the reminder before escalating to the backup, and again before the card is recorded overdue (ADR-0027)",
+        "ByLcid": {
+          "1033": "ISO 8601 duration after the reminder before escalating to the backup, and again before the card is recorded overdue (ADR-0027)"
         }
       },
       "IsRequired": false
@@ -80,16 +206,6 @@
       "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
     },
     {
-      "LogicalName": "hrs_o365usersconnection",
-      "ConnectionId": "",
-      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_office365users"
-    },
-    {
-      "LogicalName": "hrs_outlookconnection",
-      "ConnectionId": "",
-      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_office365"
-    },
-    {
       "LogicalName": "hrs_sharepointconnection",
       "ConnectionId": "",
       "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
@@ -98,6 +214,16 @@
       "LogicalName": "hrs_teamsconnection",
       "ConnectionId": "",
       "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_teams"
+    },
+    {
+      "LogicalName": "hrs_wordonlineconnection",
+      "ConnectionId": "",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+    },
+    {
+      "LogicalName": "hrs_rfptoolsconnection",
+      "ConnectionId": "",
+      "ConnectorId": ""
     }
   ],
   "CopilotAgents": []

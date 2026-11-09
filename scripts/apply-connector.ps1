@@ -14,14 +14,17 @@
   at run time; the key is never written to disk or printed.
 
   In test the connector is managed and arrives with the solution, so -Target test only creates the connection, with
-  the key from test's own Function App (ADR-0031).
+  the key from test's own Function App (ADR-0031). -ConnectionOnly does the same for any target: use it in an
+  environment set up from the gallery solution, which brings the connector and has no RFPFactory solution (ADR-0036).
 
 .EXAMPLE
   ./scripts/apply-connector.ps1 -CreateConnection
   ./scripts/apply-connector.ps1 -Target test -CreateConnection
+  ./scripts/apply-connector.ps1 -ConnectionOnly
 #>
 [CmdletBinding()]
-param([ValidateSet('dev', 'test')][string]$Target = 'dev', [switch]$CreateConnection)
+param([ValidateSet('dev', 'test')][string]$Target = 'dev', [switch]$CreateConnection, [switch]$ConnectionOnly)
+if ($ConnectionOnly) { $CreateConnection = $true }
 
 . (Join-Path $PSScriptRoot 'lib\Dataverse.ps1')
 $res = Get-TargetResources -Target $Target
@@ -33,8 +36,8 @@ $name = 'new_rfp-20factory-20tools'
 
 Connect-Dataverse -Url $url
 $existing = (Invoke-Dv -Path "connectors?`$select=connectorid&`$filter=name eq '$name'").value | Select-Object -First 1
-if ($Target -eq 'test') {
-    if (-not $existing) { throw "Connector $name not found in test; import the solution first" }
+if ($Target -eq 'test' -or $ConnectionOnly) {
+    if (-not $existing) { throw "Connector $name not found in $Target; import the solution first" }
 } elseif ($existing) {
     $out = pac connector update --connector-id $existing.connectorid --api-definition-file $definition --api-properties-file $properties --solution-unique-name RFPFactory --environment $url 2>&1
     if ($LASTEXITCODE -ne 0 -or ($out -match '^Error:')) { throw "pac connector update failed: $out" }

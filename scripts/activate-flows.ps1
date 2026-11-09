@@ -46,7 +46,9 @@ for ($pass = 1; $pass -le $Passes -and $pending.Count; $pass++) {
     # A flow reported as started has been seen off a minute later (2026-11-01), so only a later read counts.
     Start-Sleep -Seconds 90
     Connect-Dataverse -Url $url
-    $off = @($flows | Where-Object { (Invoke-Dv -Path "workflows($($_.workflowid))?`$select=statecode").statecode -ne 1 -and $_.workflowid -notin $failed.workflowid })
+    # (Strict mode: .workflowid on an empty array throws, so collect the IDs explicitly.)
+    $failedIds = @($failed | ForEach-Object { $_.workflowid })
+    $off = @($flows | Where-Object { (Invoke-Dv -Path "workflows($($_.workflowid))?`$select=statecode").statecode -ne 1 -and $_.workflowid -notin $failedIds })
     $pending = @($failed) + $off
 }
 Write-Host "$($flows.Count - $pending.Count) of $($flows.Count) flows on"

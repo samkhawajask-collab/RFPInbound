@@ -82,7 +82,9 @@ $diEndpoint = Invoke-Az cognitiveservices account show -n $di -g $rg --query pro
 $principal = Invoke-Az functionapp identity assign -n $app -g $rg --query principalId -o tsv
 $role = 'Cognitive Services User'
 # (Counted here, not with --query length(@): az.cmd passes the parentheses through cmd, which breaks them.)
-$has = @(Invoke-Az role assignment list --assignee $principal --scope $diId --role $role -o json | ConvertFrom-Json)
+# Filtered by principalId locally: --assignee looks the identity up in Entra ID, and a just-created identity isn't
+# there yet, which fails a first run (seen 2026-11-09 in a fresh environment).
+$has = @(Invoke-Az role assignment list --scope $diId --role $role -o json | ConvertFrom-Json | Where-Object principalId -eq $principal)
 if ($has.Count -eq 0) {
     Invoke-Az role assignment create --assignee-object-id $principal --assignee-principal-type ServicePrincipal `
         --role $role --scope $diId | Out-Null

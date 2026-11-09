@@ -39,17 +39,24 @@ The scripts call your environment `dev`. They only touch the environment and the
    `./scripts/deploy-tools.ps1`. The deploy runs the tests first and refuses to deploy if any fail.
 3. **SharePoint.** `./scripts/provision-sharepoint.ps1` creates the site and its folders, and uploads the company content and the
    templates.
-4. **Tables.** `pac solution import --path release/RFPFactoryData.zip`.
-5. **The gallery solution.** Download it from the gallery entry (or use `release/RFPResponseFactory.zip`) and import it. Bind the five connection references. Set
-   `hrs_RfpToolsBaseUrl` to your Function App's host **during** the import, because the connector needs it. The connection for the
-   custom connector asks for the Function App's key.
-6. **Settings.** Copy `scripts/settings/deployment-settings.template.json` to `scripts/settings/dev.local.json`, fill in the values,
-   and run `./scripts/set-env-values.ps1 -Target dev`. The gallery README lists each environment variable.
-7. **Reference data.** `./scripts/seed-data.ps1 -Target dev` loads the synthetic answer library, SMEs, policy rules, approvers,
-   certifications and opportunities.
-8. **Turn it on.** `./scripts/activate-flows.ps1 -Target dev`. Then publish the RFP Orchestrator in Copilot Studio and add the Teams
-   channel.
-9. **Try it.** Put `data/RFP_Synthetic_Dataset_Pilot/01_Inbound_RFPs/RFP-A_Cedar_Valley_Water_Authority_RFP-2026-117.docx` in the
+4. **Tables.** `pac solution import --path release/RFPFactoryData.zip`. It takes about 7 minutes.
+5. **Settings.** Copy `scripts/settings/deployment-settings.template.json` to `scripts/settings/dev.local.json` (git-ignored) and fill
+   in every environment variable. The gallery README describes each one. `hrs_RfpToolsBaseUrl` is the Function App's host name only,
+   for example `func-rfptools-xyz.azurewebsites.net`. The library URLs are folder paths such as `/Shared Documents/Inbound`. Get the
+   list ID and drive ID from Microsoft Graph (`/groups/<group id>/drive/list` and `/groups/<group id>/drive`).
+6. **The gallery solution.** Download it from the gallery entry (or use `release/RFPResponseFactory.zip`). Import it with the
+   environment variable values, because the custom connector needs `hrs_RfpToolsBaseUrl` at import:
+   `pac solution import --path release/RFPResponseFactory.zip --settings-file <a copy of dev.local.json with "ConnectionReferences": []>`.
+   pac reports that the connections still need creating; that's expected.
+7. **Connections.** Create a Microsoft Dataverse, SharePoint, Microsoft Teams and Word Online (Business) connection in the maker portal
+   (or run `node scripts/ui/create-connections.js` with `PP_ENV_ID` and `PP_CONNECTORS` set). Then
+   `./scripts/apply-connector.ps1 -ConnectionOnly` creates the rfp-tools connection with the Function App's key. Put the five connection
+   IDs in `dev.local.json` and run `./scripts/set-env-values.ps1 -Target dev`, which binds the references.
+8. **Reference data.** `./scripts/seed-data.ps1 -Target dev` loads the synthetic answer library, SMEs, policy rules, approvers,
+   certifications and opportunities (318 rows). It checks the row counts.
+9. **Turn it on.** `./scripts/activate-flows.ps1 -Target dev` turns on all 11 flows, retrying the ones that depend on others. Then
+   publish the RFP Orchestrator in Copilot Studio and add the Teams channel.
+10. **Try it.** Put `data/RFP_Synthetic_Dataset_Pilot/01_Inbound_RFPs/RFP-A_Cedar_Valley_Water_Authority_RFP-2026-117.docx` in the
    site's `Inbound` folder. Then ask the Orchestrator "What is the status of RFP A?". `docs/RUNBOOK.md` describes the run, the cards
    and reruns.
 
