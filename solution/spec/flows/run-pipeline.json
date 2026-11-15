@@ -2147,23 +2147,6 @@
                   ]
                 },
                 "actions": {
-                  "Await_Verification": {
-                    "type": "OpenApiConnection",
-                    "inputs": {
-                      "host": {
-                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
-                        "operationId": "UpdateOnlyRecord",
-                        "connectionName": "shared_commondataserviceforapps"
-                      },
-                      "parameters": {
-                        "entityName": "hrs_rfps",
-                        "recordId": "@{outputs('Ids')?['rfpId']}",
-                        "item/hrs_status": 431200172,
-                        "item/hrs_stage": 2
-                      }
-                    },
-                    "runAfter": {}
-                  },
                   "Write_Ocr_Flags": {
                     "type": "Foreach",
                     "foreach": "@body('Ocr_Flags')?['rows']",
@@ -2194,8 +2177,85 @@
                         "repetitions": 20
                       }
                     },
+                    "runAfter": {}
+                  },
+                  "Await_Verification": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "UpdateOnlyRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_rfps",
+                        "recordId": "@{outputs('Ids')?['rfpId']}",
+                        "item/hrs_status": 431200172,
+                        "item/hrs_stage": 2
+                      }
+                    },
+                    "runAfter": {
+                      "Write_Ocr_Flags": [
+                        "Succeeded"
+                      ]
+                    }
+                  },
+                  "Ocr_Still_Open": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "ListRecords",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_flags",
+                        "$select": "hrs_flagid",
+                        "$filter": "_hrs_rfp_value eq @{outputs('Ids')?['rfpId']} and hrs_flagtype eq 431200153 and hrs_resolvedon eq null"
+                      }
+                    },
+                    "runtimeConfiguration": {
+                      "paginationPolicy": {
+                        "minimumItemCount": 5000
+                      }
+                    },
                     "runAfter": {
                       "Await_Verification": [
+                        "Succeeded"
+                      ]
+                    }
+                  },
+                  "If_all_verified_early": {
+                    "type": "If",
+                    "expression": {
+                      "equals": [
+                        "@length(body('Ocr_Still_Open')?['value'])",
+                        0
+                      ]
+                    },
+                    "actions": {
+                      "Resume_Verified": {
+                        "type": "OpenApiConnection",
+                        "inputs": {
+                          "host": {
+                            "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                            "operationId": "UpdateOnlyRecord",
+                            "connectionName": "shared_commondataserviceforapps"
+                          },
+                          "parameters": {
+                            "entityName": "hrs_rfps",
+                            "recordId": "@{outputs('Ids')?['rfpId']}",
+                            "item/hrs_status": 431200171
+                          }
+                        },
+                        "runAfter": {}
+                      }
+                    },
+                    "else": {
+                      "actions": {}
+                    },
+                    "runAfter": {
+                      "Ocr_Still_Open": [
                         "Succeeded"
                       ]
                     }
@@ -2218,7 +2278,7 @@
                       }
                     },
                     "runAfter": {
-                      "Write_Ocr_Flags": [
+                      "If_all_verified_early": [
                         "Succeeded"
                       ]
                     }
@@ -4359,7 +4419,7 @@
                   "parameters": {
                     "entityName": "hrs_answers",
                     "$select": "hrs_answerid,hrs_answercode,hrs_question,hrs_answertext,hrs_approvalstatus,hrs_lastreviewed,hrs_confidentiality,_hrs_supersededby_value",
-                    "$filter": "not (startswith(hrs_answercode,'PROP-@{outputs('Ids')?['key']}-') and hrs_approvalstatus eq 431200011)",
+                    "$filter": "not (startswith(hrs_answercode,'@{concat('PROP-', replace(replace(outputs('Ids')?['key'], '~', '~t'), '-', '~h'), '-')}') and hrs_approvalstatus eq 431200011)",
                     "$expand": "hrs_categorycode($select=hrs_categorycode)"
                   }
                 },
@@ -6401,7 +6461,7 @@
                   "parameters": {
                     "entityName": "hrs_answers",
                     "$select": "hrs_answerid,hrs_answercode,hrs_question,hrs_answertext",
-                    "$filter": "startswith(hrs_answercode,'PROP-@{outputs('Ids')?['key']}-') and hrs_approvalstatus eq 431200011"
+                    "$filter": "startswith(hrs_answercode,'@{concat('PROP-', replace(replace(outputs('Ids')?['key'], '~', '~t'), '-', '~h'), '-')}') and hrs_approvalstatus eq 431200011"
                   }
                 },
                 "runtimeConfiguration": {
@@ -6534,23 +6594,6 @@
                   ]
                 },
                 "actions": {
-                  "Await_SMEs": {
-                    "type": "OpenApiConnection",
-                    "inputs": {
-                      "host": {
-                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
-                        "operationId": "UpdateOnlyRecord",
-                        "connectionName": "shared_commondataserviceforapps"
-                      },
-                      "parameters": {
-                        "entityName": "hrs_rfps",
-                        "recordId": "@{outputs('Ids')?['rfpId']}",
-                        "item/hrs_status": 431200172,
-                        "item/hrs_stage": 7
-                      }
-                    },
-                    "runAfter": {}
-                  },
                   "Write_Gaps": {
                     "type": "Foreach",
                     "foreach": "@body('Gaps')?['rows']",
@@ -6581,8 +6624,85 @@
                         "repetitions": 10
                       }
                     },
+                    "runAfter": {}
+                  },
+                  "Await_SMEs": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "UpdateOnlyRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_rfps",
+                        "recordId": "@{outputs('Ids')?['rfpId']}",
+                        "item/hrs_status": 431200172,
+                        "item/hrs_stage": 7
+                      }
+                    },
+                    "runAfter": {
+                      "Write_Gaps": [
+                        "Succeeded"
+                      ]
+                    }
+                  },
+                  "Sme_Still_Routed": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "ListRecords",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_gaps",
+                        "$select": "hrs_gapid",
+                        "$filter": "hrs_requirement/_hrs_rfp_value eq @{outputs('Ids')?['rfpId']} and hrs_smestatus eq 431200190"
+                      }
+                    },
+                    "runtimeConfiguration": {
+                      "paginationPolicy": {
+                        "minimumItemCount": 5000
+                      }
+                    },
                     "runAfter": {
                       "Await_SMEs": [
+                        "Succeeded"
+                      ]
+                    }
+                  },
+                  "If_all_answered_early": {
+                    "type": "If",
+                    "expression": {
+                      "equals": [
+                        "@length(body('Sme_Still_Routed')?['value'])",
+                        0
+                      ]
+                    },
+                    "actions": {
+                      "Resume_Answered": {
+                        "type": "OpenApiConnection",
+                        "inputs": {
+                          "host": {
+                            "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                            "operationId": "UpdateOnlyRecord",
+                            "connectionName": "shared_commondataserviceforapps"
+                          },
+                          "parameters": {
+                            "entityName": "hrs_rfps",
+                            "recordId": "@{outputs('Ids')?['rfpId']}",
+                            "item/hrs_status": 431200171
+                          }
+                        },
+                        "runAfter": {}
+                      }
+                    },
+                    "else": {
+                      "actions": {}
+                    },
+                    "runAfter": {
+                      "Sme_Still_Routed": [
                         "Succeeded"
                       ]
                     }
@@ -6605,7 +6725,7 @@
                       }
                     },
                     "runAfter": {
-                      "Write_Gaps": [
+                      "If_all_answered_early": [
                         "Succeeded"
                       ]
                     }
@@ -8056,39 +8176,7 @@
                   ]
                 }
               },
-              "Request_Approval": {
-                "type": "OpenApiConnection",
-                "inputs": {
-                  "host": {
-                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
-                    "operationId": "CreateRecord",
-                    "connectionName": "shared_commondataserviceforapps"
-                  },
-                  "parameters": {
-                    "entityName": "hrs_approvals",
-                    "item/hrs_name": "@{concat('Approval ', body('Opportunity')?['hrs_rfpnumber'])}",
-                    "item/hrs_rfp@odata.bind": "hrs_rfps(@{outputs('Ids')?['rfpId']})",
-                    "item/hrs_approver@odata.bind": "hrs_approvers(@{first(body('Approver')?['value'])?['hrs_approverid']})",
-                    "item/hrs_level": "@body('Level')?['approvalLevel']",
-                    "item/hrs_decision": 431200220,
-                    "item/hrs_requestedon": "@{utcNow()}",
-                    "item/hrs_cardpayload": "@{string(setProperty(setProperty(json('{}'), 'card', body('Card')?['card']), 'files', outputs('Package_Facts_9')?['files']))}",
-                    "item/hrs_totalrequirements": "@body('Summary')?['totalRequirements']",
-                    "item/hrs_fullcount": "@body('Summary')?['countFull']",
-                    "item/hrs_partialcount": "@body('Summary')?['countPartial']",
-                    "item/hrs_nocount": "@body('Summary')?['countNo']",
-                    "item/hrs_gapsrouted": "@body('Summary')?['gapsRouted']",
-                    "item/hrs_clarificationssent": "@body('Summary')?['clarificationsSent']",
-                    "item/hrs_pagecount": "@{outputs('Package_Facts_9')?['pages']}"
-                  }
-                },
-                "runAfter": {
-                  "Card": [
-                    "Succeeded"
-                  ]
-                }
-              },
-              "Await_Approval": {
+              "S9_Checkpoint": {
                 "type": "OpenApiConnection",
                 "inputs": {
                   "host": {
@@ -8099,11 +8187,12 @@
                   "parameters": {
                     "entityName": "hrs_rfps",
                     "recordId": "@{outputs('Ids')?['rfpId']}",
+                    "item/hrs_stage": 9,
                     "item/hrs_status": 431200172
                   }
                 },
                 "runAfter": {
-                  "Request_Approval": [
+                  "Card": [
                     "Succeeded"
                   ]
                 }
@@ -8128,7 +8217,7 @@
                   }
                 },
                 "runAfter": {
-                  "Await_Approval": [
+                  "S9_Checkpoint": [
                     "Succeeded"
                   ]
                 }
@@ -8223,18 +8312,30 @@
                   ]
                 }
               },
-              "S9_Advance": {
+              "Request_Approval": {
                 "type": "OpenApiConnection",
                 "inputs": {
                   "host": {
                     "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
-                    "operationId": "UpdateOnlyRecord",
+                    "operationId": "CreateRecord",
                     "connectionName": "shared_commondataserviceforapps"
                   },
                   "parameters": {
-                    "entityName": "hrs_rfps",
-                    "recordId": "@{outputs('Ids')?['rfpId']}",
-                    "item/hrs_stage": 9
+                    "entityName": "hrs_approvals",
+                    "item/hrs_name": "@{concat('Approval ', body('Opportunity')?['hrs_rfpnumber'])}",
+                    "item/hrs_rfp@odata.bind": "hrs_rfps(@{outputs('Ids')?['rfpId']})",
+                    "item/hrs_approver@odata.bind": "hrs_approvers(@{first(body('Approver')?['value'])?['hrs_approverid']})",
+                    "item/hrs_level": "@body('Level')?['approvalLevel']",
+                    "item/hrs_decision": 431200220,
+                    "item/hrs_requestedon": "@{utcNow()}",
+                    "item/hrs_cardpayload": "@{string(setProperty(setProperty(json('{}'), 'card', body('Card')?['card']), 'files', outputs('Package_Facts_9')?['files']))}",
+                    "item/hrs_totalrequirements": "@body('Summary')?['totalRequirements']",
+                    "item/hrs_fullcount": "@body('Summary')?['countFull']",
+                    "item/hrs_partialcount": "@body('Summary')?['countPartial']",
+                    "item/hrs_nocount": "@body('Summary')?['countNo']",
+                    "item/hrs_gapsrouted": "@body('Summary')?['gapsRouted']",
+                    "item/hrs_clarificationssent": "@body('Summary')?['clarificationsSent']",
+                    "item/hrs_pagecount": "@{outputs('Package_Facts_9')?['pages']}"
                   }
                 },
                 "runAfter": {
@@ -8260,7 +8361,7 @@
                   }
                 },
                 "runAfter": {
-                  "S9_Advance": [
+                  "Request_Approval": [
                     "Succeeded"
                   ]
                 }
@@ -8722,7 +8823,7 @@
                       "parameters": {
                         "entityName": "hrs_answers",
                         "$select": "hrs_answerid",
-                        "$filter": "startswith(hrs_answercode,'PROP-@{triggerOutputs()?['body/hrs_rfpkey']}-') and hrs_approvalstatus eq 431200011 and createdon ge @{outputs('Failed_Stage_Row')?['since']}"
+                        "$filter": "startswith(hrs_answercode,'@{concat('PROP-', replace(replace(triggerOutputs()?['body/hrs_rfpkey'], '~', '~t'), '-', '~h'), '-')}') and hrs_approvalstatus eq 431200011 and createdon ge @{outputs('Failed_Stage_Row')?['since']}"
                       }
                     },
                     "runtimeConfiguration": {

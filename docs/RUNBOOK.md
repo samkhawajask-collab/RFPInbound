@@ -192,6 +192,21 @@ solution with required components, didn't turn them off, though the original was
 So `./scripts/check-flows.ps1 -Target dev|test` now fails if any flow is off or missing. `eval/run.ps1` runs it before
 a full run. Run it after any deploy or import too.
 
+**Gallery review fixes (PR 114, 2026-11-15).** Drills for the nine review findings. They need card answers in Teams or
+the Orchestrator, so they're run by hand in dev after `apply-flows.ps1`. Use 2-minute card timings where a card must
+expire (`failure-drills.ps1 -Drill ef` sets and resets them). Not run yet:
+
+| Drill | How | Expect |
+|---|---|---|
+| i. Overlapping keys | Add a Draft answer `PROP-A~hX-001` (the code RFP `A-X` would use for requirement `001`). Ask the Orchestrator to rerun RFP A from stage 7, then answer one of A's gap cards | The rerun's `Rerun_Answers` doesn't select `PROP-A~hX-001`, and it still exists afterwards. A's new proposal is `PROP-A-<reqId>`, and `Existing_Proposal` doesn't match the other row |
+| j. Stale approval after an addendum | Reset RFP D and run it without its addendum until the approval card is posted. Upload `RFP-D_..._Addendum-No1.pdf` to `Inbound`, then press Approve on the old card | The receive flow deletes the Pending approval. The card flow posts the withdrawn notice. Nothing is written to `Output/Filed`, the RFP isn't Completed, and the run restarts at stage 3 |
+| k. Blank or unchanged OCR correction | Add a test OCR flag (as in drill e). On its card, clear the text and press Save my correction (if Teams blocks it, submit the unchanged text) | The flag stays open (`hrs_resolvedon` empty), "was not saved" is posted, and the card comes back. Then press Text is correct: the flag resolves |
+| l. Rerun after an overdue card | Let an approval card on RFP B expire ("Approval overdue" at stage 9), then rerun B from stage 9 | `Pass` picks the "Stage 9 Approval" row, not "Approval overdue". The approval created by that pass is deleted before the new one |
+| m. Two addenda together | Upload two files for one RFP in the same minute | Consecutive revision numbers; the second run starts after the first |
+| n. Quick rejection | Rerun B from stage 8 and reject the approval card as soon as it appears | The RFP goes to stage 7 / Running and assembly reruns. The run that posted the card doesn't overwrite stage 7 |
+| o. Rerun while a card is open | With a gap card open on a run waiting at stage 7, rerun from stage 6, then answer the old card during cleanup | The card is withdrawn or changes nothing. A second rerun asked for during cleanup gets "another rerun of this RFP is still removing rows" |
+| p. Early answers | Answer the first gap card (and the first OCR card in a scanned run) as soon as it appears, while the rest are still being created | The run doesn't resume until every card is answered. If they're all answered before the run marks itself Awaiting human, its recount resumes it |
+
 **Reading a failed RFP D run.** Compliance for D can vary between runs: see ADR-0021. Check the misses against
 spurious AMBIGUOUS and CONTRADICTION flags before suspecting a regression.
 

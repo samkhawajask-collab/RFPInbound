@@ -137,6 +137,11 @@ def foreach(items: str, actions: OrderedDict, concurrency: int = 20) -> dict:
     return action
 
 
+def until(expression: str, actions: OrderedDict, count: int, timeout: str) -> dict:
+    """Do until: runs `actions`, then stops when `expression` is true or after `count` iterations or `timeout`."""
+    return {"type": "Until", "expression": expression, "limit": {"count": count, "timeout": timeout}, "actions": actions}
+
+
 def terminate(status: str, message: str = "") -> dict:
     inputs = {"runStatus": status}
     if status == "Failed":

@@ -367,12 +367,83 @@
               ]
             }
           },
+          "RFP_Now": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "GetItem",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_rfps",
+                "recordId": "@triggerOutputs()?['body/_hrs_rfp_value']",
+                "$select": "hrs_status,hrs_stage,hrs_currentrevision"
+              }
+            },
+            "runAfter": {
+              "Approval_Now": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Newer_Revisions": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "ListRecords",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_rfprevisions",
+                "$select": "hrs_rfprevisionid",
+                "$filter": "_hrs_rfp_value eq @{triggerOutputs()?['body/_hrs_rfp_value']} and (createdon gt @{triggerOutputs()?['body/createdon']} or hrs_revisionnumber gt @{coalesce(body('RFP_Now')?['hrs_currentrevision'], 0)})"
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 5000
+              }
+            },
+            "runAfter": {
+              "RFP_Now": [
+                "Succeeded"
+              ]
+            }
+          },
           "If_withdrawn": {
             "type": "If",
             "expression": {
-              "equals": [
-                "@length(body('Approval_Now')?['value'])",
-                0
+              "or": [
+                {
+                  "equals": [
+                    "@length(body('Approval_Now')?['value'])",
+                    0
+                  ]
+                },
+                {
+                  "not": {
+                    "equals": [
+                      "@body('RFP_Now')?['hrs_status']",
+                      431200172
+                    ]
+                  }
+                },
+                {
+                  "not": {
+                    "equals": [
+                      "@body('RFP_Now')?['hrs_stage']",
+                      9
+                    ]
+                  }
+                },
+                {
+                  "greater": [
+                    "@length(body('Newer_Revisions')?['value'])",
+                    0
+                  ]
+                }
               ]
             },
             "actions": {
@@ -388,7 +459,7 @@
                     "poster": "Flow bot",
                     "location": "Chat with Flow bot",
                     "body/recipient": "@parameters('hrs_PilotRecipientUpn (hrs_PilotRecipientUpn)')",
-                    "body/messageBody": "@{concat('<p>', triggerOutputs()?['body/hrs_name'], ' was withdrawn because the run was reprocessed; the decision was not recorded.</p>')}"
+                    "body/messageBody": "@{concat('<p>', triggerOutputs()?['body/hrs_name'], ' was withdrawn because the RFP changed after it was sent (an addendum or a rerun); the decision was not recorded and nothing was filed.</p>')}"
                   }
                 },
                 "runAfter": {}
@@ -409,7 +480,7 @@
               "actions": {}
             },
             "runAfter": {
-              "Approval_Now": [
+              "Newer_Revisions": [
                 "Succeeded"
               ]
             }

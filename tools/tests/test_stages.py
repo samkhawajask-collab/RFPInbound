@@ -300,3 +300,17 @@ def test_stage_5_batches_and_merges_batch_outputs():
     merged = stages._merged([{"items": [{"reqId": "X-1"}]}, None, {"items": [{"reqId": "X-2"}, {"reqId": "X-3"}]}])
     assert [i["reqId"] for i in merged["items"]] == ["X-1", "X-2", "X-3"]
     assert stages._merged({"items": [{"reqId": "X-9"}]}) == {"items": [{"reqId": "X-9"}]} and stages._merged(None) == {"items": []}
+
+
+def test_proposal_codes_cannot_collide_across_rfps():
+    # PR review: RFP ACME / requirement 2026-001 and RFP ACME-2026 / requirement 001 both used to be PROP-ACME-2026-001.
+    assert stages.proposal_code("ACME", "2026-001") != stages.proposal_code("ACME-2026", "001")
+    assert stages.proposal_code("A", "CV-013") == "PROP-A-CV-013"  # keys without '-' or '~' keep their old codes
+    # One RFP's prefix never matches another RFP's code (the rerun and stage 5/7 lookups filter by this prefix).
+    keys = ["ACME", "ACME-2026", "ACME~2026", "ACME~h2026", "ACME-", "A-B-C"]
+    for key in keys:
+        prefix = stages.proposal_code(key, "")
+        for other in keys:
+            if other != key:
+                for req in ("001", "2026-001", "h2026-001", "-1"):
+                    assert not stages.proposal_code(other, req).startswith(prefix), (key, other, req)

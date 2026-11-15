@@ -33,7 +33,7 @@ $rfp = (Invoke-Dv -Path "hrs_rfps?`$select=hrs_rfpid&`$filter=hrs_rfpkey eq '$Ke
 if (-not $rfp) { throw "No hrs_rfp with key $Key" }
 $id = $rfp.hrs_rfpid
 
-# Stage 2 sets Awaiting before it writes the flags, then logs "Waiting for N OCR verification(s)." once they exist.
+# Stage 2 writes the flags, sets Awaiting, then logs "Waiting for N OCR verification(s)." once they exist.
 $expected = $null
 $deadline = (Get-Date).AddSeconds($WaitSeconds)
 while ((Get-Date) -lt $deadline) {

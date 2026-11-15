@@ -91,7 +91,12 @@
               "frequency": "Minute",
               "interval": 1
             },
-            "splitOn": "@triggerOutputs()?['body/value']"
+            "splitOn": "@triggerOutputs()?['body/value']",
+            "runtimeConfiguration": {
+              "concurrency": {
+                "runs": 1
+              }
+            }
           }
         },
         "actions": {
@@ -257,7 +262,7 @@
               ]
             },
             "actions": {
-              "Existing_Revisions": {
+              "Latest_Revision": {
                 "type": "OpenApiConnection",
                 "inputs": {
                   "host": {
@@ -267,8 +272,10 @@
                   },
                   "parameters": {
                     "entityName": "hrs_rfprevisions",
-                    "$select": "hrs_rfprevisionid",
-                    "$filter": "_hrs_rfp_value eq @{first(body('Existing_RFP')?['value'])?['hrs_rfpid']}"
+                    "$select": "hrs_revisionnumber",
+                    "$filter": "_hrs_rfp_value eq @{first(body('Existing_RFP')?['value'])?['hrs_rfpid']}",
+                    "$orderby": "hrs_revisionnumber desc",
+                    "$top": 1
                   }
                 },
                 "runtimeConfiguration": {
@@ -277,6 +284,15 @@
                   }
                 },
                 "runAfter": {}
+              },
+              "Next_Revision": {
+                "type": "Compose",
+                "inputs": "@add(int(coalesce(first(body('Latest_Revision')?['value'])?['hrs_revisionnumber'], -1)), 1)",
+                "runAfter": {
+                  "Latest_Revision": [
+                    "Succeeded"
+                  ]
+                }
               },
               "Create_Addendum_Revision": {
                 "type": "OpenApiConnection",
@@ -288,15 +304,15 @@
                   },
                   "parameters": {
                     "entityName": "hrs_rfprevisions",
-                    "item/hrs_name": "@{concat(body('Opportunity')?['hrs_rfpkey'], ' revision ', string(length(body('Existing_Revisions')?['value'])))}",
+                    "item/hrs_name": "@{concat(body('Opportunity')?['hrs_rfpkey'], ' revision ', string(outputs('Next_Revision')))}",
                     "item/hrs_rfp@odata.bind": "hrs_rfps(@{first(body('Existing_RFP')?['value'])?['hrs_rfpid']})",
-                    "item/hrs_revisionnumber": "@length(body('Existing_Revisions')?['value'])",
+                    "item/hrs_revisionnumber": "@outputs('Next_Revision')",
                     "item/hrs_effectivedate": "@{utcNow('yyyy-MM-dd')}",
                     "item/hrs_sourcedocument": "@{outputs('File')?['path']}"
                   }
                 },
                 "runAfter": {
-                  "Existing_Revisions": [
+                  "Next_Revision": [
                     "Succeeded"
                   ]
                 }
@@ -344,6 +360,58 @@
                   ]
                 },
                 "actions": {
+                  "Open_Approvals": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "ListRecords",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_approvals",
+                        "$select": "hrs_approvalid",
+                        "$filter": "_hrs_rfp_value eq @{first(body('Existing_RFP')?['value'])?['hrs_rfpid']} and hrs_decision eq 431200220"
+                      }
+                    },
+                    "runtimeConfiguration": {
+                      "paginationPolicy": {
+                        "minimumItemCount": 5000
+                      }
+                    },
+                    "runAfter": {}
+                  },
+                  "Withdraw_Approvals": {
+                    "type": "Foreach",
+                    "foreach": "@body('Open_Approvals')?['value']",
+                    "actions": {
+                      "Withdraw_Approval": {
+                        "type": "OpenApiConnection",
+                        "inputs": {
+                          "host": {
+                            "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                            "operationId": "DeleteRecord",
+                            "connectionName": "shared_commondataserviceforapps"
+                          },
+                          "parameters": {
+                            "entityName": "hrs_approvals",
+                            "recordId": "@items('Withdraw_Approvals')?['hrs_approvalid']"
+                          }
+                        },
+                        "runAfter": {}
+                      }
+                    },
+                    "runtimeConfiguration": {
+                      "concurrency": {
+                        "repetitions": 5
+                      }
+                    },
+                    "runAfter": {
+                      "Open_Approvals": [
+                        "Succeeded"
+                      ]
+                    }
+                  },
                   "Reprocess_From_Stage_3": {
                     "type": "OpenApiConnection",
                     "inputs": {
@@ -359,7 +427,11 @@
                         "item/hrs_status": 431200171
                       }
                     },
-                    "runAfter": {}
+                    "runAfter": {
+                      "Withdraw_Approvals": [
+                        "Succeeded"
+                      ]
+                    }
                   }
                 },
                 "else": {

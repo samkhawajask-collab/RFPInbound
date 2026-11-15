@@ -50,7 +50,7 @@ if ($rfp) {
     Invoke-Dv -Method DELETE -Path "hrs_rfps($id)" | Out-Null
     Write-Host "  hrs_rfps               1 deleted"
 } else { Write-Host "  no hrs_rfp with key $Key" }
-Remove-Rows 'hrs_answers' 'hrs_answerid' "startswith(hrs_answercode,'PROP-$Key-') and hrs_approvalstatus eq 431200011"
+Remove-Rows 'hrs_answers' 'hrs_answerid' "startswith(hrs_answercode,'PROP-$($Key.Replace('~', '~t').Replace('-', '~h'))-') and hrs_approvalstatus eq 431200011"
 
 # Files: this RFP's Inbound uploads (base document and addenda, RFP-<key>_*) and its Output/Draft and Output/Filed
 # package files (<key>-*). Other RFPs' files stay: a later rewind of another RFP reads its source document from Inbound.

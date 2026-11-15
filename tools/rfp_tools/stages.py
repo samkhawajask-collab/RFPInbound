@@ -676,12 +676,20 @@ def resolve_drafts(draft_items: Sequence[Mapping], drafts: Mapping | Sequence[Ma
 
 # --- Stage 7 ----------------------------------------------------------------------------------
 
+def proposal_code(rfp_key: str, req_id: str) -> str:
+    """hrs_answercode of the Draft library entry proposed from an SME's answer: PROP-<key>-<reqId>. In the key, '~' becomes
+    '~t' and '-' becomes '~h', so the first '-' after 'PROP-' ends the key: RFP ACME / requirement 2026-001 and RFP
+    ACME-2026 / requirement 001 can't share a code, and PROP-<key>- prefixes one RFP's proposals only. Must match
+    proposal_key in tools/flowgen/build.py."""
+    return f"PROP-{rfp_key.replace('~', '~t').replace('-', '~h')}-{req_id}"
+
+
 def gap_rows(requirements: Sequence[Mapping], responses: Sequence[Mapping], flags: Sequence[Mapping], rules: Sequence[Mapping],
              categories: Sequence[Mapping], due_by: str, rfp_id: str = "", proposals: Sequence[Mapping] = (), rfp_key: str = "") -> dict:
     """Active, non-duplicate requirements whose compliance is Gap -> hrs_gap rows routed by the documented rule (9.1),
     and a NO-LIBRARY-ANSWER flag for each.
 
-    proposals: this RFP's Draft PROP-<key>-<reqId> entries. One whose question is exactly the requirement's current text
+    proposals: this RFP's Draft proposal_code(key, reqId) entries. One whose question is exactly the requirement's current text
     was answered by an SME on an earlier pass, so its gap is written as Answered and no card goes out (reusedRows, ADR-0033).
     Any change to the text asks again. `count` is what the run must wait for, so reused rows don't count."""
     earlier = {p["hrs_answercode"]: p for p in proposals}
@@ -708,7 +716,7 @@ def gap_rows(requirements: Sequence[Mapping], responses: Sequence[Mapping], flag
                "hrs_requirement@odata.bind": _bind("hrs_requirements", req["hrs_requirementid"]),
                "hrs_routedtosme@odata.bind": _key_bind("hrs_smes", "hrs_smecode", sme), "smeCode": sme,
                "hrs_dueby": due_by, "hrs_smestatus": choice_value("hrs_smestatus", "Routed")}
-        prior = earlier.get(f"PROP-{rfp_key}-{req['hrs_reqid']}")
+        prior = earlier.get(proposal_code(rfp_key, req["hrs_reqid"]))
         reuse = bool(prior and prior.get("hrs_question") == req["hrs_requirementtext"] and (prior.get("hrs_answertext") or "").strip())
         if reuse:
             reused.append({**row, "hrs_smestatus": choice_value("hrs_smestatus", "Answered"), "hrs_smeanswertext": prior["hrs_answertext"],

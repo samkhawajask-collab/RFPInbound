@@ -5,7 +5,7 @@
 .DESCRIPTION
   The same rule the pipeline's failure handler uses: every row created for the RFP since stage N's latest pass
   started is removed (approvals, clarifications, gaps, responses, flags, requirements, document blocks, and Draft
-  library proposals from its gaps, PROP-<key>-*). That undoes stages N..9. Stage 4 clears the relation columns
+  library proposals from its gaps, PROP-<key>-*, with '-' in the key written ~h as in rfp_tools.stages.proposal_code). That undoes stages N..9. Stage 4 clears the relation columns
   itself; compliance values and drafts are rewritten by stages 6 and later.
 
   Card flow runs started by the gaps and approvals being removed are cancelled first (their Teams cards stay
@@ -57,7 +57,7 @@ $tables = @(
     @('hrs_flags', 'hrs_flagid', "_hrs_rfp_value eq $id"),
     @('hrs_requirements', 'hrs_requirementid', "_hrs_rfp_value eq $id"),
     @('hrs_documentblocks', 'hrs_documentblockid', "hrs_rfpdocument/hrs_rfprevision/_hrs_rfp_value eq $id"),
-    @('hrs_answers', 'hrs_answerid', "startswith(hrs_answercode,'PROP-$Key-') and hrs_approvalstatus eq 431200011")
+    @('hrs_answers', 'hrs_answerid', "startswith(hrs_answercode,'PROP-$($Key.Replace('~', '~t').Replace('-', '~h'))-') and hrs_approvalstatus eq 431200011")
 )
 foreach ($t in $tables) {
     $ids = @(Get-Ids $t[0] $t[1] $t[2])

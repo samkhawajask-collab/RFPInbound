@@ -24,7 +24,7 @@ sys.path.insert(0, str(HERE.parent))
 from flowgen import (  # noqa: E402
     Flow, append_variable, compose, condition, connector, dv_create, dv_create_from, dv_get, dv_list, dv_trigger,
     dv_delete, dv_update, env, env_inline, foreach, init_variable, prompt, prompt_output, scope, set_variable, sp_create_file,
-    sp_get_content_by_path, teams_card_and_wait, teams_message, terminate, tools, word_to_pdf, SP,
+    sp_get_content_by_path, teams_card_and_wait, teams_message, terminate, tools, until, word_to_pdf, SP,
 )
 from rfp_tools.schema import choice_value  # noqa: E402
 
@@ -119,15 +119,32 @@ def stage(flow: Flow, number: int, title: str, build) -> str:
             inner[key] = json.loads(json.dumps(inner[key]).replace("body('RFP')", f"body('S{number}_RFP')"))
     else:
         build(inner, f"S{number}")
-    flow.add(inner, f"S{number}_Advance", dv_update("hrs_rfps", RFP_ID, {"hrs_stage": number}))
+    if number != 9:
+        # Stage 9 writes hrs_stage in its checkpoint, before the approval row: after that row exists, the card flow owns
+        # the RFP's stage and status, and an advance here would overwrite a rejection's stage 7.
+        flow.add(inner, f"S{number}_Advance", dv_update("hrs_rfps", RFP_ID, {"hrs_stage": number}))
     flow.add(inner, f"S{number}_Done", dv_update("hrs_runlogs", f"@{{outputs('S{number}_RunLog_Id')}}", {
         "hrs_status": C("hrs_stagestatus", "Succeeded"), "hrs_completedon": "@{utcNow()}", "hrs_creditsestimate": STAGE_CREDITS}))
     instrument_prompts(inner)
     return f"Stage_{number}", condition({"less": ["@outputs('Ids')?['stage']", number]}, inner, OrderedDict())
 
 
+def proposal_key(key_expr: str) -> str:
+    """The RFP key as it appears in a proposal code PROP-<key>-<reqId>. '~' becomes '~t' and '-' becomes '~h', so the
+    encoded key has no '-' and the first '-' after 'PROP-' always ends it: RFP ACME / requirement 2026-001 and RFP
+    ACME-2026 / requirement 001 get different codes, and the prefix PROP-<key>- belongs to one RFP only. A key without
+    '-' or '~' is unchanged. Must match rfp_tools.stages.proposal_code."""
+    return f"replace(replace({key_expr}, '~', '~t'), '-', '~h')"
+
+
+def proposal_prefix(key_expr: str) -> str:
+    """Filter-ready prefix of every proposal code of one RFP (see proposal_key)."""
+    return f"@{{concat('PROP-', {proposal_key(key_expr)}, '-')}}"
+
+
 # This RFP's Draft proposals from its own gap answers (ADR-0032, ADR-0033).
-OWN_DRAFTS = f"startswith(hrs_answercode,'PROP-@{{outputs('Ids')?['key']}}-') and hrs_approvalstatus eq {C('hrs_approvalstatus', 'Draft')}"
+IDS_KEY = "outputs('Ids')?['key']"
+OWN_DRAFTS = f"startswith(hrs_answercode,'{proposal_prefix(IDS_KEY)}') and hrs_approvalstatus eq {C('hrs_approvalstatus', 'Draft')}"
 OWN_DRAFTS_OUT = f"not ({OWN_DRAFTS})"
 
 
@@ -206,6 +223,9 @@ def receive_flow() -> Flow:
                                                 "folderPath": env("hrs_InboundLibraryUrl")})
     trig["recurrence"] = {"frequency": "Minute", "interval": 1}
     trig["splitOn"] = "@triggerOutputs()?['body/value']"
+    # One file at a time: two addenda for the same RFP uploaded together would otherwise both read the same latest
+    # revision and take the same number. With concurrency on, a poll debatches at most 100 files; later ones wait a poll.
+    trig["runtimeConfiguration"] = {"concurrency": {"runs": 1}}
     f.trigger = {"When_a_file_is_created": trig}
     f._scan(trig)
     a = f.actions
@@ -227,12 +247,15 @@ def receive_flow() -> Flow:
     # downstream state before applying the changes. Mid-run, the pipeline itself restarts at stage 7 or the end of
     # stage 9 when it finds the new revision (restart_for_addendum).
     existing = f"first({value('Existing_RFP')})"
-    f.add(exists, "Existing_Revisions", dv_list("hrs_rfprevisions", "hrs_rfprevisionid", f"_hrs_rfp_value eq @{{{existing}?['hrs_rfpid']}}"),
-          after=None)
+    # The next number after the highest, not the row count, so a gap in the numbers can't produce a duplicate. Runs are
+    # serialized by the trigger's concurrency, so no other run allocates a number between this read and the create.
+    f.add(exists, "Latest_Revision", dv_list("hrs_rfprevisions", "hrs_revisionnumber", f"_hrs_rfp_value eq @{{{existing}?['hrs_rfpid']}}",
+                                             None, "hrs_revisionnumber desc", 1), after=None)
+    f.add(exists, "Next_Revision", compose(f"@add(int(coalesce(first({value('Latest_Revision')})?['hrs_revisionnumber'], -1)), 1)"))
     f.add(exists, "Create_Addendum_Revision", dv_create("hrs_rfprevisions", {
-        "hrs_name": f"@{{concat({body('Opportunity', 'hrs_rfpkey')}, ' revision ', string(length({value('Existing_Revisions')})))}}",
+        "hrs_name": f"@{{concat({body('Opportunity', 'hrs_rfpkey')}, ' revision ', string(outputs('Next_Revision')))}}",
         "hrs_rfp@odata.bind": f"hrs_rfps(@{{{existing}?['hrs_rfpid']}})",
-        "hrs_revisionnumber": f"@length({value('Existing_Revisions')})", "hrs_effectivedate": "@{utcNow('yyyy-MM-dd')}",
+        "hrs_revisionnumber": "@outputs('Next_Revision')", "hrs_effectivedate": "@{utcNow('yyyy-MM-dd')}",
         "hrs_sourcedocument": "@{outputs('File')?['path']}"}))
     f.add(exists, "Create_Addendum_Document", dv_create("hrs_rfpdocuments", {
         "hrs_name": "@{outputs('File')?['path']}",
@@ -240,8 +263,15 @@ def receive_flow() -> Flow:
         "hrs_format": f"@if(endsWith(toLower(outputs('File')?['name']), '.pdf'), {C('hrs_format', 'PdfNative')}, {C('hrs_format', 'Docx')})",
         "hrs_ocrused": False}))
     reprocess = OrderedDict()
-    f.add(reprocess, "Reprocess_From_Stage_3", dv_update("hrs_rfps", f"@{{{existing}?['hrs_rfpid']}}", {"hrs_stage": 2, "hrs_status": RUNNING}),
+    # An approval card still out describes the package before this addendum. Its row is removed before the restart,
+    # so the card ends with the withdrawn notice; Request Approval also re-checks the RFP before recording a decision.
+    f.add(reprocess, "Open_Approvals", dv_list("hrs_approvals", "hrs_approvalid",
+                                               f"_hrs_rfp_value eq @{{{existing}?['hrs_rfpid']}} and hrs_decision eq {C('hrs_approvaldecision', 'Pending')}"),
           after=None)
+    withdraw = OrderedDict()
+    f.add(withdraw, "Withdraw_Approval", dv_delete("hrs_approvals", "@items('Withdraw_Approvals')?['hrs_approvalid']"), after=None)
+    f.add(reprocess, "Withdraw_Approvals", foreach(f"@{value('Open_Approvals')}", withdraw, 5))
+    f.add(reprocess, "Reprocess_From_Stage_3", dv_update("hrs_rfps", f"@{{{existing}?['hrs_rfpid']}}", {"hrs_stage": 2, "hrs_status": RUNNING}))
     f.add(exists, "If_past_stage_2", condition({"and": [{"greater": [f"@int(coalesce({existing}?['hrs_stage'], 0))", 2]},
                                                         {"not": {"equals": [f"@{existing}?['hrs_status']", RUNNING]}}]}, reprocess, OrderedDict()))
     f.add(exists, "Addendum_recorded", terminate("Succeeded"))
@@ -387,9 +417,17 @@ def pipeline_flow() -> Flow:
         f.add(c, "Ocr_Flags", tools("StageOcrFlags", {"rfpId": RFP_ID, "requirements": f"@{value('Reqs_2')}",
                                                        "lowConfidence": "@variables('LowConfidence')"}))
         verify = OrderedDict()
-        # Await first, so a fast verification cannot find the run still marked Running.
-        f.add(verify, "Await_Verification", dv_update("hrs_rfps", RFP_ID, {"hrs_status": AWAITING, "hrs_stage": 2}), after=None)
+        # Every flag is written before the run is marked Awaiting human, and a verification card resumes the run only
+        # while it is Awaiting human at stage 2, so a card answered while flags are still being written can't resume
+        # it early. Cards answered before the checkpoint are caught by the recount after it.
         write_rows(f, verify, "Write_Ocr_Flags", body("Ocr_Flags", "rows"), "hrs_flags", FLAG_COLUMNS)
+        verify["Write_Ocr_Flags"]["runAfter"] = {}
+        f.add(verify, "Await_Verification", dv_update("hrs_rfps", RFP_ID, {"hrs_status": AWAITING, "hrs_stage": 2}))
+        f.add(verify, "Ocr_Still_Open", dv_list("hrs_flags", "hrs_flagid",
+                                                f"{OF_RFP} and hrs_flagtype eq {C('hrs_flagtype', 'OCR-LOW-CONFIDENCE')} and hrs_resolvedon eq null"))
+        all_verified = OrderedDict()
+        f.add(all_verified, "Resume_Verified", dv_update("hrs_rfps", RFP_ID, {"hrs_status": RUNNING}), after=None)
+        f.add(verify, "If_all_verified_early", condition({"equals": [f"@length({value('Ocr_Still_Open')})", 0]}, all_verified, OrderedDict()))
         f.add(verify, "Log_Verifying", dv_update("hrs_runlogs", f"@{{outputs('{p}_RunLog_Id')}}", {
             "hrs_status": C("hrs_stagestatus", "Succeeded"), "hrs_completedon": "@{utcNow()}",
             "hrs_errordetail": f"@{{concat('Waiting for ', string({body('Ocr_Flags', 'count')}), ' OCR verification(s).')}}",
@@ -619,15 +657,21 @@ def pipeline_flow() -> Flow:
                                                                        "hrs_dueby", "hrs_smeanswertext", "hrs_proposedanswer@odata.bind")},
             "hrs_routedon": "@{utcNow()}", "hrs_smestatus": "@items('Write_Reused_Gaps')?['hrs_smestatus']"}), after=None)
         f.add(c, "Write_Reused_Gaps", foreach(f"@{body('Gaps', 'reusedRows')}", reused_loop, 10))
-        # Await the SMEs before creating gaps, so a fast answer cannot be overwritten by this update.
+        # Every gap is written before the run is marked Awaiting human, and a gap card resumes the run only while it is
+        # Awaiting human at stage 7, so a fast answer can't resume it while gaps are still being written. Answers that
+        # came in before the checkpoint are caught by the recount after it.
         wait = OrderedDict()
-        f.add(wait, "Await_SMEs", dv_update("hrs_rfps", RFP_ID, {"hrs_status": AWAITING, "hrs_stage": 7}), after=None)
         gap_loop = OrderedDict()
         f.add(gap_loop, "Create_Gap", dv_create("hrs_gaps", {
             "hrs_name": "@{items('Write_Gaps')?['hrs_name']}", "hrs_requirement@odata.bind": "@{items('Write_Gaps')?['hrs_requirement@odata.bind']}",
             "hrs_routedtosme@odata.bind": "@{items('Write_Gaps')?['hrs_routedtosme@odata.bind']}", "hrs_routedon": "@{utcNow()}",
             "hrs_dueby": "@{items('Write_Gaps')?['hrs_dueby']}", "hrs_smestatus": "@items('Write_Gaps')?['hrs_smestatus']"}), after=None)
-        f.add(wait, "Write_Gaps", foreach(f"@{body('Gaps', 'rows')}", gap_loop, 10))
+        f.add(wait, "Write_Gaps", foreach(f"@{body('Gaps', 'rows')}", gap_loop, 10), after=None)
+        f.add(wait, "Await_SMEs", dv_update("hrs_rfps", RFP_ID, {"hrs_status": AWAITING, "hrs_stage": 7}))
+        f.add(wait, "Sme_Still_Routed", dv_list("hrs_gaps", "hrs_gapid", f"{VIA_REQ} and hrs_smestatus eq {C('hrs_smestatus', 'Routed')}"))
+        all_answered = OrderedDict()
+        f.add(all_answered, "Resume_Answered", dv_update("hrs_rfps", RFP_ID, {"hrs_status": RUNNING}), after=None)
+        f.add(wait, "If_all_answered_early", condition({"equals": [f"@length({value('Sme_Still_Routed')})", 0]}, all_answered, OrderedDict()))
         f.add(wait, "Log_Waiting", dv_update("hrs_runlogs", f"@{{outputs('{p}_RunLog_Id')}}", {
             "hrs_status": C("hrs_stagestatus", "Succeeded"), "hrs_completedon": "@{utcNow()}",
             "hrs_errordetail": f"@{{concat('Waiting for ', string({body('Gaps', 'count')}), ' SME answer(s).')}}",
@@ -722,6 +766,12 @@ def pipeline_flow() -> Flow:
             "pageCount": "@{outputs('Package_Facts_9')?['pages']}", "pageLimit": f"@{body('RFP', 'hrs_pagelimit')}",
             "draftUrl": f"@{{concat({env_inline('hrs_SharePointSiteUrl')}, outputs('Package_Facts_9')?['files']?['Narrative'])}}",
             "exceptions": f"@{body('Summary', 'exceptions')}"}}))
+        # The wait is committed before the approval row exists: the card flow starts when the row is created, and a quick
+        # rejection writes stage 7 / Running, which no later write of this run may overwrite. The addendum check follows
+        # the checkpoint, so an addendum is either seen here (restart) or arrives while the RFP is Awaiting human, when the
+        # receive flow restarts the run and Request Approval withdraws the card.
+        f.add(c, "S9_Checkpoint", dv_update("hrs_rfps", RFP_ID, {"hrs_stage": 9, "hrs_status": AWAITING}))
+        restart_for_addendum(f, c, p, "RFP")
         f.add(c, "Request_Approval", dv_create("hrs_approvals", {
             "hrs_name": f"@{{concat('Approval ', {body('Opportunity', 'hrs_rfpnumber')})}}", "hrs_rfp@odata.bind": f"hrs_rfps({RFP_ID})",
             "hrs_approver@odata.bind": f"hrs_approvers(@{{first({value('Approver')})?['hrs_approverid']}})",
@@ -731,8 +781,6 @@ def pipeline_flow() -> Flow:
             "hrs_partialcount": f"@{body('Summary', 'countPartial')}", "hrs_nocount": f"@{body('Summary', 'countNo')}",
             "hrs_gapsrouted": f"@{body('Summary', 'gapsRouted')}", "hrs_clarificationssent": f"@{body('Summary', 'clarificationsSent')}",
             "hrs_pagecount": "@{outputs('Package_Facts_9')?['pages']}"}))
-        f.add(c, "Await_Approval", dv_update("hrs_rfps", RFP_ID, {"hrs_status": AWAITING}))
-        restart_for_addendum(f, c, p, "RFP")
 
     previous = "Proposal_Template"
     for number, title, build in [(1, "Normalize", s1), (2, "Extract", s2), (3, "Reconcile addendum", s3), (4, "Analyze set", s4),
@@ -752,10 +800,11 @@ def pipeline_flow() -> Flow:
 # stage N passes the start of stage N's latest pass. Updates (compliance, drafts, revised text) are overwritten
 # when the stage runs again; stage 4 clears the relation columns itself.
 TRIGGER_RFP = "@{triggerOutputs()?['body/hrs_rfpid']}"
-TRIGGER_KEY = "@{triggerOutputs()?['body/hrs_rfpkey']}"
+TRIGGER_KEY = "triggerOutputs()?['body/hrs_rfpkey']"
 
 
 def created_since_tables(rfp: str, key: str) -> list[tuple[str, str, str]]:
+    """key: an expression (no '@') for the RFP's key; its Draft proposals are matched by their unambiguous prefix."""
     return [("hrs_approvals", "hrs_approvalid", f"_hrs_rfp_value eq {rfp}"),
             ("hrs_clarifications", "hrs_clarificationid", f"_hrs_rfp_value eq {rfp}"),
             ("hrs_gaps", "hrs_gapid", f"hrs_requirement/_hrs_rfp_value eq {rfp}"),
@@ -763,7 +812,7 @@ def created_since_tables(rfp: str, key: str) -> list[tuple[str, str, str]]:
             ("hrs_flags", "hrs_flagid", f"_hrs_rfp_value eq {rfp}"),
             ("hrs_requirements", "hrs_requirementid", f"_hrs_rfp_value eq {rfp}"),
             ("hrs_documentblocks", "hrs_documentblockid", f"hrs_rfpdocument/hrs_rfprevision/_hrs_rfp_value eq {rfp}"),
-            ("hrs_answers", "hrs_answerid", f"startswith(hrs_answercode,'PROP-{key}-') and hrs_approvalstatus eq {C('hrs_approvalstatus', 'Draft')}")]
+            ("hrs_answers", "hrs_answerid", f"startswith(hrs_answercode,'{proposal_prefix(key)}') and hrs_approvalstatus eq {C('hrs_approvalstatus', 'Draft')}")]
 
 
 def delete_created_since(flow: Flow, container: OrderedDict, prefix: str, since_expr: str, rfp: str, key: str) -> None:
@@ -913,7 +962,7 @@ def gap_flow() -> Flow:
         "hrs_smestatus": C("hrs_smestatus", "Answered")}), after=None)
     # An addendum rerun routes the same requirement again, and hrs_answercode is unique (ADR-0032). A new answer replaces an
     # earlier Draft proposal. A proposal that has since left Draft belongs to the library's reviewers and isn't changed.
-    code = f"concat('PROP-', {body('Requirement', 'hrs_rfp')}?['hrs_rfpkey'], '-', {req})"
+    code = f"concat('PROP-', {proposal_key(body('Requirement', 'hrs_rfp', 'hrs_rfpkey'))}, '-', {req})"
     f.add(answered, "Existing_Proposal", dv_list("hrs_answers", "hrs_answerid,hrs_approvalstatus", f"hrs_answercode eq '@{{{code}}}'"))
     existing = f"first({value('Existing_Proposal')})"
     new_proposal = OrderedDict()
@@ -949,9 +998,14 @@ def gap_flow() -> Flow:
                                      f"hrs_requirement/_hrs_rfp_value eq @{{{body('Requirement', 'hrs_rfp', 'hrs_rfpid')}}} and hrs_smestatus eq {C('hrs_smestatus', 'Routed')}"))
     # A failed library write must not strand the run: the answer is already saved, and a gap whose answer failed to save stays Routed.
     a["Still_routed"]["runAfter"] = {"If_responded": ["Succeeded", "Failed"]}
+    # Resume only a run that is waiting on its SMEs: Awaiting human at stage 7. While stage 7 is still writing gaps the
+    # RFP is Running, and during a rerun's cleanup it is Not started; in both cases the run itself picks up the answer.
+    f.add(a, "RFP_Now", dv_get("hrs_rfps", f"@{{{body('Requirement', 'hrs_rfp', 'hrs_rfpid')}}}", "hrs_status,hrs_stage"))
     resume = OrderedDict()
     f.add(resume, "Resume_Pipeline", dv_update("hrs_rfps", f"@{{{body('Requirement', 'hrs_rfp', 'hrs_rfpid')}}}", {"hrs_status": RUNNING}), after=None)
-    f.add(a, "If_all_answered", condition({"equals": [f"@length({value('Still_routed')})", 0]}, resume, OrderedDict()))
+    f.add(a, "If_all_answered", condition({"and": [{"equals": [f"@length({value('Still_routed')})", 0]},
+                                                   {"equals": [f"@{body('RFP_Now', 'hrs_status')}", AWAITING]},
+                                                   {"equals": [f"@{body('RFP_Now', 'hrs_stage')}", 7]}]}, resume, OrderedDict()))
     return f
 
 
@@ -987,17 +1041,39 @@ def verify_flow() -> Flow:
             {"type": "TextBlock", "weight": "Bolder", "text": "The page"},
             {"type": "Image", "url": f"@{{concat('data:image/jpeg;base64,', {body('Crop', 'jpegBase64')})}}", "altText": "Scanned page crop"},
             {"type": "TextBlock", "weight": "Bolder", "text": "Text read by OCR (correct it if it differs from the page)"},
-            {"type": "Input.Text", "id": "text", "isMultiline": True, "value": f"@{{{body('Requirement', 'hrs_requirementtext')}}}"}],
-        "actions": [{"type": "Action.Submit", "title": "Text is correct", "data": {"decision": "confirm"}},
+            {"type": "Input.Text", "id": "text", "isMultiline": True, "isRequired": True,
+             "errorMessage": "Enter the requirement text, or choose Text is correct.",
+             "value": f"@{{{body('Requirement', 'hrs_requirementtext')}}}"}],
+        "actions": [{"type": "Action.Submit", "title": "Text is correct", "data": {"decision": "confirm"}, "associatedInputs": "none"},
                     {"type": "Action.Submit", "title": "Save my correction", "data": {"decision": "correct"}}]}
     f.add(a, "Card", compose(card))
     req = body("Requirement", "hrs_reqid")
+    # The flag is resolved only by an explicit confirmation or a correction that was saved. A correction that is blank or
+    # the same as the current text is not saved: the flag stays open and the card goes out again (up to three times).
+    # The card's required field catches a blank one in Teams; this check is the one that can't be bypassed.
+    text = f"trim(coalesce({response('data', 'text')}, ''))"
+    ask = OrderedDict()
+    f.add(ask, "Reset_Response", set_variable("Response", {}), after=None)
     waits = wait_with_escalation(
-        f, a, "@{string(outputs('Card'))}", "Thanks - recorded.",
+        f, ask, "@{string(outputs('Card'))}", "Thanks - recorded.",
         f"@{{concat('<p>Reminder: the OCR text of requirement ', {req}, ' is waiting for verification; the run is paused until it is checked.</p>')}}",
         f"@{{concat('<p>Escalated: the OCR text of requirement ', {req}, ' has not been verified. The run stays paused; it never accepts OCR text by default.</p>')}}")
+    after_wait(ask, "Verdict", compose({
+        "answered": f"@{ANSWERED}",
+        "confirmed": f"@equals({response('data', 'decision')}, 'confirm')",
+        "corrected": f"@and(equals({response('data', 'decision')}, 'correct'), not(equals({text}, '')), "
+                     f"not(equals({text}, {body('Requirement', 'hrs_requirementtext')})))"}), waits)
+    not_saved = OrderedDict()
+    f.add(not_saved, "Tell_Not_Saved", teams_message(env("hrs_PilotRecipientUpn"), f"@{{concat('<p>The correction for requirement ', {req}, "
+                                                     f"' was blank or the same as the current text, so it was not saved and the OCR flag stays open. "
+                                                     f"Choose Text is correct, or enter the corrected text.</p>')}}"), after=None)
+    f.add(ask, "If_not_saved", condition({"and": [{"equals": ["@outputs('Verdict')?['answered']", True]},
+                                                  {"equals": ["@outputs('Verdict')?['confirmed']", False]},
+                                                  {"equals": ["@outputs('Verdict')?['corrected']", False]}]}, not_saved, OrderedDict()))
+    f.add(a, "Ask_Until_Valid", until("@or(equals(outputs('Verdict')?['answered'], false), equals(outputs('Verdict')?['confirmed'], true), "
+                                      "equals(outputs('Verdict')?['corrected'], true))", ask, 3, "P29D"))
     rfp_id = f"{body('Requirement', 'hrs_rfp')}?['hrs_rfpid']"
-    after_wait(a, "Flag_Now", dv_list("hrs_flags", "hrs_flagid", "hrs_flagid eq @{triggerOutputs()?['body/hrs_flagid']}"), waits)
+    after_wait(a, "Flag_Now", dv_list("hrs_flags", "hrs_flagid", "hrs_flagid eq @{triggerOutputs()?['body/hrs_flagid']}"), ["Ask_Until_Valid"])
     withdrawn = OrderedDict()
     f.add(withdrawn, "Tell_Withdrawn", teams_message(env("hrs_PilotRecipientUpn"), f"@{{concat('<p>The verification card for requirement ', {req}, "
                                                      f"' was withdrawn because the run was reprocessed; nothing was recorded.</p>')}}"), after=None)
@@ -1011,25 +1087,33 @@ def verify_flow() -> Flow:
           after=None)
     f.add(overdue, "Overdue_Stop", terminate("Succeeded"))
     f.add(a, "If_unanswered", condition({"equals": [f"@{ANSWERED}", False]}, overdue, OrderedDict()))
+    valid = OrderedDict()
     corrected = OrderedDict()
     f.add(corrected, "Save_Correction", dv_update("hrs_requirements", f"@{body('Flag', '_hrs_requirement_value')}",
-                                                  {"hrs_requirementtext": f"@{{trim({response('data', 'text')})}}"}), after=None)
-    f.add(a, "If_corrected", condition({"and": [
-        {"equals": [f"@{response('data', 'decision')}", "correct"]},
-        {"not": {"equals": [f"@trim(coalesce({response('data', 'text')}, ''))", ""]}},
-        {"not": {"equals": [f"@trim(coalesce({response('data', 'text')}, ''))", f"@{body('Requirement', 'hrs_requirementtext')}"]}}]},
-        corrected, OrderedDict()))
-    f.add(a, "Resolve_Flag", dv_update("hrs_flags", flag_id, {
+                                                  {"hrs_requirementtext": f"@{{{text}}}"}), after=None)
+    f.add(valid, "If_corrected", condition({"equals": ["@outputs('Verdict')?['corrected']", True]}, corrected, OrderedDict()), after=None)
+    # After If_corrected succeeded only: a failed Save_Correction fails it, and the flag stays open.
+    f.add(valid, "Resolve_Flag", dv_update("hrs_flags", flag_id, {
         "hrs_resolvedon": "@{utcNow()}", "hrs_resolvedby": env("hrs_PilotRecipientUpn"),
         "hrs_detail": f"@{{concat({body('Flag', 'hrs_detail')}, ' Verified: ', {response('data', 'decision')}, '.')}}"}))
-    f.add(a, "Still_open", dv_list("hrs_flags", "hrs_flagid",
-                                   f"_hrs_rfp_value eq @{{{rfp_id}}} and hrs_flagtype eq {ocr} and hrs_resolvedon eq null"))
-    f.add(a, "RFP_Now", dv_get("hrs_rfps", f"@{{{rfp_id}}}"))
+    f.add(valid, "Still_open", dv_list("hrs_flags", "hrs_flagid",
+                                       f"_hrs_rfp_value eq @{{{rfp_id}}} and hrs_flagtype eq {ocr} and hrs_resolvedon eq null"))
+    f.add(valid, "RFP_Now", dv_get("hrs_rfps", f"@{{{rfp_id}}}"))
     resume = OrderedDict()
     f.add(resume, "Resume_Pipeline", dv_update("hrs_rfps", f"@{{{rfp_id}}}", {"hrs_status": RUNNING}), after=None)
-    f.add(a, "If_all_verified", condition({"and": [{"equals": [f"@length({value('Still_open')})", 0]},
-                                                   {"equals": [f"@{body('RFP_Now', 'hrs_status')}", AWAITING]},
-                                                   {"equals": [f"@{body('RFP_Now', 'hrs_stage')}", 2]}]}, resume, OrderedDict()))
+    f.add(valid, "If_all_verified", condition({"and": [{"equals": [f"@length({value('Still_open')})", 0]},
+                                                       {"equals": [f"@{body('RFP_Now', 'hrs_status')}", AWAITING]},
+                                                       {"equals": [f"@{body('RFP_Now', 'hrs_stage')}", 2]}]}, resume, OrderedDict()))
+    invalid = OrderedDict()
+    # Three answers and none valid: the flag stays open and the run keeps waiting, as for an unanswered card. The row's
+    # name doesn't start with "Stage ", so a rerun's cutoff ignores it.
+    f.add(invalid, "Log_Not_Verified", dv_create("hrs_runlogs", {
+        "hrs_name": f"@{{concat('Verification not saved ', {req})}}", "hrs_rfp@odata.bind": f"hrs_rfps(@{{{rfp_id}}})", "hrs_stage": 2,
+        "hrs_status": C("hrs_stagestatus", "Failed"), "hrs_startedon": "@{utcNow()}", "hrs_completedon": "@{utcNow()}",
+        "hrs_errordetail": f"@{{concat('Each correction for ', {req}, ' was blank or unchanged; the flag stays open and the run waits.')}}"}),
+          after=None)
+    f.add(a, "If_valid", condition({"or": [{"equals": ["@outputs('Verdict')?['confirmed']", True]},
+                                           {"equals": ["@outputs('Verdict')?['corrected']", True]}]}, valid, invalid))
     return f
 
 
@@ -1052,11 +1136,23 @@ def approval_flow() -> Flow:
         f"@{{concat('<p>Escalated: no decision on ', {name}, '. Next approval level: ', "
         f"coalesce(first(body('Next_Level'))?['hrs_approvername'], 'none - this is the top level'), ' (pilot delivery).</p>')}}")
     after_wait(a, "Approval_Now", dv_list("hrs_approvals", "hrs_approvalid", "hrs_approvalid eq @{triggerOutputs()?['body/hrs_approvalid']}"), waits)
+    # The card is current only while its row exists, the RFP is still Awaiting human at stage 9 (the pipeline writes
+    # both before it creates the row), and no revision arrived after the card or is still to be applied. Anything else
+    # (an addendum, a rerun, a newer run) means the card describes a superseded package: nothing is filed or completed.
+    f.add(a, "RFP_Now", dv_get("hrs_rfps", rfp_id, "hrs_status,hrs_stage,hrs_currentrevision"))
+    f.add(a, "Newer_Revisions", dv_list("hrs_rfprevisions", "hrs_rfprevisionid",
+                                        "_hrs_rfp_value eq @{triggerOutputs()?['body/_hrs_rfp_value']} and "
+                                        "(createdon gt @{triggerOutputs()?['body/createdon']} or "
+                                        f"hrs_revisionnumber gt @{{coalesce({body('RFP_Now', 'hrs_currentrevision')}, 0)}})"))
     withdrawn = OrderedDict()
     f.add(withdrawn, "Tell_Withdrawn", teams_message(env("hrs_PilotRecipientUpn"), f"@{{concat('<p>', {name}, "
-                                                     f"' was withdrawn because the run was reprocessed; the decision was not recorded.</p>')}}"), after=None)
+                                                     f"' was withdrawn because the RFP changed after it was sent (an addendum or a rerun); "
+                                                     f"the decision was not recorded and nothing was filed.</p>')}}"), after=None)
     f.add(withdrawn, "Withdrawn_Stop", terminate("Succeeded"))
-    f.add(a, "If_withdrawn", condition({"equals": [f"@length({value('Approval_Now')})", 0]}, withdrawn, OrderedDict()))
+    f.add(a, "If_withdrawn", condition({"or": [{"equals": [f"@length({value('Approval_Now')})", 0]},
+                                               {"not": {"equals": [f"@{body('RFP_Now', 'hrs_status')}", AWAITING]}},
+                                               {"not": {"equals": [f"@{body('RFP_Now', 'hrs_stage')}", 9]}},
+                                               {"greater": [f"@length({value('Newer_Revisions')})", 0]}]}, withdrawn, OrderedDict()))
     overdue = OrderedDict()
     # No decision after the reminder and escalation: the RFP stays Awaiting human and the run log says why.
     f.add(overdue, "Log_Overdue", dv_create("hrs_runlogs", {
@@ -1198,6 +1294,9 @@ def answer_tool_flow() -> Flow:
     return f
 
 
+RERUN_LOCK = "Rerun cleanup in progress"
+
+
 def rerun_tool_flow() -> Flow:
     """Reruns from stage N with ADR-0026's rule: rows created since stage N's latest pass are removed, then the pipeline
     resumes at N. rfp-tools decides whether it's allowed; the Pre tool use hook repeats that check but can fail open."""
@@ -1216,22 +1315,45 @@ def rerun_tool_flow() -> Flow:
     refuse = OrderedDict()
     f.add(refuse, "Respond_Refused", respond(f"@{{concat('Not rerun: ', {body('Check', 'reason')})}}"), after=None)
     go = OrderedDict()
+    # One rerun of an RFP at a time. rfp-tools allows a rerun of an RFP that isn't Running, which includes one whose
+    # cleanup is under way (status Not started, below), so the claim is a run-log row. One older than an hour is from
+    # a rerun that failed mid-cleanup and no longer blocks.
+    f.add(go, "Rerun_In_Progress", dv_list("hrs_runlogs", "hrs_runlogid",
+                                           f"_hrs_rfp_value eq {rid} and hrs_name eq '{RERUN_LOCK}' and "
+                                           f"hrs_status eq {C('hrs_stagestatus', 'Started')} and createdon gt @{{addHours(utcNow(), -1)}}"), after=None)
+    busy = OrderedDict()
+    f.add(busy, "Respond_Busy", respond("Not rerun: another rerun of this RFP is still removing rows. Ask for the run status, then try again "
+                                        "once it has restarted."), after=None)
+    claimed = OrderedDict()
+    f.add(claimed, "Claim_Rerun", dv_create("hrs_runlogs", {
+        "hrs_name": RERUN_LOCK, "hrs_rfp@odata.bind": f"hrs_rfps({rid})", "hrs_status": C("hrs_stagestatus", "Started"),
+        "hrs_startedon": "@{utcNow()}", "hrs_correlationid": "@{workflow()?['run']?['name']}",
+        "hrs_errordetail": f"@{body('Check', 'reason')}"}), after=None)
+    # Before any row is removed: every card flow resumes or files only while the RFP is Awaiting human at its own
+    # stage, so a card answered during cleanup changes nothing. Running is never written here, so the pipeline doesn't start.
+    f.add(claimed, "Claim_RFP", dv_update("hrs_rfps", rid, {"hrs_status": C("hrs_runstatus", "Not started")}))
     # Respond first: removing rows can take longer than the tool limit; the run log records the outcome.
-    f.add(go, "Respond_Started", respond(f"@{{concat({body('Check', 'reason')}, ' The pipeline restarts once rows from the earlier pass are removed; "
-                                         f"ask for the run status to follow it.')}}"), after=None)
-    f.add(go, "Pass", dv_list("hrs_runlogs", "hrs_startedon", f"_hrs_rfp_value eq {rid} and hrs_stage eq @{{{body('Check', 'fromStage')}}}",
-                              None, "createdon desc", 1))
-    delete_created_since(f, go, "Rerun", f"@{{coalesce(first({value('Pass')})?['hrs_startedon'], utcNow())}}", rid,
-                         f"@{{first({value('RFP')})?['hrs_rfpkey']}}")
-    f.add(go, "Rewind", dv_update("hrs_rfps", rid, {
+    f.add(claimed, "Respond_Started", respond(f"@{{concat({body('Check', 'reason')}, ' The pipeline restarts once rows from the earlier pass are removed; "
+                                              f"ask for the run status to follow it.')}}"))
+    # The stage's latest pipeline pass. Card flows log overdue cards with the same stage number ("Approval overdue",
+    # "Verification overdue ..."); those rows are later than the pass and would leave its rows in place.
+    f.add(claimed, "Pass", dv_list("hrs_runlogs", "hrs_startedon",
+                                   f"_hrs_rfp_value eq {rid} and hrs_stage eq @{{{body('Check', 'fromStage')}}} and startswith(hrs_name,'Stage ')",
+                                   None, "createdon desc", 1))
+    delete_created_since(f, claimed, "Rerun", f"@{{coalesce(first({value('Pass')})?['hrs_startedon'], utcNow())}}", rid,
+                         f"first({value('RFP')})?['hrs_rfpkey']")
+    f.add(claimed, "Rewind", dv_update("hrs_rfps", rid, {
         "hrs_stage": f"@sub({body('Check', 'fromStage')}, 1)", "hrs_status": C("hrs_runstatus", "Not started"),
         "hrs_currentrevision": f"@if({body('Check', 'resetRevision')}, 0, first({value('RFP')})?['hrs_currentrevision'])"}))
-    f.add(go, "Restart", dv_update("hrs_rfps", rid, {"hrs_status": RUNNING}))
-    f.add(go, "Log_Rerun", dv_create("hrs_runlogs", {
+    f.add(claimed, "Restart", dv_update("hrs_rfps", rid, {"hrs_status": RUNNING}))
+    f.add(claimed, "Release_Rerun", dv_update("hrs_runlogs", f"@{body('Claim_Rerun', 'hrs_runlogid')}", {
+        "hrs_status": C("hrs_stagestatus", "Succeeded"), "hrs_completedon": "@{utcNow()}"}))
+    f.add(claimed, "Log_Rerun", dv_create("hrs_runlogs", {
         "hrs_name": f"@{{concat('Rerun from stage ', string({body('Check', 'fromStage')}), ' (RFP Orchestrator)')}}",
         "hrs_rfp@odata.bind": f"hrs_rfps({rid})", "hrs_status": C("hrs_stagestatus", "Succeeded"),
         "hrs_startedon": "@{utcNow()}", "hrs_completedon": "@{utcNow()}", "hrs_correlationid": "@{workflow()?['run']?['name']}",
         "hrs_errordetail": f"@{body('Check', 'reason')}"}))
+    f.add(go, "If_rerun_free", condition({"equals": [f"@length({value('Rerun_In_Progress')})", 0]}, claimed, busy))
     f.add(a, "If_allowed", condition({"equals": [f"@{body('Check', 'allowed')}", True]}, go, refuse), after="If_audit")
     return f
 

@@ -540,7 +540,7 @@
                       "parameters": {
                         "entityName": "hrs_answers",
                         "$select": "hrs_answerid,hrs_approvalstatus",
-                        "$filter": "hrs_answercode eq '@{concat('PROP-', body('Requirement')?['hrs_rfp']?['hrs_rfpkey'], '-', body('Requirement')?['hrs_reqid'])}'"
+                        "$filter": "hrs_answercode eq '@{concat('PROP-', replace(replace(body('Requirement')?['hrs_rfp']?['hrs_rfpkey'], '~', '~t'), '-', '~h'), '-', body('Requirement')?['hrs_reqid'])}'"
                       }
                     },
                     "runtimeConfiguration": {
@@ -573,7 +573,7 @@
                           },
                           "parameters": {
                             "entityName": "hrs_answers",
-                            "item/hrs_answercode": "@{concat('PROP-', body('Requirement')?['hrs_rfp']?['hrs_rfpkey'], '-', body('Requirement')?['hrs_reqid'])}",
+                            "item/hrs_answercode": "@{concat('PROP-', replace(replace(body('Requirement')?['hrs_rfp']?['hrs_rfpkey'], '~', '~t'), '-', '~h'), '-', body('Requirement')?['hrs_reqid'])}",
                             "item/hrs_question": "@body('Requirement')?['hrs_requirementtext']",
                             "item/hrs_answertext": "@{variables('Response')?['data']?['answer']}",
                             "item/hrs_approvalstatus": 431200011,
@@ -744,12 +744,48 @@
               ]
             }
           },
+          "RFP_Now": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "operationId": "GetItem",
+                "connectionName": "shared_commondataserviceforapps"
+              },
+              "parameters": {
+                "entityName": "hrs_rfps",
+                "recordId": "@{body('Requirement')?['hrs_rfp']?['hrs_rfpid']}",
+                "$select": "hrs_status,hrs_stage"
+              }
+            },
+            "runAfter": {
+              "Still_routed": [
+                "Succeeded"
+              ]
+            }
+          },
           "If_all_answered": {
             "type": "If",
             "expression": {
-              "equals": [
-                "@length(body('Still_routed')?['value'])",
-                0
+              "and": [
+                {
+                  "equals": [
+                    "@length(body('Still_routed')?['value'])",
+                    0
+                  ]
+                },
+                {
+                  "equals": [
+                    "@body('RFP_Now')?['hrs_status']",
+                    431200172
+                  ]
+                },
+                {
+                  "equals": [
+                    "@body('RFP_Now')?['hrs_stage']",
+                    7
+                  ]
+                }
               ]
             },
             "actions": {
@@ -774,7 +810,7 @@
               "actions": {}
             },
             "runAfter": {
-              "Still_routed": [
+              "RFP_Now": [
                 "Succeeded"
               ]
             }
