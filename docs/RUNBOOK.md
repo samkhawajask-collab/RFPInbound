@@ -192,20 +192,23 @@ solution with required components, didn't turn them off, though the original was
 So `./scripts/check-flows.ps1 -Target dev|test` now fails if any flow is off or missing. `eval/run.ps1` runs it before
 a full run. Run it after any deploy or import too.
 
-**Gallery review fixes (PR 114, 2026-11-15).** Drills for the nine review findings. They need card answers in Teams or
-the Orchestrator, so they're run by hand in dev after `apply-flows.ps1`. Use 2-minute card timings where a card must
-expire (`failure-drills.ps1 -Drill ef` sets and resets them). Not run yet:
+**Gallery review fixes (PR 114, 2026-11-15).** Drills for the nine review findings, run in dev on 2026-11-15 after
+`apply-flows.ps1`. Cards were answered as the pilot recipient with `scripts/ui/drill-card.js` and
+`answer-cards-in-teams.js`; reruns went through the Orchestrator (`ask-orchestrator.js`), because an agent flow's Request
+trigger can't be called directly. RFP A and B are filed, so they can't be rerun; S (waiting at stage 9) and D were used.
+D and S were restored afterwards: the drill revisions, files and decoys were removed, D's approval was approved (Completed,
+revision 1), and S is Awaiting approval at stage 9 again.
 
-| Drill | How | Expect |
+| Drill | How | Result |
 |---|---|---|
-| i. Overlapping keys | Add a Draft answer `PROP-A~hX-001` (the code RFP `A-X` would use for requirement `001`). Ask the Orchestrator to rerun RFP A from stage 7, then answer one of A's gap cards | The rerun's `Rerun_Answers` doesn't select `PROP-A~hX-001`, and it still exists afterwards. A's new proposal is `PROP-A-<reqId>`, and `Existing_Proposal` doesn't match the other row |
-| j. Stale approval after an addendum | Reset RFP D and run it without its addendum until the approval card is posted. Upload `RFP-D_..._Addendum-No1.pdf` to `Inbound`, then press Approve on the old card | The receive flow deletes the Pending approval. The card flow posts the withdrawn notice. Nothing is written to `Output/Filed`, the RFP isn't Completed, and the run restarts at stage 3 |
-| k. Blank or unchanged OCR correction | Add a test OCR flag (as in drill e). On its card, clear the text and press Save my correction (if Teams blocks it, submit the unchanged text) | The flag stays open (`hrs_resolvedon` empty), "was not saved" is posted, and the card comes back. Then press Text is correct: the flag resolves |
-| l. Rerun after an overdue card | Let an approval card on RFP B expire ("Approval overdue" at stage 9), then rerun B from stage 9 | `Pass` picks the "Stage 9 Approval" row, not "Approval overdue". The approval created by that pass is deleted before the new one |
-| m. Two addenda together | Upload two files for one RFP in the same minute | Consecutive revision numbers; the second run starts after the first |
-| n. Quick rejection | Rerun B from stage 8 and reject the approval card as soon as it appears | The RFP goes to stage 7 / Running and assembly reruns. The run that posted the card doesn't overwrite stage 7 |
-| o. Rerun while a card is open | With a gap card open on a run waiting at stage 7, rerun from stage 6, then answer the old card during cleanup | The card is withdrawn or changes nothing. A second rerun asked for during cleanup gets "another rerun of this RFP is still removing rows" |
-| p. Early answers | Answer the first gap card (and the first OCR card in a scanned run) as soon as it appears, while the rest are still being created | The run doesn't resume until every card is answered. If they're all answered before the run marks itself Awaiting human, its recount resumes it |
+| i. Overlapping keys | Draft decoys `PROP-S~hX-001` and `PROP-A~hX-001` (codes RFPs `S-X` and `A-X` would use). Orchestrator reran S from stage 9. D's six gap cards were answered | PASS: both decoys survived `Rerun_Answers`; D's answers created `PROP-D-THPA-<reqId>` and linked them to the gaps |
+| j. Stale approval after an addendum | D at stage 9 with a Pending approval; an addendum copy uploaded to `Inbound`, then Approve pressed on the old card | PASS: revision 4 created, the Pending approval deleted, D restarted at stage 3. The card flow ran `Tell_Withdrawn`; `Record_Decision`, `File_Package` and `Complete_RFP` were skipped; `Output/Filed` unchanged (3 D files); D not Completed |
+| k. Blank or unchanged OCR correction | Test OCR flag on D THPA-005. Cleared text + Save my correction; then the unchanged text + Save; then Text is correct | PASS: Teams refused the blank submit ("Enter the requirement text, or choose Text is correct."). The unchanged text was not saved: the flag stayed open, "not saved" was posted, the card came back. Text is correct resolved it ("Verified: confirm"). D, waiting at stage 7, was not resumed by it |
+| l. Rerun after an overdue card | S had "Approval overdue" (11-05) after its "Stage 9 Approval" pass (11-02) and a Pending approval from that pass. Orchestrator reran S from stage 9 | PASS: the 11-02 approval was deleted (the old cutoff, the overdue row, would have kept it) |
+| m. Two addenda together | Two copies of D's addendum uploaded in the same second | PASS: revisions 2 and 3. The second run's first action started at 23:27:30.55, after the first run ended (23:27:30) |
+| n. Quick rejection | Reject pressed on S's new approval card as soon as it was posted | PASS: decision Rejected with the comment; S went to stage 7 / Running, rebuilt stages 8-9 and posted a new card. After creating the approval row the run wrote only its run log |
+| o. Rerun while a cleanup holds the lock | A fresh "Rerun cleanup in progress" row on S, then a rerun asked for | PASS: "Not rerun: another rerun of this RFP is still removing rows"; S unchanged. On the real rerun the lock was written and released (Succeeded) 4 seconds later |
+| p. Early answers | D's stage 7 rerun | PASS for the order: all six gaps created 23:32:44, Awaiting human written 23:32:46; the last gap answer resumed D (Awaiting human at stage 7). An answer arriving while gaps are still being written wasn't forced |
 
 **Reading a failed RFP D run.** Compliance for D can vary between runs: see ADR-0021. Check the misses against
 spurious AMBIGUOUS and CONTRADICTION flags before suspecting a regression.
