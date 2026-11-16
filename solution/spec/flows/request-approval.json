@@ -628,23 +628,142 @@
                 },
                 "runAfter": {}
               },
-              "Complete_RFP": {
+              "RFP_Before_Complete": {
                 "type": "OpenApiConnection",
                 "inputs": {
                   "host": {
                     "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
-                    "operationId": "UpdateOnlyRecord",
+                    "operationId": "GetItem",
                     "connectionName": "shared_commondataserviceforapps"
                   },
                   "parameters": {
                     "entityName": "hrs_rfps",
                     "recordId": "@triggerOutputs()?['body/_hrs_rfp_value']",
-                    "item/hrs_status": 431200173,
-                    "item/hrs_stage": 9
+                    "$select": "hrs_status,hrs_stage,hrs_currentrevision"
                   }
                 },
                 "runAfter": {
                   "File_Package": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Revisions_Before_Complete": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_rfprevisions",
+                    "$select": "hrs_rfprevisionid",
+                    "$filter": "_hrs_rfp_value eq @{triggerOutputs()?['body/_hrs_rfp_value']} and (createdon gt @{triggerOutputs()?['body/createdon']} or hrs_revisionnumber gt @{coalesce(body('RFP_Before_Complete')?['hrs_currentrevision'], 0)})"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "RFP_Before_Complete": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "If_still_current": {
+                "type": "If",
+                "expression": {
+                  "and": [
+                    {
+                      "equals": [
+                        "@body('RFP_Before_Complete')?['hrs_status']",
+                        431200172
+                      ]
+                    },
+                    {
+                      "equals": [
+                        "@body('RFP_Before_Complete')?['hrs_stage']",
+                        9
+                      ]
+                    },
+                    {
+                      "equals": [
+                        "@length(body('Revisions_Before_Complete')?['value'])",
+                        0
+                      ]
+                    }
+                  ]
+                },
+                "actions": {
+                  "Complete_RFP": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "UpdateOnlyRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_rfps",
+                        "recordId": "@triggerOutputs()?['body/_hrs_rfp_value']",
+                        "item/hrs_status": 431200173,
+                        "item/hrs_stage": 9
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                },
+                "else": {
+                  "actions": {
+                    "Log_Filed_Superseded": {
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                          "operationId": "CreateRecord",
+                          "connectionName": "shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "hrs_runlogs",
+                          "item/hrs_name": "Approval superseded during filing",
+                          "item/hrs_rfp@odata.bind": "hrs_rfps(@{triggerOutputs()?['body/_hrs_rfp_value']})",
+                          "item/hrs_stage": 9,
+                          "item/hrs_status": 431200182,
+                          "item/hrs_startedon": "@{utcNow()}",
+                          "item/hrs_completedon": "@{utcNow()}",
+                          "item/hrs_errordetail": "@{concat('The RFP changed (addendum or rerun) while ', triggerOutputs()?['body/hrs_name'], ' was being filed. The copy in Output/Filed is the superseded package; the RFP was not completed.')}"
+                        }
+                      },
+                      "runAfter": {}
+                    },
+                    "Tell_Filed_Superseded": {
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams",
+                          "operationId": "PostMessageToConversation",
+                          "connectionName": "shared_teams"
+                        },
+                        "parameters": {
+                          "poster": "Flow bot",
+                          "location": "Chat with Flow bot",
+                          "body/recipient": "@parameters('hrs_PilotRecipientUpn (hrs_PilotRecipientUpn)')",
+                          "body/messageBody": "@{concat('<p>', triggerOutputs()?['body/hrs_name'], ' was approved, but the RFP changed while the package was being filed. The filed copy is superseded and the RFP was not completed; a new approval card follows when the restarted run finishes.</p>')}"
+                        }
+                      },
+                      "runAfter": {
+                        "Log_Filed_Superseded": [
+                          "Succeeded"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "runAfter": {
+                  "Revisions_Before_Complete": [
                     "Succeeded"
                   ]
                 }

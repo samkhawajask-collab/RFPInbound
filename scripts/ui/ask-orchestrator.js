@@ -1,6 +1,6 @@
 // Asks the RFP Orchestrator questions in Copilot Studio's test chat and prints its replies (ADR-0030, drill h).
 //   PP_ENV_ID=<environment id> BOT_ID=<agent id> node scripts/ui/ask-orchestrator.js "What is the status of RFP A?" ["..."]
-// Uses the persistent profile in scripts/ui/profile. Each question waits up to WAIT_S seconds (default 120) for the
+// Uses the persistent profile in scripts/ui/profile (or scripts/ui/$UI_PROFILE, for a second session in parallel). Each question waits up to WAIT_S seconds (default 120) for the
 // reply to stop changing. Screenshots go to scripts/ui/shots.
 const { chromium } = require('playwright');
 const path = require('path');
@@ -11,7 +11,7 @@ const log = (m) => console.log(`[${new Date().toISOString().slice(11, 19)}] ${m}
 
 (async () => {
   const questions = process.argv.slice(2);
-  const ctx = await chromium.launchPersistentContext(path.join(__dirname, 'profile'), { headless: false, viewport: { width: 1500, height: 950 } });
+  const ctx = await chromium.launchPersistentContext(path.join(__dirname, process.env.UI_PROFILE || 'profile'), { headless: false, viewport: { width: 1500, height: 950 } });
   const page = ctx.pages()[0] || await ctx.newPage();
   try {
     await page.goto(`https://copilotstudio.microsoft.com/environments/${ENV}/agents/${BOT}`, { waitUntil: 'domcontentloaded' });

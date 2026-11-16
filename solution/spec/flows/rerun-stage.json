@@ -218,7 +218,27 @@
               ]
             },
             "actions": {
-              "Rerun_In_Progress": {
+              "Claim_Rerun": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "CreateRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_runlogs",
+                    "item/hrs_name": "Rerun cleanup in progress",
+                    "item/hrs_rfp@odata.bind": "hrs_rfps(@{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')})",
+                    "item/hrs_status": 431200180,
+                    "item/hrs_startedon": "@{utcNow()}",
+                    "item/hrs_correlationid": "@{workflow()?['run']?['name']}",
+                    "item/hrs_errordetail": "@body('Check')?['reason']"
+                  }
+                },
+                "runAfter": {}
+              },
+              "Live_Claims": {
                 "type": "OpenApiConnection",
                 "inputs": {
                   "host": {
@@ -229,7 +249,9 @@
                   "parameters": {
                     "entityName": "hrs_runlogs",
                     "$select": "hrs_runlogid",
-                    "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and hrs_name eq 'Rerun cleanup in progress' and hrs_status eq 431200180 and createdon gt @{addHours(utcNow(), -1)}"
+                    "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and hrs_name eq 'Rerun cleanup in progress' and hrs_status eq 431200180 and createdon gt @{addHours(utcNow(), -1)}",
+                    "$orderby": "createdon asc,hrs_runlogid asc",
+                    "$top": 1
                   }
                 },
                 "runtimeConfiguration": {
@@ -237,37 +259,21 @@
                     "minimumItemCount": 5000
                   }
                 },
-                "runAfter": {}
+                "runAfter": {
+                  "Claim_Rerun": [
+                    "Succeeded"
+                  ]
+                }
               },
-              "If_rerun_free": {
+              "If_claim_won": {
                 "type": "If",
                 "expression": {
                   "equals": [
-                    "@length(body('Rerun_In_Progress')?['value'])",
-                    0
+                    "@first(body('Live_Claims')?['value'])?['hrs_runlogid']",
+                    "@body('Claim_Rerun')?['hrs_runlogid']"
                   ]
                 },
                 "actions": {
-                  "Claim_Rerun": {
-                    "type": "OpenApiConnection",
-                    "inputs": {
-                      "host": {
-                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
-                        "operationId": "CreateRecord",
-                        "connectionName": "shared_commondataserviceforapps"
-                      },
-                      "parameters": {
-                        "entityName": "hrs_runlogs",
-                        "item/hrs_name": "Rerun cleanup in progress",
-                        "item/hrs_rfp@odata.bind": "hrs_rfps(@{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')})",
-                        "item/hrs_status": 431200180,
-                        "item/hrs_startedon": "@{utcNow()}",
-                        "item/hrs_correlationid": "@{workflow()?['run']?['name']}",
-                        "item/hrs_errordetail": "@body('Check')?['reason']"
-                      }
-                    },
-                    "runAfter": {}
-                  },
                   "Claim_RFP": {
                     "type": "OpenApiConnection",
                     "inputs": {
@@ -282,11 +288,7 @@
                         "item/hrs_status": 431200170
                       }
                     },
-                    "runAfter": {
-                      "Claim_Rerun": [
-                        "Succeeded"
-                      ]
-                    }
+                    "runAfter": {}
                   },
                   "Respond_Started": {
                     "type": "Response",
@@ -881,6 +883,24 @@
                 },
                 "else": {
                   "actions": {
+                    "Release_Lost_Claim": {
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                          "operationId": "UpdateOnlyRecord",
+                          "connectionName": "shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "hrs_runlogs",
+                          "recordId": "@body('Claim_Rerun')?['hrs_runlogid']",
+                          "item/hrs_status": 431200183,
+                          "item/hrs_completedon": "@{utcNow()}",
+                          "item/hrs_errordetail": "Not rerun: another rerun of this RFP holds the claim."
+                        }
+                      },
+                      "runAfter": {}
+                    },
                     "Respond_Busy": {
                       "type": "Response",
                       "kind": "Skills",
@@ -902,12 +922,16 @@
                           }
                         }
                       },
-                      "runAfter": {}
+                      "runAfter": {
+                        "Release_Lost_Claim": [
+                          "Succeeded"
+                        ]
+                      }
                     }
                   }
                 },
                 "runAfter": {
-                  "Rerun_In_Progress": [
+                  "Live_Claims": [
                     "Succeeded"
                   ]
                 }

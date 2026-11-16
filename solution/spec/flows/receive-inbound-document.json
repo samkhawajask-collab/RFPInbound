@@ -339,20 +339,40 @@
                   ]
                 }
               },
+              "RFP_After_Revision": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "GetItem",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_rfps",
+                    "recordId": "@{first(body('Existing_RFP')?['value'])?['hrs_rfpid']}",
+                    "$select": "hrs_stage,hrs_status"
+                  }
+                },
+                "runAfter": {
+                  "Create_Addendum_Document": [
+                    "Succeeded"
+                  ]
+                }
+              },
               "If_past_stage_2": {
                 "type": "If",
                 "expression": {
                   "and": [
                     {
                       "greater": [
-                        "@int(coalesce(first(body('Existing_RFP')?['value'])?['hrs_stage'], 0))",
+                        "@int(coalesce(body('RFP_After_Revision')?['hrs_stage'], 0))",
                         2
                       ]
                     },
                     {
                       "not": {
                         "equals": [
-                          "@first(body('Existing_RFP')?['value'])?['hrs_status']",
+                          "@body('RFP_After_Revision')?['hrs_status']",
                           431200171
                         ]
                       }
@@ -438,7 +458,7 @@
                   "actions": {}
                 },
                 "runAfter": {
-                  "Create_Addendum_Document": [
+                  "RFP_After_Revision": [
                     "Succeeded"
                   ]
                 }

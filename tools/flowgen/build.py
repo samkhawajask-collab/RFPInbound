@@ -272,8 +272,13 @@ def receive_flow() -> Flow:
     f.add(withdraw, "Withdraw_Approval", dv_delete("hrs_approvals", "@items('Withdraw_Approvals')?['hrs_approvalid']"), after=None)
     f.add(reprocess, "Withdraw_Approvals", foreach(f"@{value('Open_Approvals')}", withdraw, 5))
     f.add(reprocess, "Reprocess_From_Stage_3", dv_update("hrs_rfps", f"@{{{existing}?['hrs_rfpid']}}", {"hrs_stage": 2, "hrs_status": RUNNING}))
-    f.add(exists, "If_past_stage_2", condition({"and": [{"greater": [f"@int(coalesce({existing}?['hrs_stage'], 0))", 2]},
-                                                        {"not": {"equals": [f"@{existing}?['hrs_status']", RUNNING]}}]}, reprocess, OrderedDict()))
+    # Decided on the RFP as it is now that the revision exists, not as it was when this run started: a run that was
+    # Running at the start may have reached its stage 9 checkpoint since. Either the pipeline's own new-revision check
+    # (after its checkpoint) sees this revision, or this read sees Awaiting human and restarts the run here.
+    f.add(exists, "RFP_After_Revision", dv_get("hrs_rfps", f"@{{{existing}?['hrs_rfpid']}}", "hrs_stage,hrs_status"))
+    fresh = "body('RFP_After_Revision')"
+    f.add(exists, "If_past_stage_2", condition({"and": [{"greater": [f"@int(coalesce({fresh}?['hrs_stage'], 0))", 2]},
+                                                        {"not": {"equals": [f"@{fresh}?['hrs_status']", RUNNING]}}]}, reprocess, OrderedDict()))
     f.add(exists, "Addendum_recorded", terminate("Succeeded"))
     f.add(a, "If_exists", condition({"greater": [f"@length({value('Existing_RFP')})", 0]}, exists, OrderedDict()))
     f.add(a, "Create_RFP", dv_create("hrs_rfps", {
@@ -1173,7 +1178,30 @@ def approval_flow() -> Flow:
                                                   "@{last(split(items('File_Package'), '/'))}", "@body('Draft_File')"))
     f.add(approve, "File_Package", foreach("@createArray(outputs('Payload')?['files']?['Narrative'], outputs('Payload')?['files']?['Excluded'], outputs('Payload')?['files']?['Compliance-Matrix'])",
                                            copy_loop, 3), after=None)
-    f.add(approve, "Complete_RFP", dv_update("hrs_rfps", rfp_id, {"hrs_status": COMPLETED, "hrs_stage": 9}))
+    # Filing takes seconds; an addendum or rerun in that time restarts the RFP. Completion re-checks what the decision
+    # was checked against and completes only an RFP still Awaiting human at stage 9 with no newer revision; otherwise
+    # the restarted run keeps its state (its stage 3 cleanup removes this approval) and the filed copy is reported as
+    # superseded. Power Automate has no compare-and-set, so a write landing between this read and Complete_RFP remains
+    # possible, but the window is one action instead of the whole filing.
+    f.add(approve, "RFP_Before_Complete", dv_get("hrs_rfps", rfp_id, "hrs_status,hrs_stage,hrs_currentrevision"))
+    f.add(approve, "Revisions_Before_Complete", dv_list("hrs_rfprevisions", "hrs_rfprevisionid",
+                                                        "_hrs_rfp_value eq @{triggerOutputs()?['body/_hrs_rfp_value']} and "
+                                                        "(createdon gt @{triggerOutputs()?['body/createdon']} or "
+                                                        f"hrs_revisionnumber gt @{{coalesce({body('RFP_Before_Complete', 'hrs_currentrevision')}, 0)}})"))
+    complete = OrderedDict()
+    f.add(complete, "Complete_RFP", dv_update("hrs_rfps", rfp_id, {"hrs_status": COMPLETED, "hrs_stage": 9}), after=None)
+    superseded = OrderedDict()
+    f.add(superseded, "Log_Filed_Superseded", dv_create("hrs_runlogs", {
+        "hrs_name": "Approval superseded during filing", "hrs_rfp@odata.bind": "hrs_rfps(@{triggerOutputs()?['body/_hrs_rfp_value']})",
+        "hrs_stage": 9, "hrs_status": C("hrs_stagestatus", "Failed"), "hrs_startedon": "@{utcNow()}", "hrs_completedon": "@{utcNow()}",
+        "hrs_errordetail": f"@{{concat('The RFP changed (addendum or rerun) while ', {name}, ' was being filed. The copy in Output/Filed is the superseded package; the RFP was not completed.')}}"}),
+          after=None)
+    f.add(superseded, "Tell_Filed_Superseded", teams_message(env("hrs_PilotRecipientUpn"), f"@{{concat('<p>', {name}, "
+                                                             f"' was approved, but the RFP changed while the package was being filed. The filed copy is superseded and the RFP was not completed; "
+                                                             f"a new approval card follows when the restarted run finishes.</p>')}}"))
+    f.add(approve, "If_still_current", condition({"and": [{"equals": [f"@{body('RFP_Before_Complete', 'hrs_status')}", AWAITING]},
+                                                          {"equals": [f"@{body('RFP_Before_Complete', 'hrs_stage')}", 9]},
+                                                          {"equals": [f"@length({value('Revisions_Before_Complete')})", 0]}]}, complete, superseded))
     reject = OrderedDict()
     # hrs_approval has one row per RFP (alternate key on hrs_rfp), so the rejected row must go before stage 9 asks
     # again; otherwise the next Request_Approval fails with a duplicate key and the run ends Failed. The decision and
@@ -1325,22 +1353,28 @@ def rerun_tool_flow() -> Flow:
     f.add(refuse, "Respond_Refused", respond(f"@{{concat('Not rerun: ', {body('Check', 'reason')})}}"), after=None)
     go = OrderedDict()
     # One rerun of an RFP at a time. rfp-tools allows a rerun of an RFP that isn't Running, which includes one whose
-    # cleanup is under way (status Not started, below), so the claim is a run-log row. One older than an hour is from
-    # a rerun that failed mid-cleanup and no longer blocks.
-    f.add(go, "Rerun_In_Progress", dv_list("hrs_runlogs", "hrs_runlogid",
-                                           f"_hrs_rfp_value eq {rid} and hrs_name eq '{RERUN_LOCK}' and "
-                                           f"hrs_status eq {C('hrs_stagestatus', 'Started')} and createdon gt @{{addHours(utcNow(), -1)}}"), after=None)
-    busy = OrderedDict()
-    f.add(busy, "Respond_Busy", respond("Not rerun: another rerun of this RFP is still removing rows. Ask for the run status, then try again "
-                                        "once it has restarted."), after=None)
-    claimed = OrderedDict()
-    f.add(claimed, "Claim_Rerun", dv_create("hrs_runlogs", {
+    # cleanup is under way (status Not started, below), so the claim is a run-log row. Write first, then read: every
+    # caller creates its claim, then lists the live claims for the RFP in creation order, and only the first (ties
+    # broken by row ID) proceeds; the others release theirs and are refused. Two callers can't both see themselves
+    # first, whatever the interleaving. A claim older than an hour is from a rerun that failed mid-cleanup and is ignored.
+    f.add(go, "Claim_Rerun", dv_create("hrs_runlogs", {
         "hrs_name": RERUN_LOCK, "hrs_rfp@odata.bind": f"hrs_rfps({rid})", "hrs_status": C("hrs_stagestatus", "Started"),
         "hrs_startedon": "@{utcNow()}", "hrs_correlationid": "@{workflow()?['run']?['name']}",
         "hrs_errordetail": f"@{body('Check', 'reason')}"}), after=None)
+    f.add(go, "Live_Claims", dv_list("hrs_runlogs", "hrs_runlogid",
+                                     f"_hrs_rfp_value eq {rid} and hrs_name eq '{RERUN_LOCK}' and "
+                                     f"hrs_status eq {C('hrs_stagestatus', 'Started')} and createdon gt @{{addHours(utcNow(), -1)}}",
+                                     None, "createdon asc,hrs_runlogid asc", 1))
+    busy = OrderedDict()
+    f.add(busy, "Release_Lost_Claim", dv_update("hrs_runlogs", f"@{body('Claim_Rerun', 'hrs_runlogid')}", {
+        "hrs_status": C("hrs_stagestatus", "Skipped"), "hrs_completedon": "@{utcNow()}",
+        "hrs_errordetail": "Not rerun: another rerun of this RFP holds the claim."}), after=None)
+    f.add(busy, "Respond_Busy", respond("Not rerun: another rerun of this RFP is still removing rows. Ask for the run status, then try again "
+                                        "once it has restarted."))
+    claimed = OrderedDict()
     # Before any row is removed: every card flow resumes or files only while the RFP is Awaiting human at its own
     # stage, so a card answered during cleanup changes nothing. Running is never written here, so the pipeline doesn't start.
-    f.add(claimed, "Claim_RFP", dv_update("hrs_rfps", rid, {"hrs_status": C("hrs_runstatus", "Not started")}))
+    f.add(claimed, "Claim_RFP", dv_update("hrs_rfps", rid, {"hrs_status": C("hrs_runstatus", "Not started")}), after=None)
     # Respond first: removing rows can take longer than the tool limit; the run log records the outcome.
     f.add(claimed, "Respond_Started", respond(f"@{{concat({body('Check', 'reason')}, ' The pipeline restarts once rows from the earlier pass are removed; "
                                               f"ask for the run status to follow it.')}}"))
@@ -1362,7 +1396,8 @@ def rerun_tool_flow() -> Flow:
         "hrs_rfp@odata.bind": f"hrs_rfps({rid})", "hrs_status": C("hrs_stagestatus", "Succeeded"),
         "hrs_startedon": "@{utcNow()}", "hrs_completedon": "@{utcNow()}", "hrs_correlationid": "@{workflow()?['run']?['name']}",
         "hrs_errordetail": f"@{body('Check', 'reason')}"}))
-    f.add(go, "If_rerun_free", condition({"equals": [f"@length({value('Rerun_In_Progress')})", 0]}, claimed, busy))
+    f.add(go, "If_claim_won", condition({"equals": [f"@first({value('Live_Claims')})?['hrs_runlogid']", f"@{body('Claim_Rerun', 'hrs_runlogid')}"]},
+                                        claimed, busy))
     f.add(a, "If_allowed", condition({"equals": [f"@{body('Check', 'allowed')}", True]}, go, refuse), after="If_audit")
     return f
 
