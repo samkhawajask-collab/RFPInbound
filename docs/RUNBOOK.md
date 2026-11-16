@@ -210,6 +210,8 @@ revision 1), and S is Awaiting approval at stage 9 again.
 | o. Rerun while a cleanup holds the lock | A fresh "Rerun cleanup in progress" row on S, then a rerun asked for | PASS: "Not rerun: another rerun of this RFP is still removing rows"; S unchanged. On the real rerun the lock was written and released (Succeeded) 4 seconds later |
 | p. Early answers | D's stage 7 rerun | PASS for the order: all six gaps created 23:32:44, Awaiting human written 23:32:46; the last gap answer resumed D (Awaiting human at stage 7). An answer arriving while gaps are still being written wasn't forced |
 
+Second Copilot review (2026-11-16), checked in dev the same way: two Orchestrator sessions confirming a rerun of S one second apart both wrote claims; the earlier one ran, the later released its claim (Skipped) and was refused. Trigger concurrency on Rerun Stage was rejected at activation (InvalidConcurrencyConfiguration: not supported with a synchronous Response). An addendum for a Completed D went through RFP_After_Revision and restarted D at stage 3. Approving D's next card went through RFP_Before_Complete and If_still_current to Complete_RFP. The superseded-during-filing branch wasn't forced. D was restored afterwards (revision 1, Completed); S is Awaiting approval at stage 9.
+
 **Reading a failed RFP D run.** Compliance for D can vary between runs: see ADR-0021. Check the misses against
 spurious AMBIGUOUS and CONTRADICTION flags before suspecting a regression.
 
