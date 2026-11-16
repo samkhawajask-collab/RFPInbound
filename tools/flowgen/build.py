@@ -24,7 +24,7 @@ sys.path.insert(0, str(HERE.parent))
 from flowgen import (  # noqa: E402
     Flow, append_variable, compose, condition, connector, dv_create, dv_create_from, dv_get, dv_list, dv_trigger,
     dv_delete, dv_update, env, env_inline, foreach, init_variable, prompt, prompt_output, scope, set_variable, sp_create_file,
-    sp_get_content_by_path, teams_card_and_wait, teams_message, terminate, tools, until, word_to_pdf, SP,
+    sp_get_content_by_path, sp_get_metadata_by_path, teams_card_and_wait, teams_message, terminate, tools, until, word_to_pdf, SP,
 )
 from rfp_tools.schema import choice_value  # noqa: E402
 
@@ -140,6 +140,18 @@ def proposal_key(key_expr: str) -> str:
 def proposal_prefix(key_expr: str) -> str:
     """Filter-ready prefix of every proposal code of one RFP (see proposal_key)."""
     return f"@{{concat('PROP-', {proposal_key(key_expr)}, '-')}}"
+
+
+# The three package files stage 8 writes and the approval files (keys of Package_Facts' files).
+PACKAGE_FILES = ("Narrative", "Excluded", "Compliance-Matrix")
+
+
+def package_etags(prefix: str = "Version") -> str:
+    """Expression for {label: ETag} from the <prefix>_<label> metadata actions, one per package file."""
+    expr = "json('{}')"
+    for label in PACKAGE_FILES:
+        expr = f"setProperty({expr}, '{label}', body('{prefix}_{label.replace('-', '_')}')?['ETag'])"
+    return expr
 
 
 # This RFP's Draft proposals from its own gap answers (ADR-0032, ADR-0033).
@@ -775,13 +787,18 @@ def pipeline_flow() -> Flow:
         # rejection writes stage 7 / Running, which no later write of this run may overwrite. The addendum check follows
         # the checkpoint, so an addendum is either seen here (restart) or arrives while the RFP is Awaiting human, when the
         # receive flow restarts the run and Request Approval withdraws the card.
+        # The approval is for these exact files: their ETags go on the approval row, and Request Approval files only
+        # what is still at those versions (an edit while the card is open asks again instead).
+        for label in PACKAGE_FILES:
+            f.add(c, f"Version_{label.replace('-', '_')}", sp_get_metadata_by_path(f"@{{outputs('Package_Facts_9')?['files']?['{label}']}}"))
         f.add(c, "S9_Checkpoint", dv_update("hrs_rfps", RFP_ID, {"hrs_stage": 9, "hrs_status": AWAITING}))
         restart_for_addendum(f, c, p, "RFP")
         f.add(c, "Request_Approval", dv_create("hrs_approvals", {
             "hrs_name": f"@{{concat('Approval ', {body('Opportunity', 'hrs_rfpnumber')})}}", "hrs_rfp@odata.bind": f"hrs_rfps({RFP_ID})",
             "hrs_approver@odata.bind": f"hrs_approvers(@{{first({value('Approver')})?['hrs_approverid']}})",
             "hrs_level": f"@{body('Level', 'approvalLevel')}", "hrs_decision": C("hrs_approvaldecision", "Pending"), "hrs_requestedon": "@{utcNow()}",
-            "hrs_cardpayload": f"@{{string(setProperty(setProperty(json('{{}}'), 'card', {body('Card', 'card')}), 'files', outputs('Package_Facts_9')?['files']))}}",
+            "hrs_cardpayload": "@{string(setProperty(setProperty(setProperty(json('{}'), 'card', " + body('Card', 'card') + "), 'files', outputs('Package_Facts_9')?['files']), "
+                               f"'etags', {package_etags()}))}}",
             "hrs_totalrequirements": f"@{body('Summary', 'totalRequirements')}", "hrs_fullcount": f"@{body('Summary', 'countFull')}",
             "hrs_partialcount": f"@{body('Summary', 'countPartial')}", "hrs_nocount": f"@{body('Summary', 'countNo')}",
             "hrs_gapsrouted": f"@{body('Summary', 'gapsRouted')}", "hrs_clarificationssent": f"@{body('Summary', 'clarificationsSent')}",
@@ -1166,6 +1183,31 @@ def approval_flow() -> Flow:
         "hrs_errordetail": f"@{{concat('No decision on ', {name}, ' after the reminder and escalation; the RFP stays Awaiting human.')}}"}), after=None)
     f.add(overdue, "Overdue_Stop", terminate("Succeeded"))
     f.add(a, "If_unanswered", condition({"equals": [f"@{ANSWERED}", False]}, overdue, OrderedDict()))
+    # The approval covers the files as they were when the card was posted (their ETags, saved by stage 9). A draft
+    # edited, replaced or removed since then wasn't what was reviewed: nothing is recorded or filed, and stage 9 runs
+    # again to post a card for the package as it is now. A card posted before ETags were saved has none and isn't checked.
+    reads = [f"Now_{label.replace('-', '_')}" for label in PACKAGE_FILES]
+    for label, read in zip(PACKAGE_FILES, reads):
+        f.add(a, read, sp_get_metadata_by_path(f"@{{outputs('Payload')?['files']?['{label}']}}"), after="If_unanswered")
+    etags_then = "outputs('Payload')?['etags']"
+    changed = [{"not": {"equals": [f"@body('Now_{label.replace('-', '_')}')?['ETag']", f"@{etags_then}?['{label}']"]}} for label in PACKAGE_FILES]
+    redo = OrderedDict()
+    f.add(redo, "Log_Draft_Changed", dv_create("hrs_runlogs", {
+        "hrs_name": "Approval withdrawn: package edited", "hrs_rfp@odata.bind": "hrs_rfps(@{triggerOutputs()?['body/_hrs_rfp_value']})",
+        "hrs_stage": 9, "hrs_status": C("hrs_stagestatus", "Skipped"), "hrs_startedon": "@{utcNow()}", "hrs_completedon": "@{utcNow()}",
+        "hrs_errordetail": f"@{{concat('A package file changed after ', {name}, ' was posted, so the decision was not recorded and nothing was filed. Stage 9 runs again for the package as it is now.')}}"}),
+          after=None)
+    f.add(redo, "Tell_Draft_Changed", teams_message(env("hrs_PilotRecipientUpn"), f"@{{concat('<p>', {name}, "
+                                                    f"' was not recorded: a package file was edited after the card was sent, so the decision would not cover what is in it now. "
+                                                    f"A new card for the current package follows.</p>')}}"))
+    f.add(redo, "Remove_Stale_Approval", dv_delete("hrs_approvals", approval_id))
+    # Two writes, as in the failure handler: the stage first, then Running, which starts the pipeline at stage 9.
+    f.add(redo, "Rewind_To_Stage_9", dv_update("hrs_rfps", rfp_id, {"hrs_stage": 8, "hrs_status": C("hrs_runstatus", "Not started")}))
+    f.add(redo, "Restart_Stage_9", dv_update("hrs_rfps", rfp_id, {"hrs_status": RUNNING}))
+    f.add(redo, "Edited_Stop", terminate("Succeeded"))
+    f.add(a, "If_package_edited", condition({"and": [{"not": {"equals": [f"@empty({etags_then})", True]}}, {"or": changed}]}, redo, OrderedDict()))
+    # A file that can't be read (deleted, renamed) counts as changed.
+    a["If_package_edited"]["runAfter"] = {read: ["Succeeded", "Failed"] for read in reads}
     f.add(a, "Decision", compose({"approve": f"@equals({response('data')}?['decision'], 'approve')",
                                   "comments": f"@{{coalesce({response('data')}?['comments'], '')}}"}))
     f.add(a, "Record_Decision", dv_update("hrs_approvals", approval_id, {

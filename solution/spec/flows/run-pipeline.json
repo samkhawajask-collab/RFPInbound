@@ -8176,6 +8176,63 @@
                   ]
                 }
               },
+              "Version_Narrative": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                    "operationId": "GetFileMetadataByPath",
+                    "connectionName": "shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "@parameters('hrs_SharePointSiteUrl (hrs_SharePointSiteUrl)')",
+                    "path": "@{outputs('Package_Facts_9')?['files']?['Narrative']}"
+                  }
+                },
+                "runAfter": {
+                  "Card": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Version_Excluded": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                    "operationId": "GetFileMetadataByPath",
+                    "connectionName": "shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "@parameters('hrs_SharePointSiteUrl (hrs_SharePointSiteUrl)')",
+                    "path": "@{outputs('Package_Facts_9')?['files']?['Excluded']}"
+                  }
+                },
+                "runAfter": {
+                  "Version_Narrative": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Version_Compliance_Matrix": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                    "operationId": "GetFileMetadataByPath",
+                    "connectionName": "shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "@parameters('hrs_SharePointSiteUrl (hrs_SharePointSiteUrl)')",
+                    "path": "@{outputs('Package_Facts_9')?['files']?['Compliance-Matrix']}"
+                  }
+                },
+                "runAfter": {
+                  "Version_Excluded": [
+                    "Succeeded"
+                  ]
+                }
+              },
               "S9_Checkpoint": {
                 "type": "OpenApiConnection",
                 "inputs": {
@@ -8192,7 +8249,7 @@
                   }
                 },
                 "runAfter": {
-                  "Card": [
+                  "Version_Compliance_Matrix": [
                     "Succeeded"
                   ]
                 }
@@ -8328,7 +8385,7 @@
                     "item/hrs_level": "@body('Level')?['approvalLevel']",
                     "item/hrs_decision": 431200220,
                     "item/hrs_requestedon": "@{utcNow()}",
-                    "item/hrs_cardpayload": "@{string(setProperty(setProperty(json('{}'), 'card', body('Card')?['card']), 'files', outputs('Package_Facts_9')?['files']))}",
+                    "item/hrs_cardpayload": "@{string(setProperty(setProperty(setProperty(json('{}'), 'card', body('Card')?['card']), 'files', outputs('Package_Facts_9')?['files']), 'etags', setProperty(setProperty(setProperty(json('{}'), 'Narrative', body('Version_Narrative')?['ETag']), 'Excluded', body('Version_Excluded')?['ETag']), 'Compliance-Matrix', body('Version_Compliance_Matrix')?['ETag'])))}",
                     "item/hrs_totalrequirements": "@body('Summary')?['totalRequirements']",
                     "item/hrs_fullcount": "@body('Summary')?['countFull']",
                     "item/hrs_partialcount": "@body('Summary')?['countPartial']",

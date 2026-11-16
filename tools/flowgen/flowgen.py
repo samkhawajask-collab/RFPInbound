@@ -256,6 +256,11 @@ def sp_get_content_by_path(path_expr: str) -> dict:
     return connector(SP, "GetFileContentByPath", {"dataset": env("hrs_SharePointSiteUrl"), "path": path_expr, "inferContentType": False})
 
 
+def sp_get_metadata_by_path(path_expr: str) -> dict:
+    """File properties (including ETag, which changes whenever the file's content or properties change)."""
+    return connector(SP, "GetFileMetadataByPath", {"dataset": env("hrs_SharePointSiteUrl"), "path": path_expr})
+
+
 def sp_create_file(folder_expr: str, name_expr: str, content_expr: str) -> dict:
     return connector(SP, "CreateFile", {"dataset": env("hrs_SharePointSiteUrl"), "folderPath": folder_expr,
                                         "name": name_expr, "body": content_expr})

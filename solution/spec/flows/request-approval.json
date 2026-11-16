@@ -536,6 +536,238 @@
               ]
             }
           },
+          "Now_Narrative": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                "operationId": "GetFileMetadataByPath",
+                "connectionName": "shared_sharepointonline"
+              },
+              "parameters": {
+                "dataset": "@parameters('hrs_SharePointSiteUrl (hrs_SharePointSiteUrl)')",
+                "path": "@{outputs('Payload')?['files']?['Narrative']}"
+              }
+            },
+            "runAfter": {
+              "If_unanswered": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Now_Excluded": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                "operationId": "GetFileMetadataByPath",
+                "connectionName": "shared_sharepointonline"
+              },
+              "parameters": {
+                "dataset": "@parameters('hrs_SharePointSiteUrl (hrs_SharePointSiteUrl)')",
+                "path": "@{outputs('Payload')?['files']?['Excluded']}"
+              }
+            },
+            "runAfter": {
+              "If_unanswered": [
+                "Succeeded"
+              ]
+            }
+          },
+          "Now_Compliance_Matrix": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                "operationId": "GetFileMetadataByPath",
+                "connectionName": "shared_sharepointonline"
+              },
+              "parameters": {
+                "dataset": "@parameters('hrs_SharePointSiteUrl (hrs_SharePointSiteUrl)')",
+                "path": "@{outputs('Payload')?['files']?['Compliance-Matrix']}"
+              }
+            },
+            "runAfter": {
+              "If_unanswered": [
+                "Succeeded"
+              ]
+            }
+          },
+          "If_package_edited": {
+            "type": "If",
+            "expression": {
+              "and": [
+                {
+                  "not": {
+                    "equals": [
+                      "@empty(outputs('Payload')?['etags'])",
+                      true
+                    ]
+                  }
+                },
+                {
+                  "or": [
+                    {
+                      "not": {
+                        "equals": [
+                          "@body('Now_Narrative')?['ETag']",
+                          "@outputs('Payload')?['etags']?['Narrative']"
+                        ]
+                      }
+                    },
+                    {
+                      "not": {
+                        "equals": [
+                          "@body('Now_Excluded')?['ETag']",
+                          "@outputs('Payload')?['etags']?['Excluded']"
+                        ]
+                      }
+                    },
+                    {
+                      "not": {
+                        "equals": [
+                          "@body('Now_Compliance_Matrix')?['ETag']",
+                          "@outputs('Payload')?['etags']?['Compliance-Matrix']"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "actions": {
+              "Log_Draft_Changed": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "CreateRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_runlogs",
+                    "item/hrs_name": "Approval withdrawn: package edited",
+                    "item/hrs_rfp@odata.bind": "hrs_rfps(@{triggerOutputs()?['body/_hrs_rfp_value']})",
+                    "item/hrs_stage": 9,
+                    "item/hrs_status": 431200183,
+                    "item/hrs_startedon": "@{utcNow()}",
+                    "item/hrs_completedon": "@{utcNow()}",
+                    "item/hrs_errordetail": "@{concat('A package file changed after ', triggerOutputs()?['body/hrs_name'], ' was posted, so the decision was not recorded and nothing was filed. Stage 9 runs again for the package as it is now.')}"
+                  }
+                },
+                "runAfter": {}
+              },
+              "Tell_Draft_Changed": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams",
+                    "operationId": "PostMessageToConversation",
+                    "connectionName": "shared_teams"
+                  },
+                  "parameters": {
+                    "poster": "Flow bot",
+                    "location": "Chat with Flow bot",
+                    "body/recipient": "@parameters('hrs_PilotRecipientUpn (hrs_PilotRecipientUpn)')",
+                    "body/messageBody": "@{concat('<p>', triggerOutputs()?['body/hrs_name'], ' was not recorded: a package file was edited after the card was sent, so the decision would not cover what is in it now. A new card for the current package follows.</p>')}"
+                  }
+                },
+                "runAfter": {
+                  "Log_Draft_Changed": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Remove_Stale_Approval": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "DeleteRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_approvals",
+                    "recordId": "@triggerOutputs()?['body/hrs_approvalid']"
+                  }
+                },
+                "runAfter": {
+                  "Tell_Draft_Changed": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Rewind_To_Stage_9": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "UpdateOnlyRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_rfps",
+                    "recordId": "@triggerOutputs()?['body/_hrs_rfp_value']",
+                    "item/hrs_stage": 8,
+                    "item/hrs_status": 431200170
+                  }
+                },
+                "runAfter": {
+                  "Remove_Stale_Approval": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Restart_Stage_9": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "UpdateOnlyRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_rfps",
+                    "recordId": "@triggerOutputs()?['body/_hrs_rfp_value']",
+                    "item/hrs_status": 431200171
+                  }
+                },
+                "runAfter": {
+                  "Rewind_To_Stage_9": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Edited_Stop": {
+                "type": "Terminate",
+                "inputs": {
+                  "runStatus": "Succeeded"
+                },
+                "runAfter": {
+                  "Restart_Stage_9": [
+                    "Succeeded"
+                  ]
+                }
+              }
+            },
+            "else": {
+              "actions": {}
+            },
+            "runAfter": {
+              "Now_Narrative": [
+                "Succeeded",
+                "Failed"
+              ],
+              "Now_Excluded": [
+                "Succeeded",
+                "Failed"
+              ],
+              "Now_Compliance_Matrix": [
+                "Succeeded",
+                "Failed"
+              ]
+            }
+          },
           "Decision": {
             "type": "Compose",
             "inputs": {
@@ -543,7 +775,7 @@
               "comments": "@{coalesce(variables('Response')?['data']?['comments'], '')}"
             },
             "runAfter": {
-              "If_unanswered": [
+              "If_package_edited": [
                 "Succeeded"
               ]
             }
