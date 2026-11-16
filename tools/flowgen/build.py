@@ -1175,7 +1175,16 @@ def approval_flow() -> Flow:
                                            copy_loop, 3), after=None)
     f.add(approve, "Complete_RFP", dv_update("hrs_rfps", rfp_id, {"hrs_status": COMPLETED, "hrs_stage": 9}))
     reject = OrderedDict()
-    f.add(reject, "Back_To_Assembly", dv_update("hrs_rfps", rfp_id, {"hrs_stage": 7, "hrs_status": RUNNING}), after=None)
+    # hrs_approval has one row per RFP (alternate key on hrs_rfp), so the rejected row must go before stage 9 asks
+    # again; otherwise the next Request_Approval fails with a duplicate key and the run ends Failed. The decision and
+    # its comments are kept in the run log first. The name doesn't start with "Stage ", so a rerun's cutoff ignores it.
+    f.add(reject, "Log_Rejection", dv_create("hrs_runlogs", {
+        "hrs_name": "Approval rejected", "hrs_rfp@odata.bind": "hrs_rfps(@{triggerOutputs()?['body/_hrs_rfp_value']})", "hrs_stage": 9,
+        "hrs_status": C("hrs_stagestatus", "Succeeded"), "hrs_startedon": "@{utcNow()}", "hrs_completedon": "@{utcNow()}",
+        "hrs_errordetail": f"@{{concat('Rejected: ', {name}, '. Comments: ', outputs('Decision')?['comments'], ' The run returns to assembly.')}}"}),
+          after=None)
+    f.add(reject, "Remove_Rejected_Approval", dv_delete("hrs_approvals", approval_id))
+    f.add(reject, "Back_To_Assembly", dv_update("hrs_rfps", rfp_id, {"hrs_stage": 7, "hrs_status": RUNNING}))
     f.add(a, "If_approved", condition({"equals": ["@outputs('Decision')?['approve']", True]}, approve, reject))
     return f
 

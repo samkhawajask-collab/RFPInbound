@@ -652,6 +652,46 @@
             },
             "else": {
               "actions": {
+                "Log_Rejection": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "hrs_runlogs",
+                      "item/hrs_name": "Approval rejected",
+                      "item/hrs_rfp@odata.bind": "hrs_rfps(@{triggerOutputs()?['body/_hrs_rfp_value']})",
+                      "item/hrs_stage": 9,
+                      "item/hrs_status": 431200181,
+                      "item/hrs_startedon": "@{utcNow()}",
+                      "item/hrs_completedon": "@{utcNow()}",
+                      "item/hrs_errordetail": "@{concat('Rejected: ', triggerOutputs()?['body/hrs_name'], '. Comments: ', outputs('Decision')?['comments'], ' The run returns to assembly.')}"
+                    }
+                  },
+                  "runAfter": {}
+                },
+                "Remove_Rejected_Approval": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "DeleteRecord",
+                      "connectionName": "shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "hrs_approvals",
+                      "recordId": "@triggerOutputs()?['body/hrs_approvalid']"
+                    }
+                  },
+                  "runAfter": {
+                    "Log_Rejection": [
+                      "Succeeded"
+                    ]
+                  }
+                },
                 "Back_To_Assembly": {
                   "type": "OpenApiConnection",
                   "inputs": {
@@ -667,7 +707,11 @@
                       "item/hrs_status": 431200171
                     }
                   },
-                  "runAfter": {}
+                  "runAfter": {
+                    "Remove_Rejected_Approval": [
+                      "Succeeded"
+                    ]
+                  }
                 }
               }
             },
