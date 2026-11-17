@@ -98,7 +98,7 @@
               "parameters": {
                 "entityName": "hrs_rfps",
                 "$select": "hrs_rfpid,hrs_rfpkey,hrs_stage,hrs_status",
-                "$filter": "hrs_rfpkey eq '@{trim(string(coalesce(triggerBody()?['parameters']?['rfpKey'], '')))}'"
+                "$filter": "hrs_rfpkey eq '@{replace(trim(string(coalesce(triggerBody()?['parameters']?['rfpKey'], ''))), '''', '''''')}'"
               }
             },
             "runtimeConfiguration": {

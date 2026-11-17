@@ -212,6 +212,8 @@ revision 1), and S is Awaiting approval at stage 9 again.
 
 Second Copilot review (2026-11-16), checked in dev the same way: two Orchestrator sessions confirming a rerun of S one second apart both wrote claims; the earlier one ran, the later released its claim (Skipped) and was refused. Trigger concurrency on Rerun Stage was rejected at activation (InvalidConcurrencyConfiguration: not supported with a synchronous Response). An addendum for a Completed D went through RFP_After_Revision and restarted D at stage 3. Approving D's next card went through RFP_Before_Complete and If_still_current to Complete_RFP. The superseded-during-filing branch wasn't forced. D was restored afterwards (revision 1, Completed); S is Awaiting approval at stage 9.
 
+Third and fourth Copilot reviews (2026-11-17), checked in dev: an evaluation of the RFP Orchestrator in Copilot Studio (8 cases, General quality and Compare meaning, average 88%) was exported to gallery-submission/.../evaluations/; its case "x' or hrs_rfpkey ne 'x" got "No RFP has that key", which checks the apostrophe escaping through the live agent. For the stage 9 recheck, S's page limit was set to 1 and its narrative edited while the card was open: the stage 9 rerun re-counted the current file and failed G6 ("governed narrative is 15 pages, limit 1"). With the limit restored (30), a rerun from stage 9 passed the recheck and posted a card with the re-measured 15 pages.
+
 **Reading a failed RFP D run.** Compliance for D can vary between runs: see ADR-0021. Check the misses against
 spurious AMBIGUOUS and CONTRADICTION flags before suspecting a regression.
 

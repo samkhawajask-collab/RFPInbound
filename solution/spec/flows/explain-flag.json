@@ -81,7 +81,7 @@
               "parameters": {
                 "entityName": "hrs_rfps",
                 "$select": "hrs_rfpid,hrs_rfpkey,hrs_stage,hrs_status,hrs_currentrevision",
-                "$filter": "hrs_rfpkey eq '@{trim(triggerBody()?['rfpKey'])}'"
+                "$filter": "hrs_rfpkey eq '@{replace(trim(triggerBody()?['rfpKey']), '''', '''''')}'"
               }
             },
             "runtimeConfiguration": {
@@ -163,7 +163,7 @@
               "parameters": {
                 "entityName": "hrs_requirements",
                 "$select": "hrs_requirementid,hrs_reqid,hrs_location,hrs_requirementtext,hrs_compliance",
-                "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and hrs_reqid eq '@{trim(triggerBody()?['reqId'])}'"
+                "$filter": "_hrs_rfp_value eq @{coalesce(first(body('RFP')?['value'])?['hrs_rfpid'], '00000000-0000-0000-0000-000000000000')} and hrs_reqid eq '@{replace(trim(triggerBody()?['reqId']), '''', '''''')}'"
               }
             },
             "runtimeConfiguration": {

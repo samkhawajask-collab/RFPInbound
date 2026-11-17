@@ -7841,6 +7841,263 @@
                   ]
                 }
               },
+              "Narrative_PDF_9": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                    "operationId": "GetFilePDF",
+                    "connectionName": "shared_wordonlinebusiness"
+                  },
+                  "parameters": {
+                    "source": "@parameters('hrs_SharePointSiteUrl (hrs_SharePointSiteUrl)')",
+                    "drive": "@parameters('hrs_DocumentDriveId (hrs_DocumentDriveId)')",
+                    "file": "@{concat('/', join(skip(split(outputs('Package_Facts_9')?['files']?['Narrative'], '/'), 2), '/'))}"
+                  }
+                },
+                "runAfter": {
+                  "Package_Facts_9": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Pages_9": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/{{tools:api}}",
+                    "operationId": "CountPages",
+                    "connectionName": "{{tools:api}}"
+                  },
+                  "parameters": {
+                    "body": {
+                      "pdfBase64": "@body('Narrative_PDF_9')?['$content']"
+                    }
+                  }
+                },
+                "limit": {
+                  "timeout": "PT10M"
+                },
+                "retryPolicy": {
+                  "type": "exponential",
+                  "count": 3,
+                  "interval": "PT10S"
+                },
+                "runAfter": {
+                  "Narrative_PDF_9": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Ocr_Open_9": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "ListRecords",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_flags",
+                    "$select": "hrs_name",
+                    "$filter": "_hrs_rfp_value eq @{outputs('Ids')?['rfpId']} and hrs_flagtype eq 431200153 and hrs_resolvedon eq null"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "paginationPolicy": {
+                    "minimumItemCount": 5000
+                  }
+                },
+                "runAfter": {
+                  "Pages_9": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Ocr_Open_Names_9": {
+                "type": "Select",
+                "inputs": {
+                  "from": "@body('Ocr_Open_9')?['value']",
+                  "select": "@item()?['hrs_name']"
+                },
+                "runAfter": {
+                  "Ocr_Open_9": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Gates_9": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/{{tools:api}}",
+                    "operationId": "CheckGates",
+                    "connectionName": "{{tools:api}}"
+                  },
+                  "parameters": {
+                    "body": {
+                      "g6": {
+                        "pageCount": "@body('Pages_9')?['pages']",
+                        "pageLimit": "@body('S9_RFP')?['hrs_pagelimit']",
+                        "unresolvedOcr": "@body('Ocr_Open_Names_9')"
+                      }
+                    }
+                  }
+                },
+                "limit": {
+                  "timeout": "PT10M"
+                },
+                "retryPolicy": {
+                  "type": "exponential",
+                  "count": 3,
+                  "interval": "PT10S"
+                },
+                "runAfter": {
+                  "Ocr_Open_Names_9": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "If_gates_fail_9": {
+                "type": "If",
+                "expression": {
+                  "equals": [
+                    "@body('Gates_9')?['passed']",
+                    false
+                  ]
+                },
+                "actions": {
+                  "Limit_Breach_Flag_9": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "CreateRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_flags",
+                        "item/hrs_name": "LIMIT-BREACH package",
+                        "item/hrs_flagtype": 431200154,
+                        "item/hrs_severity": 431200050,
+                        "item/hrs_detail": "@{concat('Stage 9 recheck of the current files: ', string(body('Gates_9')?['gates']))}",
+                        "item/hrs_rfp@odata.bind": "hrs_rfps(@{outputs('Ids')?['rfpId']})"
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                },
+                "else": {
+                  "actions": {}
+                },
+                "runAfter": {
+                  "Gates_9": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Gate_G6_Current_Files": {
+                "type": "If",
+                "expression": {
+                  "equals": [
+                    "@not(body('Gates_9')?['passed'])",
+                    true
+                  ]
+                },
+                "actions": {
+                  "Gate_G6_Current_Files_Mark_failed": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "UpdateOnlyRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_rfps",
+                        "recordId": "@{outputs('Ids')?['rfpId']}",
+                        "item/hrs_status": 431200174
+                      }
+                    },
+                    "runAfter": {}
+                  },
+                  "Gate_G6_Current_Files_Log": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "UpdateOnlyRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "hrs_runlogs",
+                        "recordId": "@{outputs('S9_RunLog_Id')}",
+                        "item/hrs_status": 431200182,
+                        "item/hrs_completedon": "@{utcNow()}",
+                        "item/hrs_errordetail": "@{concat('Stage 9 recheck of the current files: ', string(body('Gates_9')?['gates']))}",
+                        "item/hrs_creditsestimate": "@xpath(xml(json(concat('{\"r\":{\"v\":', string(variables('Usage')), '}}'))), 'sum(/r/v)')"
+                      }
+                    },
+                    "runAfter": {
+                      "Gate_G6_Current_Files_Mark_failed": [
+                        "Succeeded"
+                      ]
+                    }
+                  },
+                  "Gate_G6_Current_Files_Stop": {
+                    "type": "Terminate",
+                    "inputs": {
+                      "runStatus": "Failed",
+                      "runError": {
+                        "code": "PipelineStopped",
+                        "message": "@{concat('Stage 9 recheck of the current files: ', string(body('Gates_9')?['gates']))}"
+                      }
+                    },
+                    "runAfter": {
+                      "Gate_G6_Current_Files_Log": [
+                        "Succeeded"
+                      ]
+                    }
+                  }
+                },
+                "else": {
+                  "actions": {}
+                },
+                "runAfter": {
+                  "If_gates_fail_9": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Facts_Now": {
+                "type": "Compose",
+                "inputs": "@setProperty(outputs('Package_Facts_9'), 'pages', body('Pages_9')?['pages'])",
+                "runAfter": {
+                  "Gate_G6_Current_Files": [
+                    "Succeeded"
+                  ]
+                }
+              },
+              "Save_Facts_Now": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "UpdateOnlyRecord",
+                    "connectionName": "shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "hrs_rfps",
+                    "recordId": "@{outputs('Ids')?['rfpId']}",
+                    "item/hrs_packagefacts": "@{string(outputs('Facts_Now'))}"
+                  }
+                },
+                "runAfter": {
+                  "Facts_Now": [
+                    "Succeeded"
+                  ]
+                }
+              },
               "L9_Reqs": {
                 "type": "OpenApiConnection",
                 "inputs": {
@@ -7863,7 +8120,7 @@
                   }
                 },
                 "runAfter": {
-                  "Package_Facts_9": [
+                  "Save_Facts_Now": [
                     "Succeeded"
                   ]
                 }
@@ -8154,7 +8411,7 @@
                         "countNo": "@body('Summary')?['countNo']",
                         "countGap": "@body('Summary')?['countGap']",
                         "countClarify": "@body('Summary')?['countClarify']",
-                        "pageCount": "@{outputs('Package_Facts_9')?['pages']}",
+                        "pageCount": "@{outputs('Facts_Now')?['pages']}",
                         "pageLimit": "@body('S9_RFP')?['hrs_pagelimit']",
                         "draftUrl": "@{concat(parameters('hrs_SharePointSiteUrl (hrs_SharePointSiteUrl)'), outputs('Package_Facts_9')?['files']?['Narrative'])}",
                         "exceptions": "@body('Summary')?['exceptions']"
@@ -8392,7 +8649,7 @@
                     "item/hrs_nocount": "@body('Summary')?['countNo']",
                     "item/hrs_gapsrouted": "@body('Summary')?['gapsRouted']",
                     "item/hrs_clarificationssent": "@body('Summary')?['clarificationsSent']",
-                    "item/hrs_pagecount": "@{outputs('Package_Facts_9')?['pages']}"
+                    "item/hrs_pagecount": "@{outputs('Facts_Now')?['pages']}"
                   }
                 },
                 "runAfter": {

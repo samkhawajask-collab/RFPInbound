@@ -764,6 +764,28 @@ def pipeline_flow() -> Flow:
         gate(f, c, "Gate_Package_Facts", f"empty({body('RFP', 'hrs_packagefacts')})",
              "'No saved package from stage 8. Rerun from stage 8.'", p)
         f.add(c, "Package_Facts_9", compose(f"@json({body('RFP', 'hrs_packagefacts')})"))
+        # The files are re-measured here rather than trusted from stage 8: stage 9 also runs alone, when a draft was edited
+        # while its approval card was open (Request Approval) or on a rerun from stage 9. The narrative as it is now is
+        # converted and counted, and G6's file-dependent checks (page limit, unverified OCR) run again with CheckGates.
+        # Word limits, forms and G5 come from the response and flag rows, which a file edit doesn't change.
+        f.add(c, "Narrative_PDF_9", word_to_pdf(drive_relative("outputs('Package_Facts_9')?['files']?['Narrative']")))
+        f.add(c, "Pages_9", tools("CountPages", {"pdfBase64": f"@{body('Narrative_PDF_9', '$content')}"}))
+        f.add(c, "Ocr_Open_9", dv_list("hrs_flags", "hrs_name",
+                                       f"{OF_RFP} and hrs_flagtype eq {C('hrs_flagtype', 'OCR-LOW-CONFIDENCE')} and hrs_resolvedon eq null"))
+        f.add(c, "Ocr_Open_Names_9", {"type": "Select", "inputs": {"from": f"@{value('Ocr_Open_9')}", "select": "@item()?['hrs_name']"}})
+        f.add(c, "Gates_9", tools("CheckGates", {"g6": {"pageCount": f"@{body('Pages_9', 'pages')}", "pageLimit": f"@{body('RFP', 'hrs_pagelimit')}",
+                                                        "unresolvedOcr": "@body('Ocr_Open_Names_9')"}}))
+        breach9 = OrderedDict()
+        f.add(breach9, "Limit_Breach_Flag_9", dv_create("hrs_flags", {
+            "hrs_name": "LIMIT-BREACH package", "hrs_flagtype": C("hrs_flagtype", "LIMIT-BREACH"), "hrs_severity": C("hrs_severity", "Block"),
+            "hrs_detail": f"@{{concat('Stage 9 recheck of the current files: ', string({body('Gates_9', 'gates')}))}}",
+            "hrs_rfp@odata.bind": f"hrs_rfps({RFP_ID})"}), after=None)
+        f.add(c, "If_gates_fail_9", condition({"equals": [f"@{body('Gates_9', 'passed')}", False]}, breach9, OrderedDict()))
+        gate(f, c, "Gate_G6_Current_Files", f"not({body('Gates_9', 'passed')})",
+             f"concat('Stage 9 recheck of the current files: ', string({body('Gates_9', 'gates')}))", p)
+        # The facts with the count of the files as they are now; saved for any later stage 9 run.
+        f.add(c, "Facts_Now", compose(f"@setProperty(outputs('Package_Facts_9'), 'pages', {body('Pages_9', 'pages')})"))
+        f.add(c, "Save_Facts_Now", dv_update("hrs_rfps", RFP_ID, {"hrs_packagefacts": "@{string(outputs('Facts_Now'))}"}))
         list_common(f, c, "L9", flags=True, gaps=True, clarifications=True)
         f.add(c, "Package_Rows_9", tools("StagePackageRequirements", {"requirements": f"@{value('L9_Reqs')}", "responses": f"@{value('L9_Responses')}",
                                                                        "flags": f"@{value('L9_Flags')}", "rules": f"@{value('L9_Rules')}", "gaps": f"@{value('L9_Gaps')}"}))
@@ -780,7 +802,7 @@ def pipeline_flow() -> Flow:
             "totalRequirements": f"@{body('Summary', 'totalRequirements')}", "countFull": f"@{body('Summary', 'countFull')}",
             "countPartial": f"@{body('Summary', 'countPartial')}", "countNo": f"@{body('Summary', 'countNo')}",
             "countGap": f"@{body('Summary', 'countGap')}", "countClarify": f"@{body('Summary', 'countClarify')}",
-            "pageCount": "@{outputs('Package_Facts_9')?['pages']}", "pageLimit": f"@{body('RFP', 'hrs_pagelimit')}",
+            "pageCount": "@{outputs('Facts_Now')?['pages']}", "pageLimit": f"@{body('RFP', 'hrs_pagelimit')}",
             "draftUrl": f"@{{concat({env_inline('hrs_SharePointSiteUrl')}, outputs('Package_Facts_9')?['files']?['Narrative'])}}",
             "exceptions": f"@{body('Summary', 'exceptions')}"}}))
         # The wait is committed before the approval row exists: the card flow starts when the row is created, and a quick
@@ -802,7 +824,7 @@ def pipeline_flow() -> Flow:
             "hrs_totalrequirements": f"@{body('Summary', 'totalRequirements')}", "hrs_fullcount": f"@{body('Summary', 'countFull')}",
             "hrs_partialcount": f"@{body('Summary', 'countPartial')}", "hrs_nocount": f"@{body('Summary', 'countNo')}",
             "hrs_gapsrouted": f"@{body('Summary', 'gapsRouted')}", "hrs_clarificationssent": f"@{body('Summary', 'clarificationsSent')}",
-            "hrs_pagecount": "@{outputs('Package_Facts_9')?['pages']}"}))
+            "hrs_pagecount": "@{outputs('Facts_Now')?['pages']}"}))
 
     previous = "Proposal_Template"
     for number, title, build in [(1, "Normalize", s1), (2, "Extract", s2), (3, "Reconcile addendum", s3), (4, "Analyze set", s4),
@@ -1195,11 +1217,11 @@ def approval_flow() -> Flow:
     f.add(redo, "Log_Draft_Changed", dv_create("hrs_runlogs", {
         "hrs_name": "Approval withdrawn: package edited", "hrs_rfp@odata.bind": "hrs_rfps(@{triggerOutputs()?['body/_hrs_rfp_value']})",
         "hrs_stage": 9, "hrs_status": C("hrs_stagestatus", "Skipped"), "hrs_startedon": "@{utcNow()}", "hrs_completedon": "@{utcNow()}",
-        "hrs_errordetail": f"@{{concat('A package file changed after ', {name}, ' was posted, so the decision was not recorded and nothing was filed. Stage 9 runs again for the package as it is now.')}}"}),
+        "hrs_errordetail": f"@{{concat('A package file changed after ', {name}, ' was posted, so the decision was not recorded and nothing was filed. Stage 9 runs again: it re-counts the edited narrative against the page limit, then posts a card for the package as it is now.')}}"}),
           after=None)
     f.add(redo, "Tell_Draft_Changed", teams_message(env("hrs_PilotRecipientUpn"), f"@{{concat('<p>', {name}, "
                                                     f"' was not recorded: a package file was edited after the card was sent, so the decision would not cover what is in it now. "
-                                                    f"A new card for the current package follows.</p>')}}"))
+                                                    f"Its page count is checked again, then a new card for the current package follows.</p>')}}"))
     f.add(redo, "Remove_Stale_Approval", dv_delete("hrs_approvals", approval_id))
     # Two writes, as in the failure handler: the stage first, then Running, which starts the pipeline at stage 9.
     f.add(redo, "Rewind_To_Stage_9", dv_update("hrs_rfps", rfp_id, {"hrs_stage": 8, "hrs_status": C("hrs_runstatus", "Not started")}))
@@ -1284,9 +1306,21 @@ KEY_INPUT = "The RFP's key, as the user gave it. The tool says if no RFP has tha
 REQ_INPUT = "The requirement ID as the buyer wrote it, for example CV-047 or THPA-036"
 
 
+# The agent-supplied values used in filters.
+TOOL_KEY = "trim(triggerBody()?['rfpKey'])"
+TOOL_REQ = "trim(triggerBody()?['reqId'])"
+HOOK_KEY = "trim(string(coalesce(triggerBody()?['parameters']?['rfpKey'], '')))"
+
+
+def odata_literal(expr: str) -> str:
+    """An expression (no '@') made safe to place inside an OData string literal: each apostrophe is doubled, so a value
+    like  x' or hrs_rfpkey ne 'x  stays one literal instead of changing the filter. For every filter built from agent input."""
+    return f"replace({expr}, '''', '''''')"
+
+
 def tool_rfp(f: Flow, a: OrderedDict) -> str:
     f.add(a, "RFP", dv_list("hrs_rfps", "hrs_rfpid,hrs_rfpkey,hrs_stage,hrs_status,hrs_currentrevision",
-                            "hrs_rfpkey eq '@{trim(triggerBody()?['rfpKey'])}'"), after=None)
+                            "hrs_rfpkey eq '@{" + odata_literal(TOOL_KEY) + "}'"), after=None)
     return f"@{{coalesce(first({value('RFP')})?['hrs_rfpid'], '{NO_ID}')}}"
 
 
@@ -1337,7 +1371,7 @@ def status_tool_flow() -> Flow:
 
 def tool_requirement(f: Flow, a: OrderedDict, rid: str) -> str:
     f.add(a, "Requirement", dv_list("hrs_requirements", "hrs_requirementid,hrs_reqid,hrs_location,hrs_requirementtext,hrs_compliance",
-                                    f"_hrs_rfp_value eq {rid} and hrs_reqid eq '@{{trim(triggerBody()?['reqId'])}}'"))
+                                    f"_hrs_rfp_value eq {rid} and hrs_reqid eq '@{{{odata_literal(TOOL_REQ)}}}'"))
     return f"@{{coalesce(first({value('Requirement')})?['hrs_requirementid'], '{NO_ID}')}}"
 
 
@@ -1474,7 +1508,7 @@ def pre_tool_hook_flow() -> Flow:
                    "additionalContext": "string", "suppressOutput": "boolean"})
     a = f.actions
     f.add(a, "RFP", dv_list("hrs_rfps", "hrs_rfpid,hrs_rfpkey,hrs_stage,hrs_status",
-                            "hrs_rfpkey eq '@{trim(string(coalesce(triggerBody()?['parameters']?['rfpKey'], '')))}'"), after=None)
+                            "hrs_rfpkey eq '@{" + odata_literal(HOOK_KEY) + "}'"), after=None)
     f.add(a, "Check", tools("OrchestratorRerunCheck", {"rfp": f"@first({value('RFP')})",
                                                         "stage": "@{triggerBody()?['parameters']?['stage']}"}))
     rerun = "contains(toLower(coalesce(triggerBody()?['toolName'], '')), 'rerun')"
@@ -1509,7 +1543,7 @@ def post_tool_hook_flow() -> Flow:
                   {"modifiedResult": "string", "additionalContext": "string", "suppressOutput": "boolean"})
     a = f.actions
     meta = "triggerBody()?['metadata']"
-    f.add(a, "RFP", dv_list("hrs_rfps", "hrs_rfpid", "hrs_rfpkey eq '@{trim(string(coalesce(triggerBody()?['parameters']?['rfpKey'], '')))}'"),
+    f.add(a, "RFP", dv_list("hrs_rfps", "hrs_rfpid", "hrs_rfpkey eq '@{" + odata_literal(HOOK_KEY) + "}'"),
           after=None)
     audit = {"hrs_name": "@{concat('Tool call: ', triggerBody()?['toolName'])}", "hrs_status": C("hrs_stagestatus", "Succeeded"),
              "hrs_startedon": "@{utcNow()}", "hrs_completedon": "@{utcNow()}", "hrs_correlationid": conversation_key(meta),

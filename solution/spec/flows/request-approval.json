@@ -652,7 +652,7 @@
                     "item/hrs_status": 431200183,
                     "item/hrs_startedon": "@{utcNow()}",
                     "item/hrs_completedon": "@{utcNow()}",
-                    "item/hrs_errordetail": "@{concat('A package file changed after ', triggerOutputs()?['body/hrs_name'], ' was posted, so the decision was not recorded and nothing was filed. Stage 9 runs again for the package as it is now.')}"
+                    "item/hrs_errordetail": "@{concat('A package file changed after ', triggerOutputs()?['body/hrs_name'], ' was posted, so the decision was not recorded and nothing was filed. Stage 9 runs again: it re-counts the edited narrative against the page limit, then posts a card for the package as it is now.')}"
                   }
                 },
                 "runAfter": {}
@@ -669,7 +669,7 @@
                     "poster": "Flow bot",
                     "location": "Chat with Flow bot",
                     "body/recipient": "@parameters('hrs_PilotRecipientUpn (hrs_PilotRecipientUpn)')",
-                    "body/messageBody": "@{concat('<p>', triggerOutputs()?['body/hrs_name'], ' was not recorded: a package file was edited after the card was sent, so the decision would not cover what is in it now. A new card for the current package follows.</p>')}"
+                    "body/messageBody": "@{concat('<p>', triggerOutputs()?['body/hrs_name'], ' was not recorded: a package file was edited after the card was sent, so the decision would not cover what is in it now. Its page count is checked again, then a new card for the current package follows.</p>')}"
                   }
                 },
                 "runAfter": {
