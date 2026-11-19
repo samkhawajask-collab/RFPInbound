@@ -129,6 +129,13 @@ def stage(flow: Flow, number: int, title: str, build) -> str:
     return f"Stage_{number}", condition({"less": ["@outputs('Ids')?['stage']", number]}, inner, OrderedDict())
 
 
+def odata_literal(expr: str) -> str:
+    """An expression (no '@') made safe to place inside an OData string literal: each apostrophe is doubled, so a value
+    like  x' or hrs_rfpkey ne 'x  (agent input) or O'Brien (a stored key or name) stays one literal instead of changing
+    or breaking the filter. For every filter whose value is a string from agent input or from a row."""
+    return f"replace({expr}, '''', '''''')"
+
+
 def proposal_key(key_expr: str) -> str:
     """The RFP key as it appears in a proposal code PROP-<key>-<reqId>. '~' becomes '~t' and '-' becomes '~h', so the
     encoded key has no '-' and the first '-' after 'PROP-' always ends it: RFP ACME / requirement 2026-001 and RFP
@@ -138,8 +145,8 @@ def proposal_key(key_expr: str) -> str:
 
 
 def proposal_prefix(key_expr: str) -> str:
-    """Filter-ready prefix of every proposal code of one RFP (see proposal_key)."""
-    return f"@{{concat('PROP-', {proposal_key(key_expr)}, '-')}}"
+    """Filter-ready prefix of every proposal code of one RFP (see proposal_key), escaped for the OData literal."""
+    return f"@{{{odata_literal(f"concat('PROP-', {proposal_key(key_expr)}, '-')")}}}"
 
 
 # The three package files stage 8 writes and the approval files (keys of Package_Facts' files).
@@ -252,7 +259,7 @@ def receive_flow() -> Flow:
     f.add(stop, "No_match_stop", terminate("Failed", "@{concat('No opportunity matches ', outputs('File')?['name'])}"), after=None)
     f.add(a, "If_no_match", condition({"equals": [f"@{body('Match', 'opportunityId')}", None]}, stop, OrderedDict()))
     f.add(a, "Opportunity", dv_get("hrs_opportunities", f"@{body('Match', 'opportunityId')}", "hrs_rfpkey,hrs_duedate,hrs_qadeadline"))
-    f.add(a, "Existing_RFP", dv_list("hrs_rfps", "hrs_rfpid,hrs_stage,hrs_status", f"hrs_rfpkey eq '@{{{body('Opportunity', 'hrs_rfpkey')}}}'"))
+    f.add(a, "Existing_RFP", dv_list("hrs_rfps", "hrs_rfpid,hrs_stage,hrs_status", f"hrs_rfpkey eq '@{{{odata_literal(body('Opportunity', 'hrs_rfpkey'))}}}'"))
     exists = OrderedDict()
     # A file for an RFP already received is an addendum (ADR-0010): a new immutable revision with its own document.
     # Stage 3 applies it. If the pipeline is past stage 2 and not mid-run, it restarts from stage 3, which clears the
@@ -713,7 +720,7 @@ def pipeline_flow() -> Flow:
         f.add(c, "Team_Rows", {"type": "Select", "inputs": {"from": f"@{value('Team')}", "select": {
             "Name": "@item()?['hrs_name']", "Role": "@item()?['hrs_role']", "Years": "@{item()?['hrs_yearsexperience']}",
             "Certifications": "@item()?['hrs_certifications']"}}})
-        f.add(c, "Signatory", dv_list("hrs_smes", "hrs_name,hrs_title", f"hrs_name eq '@{{{body('Opportunity', 'hrs_bidowner')}}}'"))
+        f.add(c, "Signatory", dv_list("hrs_smes", "hrs_name,hrs_title", f"hrs_name eq '@{{{odata_literal(body('Opportunity', 'hrs_bidowner'))}}}'"))
         f.add(c, "Package_Rows", tools("StagePackageRequirements", {"requirements": f"@{value('L8_Reqs')}", "responses": f"@{value('L8_Responses')}",
                                                                      "flags": f"@{value('L8_Flags')}", "rules": f"@{value('L8_Rules')}", "gaps": f"@{value('L8_Gaps')}"}))
         f.add(c, "Matrix_Template", sp_get_content_by_path(f"@{{concat({env_inline('hrs_ContentLibraryUrl')}, '/Templates/Compliance_Matrix_Template.xlsx')}}"))
@@ -793,7 +800,7 @@ def pipeline_flow() -> Flow:
                                                             "clarifications": f"@{value('L9_Clarifications')}", "packageRows": f"@{body('Package_Rows_9', 'result')}"}))
         f.add(c, "Level", tools("DeriveApprovalLevel", {"valueBand": f"@{body('Opportunity', 'hrs_valueband')}",
                                                          "flagSeverities": f"@{body('Summary', 'flagSeverities')}"}))
-        f.add(c, "Approver", dv_list("hrs_approvers", "hrs_approverid,hrs_level,hrs_approvername", f"hrs_level eq '@{{{body('Level', 'approvalLevel')}}}'"))
+        f.add(c, "Approver", dv_list("hrs_approvers", "hrs_approverid,hrs_level,hrs_approvername", f"hrs_level eq '@{{{odata_literal(body('Level', 'approvalLevel'))}}}'"))
         f.add(c, "Card_Template", sp_get_content_by_path(f"@{{concat({env_inline('hrs_ContentLibraryUrl')}, '/Templates/Approval_Card.json')}}"))
         f.add(c, "Card", tools("RenderCard", {"template": f"@{{base64ToString({body('Card_Template', '$content')})}}", "data": {
             "buyerName": f"@{body('Opportunity', 'hrs_buyer')}", "rfpNumber": f"@{body('Opportunity', 'hrs_rfpnumber')}",
@@ -1007,7 +1014,7 @@ def gap_flow() -> Flow:
     # An addendum rerun routes the same requirement again, and hrs_answercode is unique (ADR-0032). A new answer replaces an
     # earlier Draft proposal. A proposal that has since left Draft belongs to the library's reviewers and isn't changed.
     code = f"concat('PROP-', {proposal_key(body('Requirement', 'hrs_rfp', 'hrs_rfpkey'))}, '-', {req})"
-    f.add(answered, "Existing_Proposal", dv_list("hrs_answers", "hrs_answerid,hrs_approvalstatus", f"hrs_answercode eq '@{{{code}}}'"))
+    f.add(answered, "Existing_Proposal", dv_list("hrs_answers", "hrs_answerid,hrs_approvalstatus", f"hrs_answercode eq '@{{{odata_literal(code)}}}'"))
     existing = f"first({value('Existing_Proposal')})"
     new_proposal = OrderedDict()
     f.add(new_proposal, "Propose_Library_Entry", dv_create("hrs_answers", {
@@ -1310,12 +1317,6 @@ REQ_INPUT = "The requirement ID as the buyer wrote it, for example CV-047 or THP
 TOOL_KEY = "trim(triggerBody()?['rfpKey'])"
 TOOL_REQ = "trim(triggerBody()?['reqId'])"
 HOOK_KEY = "trim(string(coalesce(triggerBody()?['parameters']?['rfpKey'], '')))"
-
-
-def odata_literal(expr: str) -> str:
-    """An expression (no '@') made safe to place inside an OData string literal: each apostrophe is doubled, so a value
-    like  x' or hrs_rfpkey ne 'x  stays one literal instead of changing the filter. For every filter built from agent input."""
-    return f"replace({expr}, '''', '''''')"
 
 
 def tool_rfp(f: Flow, a: OrderedDict) -> str:

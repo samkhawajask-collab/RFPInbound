@@ -4419,7 +4419,7 @@
                   "parameters": {
                     "entityName": "hrs_answers",
                     "$select": "hrs_answerid,hrs_answercode,hrs_question,hrs_answertext,hrs_approvalstatus,hrs_lastreviewed,hrs_confidentiality,_hrs_supersededby_value",
-                    "$filter": "not (startswith(hrs_answercode,'@{concat('PROP-', replace(replace(outputs('Ids')?['key'], '~', '~t'), '-', '~h'), '-')}') and hrs_approvalstatus eq 431200011)",
+                    "$filter": "not (startswith(hrs_answercode,'@{replace(concat('PROP-', replace(replace(outputs('Ids')?['key'], '~', '~t'), '-', '~h'), '-'), '''', '''''')}') and hrs_approvalstatus eq 431200011)",
                     "$expand": "hrs_categorycode($select=hrs_categorycode)"
                   }
                 },
@@ -6461,7 +6461,7 @@
                   "parameters": {
                     "entityName": "hrs_answers",
                     "$select": "hrs_answerid,hrs_answercode,hrs_question,hrs_answertext",
-                    "$filter": "startswith(hrs_answercode,'@{concat('PROP-', replace(replace(outputs('Ids')?['key'], '~', '~t'), '-', '~h'), '-')}') and hrs_approvalstatus eq 431200011"
+                    "$filter": "startswith(hrs_answercode,'@{replace(concat('PROP-', replace(replace(outputs('Ids')?['key'], '~', '~t'), '-', '~h'), '-'), '''', '''''')}') and hrs_approvalstatus eq 431200011"
                   }
                 },
                 "runtimeConfiguration": {
@@ -7155,7 +7155,7 @@
                   "parameters": {
                     "entityName": "hrs_smes",
                     "$select": "hrs_name,hrs_title",
-                    "$filter": "hrs_name eq '@{body('Opportunity')?['hrs_bidowner']}'"
+                    "$filter": "hrs_name eq '@{replace(body('Opportunity')?['hrs_bidowner'], '''', '''''')}'"
                   }
                 },
                 "runtimeConfiguration": {
@@ -8354,7 +8354,7 @@
                   "parameters": {
                     "entityName": "hrs_approvers",
                     "$select": "hrs_approverid,hrs_level,hrs_approvername",
-                    "$filter": "hrs_level eq '@{body('Level')?['approvalLevel']}'"
+                    "$filter": "hrs_level eq '@{replace(body('Level')?['approvalLevel'], '''', '''''')}'"
                   }
                 },
                 "runtimeConfiguration": {
@@ -9137,7 +9137,7 @@
                       "parameters": {
                         "entityName": "hrs_answers",
                         "$select": "hrs_answerid",
-                        "$filter": "startswith(hrs_answercode,'@{concat('PROP-', replace(replace(triggerOutputs()?['body/hrs_rfpkey'], '~', '~t'), '-', '~h'), '-')}') and hrs_approvalstatus eq 431200011 and createdon ge @{outputs('Failed_Stage_Row')?['since']}"
+                        "$filter": "startswith(hrs_answercode,'@{replace(concat('PROP-', replace(replace(triggerOutputs()?['body/hrs_rfpkey'], '~', '~t'), '-', '~h'), '-'), '''', '''''')}') and hrs_approvalstatus eq 431200011 and createdon ge @{outputs('Failed_Stage_Row')?['since']}"
                       }
                     },
                     "runtimeConfiguration": {

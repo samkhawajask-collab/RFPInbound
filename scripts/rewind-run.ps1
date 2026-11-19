@@ -30,7 +30,7 @@ $url = Resolve-TargetUrl -Target $Target
 Connect-Dataverse -Url $url
 $envId = Get-PowerPlatformEnvId -Url $url
 
-$rfp = (Invoke-Dv -Path "hrs_rfps?`$select=hrs_rfpid,hrs_stage&`$filter=hrs_rfpkey eq '$Key'").value | Select-Object -First 1
+$rfp = (Invoke-Dv -Path "hrs_rfps?`$select=hrs_rfpid,hrs_stage&`$filter=hrs_rfpkey eq '$($Key.Replace("'", "''"))'").value | Select-Object -First 1
 if (-not $rfp) { throw "No hrs_rfp with key $Key" }
 $id = $rfp.hrs_rfpid
 if ($FromStage -eq 3) { Write-Host 'Stage 3 reruns from stage 2: addenda are applied to freshly extracted requirements.'; $FromStage = 2 }
@@ -57,7 +57,7 @@ $tables = @(
     @('hrs_flags', 'hrs_flagid', "_hrs_rfp_value eq $id"),
     @('hrs_requirements', 'hrs_requirementid', "_hrs_rfp_value eq $id"),
     @('hrs_documentblocks', 'hrs_documentblockid', "hrs_rfpdocument/hrs_rfprevision/_hrs_rfp_value eq $id"),
-    @('hrs_answers', 'hrs_answerid', "startswith(hrs_answercode,'PROP-$($Key.Replace('~', '~t').Replace('-', '~h'))-') and hrs_approvalstatus eq 431200011")
+    @('hrs_answers', 'hrs_answerid', "startswith(hrs_answercode,'PROP-$($Key.Replace('~', '~t').Replace('-', '~h').Replace("'", "''"))-') and hrs_approvalstatus eq 431200011")
 )
 foreach ($t in $tables) {
     $ids = @(Get-Ids $t[0] $t[1] $t[2])

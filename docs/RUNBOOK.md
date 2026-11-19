@@ -214,6 +214,8 @@ Second Copilot review (2026-11-16), checked in dev the same way: two Orchestrato
 
 Third and fourth Copilot reviews (2026-11-17), checked in dev: an evaluation of the RFP Orchestrator in Copilot Studio (8 cases, General quality and Compare meaning, average 88%) was exported to gallery-submission/.../evaluations/; its case "x' or hrs_rfpkey ne 'x" got "No RFP has that key", which checks the apostrophe escaping through the live agent. For the stage 9 recheck, S's page limit was set to 1 and its narrative edited while the card was open: the stage 9 rerun re-counted the current file and failed G6 ("governed narrative is 15 pages, limit 1"). With the limit restored (30), a rerun from stage 9 passed the recheck and posted a card with the re-measured 15 pages.
 
+Fifth Copilot review (2026-11-19): filters built from stored strings are escaped like agent input (odata_literal): Existing_RFP (Receive), the PROP-<key>- prefix (Rerun_Answers, the stage cleanup, OWN_DRAFTS), Existing_Proposal (Route Gap, including the buyer's requirement ID), Signatory and Approver, and the key in reset-run.ps1 and rewind-run.ps1. Checked against dev Dataverse: each filter with O''Brien or R''7 returns 200; the unescaped form returns 400.
+
 **Reading a failed RFP D run.** Compliance for D can vary between runs: see ADR-0021. Check the misses against
 spurious AMBIGUOUS and CONTRADICTION flags before suspecting a regression.
 

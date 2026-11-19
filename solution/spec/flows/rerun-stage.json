@@ -747,7 +747,7 @@
                       "parameters": {
                         "entityName": "hrs_answers",
                         "$select": "hrs_answerid",
-                        "$filter": "startswith(hrs_answercode,'@{concat('PROP-', replace(replace(first(body('RFP')?['value'])?['hrs_rfpkey'], '~', '~t'), '-', '~h'), '-')}') and hrs_approvalstatus eq 431200011 and createdon ge @{coalesce(first(body('Pass')?['value'])?['hrs_startedon'], utcNow())}"
+                        "$filter": "startswith(hrs_answercode,'@{replace(concat('PROP-', replace(replace(first(body('RFP')?['value'])?['hrs_rfpkey'], '~', '~t'), '-', '~h'), '-'), '''', '''''')}') and hrs_approvalstatus eq 431200011 and createdon ge @{coalesce(first(body('Pass')?['value'])?['hrs_startedon'], utcNow())}"
                       }
                     },
                     "runtimeConfiguration": {

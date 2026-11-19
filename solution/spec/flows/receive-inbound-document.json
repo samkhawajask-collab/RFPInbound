@@ -239,7 +239,7 @@
               "parameters": {
                 "entityName": "hrs_rfps",
                 "$select": "hrs_rfpid,hrs_stage,hrs_status",
-                "$filter": "hrs_rfpkey eq '@{body('Opportunity')?['hrs_rfpkey']}'"
+                "$filter": "hrs_rfpkey eq '@{replace(body('Opportunity')?['hrs_rfpkey'], '''', '''''')}'"
               }
             },
             "runtimeConfiguration": {
